@@ -1,1 +1,29 @@
-<p>dashboard works!</p>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="btn-group mr-3">
+    <h1>ihb</h1>
+  </div>
+
+  <ul class="navbar-nav mr-auto func-btn">
+    <li ngbDropdown class="nav-item mr-3" display="dynamic">
+      <fa-icon [icon]="faBell" class="btn btn-outline-primary" id="dropdownNotification" ngbDropdownToggle></fa-icon>
+      <div ngbDropdownMenu>
+        <p *ngFor="let alert of alerts">
+          <ngb-alert [type]="alert.type" (close)="close(alert)">{{alert.message}}</ngb-alert>
+        </p>
+      </div>
+    </li>
+
+    <li ngbDropdown class="nav-item d-inline-block float-right" display="dynamic">
+      <fa-icon [icon]="faSignOutAlt" class="btn btn-outline-primary" id="dropdownMode" ngbDropdownToggle></fa-icon>
+      <div ngbDropdownMenu>
+        <a routerLink="user"><button ngbDropdownItem>User</button></a>
+        <a routerLink="doctor"><button ngbDropdownItem>Doctor</button></a>
+        <a routerLink="administrator"><button ngbDropdownItem>Administrator</button></a>
+        <div class="dropdown-divider"></div>
+        <a><button ngbDropdownItem>Sign Out</button></a>
+      </div>
+    </li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>
+
