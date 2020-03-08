@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faUserAlt, faBell } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faBell } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,7 +7,7 @@ import { faUserAlt, faBell } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  faUserAlt = faUserAlt;
+  faUser = faUser;
   faBell = faBell;
   constructor() {
   }
