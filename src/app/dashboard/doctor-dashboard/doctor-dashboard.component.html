@@ -1,1 +1,67 @@
-<p>doctor-dashboard works!</p>
+<div class="card w-75 mt-3 mx-auto">
+  <div class="card-body">
+    <nav ngbNav #nav="ngbNav" class="nav-tabs">
+      <ng-container ngbNavItem>
+        <a ngbNavLink>One</a>
+        <ng-template ngbNavContent>
+          <form>
+            <div class="form-group">
+              <div class="row">
+                <div class="col">
+                  <label for="firstName">First Name</label>
+                  <input type="text" readonly class="form-control" id="firstName" placeholder="Test">
+                </div>
+                <div class="col">
+                  <label for="lastName">Last Name</label>
+                  <input type="text" readonly class="form-control" id="lastName" placeholder="Test">
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  <label for="email">Email</label>
+                  <input type="text" readonly class="form-control" id="email" placeholder="test@test.te">
+                </div>
+              </div>
+            </div>
+          </form>
+        </ng-template>
+      </ng-container>
+      <ng-container ngbNavItem>
+        <a ngbNavLink>Two</a>
+        <ng-template ngbNavContent>
+          <form>
+            <div class="row">
+              <div class="col">
+                <label for="vaccines">Vaccines</label>
+                <div id="vaccines">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="vaccine1">
+                    <label class="form-check-label" for="vaccine1">Vaccine 1</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="vaccine2">
+                    <label class="form-check-label" for="vaccine2">Vaccine 2</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="vaccine3">
+                    <label class="form-check-label" for="vaccine3">Vaccine 3</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Save</button>
+          </form>
+        </ng-template>
+      </ng-container>
+      <ng-container ngbNavItem>
+        <a ngbNavLink>Three</a>
+        <ng-template ngbNavContent>
+          <form>
+
+          </form>
+        </ng-template>
+      </ng-container>
+    </nav>
+    <div [ngbNavOutlet]="nav" class="mt-3"></div>
+  </div>
+</div>
