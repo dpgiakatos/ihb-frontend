@@ -10,6 +10,8 @@ import { UserDashboardComponent } from './dashboard/user-dashboard/user-dashboar
 import { DoctorDashboardComponent } from './dashboard/doctor-dashboard/doctor-dashboard.component';
 import { AdministratorDashboardComponent } from './dashboard/administrator-dashboard/administrator-dashboard.component';
 import { NotificationDashboardComponent } from './dashboard/notification-dashboard/notification-dashboard.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {CommonModule} from "@angular/common";
 
 const routes: Routes = [
   {path: '', component: AppComponent},
@@ -35,7 +37,13 @@ const routes: Routes = [
     NgbModule,
     FontAwesomeModule,
     RouterModule.forRoot(routes),
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    ReactiveFormsModule,
+    FormsModule,
+    CommonModule
+  ],
+  exports: [
+    DoctorDashboardComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
