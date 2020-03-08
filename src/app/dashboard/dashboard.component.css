@@ -7,7 +7,9 @@
   color: white;*/
 }
 .dropdown-toggle::after {
+  /*
   display: none;
+  */
 }
 .func-btn {
   position: absolute;
