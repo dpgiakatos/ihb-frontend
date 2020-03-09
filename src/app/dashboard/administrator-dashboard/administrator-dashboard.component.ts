@@ -7,38 +7,32 @@ import {map, startWith} from "rxjs/operators";
 interface User {
   id?: number;
   name: string;
-  isDoctor: boolean;
-  isAdministrator: boolean;
+  mode: string[];
 }
 
 const USERS: User[] = [
   {
     name: 'User 1',
-    isDoctor: false,
-    isAdministrator: false
+    mode: ['User']
   },
   {
     name: 'User 2',
-    isDoctor: true,
-    isAdministrator: false
+    mode: ['Doctor']
   },
   {
     name: 'User 3',
-    isDoctor: false,
-    isAdministrator: true
+    mode: ['Administrator']
   },
   {
     name: 'User 4',
-    isDoctor: true,
-    isAdministrator: true
+    mode: ['Doctor', 'Administrator']
   }
 ];
 
 function search(text: string, pipe: PipeTransform): User[] {
   return USERS.filter(user => {
     const term = text.toLowerCase();
-    return user.name.toLowerCase().includes(term)
-      || pipe.transform(user.isDoctor).includes(term);
+    return user.name.toLowerCase().includes(term);
   });
 }
 
@@ -51,13 +45,13 @@ function search(text: string, pipe: PipeTransform): User[] {
 export class AdministratorDashboardComponent implements OnInit {
 
   users$: Observable<User[]>;
-  filter = new FormControl('');
+  searchBox = new FormControl('');
   page = 1;
   pageSize = 2;
   collectionSize = USERS.length;
 
   constructor(pipe: DecimalPipe) {
-    this.users$ = this.filter.valueChanges.pipe(
+    this.users$ = this.searchBox.valueChanges.pipe(
       startWith(''),
       map(text => search(text, pipe))
     );
