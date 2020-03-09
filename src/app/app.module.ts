@@ -1,20 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import {RouterModule, Routes} from "@angular/router";
+import { RouterModule, Routes } from '@angular/router';
 import { UserDashboardComponent } from './dashboard/user-dashboard/user-dashboard.component';
 import { DoctorDashboardComponent } from './dashboard/doctor-dashboard/doctor-dashboard.component';
 import { AdministratorDashboardComponent } from './dashboard/administrator-dashboard/administrator-dashboard.component';
 import { NotificationDashboardComponent } from './dashboard/notification-dashboard/notification-dashboard.component';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {CommonModule} from "@angular/common";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { HomePageComponent } from './home-page/home-page.component';
 
 const routes: Routes = [
-  {path: '', component: AppComponent},
+  {path: '', component: HomePageComponent},
   {path: 'dashboard', component: DashboardComponent, children: [
     {path: 'notification', component: NotificationDashboardComponent},
     {path: 'user', component: UserDashboardComponent},
@@ -30,7 +31,8 @@ const routes: Routes = [
     UserDashboardComponent,
     DoctorDashboardComponent,
     AdministratorDashboardComponent,
-    NotificationDashboardComponent
+    NotificationDashboardComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,
