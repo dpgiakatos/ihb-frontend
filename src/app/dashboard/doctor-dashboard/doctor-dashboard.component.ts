@@ -45,10 +45,10 @@ function search(text: string, pipe: PipeTransform): Patient[] {
 export class DoctorDashboardComponent implements OnInit {
 
   patients$: Observable<Patient[]>;
-  filter = new FormControl('');
+  searchBox = new FormControl('');
 
   constructor(pipe: DecimalPipe) {
-    this.patients$ = this.filter.valueChanges.pipe(
+    this.patients$ = this.searchBox.valueChanges.pipe(
       startWith(''),
       map(text => search(text, pipe))
     );

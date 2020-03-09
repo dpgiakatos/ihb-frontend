@@ -5,6 +5,7 @@ import {FormControl} from "@angular/forms";
 import {map, startWith} from "rxjs/operators";
 
 interface User {
+  id?: number;
   name: string;
   isDoctor: boolean;
   isAdministrator: boolean;
