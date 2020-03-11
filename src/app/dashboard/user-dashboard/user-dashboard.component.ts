@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {faCalendarAlt} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserDashboardComponent implements OnInit {
 
+  addExtraVaccination = false;
+  model;
+  faCalendarAlt = faCalendarAlt;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  addVaccination() {
+    this.addExtraVaccination = !this.addExtraVaccination;
+  }
 }

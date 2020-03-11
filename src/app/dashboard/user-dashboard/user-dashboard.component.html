@@ -2,24 +2,71 @@
   <div class="card-body">
     <nav ngbNav #nav="ngbNav" class="nav-tabs">
       <ng-container ngbNavItem>
-        <a ngbNavLink>One</a>
+        <a ngbNavLink>Personal Information</a>
         <ng-template ngbNavContent>
           <form>
             <div class="form-group">
               <div class="row">
                 <div class="col">
                   <label for="firstName">First Name</label>
-                  <input type="text" readonly class="form-control" id="firstName" placeholder="Test">
+                  <input type="text" class="form-control" id="firstName" placeholder="Test"/>
                 </div>
                 <div class="col">
                   <label for="lastName">Last Name</label>
-                  <input type="text" readonly class="form-control" id="lastName" placeholder="Test">
+                  <input type="text" class="form-control" id="lastName" placeholder="Test"/>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  <label for="ssnvs">SSNVS</label>
+                  <input type="text" class="form-control" id="ssnvs" placeholder="00000000000"/>
+                </div>
+                <div class="col">
+                  <label for="dateOfBirth">Date Of Birth</label>
+                  <div class="input-group" id="dateOfBirth">
+                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp"[(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                    <div class="input-group-append">
+                      <fa-icon [icon]="faCalendarAlt" class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></fa-icon>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  <label for="fathersFirstName">Father's First Name</label>
+                  <input type="text" class="form-control" id="fathersFirstName" placeholder="Test"/>
+                </div>
+                <div class="col">
+                  <label for="fathersLastName">Father's Last Name</label>
+                  <input type="text" class="form-control" id="fathersLastName" placeholder="Test"/>
+                </div>
+                <div class="col">
+                  <label for="mothersFirstName">Mother's First Name</label>
+                  <input type="text" class="form-control" id="mothersFirstName" placeholder="Test"/>
+                </div>
+                <div class="col">
+                  <label for="mothersLastName">Mother's Last Name</label>
+                  <input type="text" class="form-control" id="mothersLastName" placeholder="Test"/>
                 </div>
               </div>
               <div class="row mt-3">
                 <div class="col">
                   <label for="email">Email</label>
-                  <input type="text" readonly class="form-control" id="email" placeholder="test@test.te">
+                  <input type="text" class="form-control" id="email" placeholder="test@test.te"/>
+                </div>
+                <div class="col">
+                  <label for="mobilePhone">Mobile Phone</label>
+                  <input type="text" class="form-control" id="mobilePhone" placeholder="0000000000"/>
+                </div>
+                <div class="col">
+                  <label for="emergencyPhone">Emergency Phone</label>
+                  <input type="text" class="form-control" id="emergencyPhone" placeholder="000000000"/>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col">
+                  <button class="btn btn-primary mt-3 mr-3">Edit</button>
+                  <button class="btn btn-primary mt-3 mr-3">Save</button>
                 </div>
               </div>
             </div>
@@ -27,29 +74,164 @@
         </ng-template>
       </ng-container>
       <ng-container ngbNavItem>
-        <a ngbNavLink>Two</a>
+        <a ngbNavLink>Vaccinations</a>
         <ng-template ngbNavContent>
           <form>
-            <div class="row">
+            <label for="recommendedVaccinations"><b>Recommended vaccinations<sup>1</sup></b></label>
+            <div class="row" id="recommendedVaccinations">
               <div class="col">
-                <label for="vaccines">Vaccines</label>
-                <div id="vaccines">
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="vaccine1">
-                    <label class="form-check-label" for="vaccine1">Vaccine 1</label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="vaccine2">
-                    <label class="form-check-label" for="vaccine2">Vaccine 2</label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="vaccine3">
-                    <label class="form-check-label" for="vaccine3">Vaccine 3</label>
-                  </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="tuberculosis"/>
+                  <label class="form-check-label" for="tuberculosis">Tuberculosis</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="rotavirusInfection"/>
+                  <label class="form-check-label" for="rotavirusInfection">Rotavirus infection</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="diphtheria"/>
+                  <label class="form-check-label" for="diphtheria">Diphtheria</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="tetanus"/>
+                  <label class="form-check-label" for="tetanus">Tetanus</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="pertussis"/>
+                  <label class="form-check-label" for="pertussis">Pertussis</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="poliomyelitis"/>
+                  <label class="form-check-label" for="poliomyelitis">Poliomyelitis</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="haemophilusInfluenzaeTypeBInfection"/>
+                  <label class="form-check-label" for="haemophilusInfluenzaeTypeBInfection">Haemophilus influenzae type b infection</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="hepatitisB"/>
+                  <label class="form-check-label" for="hepatitisB">Hepatitis B</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="pneumococcalDisease"/>
+                  <label class="form-check-label" for="pneumococcalDisease">Pneumococcal disease</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="meningococcalDisease"/>
+                  <label class="form-check-label" for="meningococcalDisease">Meningococcal disease</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="measles"/>
+                  <label class="form-check-label" for="measles">Measles</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="mumps"/>
+                  <label class="form-check-label" for="mumps">Mumps</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="rubella"/>
+                  <label class="form-check-label" for="rubella">Rubella</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="varicella"/>
+                  <label class="form-check-label" for="varicella">Varicella</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="humanPapillomavirusInfection"/>
+                  <label class="form-check-label" for="humanPapillomavirusInfection">Human papillomavirus infection</label>
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="influenza"/>
+                  <label class="form-check-label" for="influenza">Influenza</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="herpesZoster"/>
+                  <label class="form-check-label" for="herpesZoster">Herpes zoster</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="hepatitisA"/>
+                  <label class="form-check-label" for="hepatitisA">Hepatitis A</label>
                 </div>
               </div>
             </div>
-            <button type="submit" class="btn btn-primary mt-3">Save</button>
+            <div class="row mt-3">
+              <div class="col">
+                <button class="btn btn-primary mr-3">Edit</button>
+                <button class="btn btn-primary mr-3">Save</button>
+              </div>
+            </div>
+            <label class="mt-5" for="extraVaccinations"><b>Extra vaccinations</b></label>
+            <div class="row" id="extraVaccinations">
+              <div class="col">
+                <form>
+                  <ng-container *ngIf="!addExtraVaccination; then thenBlock else elseBlock"></ng-container>
+                  <ng-template #thenBlock>
+                    <div class="row">
+                      <div class="col">
+                        <button class="btn btn-primary" (click)="addVaccination()">Add</button>
+                      </div>
+                    </div>
+                  </ng-template>
+                  <ng-template #elseBlock>
+                    <div class="form-group">
+                      <div class="row">
+                        <div class="col">
+                          <label for="vaccinationName">Vaccination Name</label>
+                          <input type="text" class="form-control" id="vaccinationName">
+                        </div>
+                        <div class="col">
+                          <label for="vaccinationDate">Vaccination Date</label>
+                          <div class="input-group" id="vaccinationDate">
+                            <input class="form-control" placeholder="yyyy-mm-dd" name="dp"[(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                            <div class="input-group-append">
+                              <fa-icon [icon]="faCalendarAlt" class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></fa-icon>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col">
+                          <label for="description">Description</label>
+                          <textarea class="form-control" id="description"></textarea>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col">
+                          <button class="btn btn-primary mr-3">Add</button>
+                          <button class="btn btn-primary mr-3" (click)="addVaccination()">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </ng-template>
+                </form>
+                <table class="table table-striped mt-3">
+                  <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Vaccination Name</th>
+                    <th scope="col">Vaccination Date</th>
+                    <th scope="col">Description</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+
+                  </tbody>
+                </table>
+                <div class="dropdown-divider"></div>
+                <div>
+                  <label for="footnotes"><b>Footnotes</b></label>
+                  <p id="footnotes">
+                    1. <a target="_blank" href="https://vaccine-schedule.ecdc.europa.eu/Scheduler/ByCountry?SelectedCountryId=82&IncludeChildAgeGroup=true&IncludeChildAgeGroup=false&IncludeAdultAgeGroup=true&IncludeAdultAgeGroup=false">
+                          Greece: Recommended vaccinations
+                        </a>
+                  </p>
+                </div>
+              </div>
+            </div>
           </form>
         </ng-template>
       </ng-container>
