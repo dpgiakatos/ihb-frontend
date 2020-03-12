@@ -1,42 +1,7 @@
-.imgCarouselSize {
-  height: 650px;
-  width: 100%;
-}
-.imgBody {
-  height: 100%;
-  width: 100%;
-}
-.navbar {
-  background-color: #B2DBBF;
-}
-.nav-link {
-  color: #343a40;
-}
-.bodyTitle {
-  padding-top: 70px;
-  margin: 20px;
-}
-.bodyText {
-  margin: 20px;
-}
-.footerBody {
-  color: #343a40;
-  float: left;
-}
-.footerColumn {
-  margin-left: 20%;
-}
-.footer {
-  position: relative;
-  clear: both;
-  background-color:#B2DBBF;
-  padding: 20px 15% 50px;
-}
-.lineSeparator {
-  background-color: #343a40;
-  height: 1px;
-}
-a {
-  text-decoration: none;
-  color: #343a40;
-}
+.divone {position:relative; clear:both; margin:0; padding:10px;}
+
+.divtwo {position:relative; clear:both; margin:0; padding:10px;}
+
+.divthree {position:relative; clear:both; margin:0; padding:10px;}
+
+.jumbotron {position:relative; clear:both; margin:0; padding:20px;}
