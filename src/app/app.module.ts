@@ -13,6 +13,8 @@ import { NotificationDashboardComponent } from './dashboard/notification-dashboa
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HomePageComponent } from './home-page/home-page.component';
+import { MessageDashboardComponent } from './dashboard/message-dashboard/message-dashboard.component';
+import { UserTabDashboardComponent } from './dashboard/user-tab-dashboard/user-tab-dashboard.component';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -20,7 +22,9 @@ const routes: Routes = [
     {path: 'notification', component: NotificationDashboardComponent},
     {path: 'user', component: UserDashboardComponent},
     {path: 'doctor', component: DoctorDashboardComponent},
-    {path: 'administrator', component: AdministratorDashboardComponent}
+    {path: 'administrator', component: AdministratorDashboardComponent},
+    {path: 'message', component: MessageDashboardComponent},
+    {path: 'usertab', component: UserTabDashboardComponent}
   ]}
 ];
 
@@ -33,6 +37,8 @@ const routes: Routes = [
     AdministratorDashboardComponent,
     NotificationDashboardComponent,
     HomePageComponent,
+    MessageDashboardComponent,
+    UserTabDashboardComponent
   ],
   imports: [
     BrowserModule,
