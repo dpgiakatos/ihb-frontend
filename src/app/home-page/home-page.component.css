@@ -1,4 +1,8 @@
 .imgCarouselSize {
-  height: 600px;
+  height: 800px;
+  width: 100%;
+}
+.imgBody {
+  height: 100%;
   width: 100%;
 }

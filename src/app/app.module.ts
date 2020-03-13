@@ -16,6 +16,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { MessageDashboardComponent } from './dashboard/message-dashboard/message-dashboard.component';
 import { UserTabDashboardComponent } from './dashboard/user-tab-dashboard/user-tab-dashboard.component';
 import { SettingsDashboardComponent } from './dashboard/settings-dashboard/settings-dashboard.component';
+import { ScrollTopComponent } from './home-page/scroll-top/scroll-top.component';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -41,7 +42,8 @@ const routes: Routes = [
     HomePageComponent,
     MessageDashboardComponent,
     UserTabDashboardComponent,
-    SettingsDashboardComponent
+    SettingsDashboardComponent,
+    ScrollTopComponent
   ],
   imports: [
     BrowserModule,
