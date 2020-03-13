@@ -12,3 +12,10 @@
 .nav-link {
   color: #343a40;
 }
+.bodyTitle {
+  padding-top: 70px;
+  margin: 20px;
+}
+.bodyText {
+  margin: 20px;
+}
