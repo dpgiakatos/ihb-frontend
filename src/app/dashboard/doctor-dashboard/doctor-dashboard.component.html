@@ -3,14 +3,22 @@
     <h1>Doctor</h1>
   </div>
   <div class="card-body">
-    <form class="form-inline">
-      <label for="search">Search patient:</label>
-      <input type="text" class="form-control ml-2 w-50" id="search" [formControl]="searchBox"/>
-      <label for="countrySeelct" class="ml-4">Select country:</label>
-      <select class="form-control ml-2 w-25" id="countrySeelct">
-        <option selected>All</option>
-        <option>Greece</option>
-      </select>
+    <form>
+      <div class="form-group">
+        <div class="row">
+          <div class="col">
+            <label for="search">Search patient:</label>
+            <input type="text" class="form-control" id="search" [formControl]="searchBox"/>
+          </div>
+          <div class="col">
+            <label for="countrySeelct">Select country:</label>
+            <select class="form-control w-50" id="countrySeelct">
+              <option selected>All</option>
+              <option>Greece</option>
+            </select>
+          </div>
+        </div>
+      </div>
     </form>
     <table *ngIf="searchBox.value" class="table table-striped mt-3">
       <thead>

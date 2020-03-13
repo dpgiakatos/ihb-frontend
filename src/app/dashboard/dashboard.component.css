@@ -1,21 +1,3 @@
-.header {
-  position: fixed;
-  top: 10px;
-  left: 0;
-  z-index: 2;
-/*  background: green;
-  color: white;*/
-}
-.dropdown-toggle::after {
-  /*
-  display: none;
-  */
-}
-.func-btn {
-  position: absolute;
-  right: 15px;
-  text-align: right;
-}
 a {
   text-decoration: none;
 }
