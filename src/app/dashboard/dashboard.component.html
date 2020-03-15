@@ -1,18 +1,16 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-  <div class="btn-group mr-3">
-    <h1>ihb</h1>
-  </div>
-  <ul class="navbar-nav mr-auto func-btn">
-    <a routerLink="notification"><fa-icon [icon]="faBell" class="btn btn-outline-primary mr-3" id="notification"></fa-icon></a>
+<nav class="navbar sticky-top">
+  <h1>ihb</h1>
+  <ul class="nav nav-pills">
+    <a routerLink="notification"><fa-icon [icon]="faBell" class="btn btn-outline-dark mr-3 nav-item" id="notification"></fa-icon></a>
     <li ngbDropdown class="nav-item d-inline-block float-right" display="dynamic">
-      <fa-icon [icon]="faUser" class="btn btn-outline-primary" id="dropdownMode" ngbDropdownToggle></fa-icon>
+      <fa-icon [icon]="faUser" class="btn btn-outline-dark nav-item" id="dropdownMode" ngbDropdownToggle></fa-icon>
       <div ngbDropdownMenu>
-        <a routerLink="user"><button ngbDropdownItem>User</button></a>
-        <a routerLink="doctor"><button ngbDropdownItem>Doctor</button></a>
-        <a routerLink="administrator"><button ngbDropdownItem>Administrator</button></a>
+        <a routerLink="user"><button class="btn-outline-dark" ngbDropdownItem>User</button></a>
+        <a routerLink="doctor"><button class="btn-outline-dark" ngbDropdownItem>Doctor</button></a>
+        <a routerLink="administrator"><button class="btn-outline-dark" ngbDropdownItem>Administrator</button></a>
         <div class="dropdown-divider"></div>
-        <a><button ngbDropdownItem>Settings</button></a>
-        <a><button ngbDropdownItem>Sign Out</button></a>
+        <a routerLink="settings"><button class="btn-outline-dark" ngbDropdownItem>Settings</button></a>
+        <a href=""><button class="btn-outline-dark" ngbDropdownItem>Sign Out</button></a>
       </div>
     </li>
   </ul>

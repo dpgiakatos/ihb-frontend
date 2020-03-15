@@ -1,13 +1,57 @@
 <div class="card w-75 mt-3 mx-auto">
+  <div class="card-header">
+    <h1>Administrator</h1>
+  </div>
   <div class="card-body">
     <nav ngbNav #nav="ngbNav" class="nav-tabs">
+      <ng-container ngbNavItem>
+        <a ngbNavLink>Inbox</a>
+        <ng-template ngbNavContent>
+          <table class="table table-striped mt-3">
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Full Name</th>
+              <th scope="col">Subject</th>
+              <th scope="col">Message</th>
+              <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let user of users">
+              <th scope="row">{{user.id}}</th>
+              <td><ngb-highlight [result]="user.name"></ngb-highlight></td>
+              <td><ngb-highlight [result]="user.mode"></ngb-highlight></td>
+              <td><ngb-highlight></ngb-highlight></td>
+              <td><a routerLink="../message"><button class="btn btn-primary mr-3">Read</button></a><a><button class="btn btn-danger">Delete</button></a></td>
+            </tr>
+            </tbody>
+          </table>
+          <div class="d-flex justify-content-between p-2">
+            <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"></ngb-pagination>
+          </div>
+        </ng-template>
+      </ng-container>
       <ng-container ngbNavItem>
         <a ngbNavLink>Users</a>
         <ng-template ngbNavContent>
           <form>
-            <div class="row mb-4">
-              <div class="col">
-              Search user: <input class="form-control w-50" type="text" [formControl]="searchBox"/>
+            <div class="form-group">
+              <div class="row">
+                <div class="col">
+                  <label for="search">Search user</label>
+                  <input type="text" class="form-control" id="search" [formControl]="searchBox"/>
+                </div>
+                <div class="col custom-control custom-checkbox my-1 mr-sm-2 ml-5">
+                  <div class="row">
+                    <input type="checkbox" class="custom-control-input" id="doctorSelect">
+                    <label class="custom-control-label" for="doctorSelect">Doctor</label>
+                  </div>
+                  <div class="row">
+                    <input type="checkbox" class="custom-control-input" id="administratorSelect">
+                    <label class="custom-control-label" for="administratorSelect">Administrator</label>
+                  </div>
+                </div>
               </div>
             </div>
           </form>
@@ -27,7 +71,7 @@
                 <th scope="row">{{i+1}}</th>
                 <td><ngb-highlight [result]="user.name" [term]="searchBox.value"></ngb-highlight></td>
                 <td><ngb-highlight [result]="user.mode"></ngb-highlight></td>
-                <td><a><button class="btn btn-primary mr-3">Edit</button></a><a><button class="btn btn-danger">Delete</button></a></td>
+                <td><a routerLink="../usertab"><button class="btn btn-primary mr-3">Edit</button></a><a><button class="btn btn-danger">Delete</button></a></td>
               </tr>
             </ng-template>
             <ng-template #elseBlock>
@@ -35,7 +79,7 @@
                 <th scope="row">{{user.id}}</th>
                 <td><ngb-highlight [result]="user.name"></ngb-highlight></td>
                 <td><ngb-highlight [result]="user.mode"></ngb-highlight></td>
-                <td><a><button class="btn btn-primary mr-3">Edit</button></a><a><button class="btn btn-danger">Delete</button></a></td>
+                <td><a routerLink="../usertab"><button class="btn btn-primary mr-3">Edit</button></a><a><button class="btn btn-danger">Delete</button></a></td>
               </tr>
             </ng-template>
             </tbody>
@@ -43,22 +87,6 @@
           <div *ngIf="!searchBox.value" class="d-flex justify-content-between p-2">
             <ngb-pagination [collectionSize]="collectionSize" [(page)]="page" [pageSize]="pageSize"></ngb-pagination>
           </div>
-        </ng-template>
-      </ng-container>
-      <ng-container ngbNavItem>
-        <a ngbNavLink>Two</a>
-        <ng-template ngbNavContent>
-          <form>
-
-          </form>
-        </ng-template>
-      </ng-container>
-      <ng-container ngbNavItem>
-        <a ngbNavLink>Three</a>
-        <ng-template ngbNavContent>
-          <form>
-
-          </form>
         </ng-template>
       </ng-container>
     </nav>

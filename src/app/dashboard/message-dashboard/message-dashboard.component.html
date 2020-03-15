@@ -1,0 +1,40 @@
+<div class="card w-75 mt-3 mx-auto">
+  <div class="card-header">
+    <a routerLink="../administrator"><button class="btn btn-primary mr-3">Back</button></a>
+    <label class="mr-3"><b>Message from test</b></label>
+    <a><button class="btn btn-danger float-right">Delete</button></a>
+  </div>
+  <div class="card-body">
+    <form>
+      <div class="form-group">
+        <div class="row">
+          <div class="col">
+            <label for="fullName">Full Name</label>
+            <input type="text" class="form-control" id="fullName" readonly placeholder="test">
+          </div>
+          <div class="col">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" id="email" readonly placeholder="test@test.te">
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col">
+            <label for="subject">Subject</label>
+            <input type="text" class="form-control" id="subject" readonly placeholder="test test test">
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col">
+            <label for="message">Message</label>
+            <textarea class="form-control" id="message" readonly placeholder="test test test test test test test test test"></textarea>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col">
+            <a routerLink="../usertab"><button class="btn btn-primary">Go to user tab</button></a>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
