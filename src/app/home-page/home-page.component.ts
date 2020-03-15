@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {faFacebookSquare, faTwitterSquare, faInstagramSquare, faGooglePlusSquare} from "@fortawesome/free-brands-svg-icons";
+import {faCopyright} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-home-page',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  faFacebookSquare = faFacebookSquare;
+  faTwitterSquare = faTwitterSquare;
+  faInstagramSquare = faInstagramSquare;
+  faGooglePlusSquare = faGooglePlusSquare;
+  faCopyright = faCopyright;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
-
 }
