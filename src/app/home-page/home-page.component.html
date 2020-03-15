@@ -18,8 +18,8 @@
         <a class="nav-link" href="#contact">Contact</a>
       </li>
     </ul>
-      <a href="dashboard"><button class="btn btn-outline-dark mr-3">Sign in</button></a>
-      <a><button class="btn btn-dark">Sign up</button></a>
+    <a href="dashboard"><button class="btn btn-outline-dark mr-3">Sign in</button></a>
+    <a><button class="btn btn-dark">Sign up</button></a>
   </div>
 </nav>
 <ngb-carousel>
@@ -51,6 +51,13 @@
     </div>
   </ng-template>
 </ngb-carousel>
+<div class="jumbotron">
+  <h1 class="display-4">Join IHB Now!</h1>
+  <p class="lead">Patients, Doctors and Clinics can all use our free platform and be a step ahead in the case of an emergency.</p>
+  <hr class="my-4">
+  <p>Create your account in just one minute. Only thing needed is a protocol.</p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">Register/Sign In Now</a>
+</div>
 <div data-spy="scroll" data-target="#menu" data-offset="0">
   <div class="container-fluid">
     <div class="row bodyTitle" id="aboutUs">
@@ -76,6 +83,7 @@
         <img src="assets/img/front-page/jpg/about.jpg" class="imgBody" alt="About image">
       </div>
     </div>
+    <div class="lineSeparator"></div>
     <div class="row bodyTitle" id="user">
       <div class="col">
         <h3>User</h3>
@@ -99,6 +107,7 @@
         </p>
       </div>
     </div>
+    <div class="lineSeparator"></div>
     <div class="row bodyTitle" id="doctor">
       <div class="col">
         <h3>Doctor</h3>
@@ -122,6 +131,7 @@
         <img src="assets/img/front-page/jpg/doctor.jpg" class="imgBody" alt="Doctor image">
       </div>
     </div>
+    <div class="lineSeparator"></div>
     <div class="row bodyTitle" id="security">
       <div class="col">
         <h3>Security</h3>
@@ -145,6 +155,7 @@
         </p>
       </div>
     </div>
+    <div class="lineSeparator"></div>
     <div class="row bodyTitle" id="contact">
       <div class="col">
         <h3>Contact</h3>
@@ -174,10 +185,105 @@
     </div>
   </div>
 </div>
+
+<div class="footer">
+  <ul class="nav nav-pills nav-fill">
+    <li class="nav-item">
+      <div class="footerColumn">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <h4 class="footerBody">Terms & Conditions</h4>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="footerBody">Users</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="footerBody">Doctors</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="footerBody">Clinics</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="footerBody">Cookies</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="footerBody">See More</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <div class="footerColumn">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <h4 class="footerBody">Useful Links</h4>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.who.int/" class="footerBody">World Health Organization</a>
+          </li>
+          <li class="nav-item">
+            <a href="https://www.vaccines.gov/" class="footerBody">Vaccines</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="footerBody">About IHB</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="footerBody">About Doctors</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <div class="footerColumn">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <h4 class="footerBody">Regions</h4>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="footerBody">Africa</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="footerBody">Americas</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="footerBody">Asia</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="footerBody">Europe</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="footerBody">Oceania</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li class="nav-item">
+      <div class="footerColumn">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <h4 class="footerBody">Support Us</h4>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="footerBody">How to Help</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="footerBody">Make a Donation</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="footerBody">Become a Supporter</a>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="lineSeparator"></div>
 <div class="navbar">
   <div class="mx-auto">
-    <a><fa-icon [icon]="faFacebookSquare" class="btn btn-dark mr-3 mt-4"></fa-icon></a>
-    <a><fa-icon [icon]="faTwitterSquare" class="btn btn-dark mt-4"></fa-icon></a>
+    <a href="https://www.facebook.com"><fa-icon [icon]="faFacebookSquare" class="btn btn-dark mr-3 mt-2"></fa-icon></a>
+    <a href="https://www.twitter.com"><fa-icon [icon]="faTwitterSquare" class="btn btn-dark mr-3 mt-2"></fa-icon></a>
+    <a href="https://www.instagram.com"><fa-icon [icon]="faInstagramSquare" class="btn btn-dark mr-3 mt-2"></fa-icon></a>
+    <a href="https://www.google.com"><fa-icon [icon]="faGooglePlusSquare" class="btn btn-dark mt-2"></fa-icon></a>
   </div>
 </div>
 <div class="navbar">

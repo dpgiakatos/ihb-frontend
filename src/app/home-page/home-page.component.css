@@ -1,5 +1,5 @@
 .imgCarouselSize {
-  height: 800px;
+  height: 650px;
   width: 100%;
 }
 .imgBody {
@@ -18,4 +18,21 @@
 }
 .bodyText {
   margin: 20px;
+}
+.footerBody {
+  color: #343a40;
+  float: left;
+}
+.footerColumn {
+  margin-left: 20%;
+}
+.footer {
+  position: relative;
+  clear: both;
+  background-color:#B2DBBF;
+  padding: 20px 15% 50px;
+}
+.lineSeparator {
+  background-color: #343a40;
+  height: 1px;
 }
