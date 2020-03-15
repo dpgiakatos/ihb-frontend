@@ -1,5 +1,5 @@
 .imgCarouselSize {
-  height: 90vh;
+  height: 650px;
   width: 100%;
 }
 .imgBody {
@@ -7,20 +7,20 @@
   width: 100%;
 }
 .navbar {
-  height: 10vh;
   background-color: #B2DBBF;
 }
 .nav-link {
   color: #343a40;
 }
 .bodyTitle {
-  padding-top: 10vh;
+  padding-top: 70px;
   margin: 20px;
 }
 .bodyText {
   margin: 20px;
 }
 .footerBody {
+  color: #343a40;
   float: left;
 }
 .footerColumn {
@@ -36,12 +36,7 @@
   background-color: #343a40;
   height: 1px;
 }
-
-.textRight {
-  float: right;
-  margin-right: 2vh;
-}
-
 a {
+  text-decoration: none;
   color: #343a40;
 }
