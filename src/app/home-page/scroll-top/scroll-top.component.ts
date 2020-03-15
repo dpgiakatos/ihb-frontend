@@ -1,6 +1,6 @@
 import {Component, HostListener, Inject, OnInit} from '@angular/core';
-import {DOCUMENT} from "@angular/common";
 import {faArrowUp} from "@fortawesome/free-solid-svg-icons";
+import {DOCUMENT} from "@angular/common";
 
 @Component({
   selector: 'app-scroll-top',
