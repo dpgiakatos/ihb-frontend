@@ -3,7 +3,7 @@
   max-width: 500px;
   padding: 15px;
   margin: auto;
-  
+
 }
 .form-register .form-control {
   padding: 10px;
@@ -47,8 +47,8 @@
 .register {
   width: 100%;
   max-width: 600px;
-  padding: 15px;
   margin: auto;
+  padding: 7% 0;
 }
 
 .h3 {
