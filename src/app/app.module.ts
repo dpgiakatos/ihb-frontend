@@ -13,20 +13,30 @@ import { NotificationDashboardComponent } from './dashboard/notification-dashboa
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HomePageComponent } from './home-page/home-page.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import {ScrollTopComponent} from "./home-page/scroll-top/scroll-top.component";
+import { AuthComponent } from './auth/auth.component';
+import {LoginComponent} from "./auth/login/login.component";
+import {ForgotPasswordComponent} from "./auth/forgot-password/forgot-password.component";
+import {RegisterComponent} from "./auth/register/register.component";
+import {UserTabDashboardComponent} from "./dashboard/user-tab-dashboard/user-tab-dashboard.component";
+import {MessageDashboardComponent} from "./dashboard/message-dashboard/message-dashboard.component";
+import {SettingsDashboardComponent} from "./dashboard/settings-dashboard/settings-dashboard.component";
 
 const routes: Routes = [
-  {path: 'forgot-password', component: ForgotPasswordComponent},
-  {path: 'register', component: RegisterComponent},
-  {path: 'login', component: LoginComponent},
   {path: '', component: HomePageComponent},
+  {path: 'auth', component: AuthComponent, children: [
+    {path: 'login', component: LoginComponent},
+    {path: 'forgot-password', component: ForgotPasswordComponent},
+    {path: 'register', component: RegisterComponent}
+  ]},
   {path: 'dashboard', component: DashboardComponent, children: [
     {path: 'notification', component: NotificationDashboardComponent},
     {path: 'user', component: UserDashboardComponent},
     {path: 'doctor', component: DoctorDashboardComponent},
-    {path: 'administrator', component: AdministratorDashboardComponent}
+    {path: 'administrator', component: AdministratorDashboardComponent},
+    {path: 'message', component: MessageDashboardComponent},
+    {path: 'usertab', component: UserTabDashboardComponent},
+    {path: 'settings', component: SettingsDashboardComponent}
   ]}
 ];
 
@@ -38,10 +48,15 @@ const routes: Routes = [
     DoctorDashboardComponent,
     AdministratorDashboardComponent,
     NotificationDashboardComponent,
+    UserTabDashboardComponent,
+    MessageDashboardComponent,
+    SettingsDashboardComponent,
     HomePageComponent,
+    ScrollTopComponent,
+    AuthComponent,
     LoginComponent,
-    RegisterComponent,
     ForgotPasswordComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
