@@ -1,0 +1,34 @@
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+  <div class="btn-group-mr-3">
+    <h1><a routerLink="../">ihb</a> </h1>
+  </div>
+</nav>
+
+<form class="register"> <!-- class="form-register form-inline" action="index.html" method="post"> -->
+  <legend><h1 class="h3 mb-3 font-weight-normal">Create Account</h1></legend>
+  <div class="form-row">
+    <div class="form-group col-md-5">
+      <label for="text" class="sr-only">First Name</label>
+      <input type="text" id="firstname" class="form-control" placeholder="First Name" required autofocus>
+    </div>
+    <div class="form-group col-md-7">
+      <label for="text" class="sr-only">Last Name</label>
+      <input type="text" id="lastname" class="form-control" placeholder="Last Name" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email" class="sr-only">Email Address</label>
+    <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email Address" required>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="password" class="sr-only">Password</label>
+      <input type="password" id="password" class="form-control" placeholder="Password">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="password" class="sr-only">Password Confirmation</label>
+      <input type="password" id="passwordConfirmation" class="form-control" placeholder="Password Confirmation">
+    </div>
+  </div>
+  <a routerLink="../dashboard"><input class="btn btn-lg btn-primary btn-block" type="submit" value="Register"></a>
+</form>
