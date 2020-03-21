@@ -1,5 +1,5 @@
 .imgCarouselSize {
-  height: 650px;
+  height: 90vh;
   width: 100%;
 }
 .imgBody {
@@ -7,15 +7,41 @@
   width: 100%;
 }
 .navbar {
+  height: 10vh;
   background-color: #B2DBBF;
 }
 .nav-link {
   color: #343a40;
 }
 .bodyTitle {
-  padding-top: 70px;
+  padding-top: 10vh;
   margin: 20px;
 }
 .bodyText {
   margin: 20px;
+}
+.footerBody {
+  float: left;
+}
+.footerColumn {
+  margin-left: 20%;
+}
+.footer {
+  position: relative;
+  clear: both;
+  background-color:#B2DBBF;
+  padding: 20px 15% 50px;
+}
+.lineSeparator {
+  background-color: #343a40;
+  height: 1px;
+}
+
+.textRight {
+  float: right;
+  margin-right: 2vh;
+}
+
+a {
+  color: #343a40;
 }
