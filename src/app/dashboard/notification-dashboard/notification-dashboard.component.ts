@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {faFlag} from "@fortawesome/free-solid-svg-icons";
+import {faFontAwesomeAlt} from "@fortawesome/free-brands-svg-icons";
 
 interface Alert {
   type: string;
@@ -23,7 +23,7 @@ const ALERTS: Alert[] = [{
 export class NotificationDashboardComponent implements OnInit {
 
   alerts: Alert[];
-  faFlag = faFlag;
+  faFontAwesomeAlt = faFontAwesomeAlt;
 
   constructor() {
     this.alerts = Array.from(ALERTS);

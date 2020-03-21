@@ -2,7 +2,7 @@
   <div class="card-body">
     <p *ngFor="let alert of alerts">
       <ngb-alert [type]="alert.type" (close)="close(alert)">
-        <a><fa-icon [icon]="faFlag" class="btn btn-danger float-left mr-3">Report</fa-icon></a>
+        <a title="Report"><fa-icon [icon]="faFontAwesomeAlt" class="mr-3 float-right" size="2x"></fa-icon></a>
         {{ alert.message }}
       </ngb-alert>
     </p>

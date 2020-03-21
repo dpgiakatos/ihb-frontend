@@ -41,7 +41,16 @@
   float: right;
   margin-right: 2vh;
 }
-
+.copyrightSection {
+  text-align: center;
+  padding-top: 10px;
+}
+.socialMediaSection {
+  text-align: center;
+}
+.logo {
+  height: 6vh;
+}
 a {
   color: #343a40;
 }
