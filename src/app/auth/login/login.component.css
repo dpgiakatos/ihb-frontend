@@ -1,47 +1,12 @@
-  position: fixed;
-  .header {
-  top: 10px;
-  left: 0;
-  z-index: 2;
-/*  background: green;
-  color: white;*/
-}
-.dropdown-toggle::after {
-  /*
-  display: none;
-  */
-}
-.func-btn {
-  position: absolute;
-  right: 15px;
-  text-align: right;
-}
 a {
   text-decoration: none;
 }
-
-.bg-placeholder-img {
-  font-size: 1.123rem;
-  text-anchor: middle;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-@media (min-width: 768px) {
-  .bd-placeholder-img-lg {
-    font-size: 3.5rem;
-  }
-}
-
 .form-signin {
   width: 100%;
   max-width: 330px;
   margin: auto;
   padding: 7% 0;
 }
-
 .form-signin .form-control {
   position: relative;
   box-sizing: border-box;
@@ -62,11 +27,9 @@ a {
   border-top-left-radius: 2;
   border-top-right-radius: 2;
 }
-
 #forgot_password {
   text-align: center;
 }
-
 .h3 {
   text-align: center;
 }
