@@ -1,5 +1,6 @@
 <nav id="menu" class="navbar navbar-expand-lg sticky-top">
-  <a><h1 class="mr-5">ihb</h1></a>
+  <a routerLink="" class="mr-3"><img src="assets/img/front-page/jpg/logo.png" alt="Website Logo" style="height: 6vh;"></a>
+  <!-- <a routerLink=""><h1 class="mr-5">ihb</h1></a> -->
   <div class="collapse navbar-collapse">
     <ul class="nav nav-pills mr-auto">
       <li class="nav-item">
@@ -22,6 +23,7 @@
       <a><button class="btn btn-dark">Sign up</button></a>
   </div>
 </nav>
+
 <ngb-carousel>
   <ng-template ngbSlide>
     <div>
@@ -57,7 +59,7 @@
   <p class="lead">Patients, Doctors and Clinics can all use our free platform and be a step ahead in the case of an emergency.</p>
   <hr class="my-4">
   <p>Create your account in just one minute. Only thing needed is a protocol.</p>
-  <a class="btn btn-primary btn-lg" href="#" role="button">Register/Sign In Now</a>
+  <a routerLink="dashboard" class="btn btn-primary btn-lg" role="button">Register/Sign In Now</a>
 </div>
 
 <div data-spy="scroll" data-target="#menu" data-offset="0">
@@ -90,7 +92,7 @@
 
     <div class="row bodyTitle" id="user">
       <div class="col">
-        <h3>User</h3>
+        <h3 class="textRight">User</h3>
       </div>
     </div>
     <div class="row bodyText">
@@ -142,7 +144,7 @@
 
     <div class="row bodyTitle" id="security">
       <div class="col">
-        <h3>Security</h3>
+        <h3 class="textRight">Security</h3>
       </div>
     </div>
     <div class="row bodyText">
