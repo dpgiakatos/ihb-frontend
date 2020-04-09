@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
-  selector: 'app-settings-dashboard',
+  selector: 'ihb-settings-dashboard',
   templateUrl: './settings-dashboard.component.html',
   styleUrls: ['./settings-dashboard.component.css']
 })

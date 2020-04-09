@@ -1,0 +1,18 @@
+.logo {
+  height: 48px;
+}
+
+.navbar {
+  background-color: #B2DBBF;
+}
+
+a {
+  color: #343a40;
+}
+
+
+@media (max-width: 991px) {
+  .nav-button-margin {
+    margin-bottom: 12px;
+  }
+}

@@ -37,7 +37,7 @@ function search(text: string, pipe: PipeTransform): Patient[] {
 }
 
 @Component({
-  selector: 'app-doctor-dashboard',
+  selector: 'ihb-doctor-dashboard',
   templateUrl: './doctor-dashboard.component.html',
   styleUrls: ['./doctor-dashboard.component.css'],
   providers: [DecimalPipe]

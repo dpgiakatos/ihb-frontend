@@ -1,21 +1,12 @@
-import {Component, OnInit} from '@angular/core';
-import { faFacebookSquare, faTwitterSquare, faInstagramSquare, faGooglePlusSquare } from '@fortawesome/free-brands-svg-icons';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-home-page',
+  selector: 'ihb-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css']
 })
-export class HomePageComponent implements OnInit {
+export class HomePageComponent {
 
-  faFacebookSquare = faFacebookSquare;
-  faTwitterSquare = faTwitterSquare;
-  faInstagramSquare = faInstagramSquare;
-  faGooglePlusSquare = faGooglePlusSquare;
+  constructor() { }
 
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
 }

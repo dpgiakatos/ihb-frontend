@@ -37,7 +37,7 @@ function search(text: string, pipe: PipeTransform): User[] {
 }
 
 @Component({
-  selector: 'app-administrator-dashboard',
+  selector: 'ihb-administrator-dashboard',
   templateUrl: './administrator-dashboard.component.html',
   styleUrls: ['./administrator-dashboard.component.css'],
   providers: [DecimalPipe]
