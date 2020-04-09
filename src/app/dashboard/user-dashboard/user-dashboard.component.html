@@ -27,7 +27,7 @@
                 <div class="col">
                   <label for="dateOfBirth">Date Of Birth</label>
                   <div class="input-group" id="dateOfBirth">
-                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker
+                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker
                            #d="ngbDatepicker">
                     <div class="input-group-append">
                       <fa-icon [icon]="faCalendarAlt" class="btn btn-outline-secondary calendar" (click)="d.toggle()"
@@ -182,7 +182,7 @@
             <label class="mt-5" for="extraVaccinations"><b>Extra vaccinations</b></label>
             <div class="row" id="extraVaccinations">
               <div class="col">
-                <form>
+                <form [formGroup]="addExtraVaccinationForm" (ngSubmit)="onExtraVaccinationSubmit()">
                   <ng-container
                     *ngIf="!addExtraVaccination; then thenBlockForExtraVaccination else elseBlockForExtraVaccination"></ng-container>
                   <ng-template #thenBlockForExtraVaccination>
@@ -197,28 +197,33 @@
                       <div class="row">
                         <div class="col">
                           <label for="vaccinationName">Vaccination Name</label>
-                          <input type="text" class="form-control" id="vaccinationName">
+                          <input type="text" class="form-control" [ngClass]="{'is-invalid': validator(addExtraVaccinationForm.get('name'))}"
+                                 id="vaccinationName" formControlName="name" required>
+                          <div class="invalid-feedback">Please provide a valid name.</div>
                         </div>
                         <div class="col">
                           <label for="vaccinationDate">Vaccination Date</label>
                           <div class="input-group" id="vaccinationDate">
-                            <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model"
-                                   ngbDatepicker #d="ngbDatepicker">
+                            <input class="form-control" placeholder="yyyy-mm-dd" name="dp" formControlName="date"
+                                   ngbDatepicker #d="ngbDatepicker"
+                                   [ngClass]="{'is-invalid': validator(addExtraVaccinationForm.get('date'))}" required>
                             <div class="input-group-append">
                               <fa-icon [icon]="faCalendarAlt" class="btn btn-outline-secondary calendar"
                                        (click)="d.toggle()" type="button"></fa-icon>
                             </div>
+                            <div class="invalid-feedback">Please provide a valid date.</div>
                           </div>
                         </div>
                         <div class="col">
                           <label for="vaccinationDescription">Description</label>
-                          <textarea class="form-control" id="vaccinationDescription"></textarea>
+                          <textarea class="form-control" id="vaccinationDescription" formControlName="description"
+                                    [ngClass]="{'is-invalid': validator(addExtraVaccinationForm.get('description'))}" required></textarea>
+                          <div class="invalid-feedback">Please provide a valid description.</div>
                         </div>
                       </div>
-                      <div class="row">
+                      <div class="row mt-3">
                         <div class="col">
-                          <button class="btn btn-primary mr-3">Add</button>
-                          <button class="btn btn-primary mr-3">Save</button>
+                          <button type="submit" class="btn btn-primary mr-3" [disabled]="isValid(addExtraVaccinationForm)">Save</button>
                           <button class="btn btn-primary mr-3" (click)="addVaccination()">Close</button>
                         </div>
                       </div>
@@ -257,7 +262,7 @@
       <ng-container ngbNavItem>
         <a ngbNavLink>Allergic diseases</a>
         <ng-template ngbNavContent>
-          <form>
+          <form [formGroup]="addAllergicForm" (ngSubmit)="onAllergicFormSubmit()">
             <ng-container
               *ngIf="!addAllergicDisease; then thenBlockForAllergic else elseBlockForAllergic"></ng-container>
             <ng-template #thenBlockForAllergic>
@@ -272,21 +277,26 @@
                 <div class="row">
                   <div class="col">
                     <label for="allergicDiseaseName">Allergic Disease Name</label>
-                    <input type="text" class="form-control" id="allergicDiseaseName">
+                    <input type="text" class="form-control" id="allergicDiseaseName" formControlName="name" required
+                           [ngClass]="{'is-invalid': validator(addAllergicForm.get('name'))}">
+                    <div class="invalid-feedback">Please provide a valid name.</div>
                   </div>
                   <div class="col">
                     <label for="allergicDiseaseDescription">Allergic Disease Description</label>
-                    <textarea class="form-control" id="allergicDiseaseDescription"></textarea>
+                    <textarea class="form-control" id="allergicDiseaseDescription" formControlName="dDescription" required
+                              [ngClass]="{'is-invalid': validator(addAllergicForm.get('dDescription'))}"></textarea>
+                    <div class="invalid-feedback">Please provide a valid description.</div>
                   </div>
                   <div class="col">
                     <label for="allergicDiseaseTreatmentDescription">Treatment Description</label>
-                    <textarea class="form-control" id="allergicDiseaseTreatmentDescription"></textarea>
+                    <textarea class="form-control" id="allergicDiseaseTreatmentDescription" formControlName="tDescription" required
+                              [ngClass]="{'is-invalid': validator(addAllergicForm.get('tDescription'))}"></textarea>
+                    <div class="invalid-feedback">Please provide a valid description.</div>
                   </div>
                 </div>
-                <div class="row">
+                <div class="row mt-3">
                   <div class="col">
-                    <button class="btn btn-primary mr-3">Add</button>
-                    <button class="btn btn-primary mr-3">Save</button>
+                    <button type="submit" class="btn btn-primary mr-3" [disabled]="isValid(addAllergicForm)">Save</button>
                     <button class="btn btn-primary mr-3" (click)="addAllergic()">Close</button>
                   </div>
                 </div>
@@ -312,7 +322,7 @@
       <ng-container ngbNavItem>
         <a ngbNavLink>Hospital Treatment</a>
         <ng-template ngbNavContent>
-          <form>
+          <form [formGroup]="addHospitalForm" (ngSubmit)="onHospitalFormSubmit()">
             <ng-container
               *ngIf="!addHospitalTreatment; then thenBlockForHospitalTreatment else elseBlockForHospitalTreatment"></ng-container>
             <ng-template #thenBlockForHospitalTreatment>
@@ -327,27 +337,37 @@
                 <div class="row">
                   <div class="col">
                     <label for="hospitalName">Hospital's Name</label>
-                    <input type="text" class="form-control" id="hospitalName">
+                    <input type="text" class="form-control" id="hospitalName" formControlName="name" required
+                           [ngClass]="{'is-invalid': validator(addHospitalForm.get('name'))}">
+                    <div class="invalid-feedback">Please provide a valid name.</div>
                   </div>
                   <div class="col">
                     <label for="hospitalCity">Hospital's City</label>
-                    <input type="text" class="form-control" id="hospitalCity">
+                    <input type="text" class="form-control" id="hospitalCity" formControlName="city" required
+                           [ngClass]="{'is-invalid': validator(addHospitalForm.get('city'))}">
+                    <div class="invalid-feedback">Please provide a valid city.</div>
                   </div>
                   <div class="col">
                     <label for="hospitalCountry">Hospital's Country</label>
-                    <select class="form-control" id="hospitalCountry">
+                    <select class="form-control" id="hospitalCountry" formControlName="country" required
+                            [ngClass]="{'is-invalid': validator(addHospitalForm.get('country'))}">
                       <option>Greece</option>
                     </select>
+                    <div class="invalid-feedback">Please provide a valid country.</div>
                   </div>
                 </div>
                 <div class="row mt-3">
                   <div class="col">
                     <label for="hospitalTreatmentCause">Hospital Treatment Cause</label>
-                    <textarea class="form-control" id="hospitalTreatmentCause"></textarea>
+                    <textarea class="form-control" id="hospitalTreatmentCause" formControlName="cause" required
+                              [ngClass]="{'is-invalid': validator(addHospitalForm.get('cause'))}"></textarea>
+                    <div class="invalid-feedback">Please provide a valid cause.</div>
                   </div>
                   <div class="col">
                     <label for="hospitalTreatmentDescription">Treatment Description</label>
-                    <textarea class="form-control" id="hospitalTreatmentDescription"></textarea>
+                    <textarea class="form-control" id="hospitalTreatmentDescription" formControlName="treatment" required
+                              [ngClass]="{'is-invalid': validator(addHospitalForm.get('treatment'))}"></textarea>
+                    <div class="invalid-feedback">Please provide a valid treatment.</div>
                   </div>
                 </div>
                 <div class="row mt-3">
@@ -355,7 +375,8 @@
                     <label for="hospitalTreatmentPeriod">Hospital Treatment Period</label>
                     <div id="hospitalTreatmentPeriod">
                       <ngb-datepicker #dp (dateSelect)="onDateSelection($event)" [displayMonths]="2" [dayTemplate]="t"
-                                      outsideDays="hidden">
+                                      outsideDays="hidden" formControlName="period" required
+                                      [ngClass]="{'is-invalid': validator(addHospitalForm.get('period'))}">
                       </ngb-datepicker>
                       <ng-template #t let-date let-focused="focused">
                         <span class="custom-day"
@@ -367,13 +388,13 @@
                           {{ date.day }}
                         </span>
                       </ng-template>
+                      <div class="invalid-feedback">Please provide a valid period.</div>
                     </div>
                   </div>
                 </div>
                 <div class="row mt-3">
                   <div class="col">
-                    <button class="btn btn-primary mr-3">Add</button>
-                    <button class="btn btn-primary mr-3">Save</button>
+                    <button type="submit" class="btn btn-primary mr-3" [disabled]="isValid(addHospitalForm)">Save</button>
                     <button class="btn btn-primary mr-3" (click)="addHospital()">Close</button>
                   </div>
                 </div>
