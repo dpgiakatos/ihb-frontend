@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {faFontAwesomeAlt} from "@fortawesome/free-brands-svg-icons";
+import { faFontAwesomeAlt } from '@fortawesome/free-brands-svg-icons';
 
 interface Alert {
   type: string;

@@ -1,8 +1,8 @@
-import {Component, OnInit, PipeTransform} from '@angular/core';
-import {DecimalPipe} from "@angular/common";
-import {Observable} from "rxjs";
-import {FormControl} from "@angular/forms";
-import {map, startWith} from "rxjs/operators";
+import { Component, OnInit, PipeTransform } from '@angular/core';
+import { DecimalPipe } from '@angular/common';
+import { Observable } from 'rxjs';
+import { FormControl } from '@angular/forms';
+import { map, startWith } from 'rxjs/operators';
 
 interface User {
   id?: number;
@@ -62,7 +62,7 @@ export class AdministratorDashboardComponent implements OnInit {
 
   get users(): User[] {
     return USERS
-      .map((user, i) => ({id: i+1, ...user}))
-      .slice((this.page-1)*this.pageSize, (this.page-1)*this.pageSize+this.pageSize);
+      .map((user, i) => ({id: i + 1, ...user}))
+      .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
   }
 }

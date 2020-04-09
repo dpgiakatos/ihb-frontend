@@ -1,8 +1,8 @@
-import {Component, OnInit, PipeTransform} from '@angular/core';
-import {DecimalPipe} from "@angular/common";
-import {Observable} from "rxjs";
+import { Component, OnInit, PipeTransform } from '@angular/core';
+import { DecimalPipe } from '@angular/common';
+import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
-import {FormControl} from "@angular/forms";
+import { FormControl } from '@angular/forms';
 
 interface Patient {
   name: string;

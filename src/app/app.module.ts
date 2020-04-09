@@ -13,14 +13,14 @@ import { NotificationDashboardComponent } from './dashboard/notification-dashboa
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HomePageComponent } from './home-page/home-page.component';
-import {ScrollTopComponent} from "./home-page/scroll-top/scroll-top.component";
+import { ScrollTopComponent } from './home-page/scroll-top/scroll-top.component';
 import { AuthComponent } from './auth/auth.component';
-import {LoginComponent} from "./auth/login/login.component";
-import {ForgotPasswordComponent} from "./auth/forgot-password/forgot-password.component";
-import {RegisterComponent} from "./auth/register/register.component";
-import {UserTabDashboardComponent} from "./dashboard/user-tab-dashboard/user-tab-dashboard.component";
-import {MessageDashboardComponent} from "./dashboard/message-dashboard/message-dashboard.component";
-import {SettingsDashboardComponent} from "./dashboard/settings-dashboard/settings-dashboard.component";
+import { LoginComponent } from './auth/login/login.component';
+import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { UserTabDashboardComponent } from './dashboard/user-tab-dashboard/user-tab-dashboard.component';
+import { MessageDashboardComponent } from './dashboard/message-dashboard/message-dashboard.component';
+import { SettingsDashboardComponent } from './dashboard/settings-dashboard/settings-dashboard.component';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
