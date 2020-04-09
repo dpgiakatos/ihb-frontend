@@ -1,34 +1,27 @@
-import {Component, HostListener, Inject, OnInit} from '@angular/core';
-import {faArrowUp} from "@fortawesome/free-solid-svg-icons";
-import {DOCUMENT} from "@angular/common";
+import { Component, HostListener, Inject, Optional } from '@angular/core';
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-scroll-top',
   templateUrl: './scroll-top.component.html',
   styleUrls: ['./scroll-top.component.css']
 })
-export class ScrollTopComponent implements OnInit {
+export class ScrollTopComponent {
 
   windowScrolled: boolean;
   faArrowUp = faArrowUp;
 
-  constructor(@Inject(DOCUMENT) private document: Document) { }
+  constructor(@Optional() @Inject(DOCUMENT) private document: Document) { }
 
-  ngOnInit(): void {
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll(event: Event) {
+      this.windowScrolled = this.document?.defaultView.pageYOffset >= 100;
   }
 
-  @HostListener("window:scroll", [])
-  onWindowScroll() {
-    if (window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop > 100) {
-      this.windowScrolled = true;
-    }
-    else if (this.windowScrolled && window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop < 10) {
-      this.windowScrolled = false;
-    }
-  }
   scrollToTop() {
     (function smoothscroll() {
-      var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+      const currentScroll = this.document?.defaultView.pageYOffset;
       if (currentScroll > 0) {
         window.requestAnimationFrame(smoothscroll);
         window.scrollTo(0, currentScroll - (currentScroll / 8));
