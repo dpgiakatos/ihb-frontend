@@ -16,16 +16,18 @@ export class ScrollTopComponent {
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(event: Event) {
-      this.windowScrolled = this.document?.defaultView.pageYOffset >= 100;
+    this.windowScrolled = this.document?.defaultView.pageYOffset >= 100;
   }
 
   scrollToTop() {
-    (function smoothscroll() {
+    const smoothscroll = () => {
       const currentScroll = this.document?.defaultView.pageYOffset;
       if (currentScroll > 0) {
-        window.requestAnimationFrame(smoothscroll);
+        window.requestAnimationFrame(smoothscroll.bind(this));
         window.scrollTo(0, currentScroll - (currentScroll / 8));
       }
-    })();
+    };
+
+    smoothscroll();
   }
 }
