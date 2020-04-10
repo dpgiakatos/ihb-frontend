@@ -9,7 +9,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserDashboardComponent } from './dashboard/user-dashboard/user-dashboard.component';
 import { DoctorDashboardComponent } from './dashboard/doctor-dashboard/doctor-dashboard.component';
 import { AdministratorDashboardComponent } from './dashboard/administrator-dashboard/administrator-dashboard.component';
-import { NotificationDashboardComponent } from './dashboard/notification-dashboard/notification-dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -30,7 +29,6 @@ const routes: Routes = [
     {path: 'register', component: RegisterComponent}
   ]},
   {path: 'dashboard', component: DashboardComponent, children: [
-    {path: 'notification', component: NotificationDashboardComponent},
     {path: 'user', component: UserDashboardComponent},
     {path: 'doctor', component: DoctorDashboardComponent},
     {path: 'administrator', component: AdministratorDashboardComponent},
@@ -47,7 +45,6 @@ const routes: Routes = [
     UserDashboardComponent,
     DoctorDashboardComponent,
     AdministratorDashboardComponent,
-    NotificationDashboardComponent,
     UserTabDashboardComponent,
     MessageDashboardComponent,
     SettingsDashboardComponent,

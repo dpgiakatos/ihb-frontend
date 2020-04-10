@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
-import { NgbCalendar, NgbDate } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
@@ -10,13 +10,12 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class UserDashboardComponent implements OnInit {
 
+  editPersonalInformation = false;
   addExtraVaccination = false;
   faCalendarAlt = faCalendarAlt;
   addAllergicDisease = false;
   addHospitalTreatment = false;
-  hoveredDate: NgbDate;
-  fromDate: NgbDate;
-  toDate: NgbDate;
+  personalForm;
   addExtraVaccinationForm;
   addAllergicForm;
   addHospitalForm;
@@ -25,6 +24,80 @@ export class UserDashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.personalForm = new FormGroup({
+      'fName': new FormControl({
+        value: null,
+        disabled: true
+      }, [
+        Validators.required
+      ]),
+      'lName': new FormControl({
+        value: null,
+        disabled: true
+      }, [
+        Validators.required
+      ]),
+      'ssnvs': new FormControl({
+        value: null,
+        disabled: true
+      }, [
+        Validators.required
+      ]),
+      'date': new FormControl({
+        value: null,
+        disabled: true
+      }, [
+        Validators.required
+      ]),
+      'country': new FormControl({
+        value: null,
+        disabled: true
+      }, [
+        Validators.required
+      ]),
+      'fFName': new FormControl({
+        value: null,
+        disabled: true
+      }, [
+        Validators.required
+      ]),
+      'fLName': new FormControl({
+        value: null,
+        disabled: true
+      }, [
+        Validators.required
+      ]),
+      'mFName': new FormControl({
+        value: null,
+        disabled: true
+      }, [
+        Validators.required
+      ]),
+      'mLName': new FormControl({
+        value: null,
+        disabled: true
+      }, [
+        Validators.required
+      ]),
+      'email': new FormControl({
+        value: null,
+        disabled: true
+      }, [
+        Validators.required
+      ]),
+      'mPhone': new FormControl({
+        value: null,
+        disabled: true
+      }, [
+        Validators.required
+      ]),
+      'ePhone': new FormControl({
+        value: null,
+        disabled: true
+      }, [
+        Validators.required
+      ])
+    });
     this.addExtraVaccinationForm = new FormGroup({
       'name': new FormControl(null, [
         Validators.required
@@ -63,30 +136,44 @@ export class UserDashboardComponent implements OnInit {
       'treatment': new FormControl(null, [
         Validators.required
       ]),
-      'period': new FormControl(null, [
+      'starts': new FormControl(this.calendar.getToday(), [
+        Validators.required
+      ]),
+      'finishes': new FormControl(this.calendar.getToday(), [
         Validators.required
       ])
     });
   }
 
-  private resetExtraVaccinationForm() {
-    this.addExtraVaccinationForm.reset();
-    this.addExtraVaccinationForm.get('date').setValue(this.calendar.getToday());
+  onPersonalSubmit() {
+    console.log(this.personalForm.value);
+    this.personalForm.reset();
+    this.personalForm.disable();
+    this.editPersonalInformation = !this.editPersonalInformation;
+  }
+
+  editPersonal() {
+    this.editPersonalInformation = !this.editPersonalInformation;
+    this.personalForm.enable();
   }
 
   onExtraVaccinationSubmit() {
+    this.addExtraVaccination = !this.addExtraVaccination;
     console.log(this.addExtraVaccinationForm.value);
-    this.resetExtraVaccinationForm();
+    this.addExtraVaccinationForm.reset();
+    this.addExtraVaccinationForm.get('date').setValue(this.calendar.getToday());
   }
 
   addVaccination() {
     this.addExtraVaccination = !this.addExtraVaccination;
     if (this.addExtraVaccination) {
-      this.resetExtraVaccinationForm();
+      this.addExtraVaccinationForm.reset();
+      this.addExtraVaccinationForm.get('date').setValue(this.calendar.getToday());
     }
   }
 
   onAllergicFormSubmit() {
+    this.addAllergicDisease = !this.addAllergicDisease;
     console.log(this.addAllergicForm.value);
     this.addAllergicForm.reset();
   }
@@ -99,43 +186,20 @@ export class UserDashboardComponent implements OnInit {
   }
 
   onHospitalFormSubmit() {
-    this.addHospitalForm.get('period').setValue([this.fromDate, this.toDate]);
+    this.addHospitalTreatment = !this.addHospitalTreatment;
     console.log(this.addHospitalForm.value);
     this.addHospitalForm.reset();
-    this.fromDate = this.calendar.getToday();
-    this.toDate = null;
+    this.addHospitalForm.get('starts').setValue(this.calendar.getToday());
+    this.addHospitalForm.get('finishes').setValue(this.calendar.getToday());
   }
 
   addHospital() {
     this.addHospitalTreatment = !this.addHospitalTreatment;
     if (this.addHospitalTreatment) {
       this.addHospitalForm.reset();
-      this.fromDate = this.calendar.getToday();
-      this.toDate = null;
+      this.addHospitalForm.get('starts').setValue(this.calendar.getToday());
+      this.addHospitalForm.get('finishes').setValue(this.calendar.getToday());
     }
-  }
-
-  onDateSelection(date: NgbDate) {
-    if (!this.fromDate && !this.toDate) {
-      this.fromDate = date;
-    } else if (this.fromDate && !this.toDate && date.after(this.fromDate)) {
-      this.toDate = date;
-    } else {
-      this.toDate = null;
-      this.fromDate = date;
-    }
-  }
-
-  isHovered(date: NgbDate) {
-    return this.fromDate && !this.toDate && this.hoveredDate && date.after(this.fromDate) && date.before(this.hoveredDate);
-  }
-
-  isInside(date: NgbDate) {
-    return date.after(this.fromDate) && date.before(this.toDate);
-  }
-
-  isRange(date: NgbDate) {
-    return date.equals(this.fromDate) || date.equals(this.toDate) || this.isInside(date) || this.isHovered(date);
   }
 
   validator(form: FormControl): boolean {

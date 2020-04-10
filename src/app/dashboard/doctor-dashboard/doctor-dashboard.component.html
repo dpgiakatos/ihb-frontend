@@ -6,11 +6,11 @@
     <form>
       <div class="form-group">
         <div class="row">
-          <div class="col">
+          <div class="col-lg mt-3">
             <label for="search">Search patient:</label>
             <input type="text" class="form-control" id="search" [formControl]="searchBox"/>
           </div>
-          <div class="col">
+          <div class="col-lg mt-3">
             <label for="countrySeelct">Select country:</label>
             <select class="form-control w-50" id="countrySeelct">
               <option selected>All</option>
@@ -20,13 +20,13 @@
         </div>
       </div>
     </form>
-    <table *ngIf="searchBox.value" class="table table-striped mt-3">
+    <table *ngIf="searchBox.value" class="table table-striped mt-3 table-responsive-lg">
       <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">Full Name</th>
-        <th scope="col">SSNVS (Greece: ΑΜΚΑ)</th>
-        <th scope="col"></th>
+        <th scope="col-lg">#</th>
+        <th scope="col-lg">Full Name</th>
+        <th scope="col-lg">SSNVS (Greece: ΑΜΚΑ)</th>
+        <th scope="col-lg"></th>
       </tr>
       </thead>
       <tbody>

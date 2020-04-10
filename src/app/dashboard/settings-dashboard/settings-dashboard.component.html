@@ -4,21 +4,23 @@
   </div>
   <div class="card-body">
     <h3>Change Password</h3>
-    <form>
+    <form [formGroup]="passwordForm" (ngSubmit)="onPasswordSubmit()">
       <div class="form-group">
         <div class="row">
-          <div class="col">
+          <div class="col-lg mt-3">
             <label for="password">Type the new password</label>
-            <input type="password" class="form-control" id="password">
+            <input type="password" class="form-control" id="password" formControlName="password" required>
           </div>
-          <div class="col">
+          <div class="col-lg mt-3">
             <label for="retypePassword">Retype the new password</label>
-            <input type="password" class="form-control" id="retypePassword">
+            <input type="password" class="form-control" id="retypePassword" formControlName="retype"
+                   [ngClass]="{'is-invalid': checkSamePassword()}" required>
+            <div class="invalid-feedback">The password is not the same.</div>
           </div>
         </div>
-        <div class="row mt-3">
-          <div class="col">
-            <a><button class="btn btn-primary">Save</button></a>
+        <div class="row">
+          <div class="col-lg mt-3">
+            <a><button type="submit" class="btn btn-primary" [disabled]="isValid(passwordForm)">Save</button></a>
           </div>
         </div>
       </div>
@@ -26,19 +28,19 @@
     <hr/>
     <h3>Ask for doctor authorization</h3>
     <p>Upload all the necessaries files in order to get a doctor account.</p>
-    <form>
+    <form [formGroup]="uploadForm" (ngSubmit)="onUploadSubmit()">
       <div class="form-group">
         <div class="row">
-          <div class="col">
+          <div class="col-lg mt-3">
             <div class="custom-file">
-              <input type="file" class="custom-file-input" id="customFile">
+              <input type="file" class="custom-file-input" id="customFile" formControlName="file" required>
               <label class="custom-file-label" for="customFile">Choose file</label>
             </div>
           </div>
         </div>
-        <div class="row mt-3">
-          <div class="col">
-            <a><button class="btn btn-primary">Upload</button></a>
+        <div class="row">
+          <div class="col-lg mt-3">
+            <a><button type="submit" class="btn btn-primary" [disabled]="uploadButton()">Upload</button></a>
           </div>
         </div>
       </div>

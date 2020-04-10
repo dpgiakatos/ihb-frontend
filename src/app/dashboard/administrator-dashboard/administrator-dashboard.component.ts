@@ -1,7 +1,7 @@
 import { Component, OnInit, PipeTransform } from '@angular/core';
 import { DecimalPipe } from '@angular/common';
 import { Observable } from 'rxjs';
-import { FormControl } from '@angular/forms';
+import {FormControl} from '@angular/forms';
 import { map, startWith } from 'rxjs/operators';
 
 interface User {
