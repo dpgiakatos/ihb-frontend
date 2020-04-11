@@ -14,13 +14,13 @@
                   <label for="firstName">First Name</label>
                   <input type="text" class="form-control" id="firstName"
                          formControlName="fName" [ngClass]="{'is-invalid': validator(personalForm.get('fName'))}" required>
-                  <div class="invalid-feedback">Please provide a valid name.</div>
+                  <div class="invalid-feedback">Please provide your first name.</div>
                 </div>
                 <div class="col-lg mt-3">
                   <label for="lastName">Last Name</label>
                   <input type="text" class="form-control" id="lastName"
                          formControlName="lName" [ngClass]="{'is-invalid': validator(personalForm.get('lName'))}" required>
-                  <div class="invalid-feedback">Please provide a valid name.</div>
+                  <div class="invalid-feedback">Please provide your last name.</div>
                 </div>
               </div>
               <div class="row">
@@ -28,7 +28,7 @@
                   <label for="ssnvs">SSNVS</label>
                   <input type="text" class="form-control" id="ssnvs"
                          formControlName="ssnvs" [ngClass]="{'is-invalid': validator(personalForm.get('ssnvs'))}" required>
-                  <div class="invalid-feedback">Please provide a valid name.</div>
+                  <div class="invalid-feedback">Please provide your SSNVS.</div>
                 </div>
                 <div class="col-lg mt-3">
                   <label for="dateOfBirth">Date Of Birth</label>
@@ -40,7 +40,7 @@
                       <fa-icon [icon]="faCalendarAlt" class="btn btn-outline-secondary calendar" (click)="d.toggle()"
                                type="button" [ngClass]="{'disabled fa-icon-disabled': !editPersonalInformation}" ></fa-icon>
                     </div>
-                    <div class="invalid-feedback">Please provide a valid name.</div>
+                    <div class="invalid-feedback">Please provide your date of birth.</div>
                   </div>
                 </div>
                 <div class="col-lg mt-3">
@@ -49,7 +49,7 @@
                           formControlName="country" [ngClass]="{'is-invalid': validator(personalForm.get('country'))}" required>
                     <option>Greece</option>
                   </select>
-                  <div class="invalid-feedback">Please provide a valid name.</div>
+                  <div class="invalid-feedback">Please provide your country.</div>
                 </div>
               </div>
               <div class="row">
@@ -57,25 +57,25 @@
                   <label for="fathersFirstName">Father's First Name</label>
                   <input type="text" class="form-control" id="fathersFirstName"
                          formControlName="fFName" [ngClass]="{'is-invalid': validator(personalForm.get('fFName'))}" required>
-                  <div class="invalid-feedback">Please provide a valid name.</div>
+                  <div class="invalid-feedback">Please provide your father's first name.</div>
                 </div>
                 <div class="col-lg mt-3">
                   <label for="fathersLastName">Father's Last Name</label>
                   <input type="text" class="form-control" id="fathersLastName"
                          formControlName="fLName" [ngClass]="{'is-invalid': validator(personalForm.get('fLName'))}" required>
-                  <div class="invalid-feedback">Please provide a valid name.</div>
+                  <div class="invalid-feedback">Please provide your father's last name.</div>
                 </div>
                 <div class="col-lg mt-3">
                   <label for="mothersFirstName">Mother's First Name</label>
                   <input type="text" class="form-control" id="mothersFirstName"
                          formControlName="mFName" [ngClass]="{'is-invalid': validator(personalForm.get('mFName'))}" required>
-                  <div class="invalid-feedback">Please provide a valid name.</div>
+                  <div class="invalid-feedback">Please provide your mother's first name.</div>
                 </div>
                 <div class="col-lg mt-3">
                   <label for="mothersLastName">Mother's Last Name</label>
                   <input type="text" class="form-control" id="mothersLastName"
                          formControlName="mLName" [ngClass]="{'is-invalid': validator(personalForm.get('mLName'))}" required>
-                  <div class="invalid-feedback">Please provide a valid name.</div>
+                  <div class="invalid-feedback">Please provide your mother's last name</div>
                 </div>
               </div>
               <div class="row">
@@ -83,19 +83,19 @@
                   <label for="email">Email</label>
                   <input type="email" class="form-control" id="email"
                          formControlName="email" [ngClass]="{'is-invalid': validator(personalForm.get('email'))}" required email="true">
-                  <div class="invalid-feedback">Please provide a valid email.</div>
+                  <div class="invalid-feedback">Please provide your email.</div>
                 </div>
                 <div class="col-lg mt-3">
                   <label for="mobilePhone">Mobile Phone</label>
                   <input type="text" class="form-control" id="mobilePhone"
                          formControlName="mPhone" [ngClass]="{'is-invalid': validator(personalForm.get('mPhone'))}" required>
-                  <div class="invalid-feedback">Please provide a valid name.</div>
+                  <div class="invalid-feedback">Please provide your mobile phone.</div>
                 </div>
                 <div class="col-lg mt-3">
                   <label for="emergencyPhone">Emergency Phone Contact</label>
                   <input type="text" class="form-control" id="emergencyPhone"
                          formControlName="ePhone" [ngClass]="{'is-invalid': validator(personalForm.get('ePhone'))}" required>
-                  <div class="invalid-feedback">Please provide a valid name.</div>
+                  <div class="invalid-feedback">Please provide an emergency phone contact.</div>
                 </div>
               </div>
               <div class="row">
