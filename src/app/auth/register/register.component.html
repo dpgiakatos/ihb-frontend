@@ -1,28 +1,40 @@
-<form class="register"> <!-- class="form-register form-inline" action="index.html" method="post"> -->
+<form class="register" [formGroup]="form" (ngSubmit)="onSubmit()"> <!-- class="form-register form-inline" action="index.html" method="post"> -->
   <legend><h1 class="h3 mb-3 font-weight-normal">Create Account</h1></legend>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="firstname" class="sr-only">First Name</label>
-      <input type="text" id="firstName" class="form-control" placeholder="First Name" required autofocus>
+      <input type="text" id="firstName" class="form-control" placeholder="First Name"
+             formControlName="fName" [ngClass]="{'is-invalid': validator(form.get('fName'))}" required>
+      <div class="invalid-feedback">Please provide your first name.</div>
     </div>
     <div class="form-group col-md-6">
       <label for="lastName" class="sr-only">Last Name</label>
-      <input type="text" id="lastName" class="form-control" placeholder="Last Name" required>
+      <input type="text" id="lastName" class="form-control" placeholder="Last Name"
+             formControlName="lName" [ngClass]="{'is-invalid': validator(form.get('lName'))}" required>
+      <div class="invalid-feedback">Please provide your last name.</div>
     </div>
   </div>
   <div class="form-group">
     <label for="email" class="sr-only">Email Address</label>
-    <input type="email" id="email" class="form-control" placeholder="Email Address" required>
+    <input type="email" id="email" class="form-control" placeholder="Email Address" email="true"
+           formControlName="email" [ngClass]="{'is-invalid': validator(form.get('email'))}" required>
+    <div class="invalid-feedback">Please provide your email.</div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="password" class="sr-only">Password</label>
-      <input type="password" id="password" class="form-control" placeholder="Password">
+      <input type="password" id="password" class="form-control" placeholder="Password"
+             formControlName="password" [ngClass]="{'is-invalid': validator(form.get('password'))}" required>
+      <div class="invalid-feedback">Please provide a password.</div>
     </div>
     <div class="form-group col-md-6">
       <label for="password" class="sr-only">Password Confirmation</label>
-      <input type="password" id="passwordConfirmation" class="form-control" placeholder="Password Confirmation">
+      <input type="password" id="passwordConfirmation" class="form-control" placeholder="Password Confirmation"
+             formControlName="cPassword" [ngClass]="{'is-invalid': checkSamePassword()}" required>
+      <div class="invalid-feedback">The password is not the same.</div>
     </div>
   </div>
-  <a routerLink="../login"><button type="submit" class="btn btn-lg btn-primary btn-block">Register</button></a>
+  <a routerLink="../login">
+    <button type="submit" class="btn btn-lg btn-primary btn-block" [disabled]="isValid(form)">Register</button>
+  </a>
 </form>

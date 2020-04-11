@@ -23,7 +23,7 @@ a {
   border-bottom-left-radius: 2;
 }
 .form-signin input[type="password"] {
-  margin-bottom: 10px;
+  margin-bottom: -1px;
   border-top-left-radius: 2;
   border-top-right-radius: 2;
 }
