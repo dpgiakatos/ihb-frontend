@@ -1,35 +1,97 @@
+position: fixed;
+.header {
+top: 10px;
+left: 0;
+z-index: 2;
+/*  background: green;
+color: white;*/
+}
+.dropdown-toggle::after {
+/*
+display: none;
+*/
+}
+.func-btn {
+position: absolute;
+right: 15px;
+text-align: right;
+}
 a {
-  text-decoration: none;
+text-decoration: none;
 }
+
+.bg-placeholder-img {
+font-size: 1.123rem;
+text-anchor: middle;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+@media (min-width: 768px) {
+.bd-placeholder-img-lg {
+  font-size: 3.5rem;
+}
+}
+
 .form-signin {
-  width: 100%;
-  max-width: 330px;
-  margin: auto;
-  padding: 7% 0;
+width: 100%;
+max-width: 330px;
+margin: auto;
+padding: 7% 0;
 }
+
 .form-signin .form-control {
-  position: relative;
-  box-sizing: border-box;
-  height: auto;
-  padding: 10px;
-  font-size: 16px;
+position: relative;
+box-sizing: border-box;
+height: auto;
+/* padding: 10px; */
+font-size: 16px;
+border-radius: 1.5625em;
 }
 .form-signin .form-control:focus {
-  z-index: 2;
+z-index: 2;
 }
+
 .form-signin input[type="email"] {
-  margin-bottom: -1px;
-  border-bottom-right-radius: 2;
-  border-bottom-left-radius: 2;
+margin-top: 10px;
+margin-bottom: 15px;
+
 }
 .form-signin input[type="password"] {
-  margin-bottom: -1px;
-  border-top-left-radius: 2;
-  border-top-right-radius: 2;
+margin-bottom: 20px;
+
 }
-#forgot_password {
-  text-align: center;
+
+/* #forgot_password {
+text-align: center;
 }
+
 .h3 {
-  text-align: center;
+text-align: center;
+} */
+
+.col-sm-3 {
+margin: auto;
+padding-top: 25px;
+}
+
+.signin-card {
+align: center;
+
+/* width: 25%;
+margin: auto;
+border-radius: 3px;
+padding: 25px;
+text-align: center; */
+}
+
+.btn-primary {
+border-radius: 1.5625em;
+margin-bottom: 20px;
+}
+
+#forgot_password {
+margin-bottom: 30px;
 }
