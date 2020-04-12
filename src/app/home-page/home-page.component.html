@@ -1,33 +1,9 @@
-<nav id="menu" class="navbar navbar-expand-lg sticky-top">
-  <a routerLink="" class="mr-3"><img src="assets/img/front-page/png/logo.png" alt="ihb" class="logo"></a>
-  <!-- <a routerLink=""><h1 class="mr-5">ihb</h1></a> -->
-  <div class="collapse navbar-collapse">
-    <ul class="nav nav-pills mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="#aboutUs">About Us</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#user">User</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#doctor">Doctor</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#security">Security</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#contact">Contact</a>
-      </li>
-    </ul>
-      <a routerLink="auth/login"><button class="btn btn-outline-dark mr-3">Sign in</button></a>
-      <a routerLink="auth/register"><button class="btn btn-dark">Sign up</button></a>
-  </div>
-</nav>
+<ihb-navbar></ihb-navbar>
 
 <ngb-carousel>
   <ng-template ngbSlide>
-    <div>
-      <img src="assets/img/front-page/jpg/carousel-img1.jpg" class="imgCarouselSize" alt="First slide">
+    <div class="carousel-image">
+      <img src="assets/img/front-page/jpg/carousel-img1.jpg" alt="First slide">
     </div>
     <div class="carousel-caption">
       <h3>First slide label</h3>
@@ -35,8 +11,8 @@
     </div>
   </ng-template>
   <ng-template ngbSlide>
-    <div>
-      <img src="assets/img/front-page/jpg/carousel-img2.jpg" class="imgCarouselSize" alt="Second slide">
+    <div class="carousel-image">
+      <img src="assets/img/front-page/jpg/carousel-img2.jpg" alt="Second slide">
     </div>
     <div class="carousel-caption">
       <h3>Second slide label</h3>
@@ -44,8 +20,8 @@
     </div>
   </ng-template>
   <ng-template ngbSlide>
-    <div>
-      <img src="assets/img/front-page/jpg/carousel-img3.jpg" class="imgCarouselSize" alt="Third slide">
+    <div class="carousel-image">
+      <img src="assets/img/front-page/jpg/carousel-img3.jpg" alt="Third slide">
     </div>
     <div class="carousel-caption">
       <h3>Third slide label</h3>
@@ -55,262 +31,106 @@
 </ngb-carousel>
 
 <div class="jumbotron">
-  <h1 class="display-4">Join IHB Now!</h1>
-  <p class="lead">Patients, Doctors and Clinics can all use our free platform and be a step ahead in the case of an emergency.</p>
-  <hr class="my-4">
-  <p>Create your account in just one minute. Only thing needed is a protocol.</p>
-  <a routerLink="auth/register" class="btn btn-primary btn-lg" role="button">Register Now</a>
+  <div class="container">
+    <h1 class="display-4">Join IHB Now!</h1>
+    <p class="lead">Patients, Doctors and Clinics can all use our free platform and be a step ahead in the case of an emergency.</p>
+    <hr class="my-4">
+    <p>Create your account in just one minute. Only thing needed is a protocol.</p>
+    <a routerLink="auth/register" class="btn btn-primary btn-lg" role="button">Register Now</a>
+  </div>
 </div>
 
-<div data-spy="scroll" data-target="#menu" data-offset="0">
+<div>
   <div class="container-fluid">
-    <div class="row bodyTitle" id="aboutUs">
-      <div class="col">
+    <div class="row content-section" id="about-us">
+      <div class="col-md-6 col-sm-12">
         <h3>About Us</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sollicitudin pellentesque neque vel placerat. Suspendisse massa leo, faucibus quis auctor ut, iaculis quis purus. Ut id mattis nunc. Sed in ligula enim. Etiam eget eleifend risus. Nullam vel interdum dui, a auctor ante. Nulla facilisi. Aliquam cursus lectus sed augue tincidunt lacinia.
+        </p>
+      </div>
+      <div class="col-md-6 col-sm-12 body-image-container">
+        <img src="assets/img/front-page/jpg/about.jpg" class="body-image" alt="About image">
       </div>
     </div>
-    <div class="row bodyText">
-      <div class="col">
+
+    <div class="line-separator"></div>
+
+    <div class="row content-section" id="user">
+      <div class="col-md-6 col-sm-12">
+        <h3>User</h3>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sollicitudin pellentesque neque vel placerat. Suspendisse massa leo, faucibus quis auctor ut, iaculis quis purus. Ut id mattis nunc. Sed in ligula enim. Etiam eget eleifend risus. Nullam vel interdum dui, a auctor ante. Nulla facilisi. Aliquam cursus lectus sed augue tincidunt lacinia.
 
           Duis rhoncus tristique imperdiet. Maecenas eu malesuada leo, nec varius lectus. Nam porta viverra tempor. Curabitur vel lacinia tortor. Etiam ut tincidunt ex, eget vehicula mi. Proin diam sem, auctor id efficitur at, feugiat sed mauris. Nunc luctus, justo ac ornare ultrices, urna orci pretium mauris, ac condimentum est velit in velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
           Curabitur porttitor elit vitae felis egestas sollicitudin. Nulla tortor neque, rutrum ut magna aliquam, sagittis faucibus justo. Vivamus in ipsum odio. Donec facilisis pulvinar varius. Aenean vel vulputate urna. Proin justo augue, elementum non purus eget, efficitur laoreet magna. In magna nunc, pulvinar vestibulum dui non, tincidunt euismod nisl. Vivamus consequat, arcu nec tempus consectetur, est ligula maximus turpis, a imperdiet lorem neque eu ligula. Duis at neque vestibulum, tincidunt eros non, tincidunt tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-
-          Maecenas quis ex at ipsum vestibulum laoreet. Aenean nec blandit neque, ut efficitur nunc. Integer interdum gravida dui et interdum. Fusce aliquam lorem vel dui interdum mattis. Nunc et vulputate erat. Sed augue justo, consectetur sit amet lacinia vitae, blandit eget ligula. Sed aliquet vitae ipsum et laoreet. Nulla venenatis porttitor tortor, a aliquet mi. Ut maximus augue purus, venenatis fringilla mauris convallis sed. In eleifend erat vel lacus bibendum feugiat. Cras tristique odio ipsum, at consequat sem tempus ut. Nullam imperdiet faucibus enim a aliquam. In dapibus eros purus, nec lobortis nulla luctus non. Nullam tincidunt molestie sollicitudin. Nullam suscipit leo a justo efficitur, vitae volutpat tellus elementum. Nullam iaculis turpis at dolor imperdiet molestie.
-
-          Aenean velit urna, iaculis eu turpis ac, sagittis viverra est. Nam ultricies ullamcorper lacinia. Morbi porta bibendum eros vitae pellentesque. Maecenas at aliquet risus. Aenean in quam ultricies odio dignissim auctor. Mauris eget neque orci. Vivamus tincidunt, urna vel consectetur commodo, enim lorem vestibulum sapien, a finibus lorem justo ut elit. Vivamus eget sem eu tortor scelerisque vehicula id ac lorem. Cras maximus, turpis in sollicitudin sagittis, orci diam scelerisque quam, nec lobortis dui leo et quam.
         </p>
       </div>
-      <div class="col">
-        <img src="assets/img/front-page/jpg/about.jpg" class="imgBody" alt="About image">
-      </div>
-    </div>
-    <div class="nav-footer-line" style="background-color: #3a4553; height: 1px;"></div>
-    <div class="row bodyTitle" id="user">
-      <div class="col">
-        <h3 class="textRight">User</h3>
-      </div>
-    </div>
-    <div class="row bodyText">
-      <div class="col">
-        <img src="assets/img/front-page/jpg/user.jpg" class="imgBody" alt="User image">
-      </div>
-      <div class="col">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sollicitudin pellentesque neque vel placerat. Suspendisse massa leo, faucibus quis auctor ut, iaculis quis purus. Ut id mattis nunc. Sed in ligula enim. Etiam eget eleifend risus. Nullam vel interdum dui, a auctor ante. Nulla facilisi. Aliquam cursus lectus sed augue tincidunt lacinia.
-
-          Duis rhoncus tristique imperdiet. Maecenas eu malesuada leo, nec varius lectus. Nam porta viverra tempor. Curabitur vel lacinia tortor. Etiam ut tincidunt ex, eget vehicula mi. Proin diam sem, auctor id efficitur at, feugiat sed mauris. Nunc luctus, justo ac ornare ultrices, urna orci pretium mauris, ac condimentum est velit in velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-          Curabitur porttitor elit vitae felis egestas sollicitudin. Nulla tortor neque, rutrum ut magna aliquam, sagittis faucibus justo. Vivamus in ipsum odio. Donec facilisis pulvinar varius. Aenean vel vulputate urna. Proin justo augue, elementum non purus eget, efficitur laoreet magna. In magna nunc, pulvinar vestibulum dui non, tincidunt euismod nisl. Vivamus consequat, arcu nec tempus consectetur, est ligula maximus turpis, a imperdiet lorem neque eu ligula. Duis at neque vestibulum, tincidunt eros non, tincidunt tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-
-          Maecenas quis ex at ipsum vestibulum laoreet. Aenean nec blandit neque, ut efficitur nunc. Integer interdum gravida dui et interdum. Fusce aliquam lorem vel dui interdum mattis. Nunc et vulputate erat. Sed augue justo, consectetur sit amet lacinia vitae, blandit eget ligula. Sed aliquet vitae ipsum et laoreet. Nulla venenatis porttitor tortor, a aliquet mi. Ut maximus augue purus, venenatis fringilla mauris convallis sed. In eleifend erat vel lacus bibendum feugiat. Cras tristique odio ipsum, at consequat sem tempus ut. Nullam imperdiet faucibus enim a aliquam. In dapibus eros purus, nec lobortis nulla luctus non. Nullam tincidunt molestie sollicitudin. Nullam suscipit leo a justo efficitur, vitae volutpat tellus elementum. Nullam iaculis turpis at dolor imperdiet molestie.
-
-          Aenean velit urna, iaculis eu turpis ac, sagittis viverra est. Nam ultricies ullamcorper lacinia. Morbi porta bibendum eros vitae pellentesque. Maecenas at aliquet risus. Aenean in quam ultricies odio dignissim auctor. Mauris eget neque orci. Vivamus tincidunt, urna vel consectetur commodo, enim lorem vestibulum sapien, a finibus lorem justo ut elit. Vivamus eget sem eu tortor scelerisque vehicula id ac lorem. Cras maximus, turpis in sollicitudin sagittis, orci diam scelerisque quam, nec lobortis dui leo et quam.
-        </p>
+      <div class="col-md-6 col-sm-12 body-image-container" style="order: -1">
+        <img src="assets/img/front-page/jpg/user.jpg" class="body-image" alt="User image">
       </div>
     </div>
 
-    <div class="nav-footer-line" style="background-color: #3a4553; height: 1px;"></div>
+    <div class="line-separator"></div>
 
-    <div class="row bodyTitle" id="doctor">
-      <div class="col">
+    <div class="row content-section" id="doctor">
+      <div class="col-md-6 col-sm-12">
         <h3>Doctor</h3>
-      </div>
-    </div>
-    <div class="row bodyText">
-      <div class="col">
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sollicitudin pellentesque neque vel placerat. Suspendisse massa leo, faucibus quis auctor ut, iaculis quis purus. Ut id mattis nunc. Sed in ligula enim. Etiam eget eleifend risus. Nullam vel interdum dui, a auctor ante. Nulla facilisi. Aliquam cursus lectus sed augue tincidunt lacinia.
 
           Duis rhoncus tristique imperdiet. Maecenas eu malesuada leo, nec varius lectus. Nam porta viverra tempor. Curabitur vel lacinia tortor. Etiam ut tincidunt ex, eget vehicula mi. Proin diam sem, auctor id efficitur at, feugiat sed mauris. Nunc luctus, justo ac ornare ultrices, urna orci pretium mauris, ac condimentum est velit in velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
           Curabitur porttitor elit vitae felis egestas sollicitudin. Nulla tortor neque, rutrum ut magna aliquam, sagittis faucibus justo. Vivamus in ipsum odio. Donec facilisis pulvinar varius. Aenean vel vulputate urna. Proin justo augue, elementum non purus eget, efficitur laoreet magna. In magna nunc, pulvinar vestibulum dui non, tincidunt euismod nisl. Vivamus consequat, arcu nec tempus consectetur, est ligula maximus turpis, a imperdiet lorem neque eu ligula. Duis at neque vestibulum, tincidunt eros non, tincidunt tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-
-          Maecenas quis ex at ipsum vestibulum laoreet. Aenean nec blandit neque, ut efficitur nunc. Integer interdum gravida dui et interdum. Fusce aliquam lorem vel dui interdum mattis. Nunc et vulputate erat. Sed augue justo, consectetur sit amet lacinia vitae, blandit eget ligula. Sed aliquet vitae ipsum et laoreet. Nulla venenatis porttitor tortor, a aliquet mi. Ut maximus augue purus, venenatis fringilla mauris convallis sed. In eleifend erat vel lacus bibendum feugiat. Cras tristique odio ipsum, at consequat sem tempus ut. Nullam imperdiet faucibus enim a aliquam. In dapibus eros purus, nec lobortis nulla luctus non. Nullam tincidunt molestie sollicitudin. Nullam suscipit leo a justo efficitur, vitae volutpat tellus elementum. Nullam iaculis turpis at dolor imperdiet molestie.
-
-          Aenean velit urna, iaculis eu turpis ac, sagittis viverra est. Nam ultricies ullamcorper lacinia. Morbi porta bibendum eros vitae pellentesque. Maecenas at aliquet risus. Aenean in quam ultricies odio dignissim auctor. Mauris eget neque orci. Vivamus tincidunt, urna vel consectetur commodo, enim lorem vestibulum sapien, a finibus lorem justo ut elit. Vivamus eget sem eu tortor scelerisque vehicula id ac lorem. Cras maximus, turpis in sollicitudin sagittis, orci diam scelerisque quam, nec lobortis dui leo et quam.
         </p>
       </div>
-      <div class="col">
-        <img src="assets/img/front-page/jpg/doctor.jpg" class="imgBody" alt="Doctor image">
+      <div class="col-md-6 col-sm-12 body-image-container">
+        <img src="assets/img/front-page/jpg/doctor.jpg" class="body-image" alt="Doctor image">
       </div>
     </div>
 
-    <div class="nav-footer-line" style="background-color: #3a4553; height: 1px;"></div>
+    <div class="line-separator"></div>
 
-    <div class="row bodyTitle" id="security">
-      <div class="col">
-        <h3 class="textRight">Security</h3>
-      </div>
-    </div>
-    <div class="row bodyText">
-      <div class="col">
-        <img src="assets/img/front-page/jpg/security.jpg" class="imgBody" alt="Security image">
-      </div>
-      <div class="col">
+    <div class="row content-section" id="security">
+      <div class="col-md-6 col-sm-12">
+        <h3>Security</h3>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sollicitudin pellentesque neque vel placerat. Suspendisse massa leo, faucibus quis auctor ut, iaculis quis purus. Ut id mattis nunc. Sed in ligula enim. Etiam eget eleifend risus. Nullam vel interdum dui, a auctor ante. Nulla facilisi. Aliquam cursus lectus sed augue tincidunt lacinia.
 
           Duis rhoncus tristique imperdiet. Maecenas eu malesuada leo, nec varius lectus. Nam porta viverra tempor. Curabitur vel lacinia tortor. Etiam ut tincidunt ex, eget vehicula mi. Proin diam sem, auctor id efficitur at, feugiat sed mauris. Nunc luctus, justo ac ornare ultrices, urna orci pretium mauris, ac condimentum est velit in velit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
           Curabitur porttitor elit vitae felis egestas sollicitudin. Nulla tortor neque, rutrum ut magna aliquam, sagittis faucibus justo. Vivamus in ipsum odio. Donec facilisis pulvinar varius. Aenean vel vulputate urna. Proin justo augue, elementum non purus eget, efficitur laoreet magna. In magna nunc, pulvinar vestibulum dui non, tincidunt euismod nisl. Vivamus consequat, arcu nec tempus consectetur, est ligula maximus turpis, a imperdiet lorem neque eu ligula. Duis at neque vestibulum, tincidunt eros non, tincidunt tellus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
-
-          Maecenas quis ex at ipsum vestibulum laoreet. Aenean nec blandit neque, ut efficitur nunc. Integer interdum gravida dui et interdum. Fusce aliquam lorem vel dui interdum mattis. Nunc et vulputate erat. Sed augue justo, consectetur sit amet lacinia vitae, blandit eget ligula. Sed aliquet vitae ipsum et laoreet. Nulla venenatis porttitor tortor, a aliquet mi. Ut maximus augue purus, venenatis fringilla mauris convallis sed. In eleifend erat vel lacus bibendum feugiat. Cras tristique odio ipsum, at consequat sem tempus ut. Nullam imperdiet faucibus enim a aliquam. In dapibus eros purus, nec lobortis nulla luctus non. Nullam tincidunt molestie sollicitudin. Nullam suscipit leo a justo efficitur, vitae volutpat tellus elementum. Nullam iaculis turpis at dolor imperdiet molestie.
-
-          Aenean velit urna, iaculis eu turpis ac, sagittis viverra est. Nam ultricies ullamcorper lacinia. Morbi porta bibendum eros vitae pellentesque. Maecenas at aliquet risus. Aenean in quam ultricies odio dignissim auctor. Mauris eget neque orci. Vivamus tincidunt, urna vel consectetur commodo, enim lorem vestibulum sapien, a finibus lorem justo ut elit. Vivamus eget sem eu tortor scelerisque vehicula id ac lorem. Cras maximus, turpis in sollicitudin sagittis, orci diam scelerisque quam, nec lobortis dui leo et quam.
         </p>
+      </div>
+      <div class="col-md-6 col-sm-12 body-image-container" style="order: -1">
+        <img src="assets/img/front-page/jpg/security.jpg" class="body-image" alt="Security image">
       </div>
     </div>
 
-    <div class="nav-footer-line" style="background-color: #3a4553; height: 1px;"></div>
+    <div class="line-separator"></div>
 
-    <div class="row bodyTitle" id="contact">
-      <div class="col">
+    <div class="row content-section" id="contact">
+      <div class="col-md-6 col-sm-12">
         <h3>Contact</h3>
-      </div>
-    </div>
-    <div class="row bodyText">
-      <div class="col">
         <form>
           <div class="form-group">
-            <div class="row">
-              <div class="col">
-                <label for="email">Email:</label>
-                <input type="text" class="form-control" id="email">
-                <label for="subject" class="mt-3">Subject:</label>
-                <input type="text" class="form-control" id="subject">
-                <label for="message" class="mt-3">Message:</label>
-                <textarea type="text" class="form-control" id="message"></textarea>
-                <a><button class="btn btn-dark mt-3">Send</button></a>
-              </div>
-            </div>
+            <label for="email">Email:</label>
+            <input type="text" class="form-control" id="email">
+            <label for="subject" class="mt-3">Subject:</label>
+            <input type="text" class="form-control" id="subject">
+            <label for="message" class="mt-3">Message:</label>
+            <textarea type="text" class="form-control" id="message"></textarea>
+            <button class="btn btn-dark mt-3">Send</button>
           </div>
         </form>
       </div>
-      <div class="col">
-        <img src="assets/img/front-page/jpg/contact.jpg" class="imgBody" alt="Contact image">
+      <div class="col-md-6 col-sm-12 body-image-container">
+        <img src="assets/img/front-page/jpg/contact.jpg" class="body-image" alt="Contact image">
       </div>
     </div>
+
   </div>
 </div>
-
-<div style="position: relative; clear: both; background-color:#B2DBBF;" class="text-white">
-    <div style="padding-top: 20px; padding-bottom: 50px; padding-left: 15%; padding-right: 15%;">
-      <ul class="nav nav-pills nav-fill">
-
-      <li class="nav-item">
-        <div style="margin-left: 20%;">
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <h4 style="color: black; float: left;">Terms & Conditions</h4>
-            </li>
-            <li class="nav-item">
-              <a style="color: black; float: left;" href="#" class="button">Users</a>
-            </li>
-            <li class="nav-item">
-              <a style="color: black; float: left;" href="#" class="button">Doctors</a>
-            </li>
-            <li class="nav-item">
-              <a style="color: black; float: left;" href="#" class="button">Clinics</a>
-            </li>
-            <li class="nav-item">
-              <a style="color: black; float: left;" href="#" class="button">Cookies</a>
-            </li>
-            <li class="nav-item">
-              <a style="color: black; float: left;" href="#" class="button">See More</a>
-            </li>
-          </ul>
-        </div>
-      </li>
-
-      <li class="nav-item">
-        <div style="margin-left: 20%;">
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <h4 style="color: black; float: left;">Useful Links</h4>
-            </li>
-            <li class="nav-item">
-              <a style="color: black; float: left;" href="https://www.who.int/" class="button">World Health Organization</a>
-            </li>
-            <li class="nav-item">
-              <a style="color: black; float: left;" href="https://www.vaccines.gov/" class="button">Vaccines</a>
-            </li>
-            <li class="nav-item">
-              <a style="color: black; float: left;" href="#" class="button">About IHB</a>
-            </li>
-            <li class="nav-item">
-              <a style="color: black; float: left;" href="#" class="button">About Doctors</a>
-            </li>
-          </ul>
-        </div>
-      </li>
-
-      <li class="nav-item">
-        <div style="margin-left: 20%;">
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <h4 style="color: black; float: left;">Regions</h4>
-            </li>
-            <li class="nav-item">
-              <a style="color: black; float: left;" href="#" class="button">Africa</a>
-            </li>
-            <li class="nav-item">
-              <a style="color: black; float: left;" href="#" class="button">Americas</a>
-            </li>
-            <li class="nav-item">
-              <a style="color: black; float: left;" href="#" class="button">Asia</a>
-            </li>
-            <li class="nav-item">
-              <a style="color: black; float: left;" href="#" class="button">Europe</a>
-            </li>
-            <li class="nav-item">
-              <a style="color: black; float: left;" href="#" class="button">Oceania</a>
-            </li>
-          </ul>
-        </div>
-      </li>
-
-
-      <li class="nav-item">
-        <div style="margin-left: 20%;">
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <h4 style="color: black; float: left;">Support Us</h4>
-            </li>
-            <li class="nav-item">
-              <a style="color: black; float: left;" href="#" class="button">How to Help</a>
-            </li>
-            <li class="nav-item">
-              <a style="color: black; float: left;" href="#" class="button">Make a Donation</a>
-            </li>
-            <li class="nav-item">
-              <a style="color: black; float: left;" href="#" class="button">Become a Supporter</a>
-            </li>
-            <li class="nav-item">
-              <a style="color: black; float: left;" href="#" class="button">Advertise Your Product</a>
-            </li>
-          </ul>
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>
-<div class="nav-footer-line" style="background-color: black; height: 1px;"></div>
-<div class="navbar">
-  <div class="mx-auto">
-    <div class="socialMediaSection">
-      <a href="https://www.facebook.com"><fa-icon [icon]="faFacebookSquare" class="mr-3" size="2x"></fa-icon></a>
-      <a href="https://www.twitter.com"><fa-icon [icon]="faTwitterSquare" class="mr-3" size="2x"></fa-icon></a>
-      <a href="https://www.instagram.com"><fa-icon [icon]="faInstagramSquare" class="mr-3" size="2x"></fa-icon></a>
-      <a href="https://www.gmail.com"><fa-icon [icon]="faGooglePlusSquare" size="2x"></fa-icon></a>
-    </div>
-    <div class="copyrightSection">
-      &copy; All rights reserved
-      <br>
-      Images from <a href="https://unsplash.com/">Unsplash</a> and <a href="https://pixabay.com/">Pixabay</a>
-    </div>
-  </div>
-</div>
-<app-scroll-top></app-scroll-top>
+<ihb-footer></ihb-footer>
+<ihb-scroll-top></ihb-scroll-top>
