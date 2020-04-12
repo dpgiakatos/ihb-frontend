@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { faUser, faBell } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: 'ihb-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })

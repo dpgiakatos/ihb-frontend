@@ -3,7 +3,7 @@ import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { DOCUMENT } from '@angular/common';
 
 @Component({
-  selector: 'app-scroll-top',
+  selector: 'ihb-scroll-top',
   templateUrl: './scroll-top.component.html',
   styleUrls: ['./scroll-top.component.css']
 })

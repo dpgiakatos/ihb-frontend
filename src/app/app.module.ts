@@ -20,6 +20,8 @@ import { RegisterComponent } from './auth/register/register.component';
 import { UserTabDashboardComponent } from './dashboard/user-tab-dashboard/user-tab-dashboard.component';
 import { MessageDashboardComponent } from './dashboard/message-dashboard/message-dashboard.component';
 import { SettingsDashboardComponent } from './dashboard/settings-dashboard/settings-dashboard.component';
+import { NavbarComponent } from './home-page/navbar/navbar.component';
+import { FooterComponent } from './home-page/footer/footer.component';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -53,7 +55,9 @@ const routes: Routes = [
     AuthComponent,
     LoginComponent,
     ForgotPasswordComponent,
-    RegisterComponent
+    RegisterComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
