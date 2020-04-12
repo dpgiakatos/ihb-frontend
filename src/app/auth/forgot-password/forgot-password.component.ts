@@ -15,7 +15,8 @@ export class ForgotPasswordComponent implements OnInit {
   ngOnInit(): void {
     this.form = new FormGroup({
       'email': new FormControl(null, [
-        Validators.required
+        Validators.required,
+        Validators.email
       ])
     });
   }
@@ -26,7 +27,7 @@ export class ForgotPasswordComponent implements OnInit {
   }
 
   validator(form: FormControl) {
-    if (form.invalid && (form.dirty || form.touched)) {
+    if (form.invalid && form.dirty && form.touched) {
       return true;
     }
     return false;

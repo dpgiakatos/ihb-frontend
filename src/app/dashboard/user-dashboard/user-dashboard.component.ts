@@ -83,7 +83,8 @@ export class UserDashboardComponent implements OnInit {
         value: null,
         disabled: true
       }, [
-        Validators.required
+        Validators.required,
+        Validators.email
       ]),
       'mPhone': new FormControl({
         value: null,
@@ -203,7 +204,7 @@ export class UserDashboardComponent implements OnInit {
   }
 
   validator(form: FormControl): boolean {
-    if (form.invalid && (form.dirty || form.touched)) {
+    if (form.invalid && form.dirty && form.touched) {
       return true;
     }
     return false;
