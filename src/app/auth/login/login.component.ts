@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
   }
 
   validator(form: FormControl): boolean {
-    if (form.invalid && (form.dirty || form.touched)) {
+    if (form.invalid && form.dirty && form.touched) {
       return true;
     }
     return false;

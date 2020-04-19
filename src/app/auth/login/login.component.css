@@ -55,12 +55,13 @@ z-index: 2;
 
 .form-signin input[type="email"] {
 margin-top: 10px;
-margin-bottom: 15px;
-
 }
-.form-signin input[type="password"] {
-margin-bottom: 20px;
+/* .form-signin input[type="password"] {
+margin-bottom: 3px;
+} */
 
+.form-row {
+  margin-bottom: 15px;
 }
 
 /* #forgot_password {

@@ -37,7 +37,7 @@ export class RegisterComponent implements OnInit {
   }
 
   validator(form: FormControl) {
-    if (form.invalid && (form.dirty || form.touched)) {
+    if (form.invalid && form.dirty && form.touched) {
       return true;
     }
     return false;
@@ -51,7 +51,7 @@ export class RegisterComponent implements OnInit {
   }
 
   checkSamePassword(): boolean {
-    if (this.form.get('password').value !== this.form.get('cPassword').value) {
+    if ((this.form.get('password').value !== this.form.get('cPassword').value) && this.form.get('cPassword').touched) {
       return true;
     }
     return false;

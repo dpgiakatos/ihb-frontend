@@ -22,6 +22,7 @@ import { MessageDashboardComponent } from './dashboard/message-dashboard/message
 import { SettingsDashboardComponent } from './dashboard/settings-dashboard/settings-dashboard.component';
 import { NavbarComponent } from './home-page/navbar/navbar.component';
 import { FooterComponent } from './home-page/footer/footer.component';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -37,7 +38,8 @@ const routes: Routes = [
     {path: 'message', component: MessageDashboardComponent},
     {path: 'usertab', component: UserTabDashboardComponent},
     {path: 'settings', component: SettingsDashboardComponent}
-  ]}
+  ]},
+  {path:'not-found', component: NotFoundPageComponent}
 ];
 
 @NgModule({
@@ -57,7 +59,8 @@ const routes: Routes = [
     ForgotPasswordComponent,
     RegisterComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    NotFoundPageComponent
   ],
   imports: [
     BrowserModule,

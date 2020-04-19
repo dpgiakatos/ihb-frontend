@@ -1,0 +1,34 @@
+.not_found_title {
+  text-align: center;
+  color: #b2dbbf;
+  font-weight: bold;
+  padding-bottom: 2rem;
+}
+
+.not_found {
+  margin: auto;
+  background-color: #f9fafd;
+  padding-top: 6rem;
+  padding-bottom: 12rem;
+}
+
+.not_found_content {
+  text-align: center;
+  margin-bottom: ;
+  font-size: 1rem;
+}
+
+.btn-outline-primary {
+  border-radius: 1.5625em;
+}
+
+.home_button {
+  padding-top: 3rem;
+  text-align: center;
+}
+
+ihb-footer {
+  bottom: 0;
+  width: 100%;
+  position: absolute;
+}
