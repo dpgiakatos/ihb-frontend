@@ -21,7 +21,8 @@ export class RegisterComponent implements OnInit {
         Validators.required
       ]),
       'email': new FormControl(null, [
-        Validators.required
+        Validators.required,
+        Validators.email
       ]),
       'password': new FormControl(null, [
         Validators.required
