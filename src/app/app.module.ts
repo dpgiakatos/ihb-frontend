@@ -39,7 +39,7 @@ const routes: Routes = [
     {path: 'usertab', component: UserTabDashboardComponent},
     {path: 'settings', component: SettingsDashboardComponent}
   ]},
-  {path:'not-found', component: NotFoundPageComponent}
+  {path:'**', component: NotFoundPageComponent}
 ];
 
 @NgModule({
