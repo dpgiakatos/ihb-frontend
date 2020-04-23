@@ -69,7 +69,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes, {
       anchorScrolling: 'enabled',
       onSameUrlNavigation: 'reload',
-      scrollPositionRestoration: 'enabled'
+      scrollPositionRestoration: 'enabled',
+      scrollOffset: [0, 72]
     }),
     ReactiveFormsModule,
     FormsModule,
