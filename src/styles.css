@@ -5,3 +5,7 @@
 html {
   scroll-padding-top: 72px; /* height of sticky header */
 }
+
+.carousel-control-next, .carousel-control-prev {
+  cursor: pointer;
+}
