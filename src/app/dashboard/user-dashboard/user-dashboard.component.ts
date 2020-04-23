@@ -20,8 +20,7 @@ export class UserDashboardComponent implements OnInit {
   addAllergicForm: FormGroup;
   addHospitalForm: FormGroup;
 
-  constructor(private calendar: NgbCalendar) {
-  }
+  constructor(private calendar: NgbCalendar) { }
 
   ngOnInit(): void {
     this.personalForm = new FormGroup({

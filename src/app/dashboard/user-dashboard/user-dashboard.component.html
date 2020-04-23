@@ -33,7 +33,7 @@
                 <div class="col-lg mt-3">
                   <label for="dateOfBirth">Date Of Birth</label>
                   <div class="input-group" id="dateOfBirth">
-                    <input class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker
+                    <input type="text" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker
                            #d="ngbDatepicker"
                            formControlName="date" [ngClass]="{'is-invalid': validator(personalForm.get('date'))}">
                     <div class="input-group-append">
@@ -234,7 +234,7 @@
                         <div class="col-lg mt-3">
                           <label for="vaccinationDate">Vaccination Date</label>
                           <div class="input-group" id="vaccinationDate">
-                            <input class="form-control" placeholder="yyyy-mm-dd" name="dp" formControlName="date"
+                            <input type="text" class="form-control" placeholder="yyyy-mm-dd" name="dp" formControlName="date"
                                    ngbDatepicker #d="ngbDatepicker"
                                    [ngClass]="{'is-invalid': validator(addExtraVaccinationForm.get('date'))}">
                             <div class="input-group-append">
@@ -404,7 +404,7 @@
                   <div class="col-lg mt-3">
                     <label for="hospitalTreatmentStarts">Hospital Treatment Starts</label>
                     <div class="input-group" id="hospitalTreatmentStarts">
-                      <input class="form-control" placeholder="yyyy-mm-dd" name="dpStart" formControlName="starts"
+                      <input type="text" class="form-control" placeholder="yyyy-mm-dd" name="dpStart" formControlName="starts"
                              ngbDatepicker #dS="ngbDatepicker"
                              [ngClass]="{'is-invalid': validator(addHospitalForm.get('starts'))}">
                       <div class="input-group-append">
@@ -417,7 +417,7 @@
                   <div class="col-lg mt-3">
                     <label for="hospitalTreatmentFinishes">Hospital Treatment Finishes</label>
                     <div class="input-group" id="hospitalTreatmentFinishes">
-                      <input class="form-control" placeholder="yyyy-mm-dd" name="dpFinishes" formControlName="finishes"
+                      <input type="text" class="form-control" placeholder="yyyy-mm-dd" name="dpFinishes" formControlName="finishes"
                              ngbDatepicker #dF="ngbDatepicker"
                              [ngClass]="{'is-invalid': validator(addHospitalForm.get('finishes'))}">
                       <div class="input-group-append">
