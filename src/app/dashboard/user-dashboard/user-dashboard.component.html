@@ -7,7 +7,7 @@
       <ng-container ngbNavItem>
         <a ngbNavLink>Personal Information</a>
         <ng-template ngbNavContent>
-          <form [formGroup]="personalForm" (ngSubmit)="onPersonalSubmit()">
+          <form [formGroup]="personalForm" (submit)="onPersonalSubmit()">
             <div class="form-group">
               <div class="row">
                 <div class="col-lg mt-3">
@@ -106,7 +106,7 @@
                     <button class="btn btn-primary mt-3 mr-3" (click)="editPersonal()">Edit</button>
                   </ng-template>
                   <ng-template #elseBlockForPersonal>
-                    <button type="submit" class="btn btn-primary mt-3 mr-3" [disabled]="isValid(personalForm)">Save</button>
+                    <button type="submit" class="btn btn-primary mt-3 mr-3" [disabled]="personalForm.invalid">Save</button>
                   </ng-template>
                 </div>
               </div>
@@ -212,7 +212,7 @@
             <label class="mt-5" for="extraVaccinations"><b>Extra vaccinations</b></label>
             <div class="row" id="extraVaccinations">
               <div class="col">
-                <form [formGroup]="addExtraVaccinationForm" (ngSubmit)="onExtraVaccinationSubmit()">
+                <form [formGroup]="addExtraVaccinationForm" (submit)="onExtraVaccinationSubmit()">
                   <ng-container
                     *ngIf="!addExtraVaccination; then thenBlockForExtraVaccination else elseBlockForExtraVaccination"></ng-container>
                   <ng-template #thenBlockForExtraVaccination>
@@ -253,7 +253,7 @@
                       </div>
                       <div class="row">
                         <div class="col-lg mt-3">
-                          <button type="submit" class="btn btn-primary mr-3" [disabled]="isValid(addExtraVaccinationForm)">Save</button>
+                          <button type="submit" class="btn btn-primary mr-3" [disabled]="addExtraVaccinationForm.invalid">Save</button>
                           <button class="btn btn-primary mr-3" (click)="addVaccination()">Close</button>
                         </div>
                       </div>
@@ -292,7 +292,7 @@
       <ng-container ngbNavItem>
         <a ngbNavLink>Allergic Diseases</a>
         <ng-template ngbNavContent>
-          <form [formGroup]="addAllergicForm" (ngSubmit)="onAllergicFormSubmit()">
+          <form [formGroup]="addAllergicForm" (submit)="onAllergicFormSubmit()">
             <ng-container
               *ngIf="!addAllergicDisease; then thenBlockForAllergic else elseBlockForAllergic"></ng-container>
             <ng-template #thenBlockForAllergic>
@@ -326,7 +326,7 @@
                 </div>
                 <div class="row">
                   <div class="col-lg mt-3">
-                    <button type="submit" class="btn btn-primary mr-3" [disabled]="isValid(addAllergicForm)">Save</button>
+                    <button type="submit" class="btn btn-primary mr-3" [disabled]="addAllergicForm.invalid">Save</button>
                     <button class="btn btn-primary mr-3" (click)="addAllergic()">Close</button>
                   </div>
                 </div>
@@ -352,7 +352,7 @@
       <ng-container ngbNavItem>
         <a ngbNavLink>Hospital Treatment</a>
         <ng-template ngbNavContent>
-          <form [formGroup]="addHospitalForm" (ngSubmit)="onHospitalFormSubmit()">
+          <form [formGroup]="addHospitalForm" (submit)="onHospitalFormSubmit()">
             <ng-container
               *ngIf="!addHospitalTreatment; then thenBlockForHospitalTreatment else elseBlockForHospitalTreatment"></ng-container>
             <ng-template #thenBlockForHospitalTreatment>
@@ -430,7 +430,7 @@
                 </div>
                 <div class="row">
                   <div class="col-lg mt-3">
-                    <button type="submit" class="btn btn-primary mr-3" [disabled]="isValid(addHospitalForm)">Save</button>
+                    <button type="submit" class="btn btn-primary mr-3" [disabled]="addHospitalForm.invalid">Save</button>
                     <button class="btn btn-primary mr-3" (click)="addHospital()">Close</button>
                   </div>
                 </div>

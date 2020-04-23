@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import { FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'ihb-user-dashboard',
@@ -15,84 +15,84 @@ export class UserDashboardComponent implements OnInit {
   faCalendarAlt = faCalendarAlt;
   addAllergicDisease = false;
   addHospitalTreatment = false;
-  personalForm;
-  addExtraVaccinationForm;
-  addAllergicForm;
-  addHospitalForm;
+  personalForm: FormGroup;
+  addExtraVaccinationForm: FormGroup;
+  addAllergicForm: FormGroup;
+  addHospitalForm: FormGroup;
 
   constructor(private calendar: NgbCalendar) {
   }
 
   ngOnInit(): void {
     this.personalForm = new FormGroup({
-      'fName': new FormControl({
+      fName: new FormControl({
         value: null,
         disabled: true
       }, [
         Validators.required
       ]),
-      'lName': new FormControl({
+      lName: new FormControl({
         value: null,
         disabled: true
       }, [
         Validators.required
       ]),
-      'ssnvs': new FormControl({
+      ssnvs: new FormControl({
         value: null,
         disabled: true
       }, [
         Validators.required
       ]),
-      'date': new FormControl({
+      date: new FormControl({
         value: null,
         disabled: true
       }, [
         Validators.required
       ]),
-      'country': new FormControl({
+      country: new FormControl({
         value: null,
         disabled: true
       }, [
         Validators.required
       ]),
-      'fFName': new FormControl({
+      fFName: new FormControl({
         value: null,
         disabled: true
       }, [
         Validators.required
       ]),
-      'fLName': new FormControl({
+      fLName: new FormControl({
         value: null,
         disabled: true
       }, [
         Validators.required
       ]),
-      'mFName': new FormControl({
+      mFName: new FormControl({
         value: null,
         disabled: true
       }, [
         Validators.required
       ]),
-      'mLName': new FormControl({
+      mLName: new FormControl({
         value: null,
         disabled: true
       }, [
         Validators.required
       ]),
-      'email': new FormControl({
+      email: new FormControl({
         value: null,
         disabled: true
       }, [
         Validators.required,
         Validators.email
       ]),
-      'mPhone': new FormControl({
+      mPhone: new FormControl({
         value: null,
         disabled: true
       }, [
         Validators.required
       ]),
-      'ePhone': new FormControl({
+      ePhone: new FormControl({
         value: null,
         disabled: true
       }, [
@@ -100,47 +100,47 @@ export class UserDashboardComponent implements OnInit {
       ])
     });
     this.addExtraVaccinationForm = new FormGroup({
-      'name': new FormControl(null, [
+      name: new FormControl(null, [
         Validators.required
       ]),
-      'date': new FormControl(this.calendar.getToday(), [
+      date: new FormControl(this.calendar.getToday(), [
         Validators.required
       ]),
-      'description': new FormControl(null, [
+      description: new FormControl(null, [
         Validators.required
       ])
     });
     this.addAllergicForm = new FormGroup({
-      'name': new FormControl(null, [
+      name: new FormControl(null, [
         Validators.required
       ]),
-      'dDescription': new FormControl(null, [
+      dDescription: new FormControl(null, [
         Validators.required
       ]),
-      'tDescription': new FormControl(null, [
+      tDescription: new FormControl(null, [
         Validators.required
       ])
     });
     this.addHospitalForm = new FormGroup({
-      'name': new FormControl(null, [
+      name: new FormControl(null, [
         Validators.required
       ]),
-      'city': new FormControl(null, [
+      city: new FormControl(null, [
         Validators.required
       ]),
-      'country': new FormControl(null, [
+      country: new FormControl(null, [
         Validators.required
       ]),
-      'cause': new FormControl(null, [
+      cause: new FormControl(null, [
         Validators.required
       ]),
-      'treatment': new FormControl(null, [
+      treatment: new FormControl(null, [
         Validators.required
       ]),
-      'starts': new FormControl(this.calendar.getToday(), [
+      starts: new FormControl(this.calendar.getToday(), [
         Validators.required
       ]),
-      'finishes': new FormControl(this.calendar.getToday(), [
+      finishes: new FormControl(this.calendar.getToday(), [
         Validators.required
       ])
     });
@@ -162,14 +162,14 @@ export class UserDashboardComponent implements OnInit {
     this.addExtraVaccination = !this.addExtraVaccination;
     console.log(this.addExtraVaccinationForm.value);
     this.addExtraVaccinationForm.reset();
-    this.addExtraVaccinationForm.get('date').setValue(this.calendar.getToday());
+    this.addExtraVaccinationForm.get('date')?.setValue(this.calendar.getToday());
   }
 
   addVaccination() {
     this.addExtraVaccination = !this.addExtraVaccination;
     if (this.addExtraVaccination) {
       this.addExtraVaccinationForm.reset();
-      this.addExtraVaccinationForm.get('date').setValue(this.calendar.getToday());
+      this.addExtraVaccinationForm.get('date')?.setValue(this.calendar.getToday());
     }
   }
 
@@ -190,30 +190,23 @@ export class UserDashboardComponent implements OnInit {
     this.addHospitalTreatment = !this.addHospitalTreatment;
     console.log(this.addHospitalForm.value);
     this.addHospitalForm.reset();
-    this.addHospitalForm.get('starts').setValue(this.calendar.getToday());
-    this.addHospitalForm.get('finishes').setValue(this.calendar.getToday());
+    this.addHospitalForm.get('starts')?.setValue(this.calendar.getToday());
+    this.addHospitalForm.get('finishes')?.setValue(this.calendar.getToday());
   }
 
   addHospital() {
     this.addHospitalTreatment = !this.addHospitalTreatment;
     if (this.addHospitalTreatment) {
       this.addHospitalForm.reset();
-      this.addHospitalForm.get('starts').setValue(this.calendar.getToday());
-      this.addHospitalForm.get('finishes').setValue(this.calendar.getToday());
+      this.addHospitalForm.get('starts')?.setValue(this.calendar.getToday());
+      this.addHospitalForm.get('finishes')?.setValue(this.calendar.getToday());
     }
   }
 
-  validator(form: FormControl): boolean {
-    if (form.invalid && form.dirty && form.touched) {
-      return true;
+  validator(control: AbstractControl | null): boolean {
+    if (!control) {
+      throw new Error('Validating null control');
     }
-    return false;
-  }
-
-  isValid(form: FormGroup): boolean {
-    if (form.valid) {
-      return false;
-    }
-    return true;
+    return control.invalid && control.dirty && control.touched;
   }
 }

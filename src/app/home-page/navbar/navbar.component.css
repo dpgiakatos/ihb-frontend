@@ -10,7 +10,6 @@ a {
   color: #343a40;
 }
 
-
 @media (max-width: 991px) {
   .nav-button-margin {
     margin-bottom: 12px;

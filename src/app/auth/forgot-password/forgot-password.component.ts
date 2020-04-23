@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormControl, FormGroup, Validators, AbstractControl} from '@angular/forms';
 
 @Component({
   selector: 'ihb-forgot-password',
@@ -8,13 +8,13 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class ForgotPasswordComponent implements OnInit {
 
-  form;
+  form: FormGroup;
 
   constructor() { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      'email': new FormControl(null, [
+      email: new FormControl(null, [
         Validators.required,
         Validators.email
       ])
@@ -26,17 +26,10 @@ export class ForgotPasswordComponent implements OnInit {
     this.form.reset();
   }
 
-  validator(form: FormControl) {
-    if (form.invalid && form.dirty && form.touched) {
-      return true;
+  validator(control: AbstractControl | null): boolean {
+    if (!control) {
+      throw new Error('Validating null control');
     }
-    return false;
-  }
-
-  isValid(form: FormGroup): boolean {
-    if (form.valid) {
-      return false;
-    }
-    return true;
+    return control.invalid && control.dirty && control.touched;
   }
 }

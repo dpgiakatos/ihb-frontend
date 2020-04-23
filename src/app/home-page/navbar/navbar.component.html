@@ -6,24 +6,23 @@
   <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
     <ul class="navbar-nav nav-pills mr-auto">
       <li class="nav-item">
-        <a class="nav-link" href="#about-us" (click)="collapse()">About Us</a>
+        <a class="nav-link" routerLink="" fragment="about-us" (click)="collapse()">About Us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#user" (click)="collapse()">User</a>
+        <a class="nav-link" routerLink="" fragment="user" (click)="collapse()">User</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#hospitals" (click)="collapse()">Hospitals</a>
+        <a class="nav-link" routerLink="" fragment="hospitals" (click)="collapse()">Hospitals</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#security" (click)="collapse()">Security</a>
+        <a class="nav-link" routerLink="" fragment="security" (click)="collapse()">Security</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#contact" (click)="collapse()">Contact</a>
+        <a class="nav-link" routerLink="" fragment="contact" (click)="collapse()">Contact</a>
       </li>
     </ul>
     <ul class="navbar-nav nav-pills">
       <a routerLink="/auth/login" class="mr-3 nav-button-margin" (click)="collapse()"><button class="btn btn-outline-dark ">Sign in</button></a>
-      <!-- <br> -->
       <a routerLink="/auth/register" (click)="collapse()"><button class="btn btn-dark">Sign up</button></a>
     </ul>
   </div>

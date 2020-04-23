@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import { FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ihb-register',
@@ -8,53 +9,47 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class RegisterComponent implements OnInit {
 
-  form;
+  form: FormGroup;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.form = new FormGroup({
-      'fName': new FormControl(null, [
+      fName: new FormControl(null, [
         Validators.required
       ]),
-      'lName': new FormControl(null, [
+      lName: new FormControl(null, [
         Validators.required
       ]),
-      'email': new FormControl(null, [
+      email: new FormControl(null, [
         Validators.required,
         Validators.email
       ]),
-      'password': new FormControl(null, [
+      password: new FormControl(null, [
         Validators.required
       ]),
-      'cPassword': new FormControl(null, [
+      cPassword: new FormControl(null, [
         Validators.required
       ])
     });
   }
 
   onSubmit() {
-
+    this.router.navigateByUrl('/dashboard/user');
   }
 
-  validator(form: FormControl) {
-    if (form.invalid && form.dirty && form.touched) {
-      return true;
+  validator(control: AbstractControl | null): boolean {
+    if (!control) {
+      throw new Error('Validating null control');
     }
-    return false;
+    return control.invalid && control.dirty && control.touched;
   }
 
-  isValid(form: FormGroup): boolean {
-    if (form.valid && !this.checkSamePassword()) {
-      return false;
-    }
-    return true;
+  isNotValid(form: FormGroup): boolean {
+    return form.invalid || this.isNotSamePassword();
   }
 
-  checkSamePassword(): boolean {
-    if ((this.form.get('password').value !== this.form.get('cPassword').value) && this.form.get('cPassword').touched) {
-      return true;
-    }
-    return false;
+  isNotSamePassword(): boolean {
+    return Boolean((this.form.get('password')?.value !== this.form.get('cPassword')?.value) && this.form.get('cPassword')?.touched);
   }
 }

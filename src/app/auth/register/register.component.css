@@ -1,59 +1,28 @@
-/* .form-register {
-  width: 100%;
-  max-width: 500px;
-  padding: 15px;
+.card {
+  width: 600px;
   margin: auto;
-
-}
-.form-register .form-control {
-  padding: 10px;
-  position: relative;
-  box-sizing: border-box;
-  height: auto;
-  font-size: 16px;
+  margin-top: 32px;
 }
 
-.form-register .form-control:focus {
-  z-index: 2;
+@media (max-width: 633px) {
+  .card {
+    width: calc(100% - 32px);
+    margin-left: 16px;
+    margin-right: 16px;
+  }
 }
 
-.form-register input[type="firstname"] {
-  border-bottom-right-radius: 2;
-  border-bottom-left-radius: 2;
+.register-header {
+  padding-top: 16px;
 }
 
-
-.form-register input[type="lastname"] {
-  border-top-left-radius: 2;
-  border-top-right-radius: 2;
+a {
+  text-decoration: none;
 }
 
-#firstname {
-  max-width: 200px;
-  margin-bottom: 10px;
-}
-
-#lastname {
-  margin-bottom: 10px;
-  max-width: 250px;
-}
-
-#inputEmail
-{
-  margin-bottom: 10px;
-
-}
-*/
 .form-register {
-  width: 100%;
-  max-width: 600px;
-  margin: auto;
-  padding-top: 7%;
-}
-
-.col-sm-5 {
-  margin: auto;
-  padding-top: 25px;
+  margin: 0 24px;
+  padding-bottom: 12px;
 }
 
 .form-control {
@@ -61,6 +30,9 @@
 }
 
 .btn-primary {
-  margin-top: 10px;
   border-radius: 1.5625em;
+}
+
+.card-bottom {
+  padding-bottom: 16px;
 }

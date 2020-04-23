@@ -1,44 +1,42 @@
-
-<div class="col-sm-5">
-    <div class="card register-card text-center">
-      <form class="form-register" [formGroup]="form" (ngSubmit)="onSubmit()"> <!-- class="form-register form-inline" action="index.html" method="post"> -->
-        <div class="form-register-header">
-          <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
-          <hr>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="text" class="sr-only">First Name</label>
-            <input type="text" id="firstname" class="form-control" placeholder="First Name" formControlName="fName" [ngClass]="{'is-invalid': validator(form.get('fName'))}" required>
-            <div class="invalid-feedback">Please provide your first name.</div>
-          </div>
-          <div class="form-group col-md-6">
-            <label for="text" class="sr-only">Last Name</label>
-            <input type="text" id="lastname" class="form-control" placeholder="Last Name" formControlName="lName" [ngClass]="{'is-invalid': validator(form.get('lName'))}" required>
-            <div class="invalid-feedback">Please provide your last name.</div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="email" class="sr-only">Email Address</label>
-          <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email Address" email="true"
-                 formControlName="email" [ngClass]="{'is-invalid': validator(form.get('email'))}" required>
-          <div class="invalid-feedback">Please provide your email.</div>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label for="password" class="sr-only">Password</label>
-            <input type="password" id="password" class="form-control" placeholder="Password" formControlName="password" [ngClass]="{'is-invalid': validator(form.get('password'))}" required>
-            <div class="invalid-feedback">Please provide a password.</div>
-          </div>
-          <div class="form-group col-md-6">
-            <label for="password" class="sr-only">Password Confirmation</label>
-            <input type="password" id="passwordConfirmation" class="form-control" placeholder="Password Confirmation" formControlName="cPassword" [ngClass]="{'is-invalid': checkSamePassword()}" required>
-            <div class="invalid-feedback">The password is not the same.</div>
-          </div>
-        </div>
-        <a routerLink="../../dashboard/user"><input class="btn btn-lg btn-primary btn-block" [disabled]="isValid(form)" type="submit" value="Register"></a>
-        <hr>
-      </form>
-      <p id="login">Already have an account? <a routerLink="../login">Login</a></p>
-    </div>
+<div class="card text-center">
+  <div class="register-header">
+    <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
+    <hr>
   </div>
+  <form class="form-register" [formGroup]="form" (submit)="onSubmit()">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="text" class="sr-only">First Name</label>
+        <input type="text" id="firstname" class="form-control" placeholder="First Name" formControlName="fName" [ngClass]="{'is-invalid': validator(form.get('fName'))}">
+        <div class="invalid-feedback">Please provide your first name.</div>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="text" class="sr-only">Last Name</label>
+        <input type="text" id="lastname" class="form-control" placeholder="Last Name" formControlName="lName" [ngClass]="{'is-invalid': validator(form.get('lName'))}">
+        <div class="invalid-feedback">Please provide your last name.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email" class="sr-only">Email Address</label>
+      <input type="email" id="inputEmail" class="form-control" placeholder="Email Address"
+              formControlName="email" [ngClass]="{'is-invalid': validator(form.get('email'))}">
+      <div class="invalid-feedback">Please provide your email.</div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="password" class="sr-only">Password</label>
+        <input type="password" id="password" class="form-control" placeholder="Password" formControlName="password" [ngClass]="{'is-invalid': validator(form.get('password'))}">
+        <div class="invalid-feedback">Please provide a password.</div>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="password" class="sr-only">Password Confirmation</label>
+        <input type="password" id="passwordConfirmation" class="form-control" placeholder="Password Confirmation" formControlName="cPassword" [ngClass]="{'is-invalid': isNotSamePassword()}">
+        <div class="invalid-feedback">The password is not the same.</div>
+      </div>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" [disabled]="form.invalid" type="submit">Register</button>
+  </form>
+  <hr>
+  <div class="card-bottom">Already have an account? <a routerLink="../login">Login</a></div>
+</div>
+

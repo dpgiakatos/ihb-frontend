@@ -44,17 +44,16 @@ function search(text: string, pipe: PipeTransform): Patient[] {
 })
 export class DoctorDashboardComponent implements OnInit {
 
-  patients$: Observable<Patient[]>;
+  patients: Observable<Patient[]>;
   searchBox = new FormControl('');
 
-  constructor(pipe: DecimalPipe) {
-    this.patients$ = this.searchBox.valueChanges.pipe(
-      startWith(''),
-      map(text => search(text, pipe))
-    );
-  }
+  constructor(private pipe: DecimalPipe) { }
 
   ngOnInit(): void {
+    this.patients = this.searchBox.valueChanges.pipe(
+      startWith(''),
+      map(text => search(text, this.pipe))
+    );
   }
 
 }

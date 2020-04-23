@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'ihb-settings-dashboard',
@@ -8,22 +8,22 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class SettingsDashboardComponent implements OnInit {
 
-  passwordForm;
-  uploadForm;
+  passwordForm: FormGroup;
+  uploadForm: FormGroup;
 
   constructor() { }
 
   ngOnInit(): void {
     this.passwordForm = new FormGroup({
-      'password': new FormControl(null, [
+      password: new FormControl(null, [
         Validators.required
       ]),
-      'retype': new FormControl(null, [
+      retype: new FormControl(null, [
         Validators.required
       ])
     });
     this.uploadForm = new FormGroup({
-      'file': new FormControl(null, [
+      file: new FormControl(null, [
         Validators.required
       ])
     });
@@ -34,28 +34,17 @@ export class SettingsDashboardComponent implements OnInit {
     this.passwordForm.reset();
   }
 
-  checkSamePassword(): boolean {
-    if (this.passwordForm.get('password').value !== this.passwordForm.get('retype').value) {
-      return true;
-    }
-    return false;
+  isNotSamePassword(): boolean {
+    return Boolean(
+      this.passwordForm.get('password')?.value !== this.passwordForm.get('retype')?.value && this.passwordForm.get('retype')?.touched
+    );
   }
 
   onUploadSubmit() {
 
   }
 
-  uploadButton() {
-    if (this.uploadForm.valid) {
-      return false;
-    }
-    return true;
-  }
-
-  isValid(form: FormGroup): boolean {
-    if (form.valid && !this.checkSamePassword()) {
-      return false;
-    }
-    return true;
+  isInvalid(form: FormGroup): boolean {
+    return form.invalid || this.isNotSamePassword();
   }
 }

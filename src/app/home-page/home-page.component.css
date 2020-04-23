@@ -15,7 +15,7 @@
   object-fit: cover;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 767px) {
   .body-image-container {
     order: -1;
   }
@@ -30,6 +30,9 @@
   height: 1px;
 }
 
-/* h2 span {
-
-} */
+@media (min-width: 1500px) {
+  .main-content-container {
+    max-width: 1470px;
+    margin: auto;
+  }
+}

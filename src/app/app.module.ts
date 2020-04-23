@@ -39,7 +39,7 @@ const routes: Routes = [
     {path: 'usertab', component: UserTabDashboardComponent},
     {path: 'settings', component: SettingsDashboardComponent}
   ]},
-  {path:'**', component: NotFoundPageComponent}
+  {path: '**', component: NotFoundPageComponent}
 ];
 
 @NgModule({
@@ -66,8 +66,11 @@ const routes: Routes = [
     BrowserModule,
     NgbModule,
     FontAwesomeModule,
-    RouterModule.forRoot(routes),
-    RouterModule.forChild(routes),
+    RouterModule.forRoot(routes, {
+      anchorScrolling: 'enabled',
+      onSameUrlNavigation: 'reload',
+      scrollPositionRestoration: 'enabled'
+    }),
     ReactiveFormsModule,
     FormsModule,
     CommonModule

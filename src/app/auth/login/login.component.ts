@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import { FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ihb-login',
@@ -8,39 +9,33 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 })
 export class LoginComponent implements OnInit {
 
-  form;
+  form: FormGroup;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      'email': new FormControl(null, [
+      email: new FormControl(null, [
         Validators.required,
         Validators.email
       ]),
-      'password': new FormControl(null, [
+      password: new FormControl(null, [
         Validators.required
       ])
     });
   }
 
-  onSubmit() {
+  onSubmit(): void {
     console.log(this.form.value);
+    this.router.navigateByUrl('/dashboard/user');
     this.form.reset();
   }
 
-  validator(form: FormControl): boolean {
-    if (form.invalid && form.dirty && form.touched) {
-      return true;
+  validator(control: AbstractControl | null): boolean {
+    if (!control) {
+      throw new Error('Validating null control');
     }
-    return false;
-  }
-
-  isValid(form: FormGroup): boolean {
-    if (form.valid) {
-      return false;
-    }
-    return true;
+    return control.invalid && control.dirty && control.touched;
   }
 
 }
