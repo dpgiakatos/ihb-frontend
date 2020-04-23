@@ -36,3 +36,7 @@
     margin: auto;
   }
 }
+
+.content-section p {
+  text-align: justify;
+}
