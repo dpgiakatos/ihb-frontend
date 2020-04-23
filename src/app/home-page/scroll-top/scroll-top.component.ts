@@ -14,9 +14,17 @@ export class ScrollTopComponent {
 
   constructor(@Optional() @Inject(DOCUMENT) private document: Document) { }
 
+
+  previousY = 0;
+  cancelScrollToTop = false;
+
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(event: Event) {
     if (this.document?.defaultView) {
+      if (this.document?.defaultView.pageYOffset > this.previousY) {
+        this.cancelScrollToTop = true;
+      }
+      this.previousY = this.document?.defaultView.pageYOffset;
       this.windowScrolled = this.document?.defaultView.pageYOffset >= 100;
     } else {
       this.windowScrolled = false;
@@ -24,11 +32,16 @@ export class ScrollTopComponent {
   }
 
   scrollToTop() {
+    this.cancelScrollToTop = false;
     const smoothscroll = () => {
       const currentScroll = this.document?.defaultView?.pageYOffset;
       if (currentScroll && currentScroll > 0) {
-        window.requestAnimationFrame(smoothscroll.bind(this));
-        window.scrollTo(0, currentScroll - (currentScroll / 8));
+        if (!this.cancelScrollToTop) {
+          window.requestAnimationFrame(smoothscroll.bind(this));
+          window.scrollTo(0, currentScroll - (currentScroll / 8));
+        } else {
+          this.cancelScrollToTop = false;
+        }
       }
     };
 
