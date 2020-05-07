@@ -23,6 +23,7 @@ import { SettingsDashboardComponent } from './dashboard/settings-dashboard/setti
 import { NavbarComponent } from './home-page/navbar/navbar.component';
 import { FooterComponent } from './home-page/footer/footer.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -74,7 +75,8 @@ const routes: Routes = [
     }),
     ReactiveFormsModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   exports: [
     DoctorDashboardComponent
