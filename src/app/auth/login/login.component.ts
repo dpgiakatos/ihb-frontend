@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { Component, OnInit, ViewChild, ɵConsole } from '@angular/core';
+import { FormControl, FormGroup, Validators, AbstractControl, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { AuthService } from '../auth.service';
+import { UnprocessableEntitySchema } from '../../helper/UnprocessableEntitySchema';
 
 @Component({
   selector: 'ihb-login',
@@ -11,7 +14,9 @@ export class LoginComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authService: AuthService) {
+
+  }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -26,9 +31,16 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.form.value);
-    this.router.navigateByUrl('/dashboard/user');
-    this.form.reset();
+    this.authService.login(this.form.value).subscribe(() => {
+      this.router.navigateByUrl('/dashboard/user');
+    }, (err: HttpErrorResponse) => {
+      if (err.error instanceof ErrorEvent) {
+        console.log('network error');
+      }
+      if (err.status === 401) {
+        this.form.setErrors({ invalidCredentials: true });
+      }
+    });
   }
 
   validator(control: AbstractControl | null): boolean {

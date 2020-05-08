@@ -9,3 +9,10 @@ html {
 .carousel-control-next, .carousel-control-prev {
   cursor: pointer;
 }
+
+.is-invalid~.invalid-feedback~.invalid-feedback,
+.is-invalid~.invalid-tooltip~.invalid-tooltip,
+.was-validated :invalid~.invalid-feedback~.invalid-feedback,
+.was-validated :invalid~.invalid-tooltip~.invalid-tooltip {
+  display: none;
+}

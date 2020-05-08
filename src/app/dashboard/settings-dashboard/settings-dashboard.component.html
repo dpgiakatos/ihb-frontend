@@ -9,11 +9,11 @@
         <div class="row">
           <div class="col-lg mt-3">
             <label for="password">Type the new password</label>
-            <input type="password" class="form-control" id="password" formControlName="password">
+            <input type="password" class="form-control" id="password" autocomplete="new-password" formControlName="password">
           </div>
           <div class="col-lg mt-3">
             <label for="retypePassword">Retype the new password</label>
-            <input type="password" class="form-control" id="retypePassword" formControlName="retype"
+            <input type="password" class="form-control" id="retypePassword" autocomplete="new-password" formControlName="retype"
                    [ngClass]="{'is-invalid': isNotSamePassword()}">
             <div class="invalid-feedback">The password is not the same.</div>
           </div>
