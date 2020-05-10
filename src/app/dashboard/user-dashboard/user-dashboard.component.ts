@@ -188,16 +188,20 @@ export class UserDashboardComponent implements OnInit {
   }
 
   onVaccinationSubmit() {
-    console.log(this.vaccinationListForm.value);
-    this.vaccinationListForm.disable();
-    this.editVaccinationList = !this.editVaccinationList;
+    this.httpClient.post('http://localhost:3000/dashboard/edit_vaccinations', this.vaccinationListForm.value)
+      .subscribe(() => {
+        this.vaccinationListForm.disable();
+        this.editVaccinationList = !this.editVaccinationList;
+      });
   }
 
   onExtraVaccinationSubmit() {
     this.addExtraVaccination = !this.addExtraVaccination;
-    console.log(this.addExtraVaccinationForm.value);
-    this.addExtraVaccinationForm.reset();
-    this.addExtraVaccinationForm.get('date')?.setValue(this.calendar.getToday());
+    this.httpClient.post('http://localhost:3000/dashboard/add_extra_vaccinations', this.addExtraVaccinationForm.value)
+      .subscribe(() => {
+        this.addExtraVaccinationForm.reset();
+        this.addExtraVaccinationForm.get('date')?.setValue(this.calendar.getToday());
+      });
   }
 
   addVaccination() {
