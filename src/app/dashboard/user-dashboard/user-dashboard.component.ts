@@ -24,6 +24,24 @@ interface ExtraVaccination {
   description: string;
 }
 
+interface Personal {
+  id: number;
+  firstName: string;
+  lastName: string;
+  ssnvs: number;
+  birthDate: string;
+  country: string;
+  fatherFirstName: string;
+  fatherLastName: string;
+  motherFirstName: string;
+  motherLastName: string;
+  email: string;
+  mobilePhone: number;
+  emergencyContact: number;
+  userId: number;
+}
+
+
 @Component({
   selector: 'ihb-user-dashboard',
   templateUrl: './user-dashboard.component.html',
@@ -65,78 +83,62 @@ export class UserDashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.httpClient.get<Personal>('dashboard/personal').subscribe(
+      result => {
+        if (result)
+          this.personalForm.patchValue(result)
+        this.personalForm.disable()
+      }
+    )
+
     this.personalForm = new FormGroup({
-      fName: new FormControl({
-        value: null,
-        disabled: true
-      }, [
+      firstName: new FormControl(
+        null, [
         Validators.required
       ]),
-      lName: new FormControl({
-        value: null,
-        disabled: true
-      }, [
+      lastName: new FormControl(
+        null, [
         Validators.required
       ]),
-      ssnvs: new FormControl({
-        value: null,
-        disabled: true
-      }, [
+      ssnvs: new FormControl(
+        null, [
         Validators.required
       ]),
-      date: new FormControl({
-        value: null,
-        disabled: true
-      }, [
+      birthDate: new FormControl(
+        null, [
         Validators.required
       ]),
-      country: new FormControl({
-        value: null,
-        disabled: true
-      }, [
+      country: new FormControl(
+        null, [
         Validators.required
       ]),
-      fFName: new FormControl({
-        value: null,
-        disabled: true
-      }, [
+      fatherFirstName: new FormControl(
+        null, [
         Validators.required
       ]),
-      fLName: new FormControl({
-        value: null,
-        disabled: true
-      }, [
+      fatherLastName: new FormControl(
+        null, [
         Validators.required
       ]),
-      mFName: new FormControl({
-        value: null,
-        disabled: true
-      }, [
+      motherFirstName: new FormControl(
+        null, [
         Validators.required
       ]),
-      mLName: new FormControl({
-        value: null,
-        disabled: true
-      }, [
+      motherLastName: new FormControl(
+        null, [
         Validators.required
       ]),
-      email: new FormControl({
-        value: null,
-        disabled: true
-      }, [
+      email: new FormControl(
+        null, [
         Validators.required,
         Validators.email
       ]),
-      mPhone: new FormControl({
-        value: null,
-        disabled: true
-      }, [
+      mobilePhone: new FormControl(
+        null, [
         Validators.required
       ]),
-      ePhone: new FormControl({
-        value: null,
-        disabled: true
-      }, [
+      emergencyContact: new FormControl(
+        null, [
         Validators.required
       ])
     });
@@ -214,7 +216,27 @@ export class UserDashboardComponent implements OnInit {
 
   onPersonalSubmit() {
     console.log(this.personalForm.value);
-    this.personalForm.reset();
+    this.httpClient.get<Personal>('dashboard/personal').subscribe(
+      result => {
+        console.log(result)
+        if (!result){
+          console.log("Will be created!")
+          this.httpClient.post<void>('dashboard/personal', this.personalForm.value).subscribe(
+            tmp => {
+              console.log(tmp)
+            }
+          )
+        }
+        else {
+          console.log("Will be updated!")
+          this.httpClient.put<void>('dashboard/personal', this.personalForm.value).subscribe(
+            tmp => {
+              console.log(tmp)
+            }
+          )
+        }
+      }
+    )
     this.personalForm.disable();
     this.editPersonalInformation = !this.editPersonalInformation;
   }
@@ -235,6 +257,24 @@ export class UserDashboardComponent implements OnInit {
         this.vaccinationListForm.disable();
         this.editVaccinationList = !this.editVaccinationList;
       });
+  }
+
+  deletePersonal() {
+    console.log(this.personalForm.value);
+    this.httpClient.get<Personal>('dashboard/personal').subscribe(
+      result => {
+        console.log(result)
+        if (result){
+          console.log("Will be deleted!")
+          this.httpClient.delete<void>('dashboard/personal', this.personalForm.value).subscribe(
+            tmp => {
+              console.log(tmp)
+            }
+          )
+        }
+      }
+    )
+    this.personalForm.reset();
   }
 
   onExtraVaccinationSubmit() {

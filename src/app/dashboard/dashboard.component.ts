@@ -17,13 +17,5 @@ export class DashboardComponent implements OnInit {
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit() {
-
-
-    this.httpClient.get<{id: string, roles: string[]}>('auth/profile').subscribe((result) => {
-
-    });
-
-    console.log('hello');
   }
-
 }
