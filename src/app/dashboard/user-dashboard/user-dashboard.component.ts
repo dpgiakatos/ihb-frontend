@@ -3,12 +3,23 @@ import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { forkJoin } from 'rxjs';
 
-interface VaccinationList {
+interface Vaccination {
   id: number;
   name: string;
+}
+
+interface VaccinationValues {
+  id: number;
+  name: string;
+}
+
+interface ExtraVaccination {
+  id: number;
+  name: string;
+  date: string;
+  description: string;
 }
 
 @Component({
@@ -21,6 +32,8 @@ export class UserDashboardComponent implements OnInit {
   editPersonalInformation = false;
   editVaccinationList = false;
   addExtraVaccination = false;
+  editExtraVaccination = false;
+  extraVaccineId: number;
   faCalendarAlt = faCalendarAlt;
   addAllergicDisease = false;
   addHospitalTreatment = false;
@@ -29,7 +42,11 @@ export class UserDashboardComponent implements OnInit {
   addExtraVaccinationForm: FormGroup;
   addAllergicForm: FormGroup;
   addHospitalForm: FormGroup;
-  vaccinationList: Observable<VaccinationList[]>;
+  vaccinationList: Vaccination[] = [];
+  extraVaccinationList: ExtraVaccination[] = [];
+  extraVaccinationPage = 1;
+  extraVaccinationPageSize = 10;
+  extraVaccinationSize: number;
 
   constructor(
     private calendar: NgbCalendar,
@@ -158,16 +175,32 @@ export class UserDashboardComponent implements OnInit {
       ])
     });
     this.vaccinationListForm = new FormGroup({});
-    this.vaccinationList = this.httpClient
-      .get<VaccinationList[]>('http://localhost:3000/dashboard/vaccinations')
-      .pipe(tap(value => {
-        for (const vaccine of value) {
-          this.vaccinationListForm.addControl(vaccine.id.toString(), new FormControl({
-            value: null,
-            disabled: true
-          }));
-        }
-      }));
+    forkJoin({
+      vaccinesList: this.httpClient.get<Vaccination[]>('dashboard/vaccinations'),
+      vaccineValues: this.httpClient.get<VaccinationValues[]>('dashboard/user_vaccines'),
+      extraVaccinesList: this.httpClient.get<ExtraVaccination[]>('dashboard/extra_vaccinations/' + this.extraVaccinationPage),
+      countExtraVaccines: this.httpClient.get<number>('dashboard/count_extra_vaccinations')
+    }).subscribe(values => {
+      this.vaccinationList = values.vaccinesList;
+      for (const vaccine of values.vaccinesList) {
+        this.vaccinationListForm.addControl(vaccine.id.toString(), new FormControl({
+          value: values.vaccineValues.some(val => val.id === vaccine.id),
+          disabled: true
+        }));
+      }
+      this.extraVaccinationList = values.extraVaccinesList;
+      this.extraVaccinationSize = values.countExtraVaccines;
+    });
+  }
+
+  setDateAsString(val: string) {
+    const date = new Date(val);
+    return date.toDateString();
+  }
+
+  setDateAsObject(val: string) {
+    const date = new Date(val);
+    return {year: date.getFullYear(), month: date.getMonth() + 1, day: date.getDate()};
   }
 
   onPersonalSubmit() {
@@ -188,7 +221,7 @@ export class UserDashboardComponent implements OnInit {
   }
 
   onVaccinationSubmit() {
-    this.httpClient.post('http://localhost:3000/dashboard/edit_vaccinations', this.vaccinationListForm.value)
+    this.httpClient.post('dashboard/edit_vaccinations', this.vaccinationListForm.value)
       .subscribe(() => {
         this.vaccinationListForm.disable();
         this.editVaccinationList = !this.editVaccinationList;
@@ -197,15 +230,59 @@ export class UserDashboardComponent implements OnInit {
 
   onExtraVaccinationSubmit() {
     this.addExtraVaccination = !this.addExtraVaccination;
-    this.httpClient.post('http://localhost:3000/dashboard/add_extra_vaccinations', this.addExtraVaccinationForm.value)
+    if (!this.editExtraVaccination) {
+      this.httpClient.post<ExtraVaccination>('dashboard/add_extra_vaccinations', this.addExtraVaccinationForm.value)
+        .subscribe((vaccination: ExtraVaccination) => {
+          if ((this.extraVaccinationSize / this.extraVaccinationPageSize) <= this.extraVaccinationPage) {
+            this.extraVaccinationList.push(vaccination);
+          }
+          this.addExtraVaccinationForm.reset();
+          this.addExtraVaccinationForm.get('date')?.setValue(this.calendar.getToday());
+          this.extraVaccinationSize++;
+        });
+    } else {
+      this.httpClient.put<ExtraVaccination>('dashboard/edit_extra_vaccinations/' + this.extraVaccineId, this.addExtraVaccinationForm.value)
+        .subscribe((vaccination: ExtraVaccination) => {
+          this.extraVaccinationList[this.extraVaccinationList.map(vaccine => vaccine.id).indexOf(this.extraVaccineId)] = vaccination;
+          this.addExtraVaccinationForm.reset();
+          this.addExtraVaccinationForm.get('date')?.setValue(this.calendar.getToday());
+          this.editExtraVaccination = false;
+        });
+    }
+  }
+
+  setEditExtraVaccinationForm(vaccine: ExtraVaccination) {
+    this.editExtraVaccination = true;
+    this.addExtraVaccinationForm.setValue({
+      name: vaccine.name,
+      date: this.setDateAsObject(vaccine.date),
+      description: vaccine.description
+    });
+    this.extraVaccineId = vaccine.id;
+    if (!this.addExtraVaccination) {
+      this.addExtraVaccination = !this.addExtraVaccination;
+    }
+  }
+
+  onDeleteExtraVaccinationSubmit(vaccine: ExtraVaccination) {
+    this.httpClient.delete('dashboard/delete_extra_vaccinations/' + vaccine.id)
       .subscribe(() => {
-        this.addExtraVaccinationForm.reset();
-        this.addExtraVaccinationForm.get('date')?.setValue(this.calendar.getToday());
+        this.extraVaccinePage();
+        this.extraVaccinationSize--;
       });
+  }
+
+  extraVaccinePage() {
+    forkJoin({
+      list: this.httpClient.get<ExtraVaccination[]>('dashboard/extra_vaccinations/' + this.extraVaccinationPage)
+    }).subscribe(value => {
+      this.extraVaccinationList = value.list;
+    });
   }
 
   addVaccination() {
     this.addExtraVaccination = !this.addExtraVaccination;
+    this.editExtraVaccination = false;
     if (this.addExtraVaccination) {
       this.addExtraVaccinationForm.reset();
       this.addExtraVaccinationForm.get('date')?.setValue(this.calendar.getToday());
