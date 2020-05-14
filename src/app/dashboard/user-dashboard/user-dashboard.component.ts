@@ -42,6 +42,12 @@ interface Personal {
 }
 
 
+interface Allergic {
+  allergicDiseaseName: string;
+  allergicDiseaseDescription: string;
+  allergicDiseaseTreatmentDescription: string;
+}
+
 @Component({
   selector: 'ihb-user-dashboard',
   templateUrl: './user-dashboard.component.html',
@@ -62,6 +68,10 @@ export class UserDashboardComponent implements OnInit {
   addExtraVaccinationForm: FormGroup;
   addAllergicForm: FormGroup;
   addHospitalForm: FormGroup;
+
+  allergicList: Allergic[] = [];
+  allergicListForm: FormGroup;
+
   vaccinationList: Vaccination[] = [];
   extraVaccinationList: ExtraVaccination[] = [];
   extraVaccinationPage = 1;
@@ -207,6 +217,14 @@ export class UserDashboardComponent implements OnInit {
       this.extraVaccinationList = values.extraVaccinesList;
       this.extraVaccinationSize = values.countExtraVaccines;
     });
+
+    forkJoin({
+      extraVaccinesList: this.httpClient.get<Allergic[]>('dashboard/allergic'),
+      countExtraVaccines: this.httpClient.get<number>('dashboard/allergic/count_allergic')
+    }).subscribe(values => {
+      console.log(values);
+    });
+
   }
 
   setDateAsObject(val: string) {
@@ -347,8 +365,13 @@ export class UserDashboardComponent implements OnInit {
   }
 
   onAllergicFormSubmit() {
-    this.addAllergicDisease = !this.addAllergicDisease;
     console.log(this.addAllergicForm.value);
+    this.httpClient.post<void>('dashboard/allergic', this.addAllergicForm.value).subscribe (
+      tmp => {
+        console.log(tmp)
+      }
+    )
+    
     this.addAllergicForm.reset();
   }
 
