@@ -3,7 +3,8 @@ import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { forkJoin } from 'rxjs';
+import { forkJoin, Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 interface Vaccination {
   id: number;
@@ -47,11 +48,15 @@ export class UserDashboardComponent implements OnInit {
   extraVaccinationPage = 1;
   extraVaccinationPageSize = 10;
   extraVaccinationSize: number;
+  userId: string;
 
   constructor(
     private calendar: NgbCalendar,
-    private httpClient: HttpClient
-    ) { }
+    private httpClient: HttpClient,
+    private activatedRoute: ActivatedRoute
+    ) {
+    this.userId = this.activatedRoute.snapshot.params.id;
+  }
 
   ngOnInit(): void {
     this.personalForm = new FormGroup({
@@ -228,7 +233,7 @@ export class UserDashboardComponent implements OnInit {
     if (!this.editExtraVaccination) {
       this.httpClient.post<ExtraVaccination>('dashboard/add_extra_vaccinations', this.addExtraVaccinationForm.value)
         .subscribe((vaccination: ExtraVaccination) => {
-          if ((this.extraVaccinationSize / this.extraVaccinationPageSize) <= this.extraVaccinationPage) {
+          if ((this.extraVaccinationSize / this.extraVaccinationPageSize) < this.extraVaccinationPage) {
             this.extraVaccinationList.push(vaccination);
           }
           this.addExtraVaccinationForm.reset();

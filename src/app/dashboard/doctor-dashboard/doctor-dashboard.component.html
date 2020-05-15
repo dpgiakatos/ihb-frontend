@@ -8,12 +8,12 @@
         <div class="row">
           <div class="col-lg mt-3">
             <label for="search">Search patient:</label>
-            <input type="text" class="form-control" id="search" [formControl]="searchBox"/>
+            <input type="text" class="form-control" id="search" [formControl]="searchBox">
           </div>
           <div class="col-lg mt-3">
-            <label for="countrySeelct">Select country:</label>
-            <select class="form-control w-50" id="countrySeelct">
-              <option selected>All</option>
+            <label for="countrySelect">Select country:</label>
+            <select class="form-control w-50" id="countrySelect" [formControl]="country">
+              <option [value]="null">All</option>
               <option>Greece</option>
             </select>
           </div>
@@ -23,18 +23,18 @@
     <table *ngIf="searchBox.value" class="table table-striped mt-3 table-responsive-lg">
       <thead>
       <tr>
-        <th scope="col-lg">#</th>
-        <th scope="col-lg">Full Name</th>
-        <th scope="col-lg">SSNVS (Greece: ΑΜΚΑ)</th>
-        <th scope="col-lg"></th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">SSNVS</th>
+        <th scope="col"></th>
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let patient of patients | async; index as i">
-        <th scope="row">{{i+1}}</th>
-        <td><ngb-highlight [result]="patient.name" [term]="searchBox.value"></ngb-highlight></td>
-        <td><ngb-highlight [result]="patient.ssnvs.toString()" [term]="searchBox.value"></ngb-highlight></td>
-        <td><a routerLink="../user"><button class="btn btn-primary">View</button></a></td>
+      <tr *ngFor="let user of list;">
+        <td><ngb-highlight [result]="user.firstName" [term]="searchBox.value"></ngb-highlight></td>
+        <td><ngb-highlight [result]="user.lastName" [term]="searchBox.value"></ngb-highlight></td>
+        <td><ngb-highlight [result]="user.ssnvs" [term]="searchBox.value"></ngb-highlight></td>
+        <td><a routerLink="../user/{{user.userId}}"><button class="btn btn-primary">View</button></a></td>
       </tr>
       </tbody>
     </table>

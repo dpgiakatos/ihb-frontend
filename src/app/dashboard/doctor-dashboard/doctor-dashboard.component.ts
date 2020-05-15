@@ -1,59 +1,67 @@
-import { Component, OnInit, PipeTransform } from '@angular/core';
-import { DecimalPipe } from '@angular/common';
-import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Subscription } from 'rxjs';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { debounceTime, switchMap, tap } from 'rxjs/operators';
 
-interface Patient {
-  name: string;
-  ssnvs: number;
-}
-
-const PATIENTS: Patient[] = [
-  {
-    name: 'User 1',
-    ssnvs: 17075200
-  },
-  {
-    name: 'User 2',
-    ssnvs: 9976140
-  },
-  {
-    name: 'User 3',
-    ssnvs: 9629091
-  },
-  {
-    name: 'User 4',
-    ssnvs: 9596960
-  }
-];
-
-function search(text: string, pipe: PipeTransform): Patient[] {
-  return PATIENTS.filter(patient => {
-    const term = text.toLowerCase();
-    return patient.name.toLowerCase().includes(term)
-      || pipe.transform(patient.ssnvs).includes(term);
-  });
+export interface User {
+  firstName: string;
+  lastName: string;
+  ssnvs: string;
+  userId: string;
 }
 
 @Component({
   selector: 'ihb-doctor-dashboard',
   templateUrl: './doctor-dashboard.component.html',
-  styleUrls: ['./doctor-dashboard.component.css'],
-  providers: [DecimalPipe]
+  styleUrls: ['./doctor-dashboard.component.css']
 })
-export class DoctorDashboardComponent implements OnInit {
+export class DoctorDashboardComponent implements OnInit, OnDestroy {
 
-  patients: Observable<Patient[]>;
-  searchBox = new FormControl('');
+  searchBox = new FormControl();
+  country = new FormControl(null);
+  subscriptionSearch: Subscription;
+  subscriptionCountry: Subscription;
+  list: User[] = [];
 
-  constructor(private pipe: DecimalPipe) { }
+  constructor(private httpClient: HttpClient) {}
 
   ngOnInit(): void {
-    this.patients = this.searchBox.valueChanges.pipe(
-      startWith(''),
-      map(text => search(text, this.pipe))
-    );
+    this.subscriptionSearch = this.searchBox.valueChanges.pipe(
+      tap(input => {
+        if (input.length === 0) {
+          this.list = [];
+        }
+      }),
+      debounceTime(1000),
+      switchMap(value => {
+        let params = new HttpParams();
+        params = params.append('search', value);
+        if (this.country.value) {
+          params = params.append('country', this.country.value);
+        }
+        return this.httpClient.get<User[]>('doctor/find', {params});
+      })
+    ).subscribe(value => {
+      this.list = value;
+    });
+    this.subscriptionCountry = this.country.valueChanges.pipe(
+      tap(input => {
+        if (input.length === 0) {
+          this.list = [];
+        }
+      }),
+      switchMap(value => {
+        return this.httpClient.get<User[]>('doctor/find?search=' + this.searchBox.value + '&country=' + value);
+      })
+    ).subscribe(value => {
+      this.list = value;
+    });
   }
 
+  ngOnDestroy() {
+    this.list = [];
+    this.subscriptionSearch.unsubscribe();
+    this.subscriptionCountry.unsubscribe();
+  }
 }

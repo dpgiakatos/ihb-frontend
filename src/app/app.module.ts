@@ -28,6 +28,7 @@ const routes: Routes = [
   {path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)},
   {path: 'dashboard', component: DashboardComponent, children: [
     {path: 'user', component: UserDashboardComponent},
+    {path: 'user/:id', component: UserDashboardComponent},
     {path: 'doctor', component: DoctorDashboardComponent},
     {path: 'administrator', component: AdministratorDashboardComponent},
     {path: 'message', component: MessageDashboardComponent},
