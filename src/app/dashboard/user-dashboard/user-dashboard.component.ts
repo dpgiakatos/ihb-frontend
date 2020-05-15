@@ -72,6 +72,8 @@ export class UserDashboardComponent implements OnInit {
 
   allergicId: number;
   allergicList: Allergic[] = [];
+  allergicPageNumber = 1;
+  allergicPageSize = 10;
   allergicSize: number;
   allergicListForm: FormGroup;
   editAllergicForm = false;
@@ -223,8 +225,8 @@ export class UserDashboardComponent implements OnInit {
     });
 
     forkJoin({
-      allergicList: this.httpClient.get<Allergic[]>('dashboard/allergic'),
-      countAllergic: this.httpClient.get<number>('dashboard/allergic/count_allergic')
+      allergicList: this.httpClient.get<Allergic[]>('dashboard/allergic/' + this.allergicPageNumber),
+      countAllergic: this.httpClient.get<number>('dashboard/allergic/count_allergic/count')
     }).subscribe(values => {
       console.log(values);
       this.allergicList = values.allergicList;
@@ -327,27 +329,6 @@ export class UserDashboardComponent implements OnInit {
     }
   }
 
-  onAllergicFormSubmit() {
-    console.log(this.addAllergicForm.value);
-    
-    if (!this.editAllergicForm) {
-      this.httpClient.post<Allergic>('dashboard/allergic', this.addAllergicForm.value).subscribe (
-        (allergic: Allergic) => {
-          this.allergicList.push(allergic);
-          this.addAllergicForm.reset();
-          this.allergicSize++;
-        });
-    }
-    else {
-      this.httpClient.put<Allergic>('dashboard/allergic/' + this.allergicId, this.addAllergicForm.value).subscribe (
-        (allergic: Allergic) => {
-          this.allergicList[this.allergicList.map(allergy => allergy.id).indexOf(this.allergicId)] = allergic;
-          this.addAllergicForm.reset();
-          this.editAllergicForm = false;
-        });
-    }
-  }
-
   setEditExtraVaccinationForm(vaccine: ExtraVaccination) {
     this.editExtraVaccination = true;
     this.addExtraVaccinationForm.setValue({
@@ -360,6 +341,53 @@ export class UserDashboardComponent implements OnInit {
       this.addExtraVaccination = !this.addExtraVaccination;
     }
   }
+
+  onDeleteExtraVaccinationSubmit(vaccine: ExtraVaccination) {
+    this.httpClient.delete('dashboard/delete_extra_vaccinations/' + vaccine.id)
+      .subscribe(() => {
+        this.extraVaccinePage();
+        this.extraVaccinationSize--;
+      });
+  }
+
+  extraVaccinePage() {
+    forkJoin({
+      list: this.httpClient.get<ExtraVaccination[]>('dashboard/extra_vaccinations/' + this.extraVaccinationPage)
+    }).subscribe(value => {
+      this.extraVaccinationList = value.list;
+    });
+  }
+
+  addVaccination() {
+    this.addExtraVaccination = !this.addExtraVaccination;
+    this.editExtraVaccination = false;
+    if (this.addExtraVaccination) {
+      this.addExtraVaccinationForm.reset();
+      this.addExtraVaccinationForm.get('date')?.setValue(this.calendar.getToday());
+    }
+  }
+
+  onAllergicFormSubmit() {
+    this.addAllergicDisease = !this.addAllergicDisease;
+    if (!this.editAllergicForm) {
+      this.httpClient.post<Allergic>('dashboard/allergic', this.addAllergicForm.value).subscribe (
+        (allergic: Allergic) => {
+          if ((this.allergicSize / this.allergicPageSize) < this.allergicPageNumber) {
+            this.allergicList.push(allergic);
+          }
+          this.addAllergicForm.reset();
+          this.allergicSize++;
+        });
+    }
+    else {
+      this.httpClient.put<Allergic>('dashboard/allergic/' + this.allergicId, this.addAllergicForm.value).subscribe (
+        (allergic: Allergic) => {
+          this.allergicList[this.allergicList.map(allergy => allergy.id).indexOf(this.allergicId)] = allergic;
+          this.addAllergicForm.reset();
+          this.editAllergicForm = false;
+        });
+    }
+  }  
 
   setEditAllergicForm(allergy: Allergic) {
     this.editAllergicForm = true;
@@ -404,23 +432,12 @@ export class UserDashboardComponent implements OnInit {
 
   allergicPage() {
     forkJoin({
-      list: this.httpClient.get<Allergic[]>('dashboard/allergic/')
+      list: this.httpClient.get<Allergic[]>('dashboard/allergic/' + this.allergicPageNumber)
     }).subscribe(value => {
       this.allergicList = value.list;
     });
   }
-
-  addVaccination() {
-    this.addExtraVaccination = !this.addExtraVaccination;
-    this.editExtraVaccination = false;
-    if (this.addExtraVaccination) {
-      this.addExtraVaccinationForm.reset();
-      this.addExtraVaccinationForm.get('date')?.setValue(this.calendar.getToday());
-    }
-  }
-
   
-
   addAllergic() {
     this.addAllergicDisease = !this.addAllergicDisease;
     if (this.addAllergicDisease) {

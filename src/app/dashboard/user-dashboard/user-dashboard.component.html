@@ -299,6 +299,14 @@
               </tr>
             </tbody>
           </table>
+          <div class="d-flex justify-content-between p-2">
+            <ngb-pagination
+              [(page)]="allergicPageNumber"
+              [pageSize]="allergicPageSize"
+              [collectionSize]="allergicSize"
+              (pageChange)="allergicPage()">
+            </ngb-pagination>
+          </div>
         </ng-template>
       </ng-container>
       <ng-container ngbNavItem>
