@@ -289,7 +289,14 @@
             </tr>
             </thead>
             <tbody>
-
+              <tr *ngFor="let allergy of allergicList; let i = index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{allergy.name}}</td>
+                <td>{{allergy.dDescription}}</td>
+                <td>{{allergy.tDescription}}</td>
+                <td><button type="button" class="btn btn-warning" (click)="setEditAllergicForm(allergy)">Edit</button></td>
+                <td><button type="button" class="btn badge-danger" (click)="onDeleteAllergicSubmit(allergy)">Delete</button></td>
+              </tr>
             </tbody>
           </table>
         </ng-template>

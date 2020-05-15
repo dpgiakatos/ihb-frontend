@@ -43,9 +43,10 @@ interface Personal {
 
 
 interface Allergic {
-  allergicDiseaseName: string;
-  allergicDiseaseDescription: string;
-  allergicDiseaseTreatmentDescription: string;
+  id: number;
+  name: string;
+  dDescription: string;
+  tDescription: string;
 }
 
 @Component({
@@ -69,8 +70,11 @@ export class UserDashboardComponent implements OnInit {
   addAllergicForm: FormGroup;
   addHospitalForm: FormGroup;
 
+  allergicId: number;
   allergicList: Allergic[] = [];
+  allergicSize: number;
   allergicListForm: FormGroup;
+  editAllergicForm = false;
 
   vaccinationList: Vaccination[] = [];
   extraVaccinationList: ExtraVaccination[] = [];
@@ -219,10 +223,12 @@ export class UserDashboardComponent implements OnInit {
     });
 
     forkJoin({
-      extraVaccinesList: this.httpClient.get<Allergic[]>('dashboard/allergic'),
-      countExtraVaccines: this.httpClient.get<number>('dashboard/allergic/count_allergic')
+      allergicList: this.httpClient.get<Allergic[]>('dashboard/allergic'),
+      countAllergic: this.httpClient.get<number>('dashboard/allergic/count_allergic')
     }).subscribe(values => {
       console.log(values);
+      this.allergicList = values.allergicList;
+      this.allergicSize = values.countAllergic;
     });
 
   }
@@ -321,6 +327,27 @@ export class UserDashboardComponent implements OnInit {
     }
   }
 
+  onAllergicFormSubmit() {
+    console.log(this.addAllergicForm.value);
+    
+    if (!this.editAllergicForm) {
+      this.httpClient.post<Allergic>('dashboard/allergic', this.addAllergicForm.value).subscribe (
+        (allergic: Allergic) => {
+          this.allergicList.push(allergic);
+          this.addAllergicForm.reset();
+          this.allergicSize++;
+        });
+    }
+    else {
+      this.httpClient.put<Allergic>('dashboard/allergic/' + this.allergicId, this.addAllergicForm.value).subscribe (
+        (allergic: Allergic) => {
+          this.allergicList[this.allergicList.map(allergy => allergy.id).indexOf(this.allergicId)] = allergic;
+          this.addAllergicForm.reset();
+          this.editAllergicForm = false;
+        });
+    }
+  }
+
   setEditExtraVaccinationForm(vaccine: ExtraVaccination) {
     this.editExtraVaccination = true;
     this.addExtraVaccinationForm.setValue({
@@ -331,6 +358,19 @@ export class UserDashboardComponent implements OnInit {
     this.extraVaccineId = vaccine.id;
     if (!this.addExtraVaccination) {
       this.addExtraVaccination = !this.addExtraVaccination;
+    }
+  }
+
+  setEditAllergicForm(allergy: Allergic) {
+    this.editAllergicForm = true;
+    this.addAllergicForm.setValue({
+      name: allergy.name,
+      dDescription: allergy.dDescription,
+      tDescription: allergy.tDescription
+    });
+    this.allergicId = allergy.id;
+    if (!this.addAllergicDisease) {
+      this.addAllergicDisease = !this.addAllergicDisease;
     }
   }
 
@@ -345,6 +385,13 @@ export class UserDashboardComponent implements OnInit {
       });
   }
 
+  onDeleteAllergicSubmit(allergy: Allergic) {
+    this.httpClient.delete('dashboard/allergic/' + allergy.id).subscribe(() => {
+      this.allergicPage();
+      this.allergicSize--;
+    })
+  }
+
   extraVaccinePage() {
     let params = new HttpParams();
     params = params.append('vaccinePageId', this.extraVaccinationPage.toString());
@@ -352,6 +399,14 @@ export class UserDashboardComponent implements OnInit {
     this.httpClient.get<ExtraVaccination[]>('dashboard/extra_vaccinations', {params})
       .subscribe(value => {
       this.extraVaccinationList = value;
+    });
+  }
+
+  allergicPage() {
+    forkJoin({
+      list: this.httpClient.get<Allergic[]>('dashboard/allergic/')
+    }).subscribe(value => {
+      this.allergicList = value.list;
     });
   }
 
@@ -364,16 +419,7 @@ export class UserDashboardComponent implements OnInit {
     }
   }
 
-  onAllergicFormSubmit() {
-    console.log(this.addAllergicForm.value);
-    this.httpClient.post<void>('dashboard/allergic', this.addAllergicForm.value).subscribe (
-      tmp => {
-        console.log(tmp)
-      }
-    )
-    
-    this.addAllergicForm.reset();
-  }
+  
 
   addAllergic() {
     this.addAllergicDisease = !this.addAllergicDisease;
