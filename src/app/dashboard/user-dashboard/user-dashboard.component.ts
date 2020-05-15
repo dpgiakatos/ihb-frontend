@@ -193,11 +193,6 @@ export class UserDashboardComponent implements OnInit {
     });
   }
 
-  setDateAsString(val: string) {
-    const date = new Date(val);
-    return date.toDateString();
-  }
-
   setDateAsObject(val: string) {
     const date = new Date(val);
     return {year: date.getFullYear(), month: date.getMonth() + 1, day: date.getDate()};
