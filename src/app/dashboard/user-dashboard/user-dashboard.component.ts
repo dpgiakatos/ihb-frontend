@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { forkJoin, Observable } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 interface Vaccination {
   id: number;
@@ -53,9 +54,14 @@ export class UserDashboardComponent implements OnInit {
   constructor(
     private calendar: NgbCalendar,
     private httpClient: HttpClient,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private jwt: JwtHelperService
     ) {
-    this.userId = this.activatedRoute.snapshot.params.id;
+      this.userId = this.activatedRoute.snapshot.params.id;
+      const accessToken = localStorage.getItem('access-token');
+      if (!this.userId && accessToken) {
+        this.userId = jwt.decodeToken(accessToken).id;
+      }
   }
 
   ngOnInit(): void {
@@ -180,11 +186,14 @@ export class UserDashboardComponent implements OnInit {
       ])
     });
     this.vaccinationListForm = new FormGroup({});
+    let params = new HttpParams();
+    params = params.append('userId', this.userId);
+    params = params.append('page', this.extraVaccinationPage.toString());
     forkJoin({
       vaccinesList: this.httpClient.get<Vaccination[]>('dashboard/vaccinations'),
-      vaccineValues: this.httpClient.get<VaccinationValues[]>('dashboard/user_vaccines'),
-      extraVaccinesList: this.httpClient.get<ExtraVaccination[]>('dashboard/extra_vaccinations/' + this.extraVaccinationPage),
-      countExtraVaccines: this.httpClient.get<number>('dashboard/count_extra_vaccinations')
+      vaccineValues: this.httpClient.get<VaccinationValues[]>('dashboard/user_vaccines/' + this.userId),
+      extraVaccinesList: this.httpClient.get<ExtraVaccination[]>('dashboard/extra_vaccinations', {params}),
+      countExtraVaccines: this.httpClient.get<number>('dashboard/count_extra_vaccinations/' + this.userId)
     }).subscribe(values => {
       this.vaccinationList = values.vaccinesList;
       for (const vaccine of values.vaccinesList) {
@@ -221,7 +230,7 @@ export class UserDashboardComponent implements OnInit {
   }
 
   onVaccinationSubmit() {
-    this.httpClient.post('dashboard/edit_vaccinations', this.vaccinationListForm.value)
+    this.httpClient.post('dashboard/edit_vaccinations/' + this.userId, this.vaccinationListForm.value)
       .subscribe(() => {
         this.vaccinationListForm.disable();
         this.editVaccinationList = !this.editVaccinationList;
@@ -231,7 +240,7 @@ export class UserDashboardComponent implements OnInit {
   onExtraVaccinationSubmit() {
     this.addExtraVaccination = !this.addExtraVaccination;
     if (!this.editExtraVaccination) {
-      this.httpClient.post<ExtraVaccination>('dashboard/add_extra_vaccinations', this.addExtraVaccinationForm.value)
+      this.httpClient.post<ExtraVaccination>('dashboard/add_extra_vaccinations/' + this.userId, this.addExtraVaccinationForm.value)
         .subscribe((vaccination: ExtraVaccination) => {
           if ((this.extraVaccinationSize / this.extraVaccinationPageSize) < this.extraVaccinationPage) {
             this.extraVaccinationList.push(vaccination);
@@ -241,7 +250,10 @@ export class UserDashboardComponent implements OnInit {
           this.extraVaccinationSize++;
         });
     } else {
-      this.httpClient.put<ExtraVaccination>('dashboard/edit_extra_vaccinations/' + this.extraVaccineId, this.addExtraVaccinationForm.value)
+      let params = new HttpParams();
+      params = params.append('vaccineId', this.extraVaccineId.toString());
+      params = params.append('userId', this.userId);
+      this.httpClient.put<ExtraVaccination>('dashboard/edit_extra_vaccinations', this.addExtraVaccinationForm.value, {params})
         .subscribe((vaccination: ExtraVaccination) => {
           this.extraVaccinationList[this.extraVaccinationList.map(vaccine => vaccine.id).indexOf(this.extraVaccineId)] = vaccination;
           this.addExtraVaccinationForm.reset();
@@ -265,7 +277,10 @@ export class UserDashboardComponent implements OnInit {
   }
 
   onDeleteExtraVaccinationSubmit(vaccine: ExtraVaccination) {
-    this.httpClient.delete('dashboard/delete_extra_vaccinations/' + vaccine.id)
+    let params = new HttpParams();
+    params = params.append('vaccineId', vaccine.id.toString());
+    params = params.append('userId', this.userId);
+    this.httpClient.delete('dashboard/delete_extra_vaccinations', {params})
       .subscribe(() => {
         this.extraVaccinePage();
         this.extraVaccinationSize--;
@@ -273,10 +288,12 @@ export class UserDashboardComponent implements OnInit {
   }
 
   extraVaccinePage() {
-    forkJoin({
-      list: this.httpClient.get<ExtraVaccination[]>('dashboard/extra_vaccinations/' + this.extraVaccinationPage)
-    }).subscribe(value => {
-      this.extraVaccinationList = value.list;
+    let params = new HttpParams();
+    params = params.append('vaccinePageId', this.extraVaccinationPage.toString());
+    params = params.append('userId', this.userId);
+    this.httpClient.get<ExtraVaccination[]>('dashboard/extra_vaccinations', {params})
+      .subscribe(value => {
+      this.extraVaccinationList = value;
     });
   }
 
