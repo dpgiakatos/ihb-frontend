@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule, NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
@@ -22,6 +22,7 @@ import { NotFoundPageComponent } from './not-found-page/not-found-page.component
 import { SharedModule } from './shared/shared.module';
 import { BaseUrlInterceptor } from './base-url.interceptor';
 import { environment } from '../environments/environment';
+import { NgbPlainDateAdapter } from './date-adapter.service';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -83,7 +84,8 @@ export function tokenGetter() {
   ],
   providers: [
     { provide: 'BASE_API_URL', useValue: environment.apiUrl },
-    { provide: HTTP_INTERCEPTORS, useClass: BaseUrlInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: BaseUrlInterceptor, multi: true },
+    { provide: NgbDateAdapter, useClass: NgbPlainDateAdapter }
   ],
   bootstrap: [AppComponent]
 })
