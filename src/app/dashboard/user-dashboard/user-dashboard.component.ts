@@ -371,6 +371,7 @@ export class UserDashboardComponent implements OnInit {
         (hospital: Hospital) => {
           this.hospitalList[this.hospitalList.map(hospital => hospital.id).indexOf(this.hospitalId)] = hospital;
           this.addHospitalForm.reset();
+          this.hospitalPage()
           this.editHospitalForm = false;
         }
       )
