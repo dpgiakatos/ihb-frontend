@@ -1,0 +1,860 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="ngb.alert.close" datatype="html">
+        <source>Close</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/alert/alert.d.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.carousel.previous" datatype="html">
+        <source>Previous</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/carousel/carousel.d.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.carousel.next" datatype="html">
+        <source>Next</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/carousel/carousel.d.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.previous-month" datatype="html">
+        <source>Previous month</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation.d.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation.d.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.next-month" datatype="html">
+        <source>Next month</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation.d.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation.d.ts</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.select-month" datatype="html">
+        <source>Select month</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation-select.d.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation-select.d.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.datepicker.select-year" datatype="html">
+        <source>Select year</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation-select.d.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation-select.d.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.first" datatype="html">
+        <source>««</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.previous" datatype="html">
+        <source>«</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.next" datatype="html">
+        <source>»</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.last" datatype="html">
+        <source>»»</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.first-aria" datatype="html">
+        <source>First</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.previous-aria" datatype="html">
+        <source>Previous</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.next-aria" datatype="html">
+        <source>Next</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.pagination.last-aria" datatype="html">
+        <source>Last</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.progressbar.value" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{getPercentValue()}}"/>%</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/progressbar/progressbar.d.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.increment-hours" datatype="html">
+        <source>Increment hours</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.HH" datatype="html">
+        <source>HH</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.hours" datatype="html">
+        <source>Hours</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.decrement-hours" datatype="html">
+        <source>Decrement hours</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.increment-minutes" datatype="html">
+        <source>Increment minutes</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.MM" datatype="html">
+        <source>MM</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.minutes" datatype="html">
+        <source>Minutes</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.decrement-minutes" datatype="html">
+        <source>Decrement minutes</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.increment-seconds" datatype="html">
+        <source>Increment seconds</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.SS" datatype="html">
+        <source>SS</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.seconds" datatype="html">
+        <source>Seconds</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.decrement-seconds" datatype="html">
+        <source>Decrement seconds</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.PM" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ i18n.getAfternoonPeriod() }}"/></source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.timepicker.AM" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ i18n.getMorningPeriod() }}"/></source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ngb.toast.close-aria" datatype="html">
+        <source>Close</source>
+        <target>Insert text</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/toast/toast.d.ts</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="847171f94c5e932a67df0c3b4d57e4e10d844b52" datatype="html">
+        <source>About Us</source>
+        <target>Σχετικά με εμάς</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/navbar/navbar.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e08a77594f3d89311cdf6da5090044270909c194" datatype="html">
+        <source>User</source>
+        <target>Χρήστης</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/navbar/navbar.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="54250c9e7b1f923b9394f1df9fc20d0006c3dcdc" datatype="html">
+        <source>Hospitals</source>
+        <target>Νοσοκομεία</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/navbar/navbar.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">107</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3574b96e4970a4b9d98806c8c7100c60ea37069c" datatype="html">
+        <source>Security</source>
+        <target>Ασφάλεια</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/navbar/navbar.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">134</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="34746fb1c7f3d2194d99652bdff89e6e14c9c4f4" datatype="html">
+        <source>Contact</source>
+        <target>Επικοινωνία</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/navbar/navbar.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">159</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="287d3301a32a65a1b31116bda5d3a6463158c42a" datatype="html">
+        <source>Sign in</source>
+        <target>Σύνδεση</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/navbar/navbar.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c40c132843f349c3aa49730405de1d0ca733aef6" datatype="html">
+        <source>Sign up</source>
+        <target>Εγγραφή</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/navbar/navbar.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="50ddf3fddeb620a211206e89292e036e69cb017c" datatype="html">
+        <source>International Travel</source>
+        <target>Διεθνές Ταξίδι</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b3e25e674285932d28ab38a02d3086fdf1192c9d" datatype="html">
+        <source>Stay protected in the case of an emergency when travelling abroad.</source>
+        <target>Παραμείνετε προστατευμένοι σε περίπτωση έκτακτης ανάγκης όταν ταξιδεύετε στο εξωτερικό.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4a098af77221b8c1325c10578e076b7dc47df5e4" datatype="html">
+        <source>Doctors and Hospitals</source>
+        <target>Γιατροί και Νοσοκομεία</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="186a971424ad84d2c0fc16c874e4b369bfcece3f" datatype="html">
+        <source>IHB empowers doctors and hospitals by giving them immediate access to patients&apos; health records.</source>
+        <target>Το IHB ενισχύει το έργο των γιατρών και των νοσοκομείων παρέχοντας τους άμεση πρόσβαση στα ιατρικό ιστορικό των ασθενών.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8d1843107a171f9b5a37c8f24b215e2c1a7982d6" datatype="html">
+        <source>Good Health and Well-Being</source>
+        <target>Καλή Υγεία και Ευημερία</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ce3c72c098ee8f1c6270118cd50618bf01b52b8f" datatype="html">
+        <source>IHB is a part of the &quot;Sustainable Development Goals&quot; initiative of the United Nations.</source>
+        <target>Το IHB είναι μέρος της πρωτοβουλίας "Στόχοι Αειφόρου Ανάπτυξης" του Οργανισμού Ηνωμένων Εθνών.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7fa8f1a6908919e74e69974416f94d7cf485e1ac" datatype="html">
+        <source>Join IHB Now!</source>
+        <target>Εγγραφείτε στο IHB τώρα!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9fb8d47e2e873ae5d88eeec6b1c9aba28239c25c" datatype="html">
+        <source>Patients, Doctors and Clinics can all use our free platform and be a step ahead in the case of an emergency.</source>
+        <target>Ασθενείς, Γιατροί και Κλινικές μπορούν όλοι να χρησιμοποιήσουν την δωρεάν πλατφόρμα μας προκειμένου να είναι ένα βήμα μπροστά σε κάτι επείγον.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b51cc4cb58fa3322487d1b5e5264b3c59ab80ef7" datatype="html">
+        <source>Create your account in just one minute. Only thing needed is a protocol.</source>
+        <target>Δημιουργήστε τον λογαριασμό σας σε μόλις ένα λεπτό. Το μόνο που χρειάζεστε είναι ένα πρωτόκολλο.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f851a1dcf6a4199fcf6b76c292c8e09d4fdf2704" datatype="html">
+        <source>Register Now</source>
+        <target>Εγγραφείτε Τώρα</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f2cdbf44efd107634a71980689e86b22764e2519" datatype="html">
+        <source>
+          International Health Booklet (IHB) was developed by 4 students of the Computer Science Department of the Aristotle University of Thessaloniki in 2020.
+          It is a project developed in the context of the course &quot;Web Information Systems&quot; with Athena Vakali being the course coordinator.
+        </source>
+        <target>
+          Το International Health Booklet (Διεθνές Βιβλιάριο Υγείας - IHB) αναπτύχθηκε από 4 φοιτητές του Τμήματος Πληροφορικής του 
+          Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης το 2020. Πρόκειται για ένα έργο που αναπτύχθηκε στο πλαίσιο του μαθήματος 
+          "Πληροφοριακά Συστήματα Παγκόσμιου Ιστού" με την κυρία Βακάλη Αθηνά να είναι η καθηγήτρια του μαθήματος.
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="88588a10a804e75322c6f43fe4a97ff696db1d36" datatype="html">
+        <source>
+          IHB is a web application that aims to help the fulfillment of the 17 Sustainable Development Goals (SDGs) set in 2015 by the United Nations General Assembly.
+          These are a collection of 17 global goals designed to be a &quot;blueprint to achieve a better and more sustainable future for all&quot; and are intended to be achieved by the year 2030.
+          IHB has to do with the 4th SDG which is &quot;Good Health and Well-Being&quot;.
+        </source>
+        <target>
+          Το IHB είναι μια διαδικτυακή εφαρμογή που στοχεύει στην επίτευξη των 17 Στόχων Αειφόρου Ανάπτυξης (Sustainable Development Goals - SDGs) 
+          που τέθηκαν το 2015 από τη Γενική Συνέλευση των Ηνωμένων Εθνών. Πρόκειται για μια συλλογή από 17 παγκόσμιους στόχους που έχουν σχεδιαστεί 
+          ως ένα «σχέδιο για ένα καλύτερο και πιο βιώσιμο μέλλον για όλους» και προορίζονται να επιτευχθούν έως το έτος 2030. Το IHB έχει να κάνει 
+          με τον 3ο SDG που είναι «Καλή Υγεία και Ευημερία».
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f12582084293d52450424d5db3033423565e3b0f" datatype="html">
+        <source>
+          It is an international health booklet, as its name implies of course.
+          Its purpose is to immediately inform medical organizations and doctors in the case of an emergency
+          about a patients medical history.
+          For example, if somebody travels either abroad or within his country and needs urgent medical help, health
+          organizations and doctors will be able, using our platform, to have access to the patients medical history in order
+          to nurse him more securely as they will have knowledge of the surgeries he has already had, his allergies etc.
+          IHB is aimed to be used by civilians, doctors and health organizations and its administrators.
+        </source>
+        <target>
+          Είναι ένα διεθνές βιβλιάριο υγείας, όπως υποδηλώνει φυσικά το όνομά του. Σκοπός του είναι να ενημερώνει άμεσα τους ιατρικούς 
+          οργανισμούς και τους γιατρούς σε περίπτωση έκτακτης ανάγκης σχετικά με το ιατρικό ιστορικό των ασθενών. Για παράδειγμα, εάν 
+          κάποιος ταξιδεύει είτε στο εξωτερικό είτε στη χώρα του και χρειάζεται επείγουσα ιατρική βοήθεια, οι οργανισμοί υγείας και οι 
+          γιατροί θα μπορούν, χρησιμοποιώντας την πλατφόρμα μας, να έχουν πρόσβαση στο ιατρικό ιστορικό των ασθενών προκειμένου να τους 
+          περιθάλψουν με μεγαλύτερη ασφάλεια έχοντας γνώση των χειρουργικών επεμβάσεων που έχουν ήδη κάνει, των αλλεργιών τους κ.λπ. Το IHB 
+          προορίζεται να χρησιμοποιηθεί από πολίτες, γιατρούς, νοσοκομεία και οργανισμούς υγείας.
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="30f46d277db1ecbcca8fc5df49d6d8b062db0d79" datatype="html">
+        <source>
+          This information system is aimed at every citizen, who want to have its medical booklet accessible anytime.
+          This may often seem useful, because it is difficult enough to remember our medical history.
+          In addition, sometimes we are not able to communicate with foreign people, so as to inform them about a medical problem that we have.
+          It is very important for you to have valid and in time access to your health booklet,
+          in order to avoid emerging situations and it can be used effectively, from doctors, for more accurate diagnoses.
+        </source>
+        <target>
+          Αυτό το πληροφοριακό σύστημα απευθύνεται σε κάθε πολίτη, ο οποίος θέλει να έχει πρόσβαση στο ιατρικό του ιστορικό ανά πάσα στιγμή. 
+          Αυτό μπορεί συχνά να αποδειχθεί χρήσιμο, καθώς είναι αρκετά δύσκολο να θυμόμαστε το ιατρικό μας ιστορικό. Επιπλέον, μερικές φορές 
+          δεν είμαστε σε θέση να επικοινωνήσουμε με ξένους, ώστε να τους ενημερώσουμε για ένα ιατρικό πρόβλημα που έχουμε. Είναι πολύ σημαντικό 
+          για εσάς να έχετε έγκυρη και έγκαιρη πρόσβαση στο βιβλιάριο υγείας σας, προκειμένου να ανταπεξέλθετε σε επείγουσες καταστάσεις και 
+          μπορεί να χρησιμοποιηθεί αποτελεσματικά, από τους γιατρούς, για πιο ακριβείς διαγνώσεις.
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a2de0aa9e0930cd6570dad757e975d978e504972" datatype="html">
+        <source>
+          Nowadays, during this pandemic period, this platform may seem to be more beneficial than ever for many people.
+          Furthermore, you could be informed about the suggested vaccinations, which are recommended by <x id="START_TAG_ABBR" ctype="x-abbr" equiv-text="&lt;abbr&gt;"/>ECDC<x id="CLOSE_TAG_ABBR" ctype="x-abbr" equiv-text="&lt;/abbr&gt;"/>.
+          You could also find useful links for the latest news of Coronavirus, general advices for precautions against potential hazards and international travel information.
+        </source>
+        <target>
+          Σήμερα, κατά τη διάρκεια αυτής της πανδημικής περιόδου, αυτή η πλατφόρμα μπορεί να αποδειχθεί πιο ευεργετική από ποτέ για πολλούς ανθρώπους. 
+          Επιπλέον, θα μπορούσατε να ενημερωθείτε για τους προτεινόμενους εμβολιασμούς, οι οποίοι συνιστώνται από το ECDC. Θα μπορούσατε επίσης να 
+          βρείτε χρήσιμους συνδέσμους για τα τελευταία νέα του Κορωνοϊού, γενικές συμβουλές για προφυλάξεις έναντι πιθανών κινδύνων και διεθνείς 
+          ταξιδιωτικές πληροφορίες.
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="23cb23cd4ab5b829f04a4e81858e4180db2048cf" datatype="html">
+        <source>
+          It is worth mentioning that not every claiming doctor will have access to the medical history of a patient,
+          but only those who have upload credentials to certify that they are authenticated doctors.
+          All these measures are taken to ensure the protection of the data.
+        </source>
+        <target>
+          Αξίζει να σημειωθεί ότι δεν έχουν όλοι οι φορείς πρόσβαση στο ιατρικό ιστορικό ενός ασθενούς, 
+          αλλά μόνο εκείνοι που έχουν ανεβάσει διαπιστευτήρια που εγγυούνται ότι είναι πιστοποιημένοι γιατροί. 
+          Όλα αυτά τα μέτρα λαμβάνονται για να διασφαλιστεί η προστασία των δεδομένων.
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="fbdb04611975d98891159db30f0343dea0b3a651" datatype="html">
+        <source>
+          If you want any clarification or you have any additional question, you could use <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Contact<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> panel.
+        </source>
+        <target>
+          Εάν θέλετε οποιαδήποτε επιπλέον διευκρίνιση ή έχετε κάποια ερώτηση, μπορείτε να χρησιμοποιήσετε την φόρμα επικοινωνίας.
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">94</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7a6cefc34bc14240870d817a486a8e49c6997f62" datatype="html">
+        <source>
+          In today&apos;s world at least 400 million people have no basic healthcare, and 40 percent lack social protection.
+          More than 1.6 billion people live in fragile settings where protracted crises, combined with weak national capacity to
+          deliver basic health services, present a significant challenge to global health.
+          In the fight to change this situation, hospitals need to play a major role.
+          Hospitals matter to people – the hospital experience often marking a central point in their lives. They matter to health systems: they
+          are instrumental for care coordination and integration and have a key role to play in supporting other health-care providers
+          (including primary health care) and in community outreach and home-based services. They also often provide a setting for education
+          of doctors, nurses and other health-care professionals and are a critical base for clinical research. They must be resilient and able
+          to maintain and scale up services in emergency situations.
+          Hospitals complement and amplify the effectiveness of many other parts of the health system, providing continuous availability of
+          services for acute and complex conditions. Hospitals concentrate scarce resources within well-planned referral networks to respond
+          efficiently to population health needs.
+          Thus, International Health Booklet, an online system empowering doctors and hospitals around the world, can play a major role
+          in order to achieve good health and well-being for people all around the world.
+        </source>
+        <target>
+          Στην σημερινή εποχή τουλάχιστον 400 εκατομμύρια άνθρωποι δεν έχουν βασική υγειονομική περίθαλψη και το 40% στερείται κοινωνικής προστασίας. 
+          Περισσότεροι από 1,6 δισεκατομμύρια άνθρωποι ζουν σε εύθραυστα περιβάλλοντα όπου οι παρατεταμένες κρίσεις, σε συνδυασμό με την αδύναμη 
+          εθνική ικανότητα παροχής βασικών υπηρεσιών υγείας, αποτελούν σημαντική πρόκληση για την παγκόσμια υγεία. Στον αγώνα για την αλλαγή αυτής 
+          της κατάστασης, τα νοσοκομεία οφείλουν να διαδραματίσουν σημαντικό ρόλο. Τα νοσοκομεία έχουν σημασία για τους ανθρώπους - η εμπειρία του 
+          νοσοκομείου σηματοδοτεί συχνά ένα κεντρικό σημείο στη ζωή τους. Έχουν σημασία για τα συστήματα υγείας: είναι καθοριστικά για τον 
+          συντονισμό και την επίτευξη της υγειονομικής φροντίδας και διαδραματίζουν βασικό ρόλο στην υποστήριξη άλλων παρόχων υγειονομικής 
+          περίθαλψης (συμπεριλαμβανομένης της πρωτοβάθμιας υγειονομικής περίθαλψης) καθώς και στις κοινοτικές υπηρεσίες προσέγγισης και στο σπίτι. 
+          Παρέχουν επίσης συχνά ένα περιβάλλον για την εκπαίδευση γιατρών, νοσοκόμων και άλλων επαγγελματιών υγείας και αποτελούν σημαντική βάση 
+          για την κλινική έρευνα. Πρέπει να είναι ανθεκτικά και ικανά να ανταπεξέρχονται σε καταστάσεις έκτακτης ανάγκης. Τα νοσοκομεία συμπληρώνουν 
+          και ενισχύουν την αποτελεσματικότητα πολλών άλλων τμημάτων του συστήματος υγείας, παρέχοντας συνεχή διαθεσιμότητα υπηρεσιών για βαριές 
+          και πολύπλοκες καταστάσεις. Τα νοσοκομεία συγκεντρώνουν περιορισμένους πόρους σε καλά σχεδιασμένα δίκτυα παραπομπής για να ανταποκρίνονται 
+          αποτελεσματικά στις ανάγκες υγείας του πληθυσμού. Έτσι, το Διεθνές Βιβλίο Υγείας, ένα διαδικτυακό σύστημα που ενδυναμώνει γιατρούς και 
+          νοσοκομεία σε όλο τον κόσμο, μπορεί να διαδραματίσει σημαντικό ρόλο προκειμένου να επιτευχθεί καλή υγεία και ευημερία για ανθρώπους σε 
+          όλο τον κόσμο.
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">108</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8c3fe4fcf889c5c57f8337d9dd2b90070810203a" datatype="html">
+        <source>
+          Giving attention to the protection of our users&apos; private health data, we store the data of our users on our own databases.
+          We guarantee that saved data are not vulnerable to possible malicious attacks. A user can delete its medical archives,
+          anytime he or she want, after this all the related information will be removed. We assure you that all those data will not be used from third parties.
+          Authentication has a very important role for our platform, because it can ensure the protection of sensitive data.
+        </source>
+        <target>
+          Δίνοντας βάση στην προστασία των ιδιωτικών δεδομένων υγείας των χρηστών μας, αποθηκεύουμε τα δεδομένα των χρηστών μας στις 
+          δικές μας βάσεις δεδομένων. Εγγυόμαστε ότι τα αποθηκευμένα δεδομένα δεν είναι ευάλωτα σε πιθανές κακόβουλες επιθέσεις. 
+          Ένας χρήστης μπορεί να διαγράψει τα ιατρικά του αρχεία, όποτε θέλει. Μετά από αυτό θα αφαιρεθούν όλα τα σχετικά δεδομένα. 
+          Σας διαβεβαιώνουμε ότι όλα αυτά τα δεδομένα δεν θα χρησιμοποιηθούν από τρίτους. Ο έλεγχος ταυτότητας έχει πολύ σημαντικό 
+          ρόλο για την πλατφόρμα μας, επειδή μπορεί να διασφαλίσει την προστασία ευαίσθητων δεδομένων.
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">135</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b75284ed05593aafec2c5af865ee4e5798234d93" datatype="html">
+        <source>
+          Everybody can understand the importance of safekeeping their personal data,
+          but sometimes platforms violate this by collecting or selling personal data.
+          We consider this unacceptable and we do everything we can in order to ensure that nothing similar to that may happen.
+        </source>
+        <target>
+          Όλοι μπορούν να κατανοήσουν τη σημασία της φύλαξης των προσωπικών τους δεδομένων, 
+          αλλά μερικές φορές οι πλατφόρμες το παραβιάζουν συλλέγοντας ή πουλώντας προσωπικά δεδομένα. 
+          Θεωρούμε τέτοιες πράξεις απαράδεκτες και κάνουμε ό, τι μπορούμε για να διασφαλίσουμε ότι δεν θα συμβεί κάτι παρόμοιο με αυτό.
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">141</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d16aba3f0e42e8a2083c8133016d490110ea309f" datatype="html">
+        <source>
+          We respect our users and recognize the value of their data, for that we will do anything we can in order to protect them.
+        </source>
+        <target>
+          Σεβόμαστε τους χρήστες μας και αναγνωρίζουμε την αξία των δεδομένων τους, για αυτό θα κάνουμε ό, τι μπορούμε για να τους προστατεύσουμε.
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">146</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ec984ab36f1da5f75ba43f9bd4b866ca9c7e6493" datatype="html">
+        <source>Email Address</source>
+        <target>Διεύθυνση Ηλεκτρονικού Ταχυδρομείου</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">162</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4b0ca852bafa5037c4e64c7b18f9cd1e14b799de" datatype="html">
+        <source>Subject</source>
+        <target>Θέμα</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">170</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ccac601bf473fa28c9ac46794f1cd40542f74347" datatype="html">
+        <source>Message</source>
+        <target>Μήνυμα</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">177</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2c5ff8fa9c9aaec93f97e37c9a0edcd797194573" datatype="html">
+        <source>Send</source>
+        <target>Αποστολή</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">183</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f56973823bd084f46c1435ec5d901a45f5aa559f" datatype="html">
+        <source>World Health Organization</source>
+        <target>Παγκόσμιος Οργανισμός Υγείας</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7a356522498e9cfbe88072741aa2c73af6befafd" datatype="html">
+        <source>Africa</source>
+        <target>Αφρική</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0d0bb1ffd26551f614372e78d9a096699eb92ef1" datatype="html">
+        <source>Americas</source>
+        <target>Αμερική</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9d55b7d35a99db5cda1912d5da7291cbb746cfc0" datatype="html">
+        <source>South-East Asia</source>
+        <target>Νοτιοανατολική Ασία</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2d98d38ec8e45c1f7514bb322411a9160606cadd" datatype="html">
+        <source>Europe</source>
+        <target>Ευρώπη</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b07a93c6fd7b026407d5384f9d29ca6de9bad74a" datatype="html">
+        <source>Eastern Mediterranean</source>
+        <target>Ανατολική Μεσόγειος</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a674b27031d38314f206129a1d5395a00990e245" datatype="html">
+        <source>Western Pacific</source>
+        <target>Δυτικός Ειρηνικός</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7ea26e98fc312ec435452489ae46028745a060fb" datatype="html">
+        <source>Non-govermental Organizations</source>
+        <target>Μη Κυβερνητικές Οργανώσεις</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9f17c1b42f7e8cd67d3bceda7f1a6abaef888f6a" datatype="html">
+        <source>Doctors of the World</source>
+        <target>Γιατροί του Κόσμου</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9a8b8db899ef7c210e8058aebe75e5db611c1bf6" datatype="html">
+        <source>Doctors without Borders</source>
+        <target>Γιατροί Χωρίς Σύνορα</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="93f6b3a30ba7afdce028c5c683d6f33b7cecc0cc" datatype="html">
+        <source>International Committee of Red Cross</source>
+        <target>Διεθνής Ομοσπονδία Ερυθρού Σταυρού</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3d7ea0d57e2628a479f39ca7947cf0db91f8face" datatype="html">
+        <source>Emergency</source>
+        <target>Επείγοντα</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e50fd44000fc9fa68a347c633230abf145e9a63f" datatype="html">
+        <source>Useful Links</source>
+        <target>Χρήσιμοι Σύνδεσμοι</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bccfdc75e5ec09ac1a363fb9fdacd7a2ec46333d" datatype="html">
+        <source>Coronavirus News</source>
+        <target>Νέα Κωρονοϊού</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="13118395e1db7deded857621c75aca14a8e5a90c" datatype="html">
+        <source>Diseases Information</source>
+        <target>Πληροφορίες Ασθενειών</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
+          <context context-type="linenumber">61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="aec1eea312482b35694a483ffff4d6e61ff5de7e" datatype="html">
+        <source>Vaccines</source>
+        <target>Εμβολιασμοί</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
+          <context context-type="linenumber">64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bc596d1d5ab9dca18896e1fb6689f8ecd3bb27fa" datatype="html">
+        <source>General Precautions</source>
+        <target>Γενικές Προφυλάξεις</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="89a9ebc38cf99ec0123656f18c23ed9c2b9ce684" datatype="html">
+        <source>Aristotle University of Thessaloniki</source>
+        <target>Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
+          <context context-type="linenumber">78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="17ba298ff67a30dc08d165e57cf2b592b6f40dfb" datatype="html">
+        <source>Computer Science Department</source>
+        <target>Τμήμα Πληροφορικής ΑΠΘ</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7e907a73423316d3395c292b6250f979c9767f37" datatype="html">
+        <source>UN Sustainable Development Goals</source>
+        <target>Στόχοι Αειφόρου Ανάπτυξης ΟΗΕ</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7371a1fd2da4a67a285dca20fa05b57e0e494896" datatype="html">
+        <source>All rights reserved</source>
+        <target>Με επιφύλαξη παντός δικαιώματος</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
+          <context context-type="linenumber">101</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5599be4ceb77ab97802b0865f851e91f97e29274" datatype="html">
+        <source>Images from </source>
+        <target>Εικόνες από </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
+          <context context-type="linenumber">103</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c6b3e99da22bb5c7a1e369aea06c790b82f68d94" datatype="html">
+        <source> and </source>
+        <target> και </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
+          <context context-type="linenumber">103</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -56,6 +56,14 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "el": {
+              "aot": true,
+              "outputPath": "dist/under-c-el/",
+              "i18nFile": "src/locale/messages.el.xlf",
+              "i18nFormat": "xlf",
+              "i18nLocale": "el",
+              "i18nMissingTranslation": "ignore"
             }
           }
         },
@@ -67,6 +75,9 @@
           "configurations": {
             "production": {
               "browserTarget": "ihb-frontend:build:production"
+            },
+            "el": {
+              "browserTarget": "ihb-frontend:build:el"
             }
           }
         },
