@@ -362,7 +362,8 @@ export class UserDashboardComponent implements OnInit {
           this.hospitalList.push(hospital);
         }
         
-        this.addHospitalForm.reset();               
+        this.addHospitalForm.reset();    
+        this.hospitalPage()           
         this.hospitalSize++;
       })
     } else {
