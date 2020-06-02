@@ -3,7 +3,7 @@ import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
 import { FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { forkJoin, Observable } from 'rxjs';
+import { forkJoin } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
@@ -22,6 +22,17 @@ interface ExtraVaccination {
   name: string;
   date: string;
   description: string;
+}
+
+interface Hospital {
+  id: number;
+  name: string;
+  city: string;
+  country: string;
+  starts: string;
+  finishes: string;
+  cause: string;
+  treatment: string;
 }
 
 @Component({
@@ -43,7 +54,16 @@ export class UserDashboardComponent implements OnInit {
   vaccinationListForm: FormGroup;
   addExtraVaccinationForm: FormGroup;
   addAllergicForm: FormGroup;
+  
+  hospitalId: number;
+  hospitalList: Hospital[] = [];
+  hospitalListForm: FormGroup;  
   addHospitalForm: FormGroup;
+  hospitalPageNumber = 1;
+  hospitalPageSize = 10;
+  hospitalSize: number;
+  editHospitalForm = false;
+
   vaccinationList: Vaccination[] = [];
   extraVaccinationList: ExtraVaccination[] = [];
   extraVaccinationPage = 1;
@@ -140,6 +160,7 @@ export class UserDashboardComponent implements OnInit {
         Validators.required
       ])
     });
+
     this.addExtraVaccinationForm = new FormGroup({
       name: new FormControl(null, [
         Validators.required
@@ -151,6 +172,7 @@ export class UserDashboardComponent implements OnInit {
         Validators.required
       ])
     });
+
     this.addAllergicForm = new FormGroup({
       name: new FormControl(null, [
         Validators.required
@@ -162,6 +184,7 @@ export class UserDashboardComponent implements OnInit {
         Validators.required
       ])
     });
+
     this.addHospitalForm = new FormGroup({
       name: new FormControl(null, [
         Validators.required
@@ -178,17 +201,19 @@ export class UserDashboardComponent implements OnInit {
       treatment: new FormControl(null, [
         Validators.required
       ]),
-      starts: new FormControl(this.calendar.getToday(), [
+      starts: new FormControl(null, [
         Validators.required
       ]),
-      finishes: new FormControl(this.calendar.getToday(), [
+      finishes: new FormControl(null, [
         Validators.required
       ])
     });
+
     this.vaccinationListForm = new FormGroup({});
     let params = new HttpParams();
     params = params.append('userId', this.userId);
     params = params.append('page', this.extraVaccinationPage.toString());
+
     forkJoin({
       vaccinesList: this.httpClient.get<Vaccination[]>('dashboard/vaccinations'),
       vaccineValues: this.httpClient.get<VaccinationValues[]>('dashboard/user_vaccines/' + this.userId),
@@ -205,6 +230,12 @@ export class UserDashboardComponent implements OnInit {
       this.extraVaccinationList = values.extraVaccinesList;
       this.extraVaccinationSize = values.countExtraVaccines;
     });
+
+    forkJoin({
+      hospitalList: this.httpClient.get<Hospital[]>('user/' + this.userId + '/hospital-treatments'),
+    }).subscribe( values => {
+      this.hospitalList = values.hospitalList;
+    })
   }
 
   setDateAsObject(val: string) {
@@ -319,21 +350,69 @@ export class UserDashboardComponent implements OnInit {
     }
   }
 
-  onHospitalFormSubmit() {
-    this.addHospitalTreatment = !this.addHospitalTreatment;
+  onHospitalFormSubmit() {   
     console.log(this.addHospitalForm.value);
-    this.addHospitalForm.reset();
-    this.addHospitalForm.get('starts')?.setValue(this.calendar.getToday());
-    this.addHospitalForm.get('finishes')?.setValue(this.calendar.getToday());
+    
+    this.addHospitalTreatment = !this.addHospitalTreatment;
+    if (!this.editHospitalForm)
+    {
+      this.httpClient.post<Hospital>('user/' + this.userId + '/hospital-treatments', this.addHospitalForm.value).subscribe((hospital: Hospital) => {
+        if ((this.hospitalSize / this.hospitalPageSize) < this.hospitalPageNumber)
+        {
+          this.hospitalList.push(hospital);
+        }
+        
+        this.addHospitalForm.reset();               
+        this.hospitalSize++;
+      })
+    } else {
+      this.httpClient.put<Hospital>('user/hospitals/' + this.hospitalId, this.addHospitalForm.value).subscribe (
+        (hospital: Hospital) => {
+          this.hospitalList[this.hospitalList.map(hospital => hospital.id).indexOf(this.hospitalId)] = hospital;
+          this.addHospitalForm.reset();
+          this.editHospitalForm = false;
+        }
+      )
+    }
+  }
+
+  hospitalPage() {
+    forkJoin({
+      list: this.httpClient.get<Hospital[]>('user/' + this.userId + '/hospital-treatments'),
+    }).subscribe( value => {
+      this.hospitalList = value.list;
+    });
   }
 
   addHospital() {
     this.addHospitalTreatment = !this.addHospitalTreatment;
     if (this.addHospitalTreatment) {
       this.addHospitalForm.reset();
-      this.addHospitalForm.get('starts')?.setValue(this.calendar.getToday());
-      this.addHospitalForm.get('finishes')?.setValue(this.calendar.getToday());
     }
+  }
+
+  setEditHospitalForm(hospital: Hospital) {    
+    this.editHospitalForm = true;
+    this.addHospitalForm.setValue({
+      name: hospital.name,
+      city: hospital.city,
+      country: hospital.country,
+      cause: hospital.cause,
+      treatment: hospital.treatment,
+      starts: hospital.starts,
+      finishes: hospital.finishes,
+    });
+    this.hospitalId = hospital.id;
+    if (!this.addHospitalTreatment) {
+      this.addHospitalTreatment = !this.addHospitalTreatment;
+    }
+  }
+
+  onDeleteHospitalSubmit(hospital: Hospital) {  
+    this.httpClient.delete('user/hospitals/' + hospital.id).subscribe(() => {
+      this.hospitalPage()
+      this.hospitalSize--;
+    })
   }
 
   validator(control: AbstractControl | null): boolean {
