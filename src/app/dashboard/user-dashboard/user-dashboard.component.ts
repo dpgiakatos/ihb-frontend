@@ -52,6 +52,15 @@ export class UserDashboardComponent implements OnInit {
         }
         return null;
       })
-    );
+    } else {
+      this.httpClient.put<Hospital>('user/hospitals/' + this.hospitalId, this.addHospitalForm.value).subscribe (
+        (hospital: Hospital) => {
+          this.hospitalList[this.hospitalList.map(hospital => hospital.id).indexOf(this.hospitalId)] = hospital;
+          this.addHospitalForm.reset();
+          this.hospitalPage()
+          this.editHospitalForm = false;
+        }
+      )
+    }
   }
 }

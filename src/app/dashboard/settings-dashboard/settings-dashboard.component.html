@@ -6,21 +6,33 @@
     <h3>Change Password</h3>
     <form [formGroup]="passwordForm" (submit)="onPasswordSubmit()">
       <div class="form-group">
+
         <div class="row">
-          <div class="col-lg mt-3">
-            <label for="password">Type the new password</label>
-            <input type="password" class="form-control" id="password" autocomplete="new-password" formControlName="password">
+          <div class="col-lg mt-3 mb-4">
+            <label for="oldPassword">Type the old password</label>
+            <input type="password" class="form-control" id="oldPassword" autocomplete="old-password"
+              placeholder="Old Password" formControlName="oldPassword">
           </div>
-          <div class="col-lg mt-3">
+        </div>
+
+        <div class="row">
+          <div class="col-lg mt-3 mb-4">
+            <label for="password">Type the new password</label>
+            <input type="password" class="form-control" id="password" autocomplete="new-password"
+              placeholder="New Password" formControlName="password">
+          </div>
+          <div class="col-lg mt-3 mb-4">
             <label for="retypePassword">Retype the new password</label>
-            <input type="password" class="form-control" id="retypePassword" autocomplete="new-password" formControlName="retype"
+            <input type="password" class="form-control" id="newPassword" autocomplete="new-password"
+              placeholder="New Password" formControlName="newPassword"
                    [ngClass]="{'is-invalid': isNotSamePassword()}">
             <div class="invalid-feedback">The password is not the same.</div>
           </div>
         </div>
+
         <div class="row">
-          <div class="col-lg mt-3">
-            <a><button type="submit" class="btn btn-primary" [disabled]="isInvalid(passwordForm)">Save</button></a>
+          <div class="col-lg mt-2">
+            <a><button type="submit" class="btn btn-primary" [disabled]="isInvalid(passwordForm)" (submit)="onPasswordSubmit()">Save</button></a>
           </div>
         </div>
       </div>

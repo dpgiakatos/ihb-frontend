@@ -1,5 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormControl, FormGroup, Validators, AbstractControl} from '@angular/forms';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router';
+import { JwtHelperService } from '@auth0/angular-jwt';
+
+interface Password {
+  oldPassword: string;
+  password: string;
+  newPassword: string;
+}
 
 @Component({
   selector: 'ihb-settings-dashboard',
@@ -10,15 +19,30 @@ export class SettingsDashboardComponent implements OnInit {
 
   passwordForm: FormGroup;
   uploadForm: FormGroup;
+  userId: string;
 
-  constructor() { }
+
+  constructor(
+    private httpClient: HttpClient,
+    private activatedRoute: ActivatedRoute,
+    private jwt: JwtHelperService
+  ) {
+    this.userId = this.activatedRoute.snapshot.params.id;
+    const accessToken = localStorage.getItem('access-token');
+    if (!this.userId && accessToken) {
+      this.userId = jwt.decodeToken(accessToken).id;
+    }
+  }
 
   ngOnInit(): void {
     this.passwordForm = new FormGroup({
+      oldPassword: new FormControl(null, [
+        Validators.required
+      ]),
       password: new FormControl(null, [
         Validators.required
       ]),
-      retype: new FormControl(null, [
+      newPassword: new FormControl(null, [
         Validators.required
       ])
     });
@@ -27,9 +51,20 @@ export class SettingsDashboardComponent implements OnInit {
         Validators.required
       ])
     });
+
+    let params = new HttpParams();
+    params = params.append('userId', this.userId);
   }
 
   onPasswordSubmit() {
+    console.log(this.passwordForm.value);
+    
+    this.httpClient.put<Password>('user/' + this.userId + '/change-password', this.passwordForm.value).subscribe(
+      (password: Password) => {
+        this.passwordForm.reset();
+      }
+    )
+
     this.passwordForm.reset();
   }
 
@@ -46,4 +81,5 @@ export class SettingsDashboardComponent implements OnInit {
   isInvalid(form: FormGroup): boolean {
     return form.invalid || this.isNotSamePassword();
   }
+
 }
