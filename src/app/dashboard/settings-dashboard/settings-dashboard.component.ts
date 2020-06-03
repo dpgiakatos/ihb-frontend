@@ -62,9 +62,14 @@ export class SettingsDashboardComponent implements OnInit {
     this.httpClient.put<Password>('user/' + this.userId + '/change-password', this.passwordForm.value).subscribe(
       (password: Password) => {
         this.passwordForm.reset();
-      }
-    )
-
+      }, (err: HttpErrorResponse) => {
+        if (err.error instanceof ErrorEvent) {
+          console.log('network error');
+        }
+        if (err.status === 401) {
+          this.passwordForm.setErrors({ invalidCredentials: true });
+        }
+      });
     this.passwordForm.reset();
   }
 
