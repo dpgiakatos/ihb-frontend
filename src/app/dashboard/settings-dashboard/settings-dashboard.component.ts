@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators, AbstractControl} from '@angular/forms';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpErrorResponse } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
@@ -62,9 +62,14 @@ export class SettingsDashboardComponent implements OnInit {
     this.httpClient.put<Password>('user/' + this.userId + '/change-password', this.passwordForm.value).subscribe(
       (password: Password) => {
         this.passwordForm.reset();
-      }
-    )
-
+      }, (err: HttpErrorResponse) => {
+        if (err.error instanceof ErrorEvent) {
+          console.log('network error');
+        }
+        if (err.status === 401) {
+          this.passwordForm.setErrors({ invalidCredentials: true });
+        }
+      });
     this.passwordForm.reset();
   }
 
