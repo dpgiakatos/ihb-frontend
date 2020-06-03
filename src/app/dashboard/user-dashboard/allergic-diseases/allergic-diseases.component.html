@@ -1,13 +1,13 @@
-<form [formGroup]="form" (submit)="onAllergicFormSubmit()">
-  <ng-container *ngIf="!addAllergicDisease; then thenBlockForAllergic else elseBlockForAllergic"></ng-container>
-  <ng-template #thenBlockForAllergic>
+<form [formGroup]="form" (submit)="onSubmit()" *ngIf="isDoctor">
+  <ng-container *ngIf="!addAllergicDisease; then addButton else displayForm"></ng-container>
+  <ng-template #addButton>
     <div class="row">
       <div class="col">
-        <button class="btn btn-primary" (click)="addAllergic()">Add</button>
+        <button class="btn btn-primary" (click)="enableAddForm()">Add</button>
       </div>
     </div>
   </ng-template>
-  <ng-template #elseBlockForAllergic>
+  <ng-template #displayForm>
     <div class="form-group">
       <div class="row">
         <div class="col-lg mt-3">
@@ -51,16 +51,16 @@
       <td>{{allergy.name}}</td>
       <td>{{allergy.dDescription}}</td>
       <td>{{allergy.tDescription}}</td>
-      <td><button type="button" class="btn btn-warning" (click)="setEditAllergicForm(allergy)">Edit</button></td>
-      <td><button type="button" class="btn badge-danger" (click)="onDeleteAllergicSubmit(allergy)">Delete</button></td>
+      <td><button type="button" class="btn btn-warning" (click)="setEditForm(allergy)">Edit</button></td>
+      <td><button type="button" class="btn badge-danger" (click)="onDelete(allergy)">Delete</button></td>
     </tr>
   </tbody>
 </table>
 <div class="d-flex justify-content-between p-2">
   <ngb-pagination
-    [(page)]="allergicPageNumber"
-    [pageSize]="allergicPageSize"
-    [collectionSize]="allergicSize"
-    (pageChange)="allergicPage()">
+    [(page)]="page"
+    [pageSize]="limit"
+    [collectionSize]="count"
+    (pageChange)="fetchCurrentPage()">
   </ngb-pagination>
 </div>

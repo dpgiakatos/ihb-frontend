@@ -1,11 +1,9 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
-import { Personal } from './personal.model';
-import { IS_DOCTOR } from 'src/app/auth/auth-utilities.module';
 import { PersonalInformationService } from './personal-information.service';
 import { ActivatedRoute } from '@angular/router';
+import { IS_DOCTOR } from '../user-dashboard.component';
 
 @Component({
   selector: 'ihb-personal-information',

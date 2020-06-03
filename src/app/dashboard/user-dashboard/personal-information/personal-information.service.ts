@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Personal } from './personal.model';
 import { UrlSerializerService } from 'src/app/helper/url-serializer.service';
 
-@Injectable({ providedIn: 'root' })
+@Injectable()
 export class PersonalInformationService {
   constructor(private httpClient: HttpClient, private urlSerializer: UrlSerializerService) { }
 

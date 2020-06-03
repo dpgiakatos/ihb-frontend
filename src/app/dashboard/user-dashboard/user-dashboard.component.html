@@ -3,17 +3,17 @@
     <h1>User</h1>
   </div>
   <div class="card-body">
-    <nav ngbNav #nav="ngbNav" class="nav-tabs">
-      <li ngbNavItem="Personal Information">
+    <nav ngbNav [activeId]="activatedChild | async" class="nav-tabs">
+      <li ngbNavItem="personal-information">
         <a ngbNavLink routerLink="./personal-information">Personal Information</a>
       </li>
-      <li ngbNavItem="Vaccinations">
+      <li ngbNavItem="vaccinations">
         <a ngbNavLink routerLink="./vaccinations">Vaccinations</a>
       </li>
-      <li ngbNavItem="Allergic Diseases">
+      <li ngbNavItem="allergic-diseases">
         <a ngbNavLink routerLink="./allergic-diseases">Allergic Diseases</a>
       </li>
-      <li ngbNavItem="Hospital Treatment">
+      <li ngbNavItem="hospital-treatment">
         <a ngbNavLink routerLink="./hospital-treatment">Hospital Treatment</a>
       </li>
     </nav>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { forkJoin } from 'rxjs';
-import { AllergicDiseases } from './alergic-diseases.model';
+import { AllergicDiseases } from './allergic-diseases.model';
 
 @Component({
   selector: 'ihb-allergic-diseases',

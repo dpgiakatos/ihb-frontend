@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Role, AuthService } from '../auth/auth.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { AuthGuard } from '../auth/auth.guard';
+import { AuthGuard } from '../auth/guards/auth.guard';
 
 @Component({
   selector: 'ihb-dashboard',

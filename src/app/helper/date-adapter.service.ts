@@ -3,12 +3,9 @@ import { Injectable } from '@angular/core';
 
 @Injectable({providedIn: 'root'})
 export class NgbPlainDateAdapter extends NgbDateAdapter<string> {
-  fromModel(value: string | NgbDate | null): NgbDateStruct | null {
+  fromModel(value: string | null): NgbDateStruct | null {
     if (!value) {
       return null;
-    }
-    if (value instanceof NgbDate) {
-      return value;
     }
 
     const [year, month, day] = value.split('-');

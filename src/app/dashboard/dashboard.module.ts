@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ExtraVaccinationsComponent } from './user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component';
+// tslint:disable-next-line: max-line-length
 import { RecommendedVaccinationsComponent } from './user-dashboard/vaccinations/recommended-vaccinations/recommended-vaccinations.component';
 import { VaccinationsComponent } from './user-dashboard/vaccinations/vaccinations.component';
 import { HospitalTreatmentComponent } from './user-dashboard/hospital-treatment/hospital-treatment.component';
@@ -18,13 +19,12 @@ import { NgbDatepickerModule, NgbNavModule, NgbPaginationModule, NgbTypeaheadMod
 import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AllergicDiseasesComponent } from './user-dashboard/allergic-diseases/allergic-diseases.component';
-import { AuthGuard } from '../auth/auth.guard';
-import { DoctorOnlyGuard } from '../auth/doctor-only.guard';
+import { AuthGuard } from '../auth/guards/auth.guard';
+import { DoctorOnlyGuard } from '../auth/guards/doctor-only.guard';
 import { SharedModule } from '../shared/shared.module';
 import { NotificationsDashboardComponent } from './notifications-dashboard/notifications-dashboard.component';
 import { AccessGuard } from './doctor-dashboard/access.guard';
 import { ModalContentComponent } from './doctor-dashboard/modal/modal.component';
-
 
 const userDashboardRoutes: Routes = [
   { path: '', redirectTo: 'personal-information', pathMatch: 'full' },
@@ -39,7 +39,10 @@ const routes: Routes = [
     { path: '', redirectTo: 'user', pathMatch: 'full' },
     { path: 'notifications', component: NotificationsDashboardComponent },
     { path: 'user', component: UserDashboardComponent, children: [...userDashboardRoutes] },
-    { path: 'user/:id', component: UserDashboardComponent, canActivate: [DoctorOnlyGuard, AccessGuard], children: [...userDashboardRoutes] },
+    {
+      path: 'user/:id', component: UserDashboardComponent,
+      canActivate: [DoctorOnlyGuard, AccessGuard], children: [...userDashboardRoutes]
+    },
     { path: 'doctor', component: DoctorDashboardComponent, canActivate: [DoctorOnlyGuard] },
     { path: 'administrator', component: AdministratorDashboardComponent },
     { path: 'message', component: MessageDashboardComponent },

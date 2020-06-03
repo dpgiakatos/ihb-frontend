@@ -1,9 +1,9 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { RecommendedVaccines } from './recommended-vaccines.interface';
+import { RecommendedVaccines } from './recommended-vaccines.model';
 import { ActivatedRoute } from '@angular/router';
 import { RecommendedVaccinationsService } from './recommended-vaccinations.service';
-import { IS_DOCTOR } from 'src/app/auth/auth-utilities.module';
+import { IS_DOCTOR } from '../../user-dashboard.component';
 
 @Component({
   selector: 'ihb-recommended-vaccinations',
@@ -31,7 +31,6 @@ export class RecommendedVaccinationsComponent implements OnInit {
 
     this.vaccinationsService.get(this.userId).subscribe(response => {
       this.vaccines = response.recommendedVaccines;
-      console.log(response);
       for (const vaccine of this.vaccines) {
         this.form.addControl(vaccine.id.toString(), new FormControl({
           value: response.userVaccinations.some(val => val.id === vaccine.id),
@@ -44,7 +43,7 @@ export class RecommendedVaccinationsComponent implements OnInit {
   onVaccinationSubmit() {
     this.form.disable();
     this.editing = false;
-    this.vaccinationsService.edit(this.userId!, this.form.value).subscribe();
+    this.vaccinationsService.edit(this.form.value, this.userId).subscribe();
   }
 
   editVaccination() {

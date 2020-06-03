@@ -25,7 +25,7 @@ export enum Role {
   Administrator = 'Administrator'
 }
 
-interface Claims {
+export class Claims {
   id: string;
   roles: Role[];
 }

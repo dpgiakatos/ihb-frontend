@@ -1,13 +1,11 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { forkJoin } from 'rxjs';
-import { HttpClient, HttpParams } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { NgbCalendar } from '@ng-bootstrap/ng-bootstrap';
-import { ExtraVaccination } from './extra-vaccinations.interface';
+import { NgbCalendar, NgbDateAdapter } from '@ng-bootstrap/ng-bootstrap';
+import { ExtraVaccination } from './extra-vaccinations.model';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { ExtraVaccinationsService } from './extra-vaccinations.service';
-import { IS_DOCTOR } from 'src/app/auth/auth-utilities.module';
+import { IS_DOCTOR } from '../../user-dashboard.component';
 
 @Component({
   selector: 'ihb-extra-vaccinations',
@@ -24,8 +22,8 @@ export class ExtraVaccinationsComponent implements OnInit {
     description: new FormControl(null, [Validators.required])
   });
 
-  addExtraVaccination = false;
-  editExtraVaccination = false;
+  adding = false;
+  editing = false;
   currentlyEditingId: string;
 
   extraVaccinationList: ExtraVaccination[] = [];
@@ -39,6 +37,7 @@ export class ExtraVaccinationsComponent implements OnInit {
     private extraVaccinationsService: ExtraVaccinationsService,
     private activatedRoute: ActivatedRoute,
     private calendar: NgbCalendar,
+    private dateAdapter: NgbDateAdapter<string>,
     @Inject(IS_DOCTOR) public isDoctor: boolean
   ) { }
 
@@ -48,46 +47,52 @@ export class ExtraVaccinationsComponent implements OnInit {
     this.fetchCurrentPage();
   }
 
-  onExtraVaccinationSubmit() {
-    this.addExtraVaccination = !this.addExtraVaccination;
-    if (!this.editExtraVaccination) {
-      this.extraVaccinationsService.create(this.userId!, this.form.value).subscribe((vaccination: ExtraVaccination) => {
+  onSubmit() {
+    if (this.form.invalid) {
+      return;
+    }
+
+    if (!this.editing) {
+      this.extraVaccinationsService.create(this.form.value, this.userId).subscribe((vaccination: ExtraVaccination) => {
         if ((this.count / this.limit) < this.page) {
           this.extraVaccinationList.push(vaccination);
         }
         this.form.reset();
-        this.form.get('date')?.setValue(this.calendar.getToday());
+        this.form.get('date')?.setValue(this.dateAdapter.toModel(this.calendar.getToday()));
         this.count++;
+        this.adding = false;
       });
       return;
     }
+
     this.extraVaccinationsService.edit(this.currentlyEditingId, this.form.value).subscribe((vaccination: ExtraVaccination) => {
         this.extraVaccinationList[this.extraVaccinationList.map(vaccine => vaccine.id).indexOf(this.currentlyEditingId)] = vaccination;
         this.form.reset();
-        this.form.get('date')?.setValue(this.calendar.getToday());
-        this.editExtraVaccination = false;
+        this.form.get('date')?.setValue(this.dateAdapter.toModel(this.calendar.getToday()));
+        this.editing = false;
+        this.adding = false;
       });
   }
 
-  setEditExtraVaccinationForm(vaccine: ExtraVaccination) {
-    this.editExtraVaccination = true;
+  setEditForm(vaccine: ExtraVaccination) {
+    this.editing = true;
+    this.adding = true;
     this.form.patchValue(vaccine);
     this.currentlyEditingId = vaccine.id!;
-    if (!this.addExtraVaccination) {
-      this.addExtraVaccination = !this.addExtraVaccination;
-    }
   }
 
   enableAddForm() {
-    this.addExtraVaccination = !this.addExtraVaccination;
-    this.editExtraVaccination = false;
-    if (this.addExtraVaccination) {
-      this.form.reset();
-      this.form.get('date')?.setValue(this.calendar.getToday());
-    }
+    this.adding = true;
+    this.form.reset();
+    this.form.get('date')?.setValue(this.dateAdapter.toModel(this.calendar.getToday()));
   }
 
-  onDeleteVaccination(vaccine: ExtraVaccination) {
+  closeAddForm() {
+    this.adding = false;
+    this.editing = false;
+  }
+
+  onDelete(vaccine: ExtraVaccination) {
     this.extraVaccinationsService.delete(vaccine.id!).subscribe(() => {
       this.fetchCurrentPage();
     });

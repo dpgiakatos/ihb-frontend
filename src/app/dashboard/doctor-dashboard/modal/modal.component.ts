@@ -21,7 +21,9 @@ export class ModalContentComponent {
 
   entry() {
     const url = this.urlSerializer.serialize(['doctor', this.user.userId, 'access']);
-    this.httpClient.get(url).subscribe();
-    this.activeModal.close();
+    this.httpClient.get(url).subscribe(() => {
+      this.router.navigate(['dashboard', 'user', this.user.userId]);
+      this.activeModal.close();
+    });
   }
 }

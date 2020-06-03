@@ -8,7 +8,7 @@ import { RegisterComponent } from './register/register.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
-import { PreventAuthGuard } from './prevent-auth.guard';
+import { PreventAuthGuard } from './guards/prevent-auth.guard';
 
 const routes: Routes = [
   { path: '', component: AuthComponent, canActivate: [PreventAuthGuard], children: [

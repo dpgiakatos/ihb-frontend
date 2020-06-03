@@ -17,9 +17,8 @@ import { SharedModule } from './shared/shared.module';
 import { BaseUrlInterceptor } from './base-url.interceptor';
 import { environment } from '../environments/environment';
 import { NgbPlainDateAdapter } from './helper/date-adapter.service';
-import { AuthGuard } from './auth/auth.guard';
-import { PreventAuthGuard } from './auth/prevent-auth.guard';
-import { AuthUtilitiesModule } from './auth/auth-utilities.module';
+import { AuthGuard } from './auth/guards/auth.guard';
+import { PreventAuthGuard } from './auth/guards/prevent-auth.guard';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -54,7 +53,6 @@ export function tokenGetter() {
     ReactiveFormsModule,
     HttpClientModule,
     SharedModule,
-    AuthUtilitiesModule,
     JwtModule.forRoot({
       config: {
         tokenGetter,
