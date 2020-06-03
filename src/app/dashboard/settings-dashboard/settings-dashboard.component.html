@@ -7,15 +7,16 @@
     <form [formGroup]="passwordForm" (submit)="onPasswordSubmit()">
       <div class="form-group">
 
-        <div class="row">
+        <div class="form-group">
           <div class="col-lg mt-3 mb-4">
             <label for="oldPassword">Type the old password</label>
             <input type="password" class="form-control" id="oldPassword" autocomplete="old-password"
               placeholder="Old Password" formControlName="oldPassword">
           </div>
+            <p class="text-danger" *ngIf="passwordForm.hasError('invalidCredentials')">Wrong Password</p>
         </div>
 
-        <div class="row">
+        <div class="form-group">
           <div class="col-lg mt-3 mb-4">
             <label for="password">Type the new password</label>
             <input type="password" class="form-control" id="password" autocomplete="new-password"
