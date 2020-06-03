@@ -3,13 +3,9 @@ import { FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { debounceTime, switchMap, tap } from 'rxjs/operators';
-
-export interface User {
-  firstName: string;
-  lastName: string;
-  ssnvs: string;
-  userId: string;
-}
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalContentComponent } from './modal/modal.component';
+import { User } from './doctor-dashboard.interface';
 
 @Component({
   selector: 'ihb-doctor-dashboard',
@@ -24,7 +20,7 @@ export class DoctorDashboardComponent implements OnInit, OnDestroy {
   subscriptionCountry: Subscription;
   list: User[] = [];
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient, private modalService: NgbModal) {}
 
   ngOnInit(): void {
     this.subscriptionSearch = this.searchBox.valueChanges.pipe(
@@ -63,5 +59,10 @@ export class DoctorDashboardComponent implements OnInit, OnDestroy {
     this.list = [];
     this.subscriptionSearch.unsubscribe();
     this.subscriptionCountry.unsubscribe();
+  }
+
+  open(user: User) {
+    const modalRef = this.modalService.open(ModalContentComponent);
+    modalRef.componentInstance.user = user;
   }
 }

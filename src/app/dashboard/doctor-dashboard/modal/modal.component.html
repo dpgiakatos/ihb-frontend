@@ -1,0 +1,15 @@
+<div class="modal-header">
+  <h4 class="modal-title">Attention!</h4>
+  <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p>You are asking permission to see the health booklet of patient <b>{{user.lastName}} {{user.lastName}}</b>.</p>
+  <p><b>This transaction will be recorded and <u>{{user.lastName}} {{user.lastName}}</u> will be notify.</b></p>
+</div>
+<div class="modal-footer">
+  <a routerLink="./dashboard/user/{{user.userId}}">
+    <button type="button" class="btn btn-danger" ngbAutofocus (click)="entry()">Grant permission</button>
+  </a>
+</div>

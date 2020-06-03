@@ -32,7 +32,7 @@
         <td><ngb-highlight [result]="user.firstName" [term]="searchBox.value"></ngb-highlight></td>
         <td><ngb-highlight [result]="user.lastName" [term]="searchBox.value"></ngb-highlight></td>
         <td><ngb-highlight [result]="user.ssnvs" [term]="searchBox.value"></ngb-highlight></td>
-        <td><a routerLink="../user/{{user.userId}}"><button class="btn btn-primary">View</button></a></td>
+        <td><button class="btn btn-primary" (click)="open(user)">View</button></td>
       </tr>
       </tbody>
     </table>

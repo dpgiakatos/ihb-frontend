@@ -1,6 +1,7 @@
 <nav class="navbar sticky-top">
   <a routerLink="" class="mr-3"><img src="assets/img/front-page/png/logo.png" alt="ihb" class="logo"></a>
   <ul class="nav nav-pills">
+    <a routerLink="alert" class="mr-3"><fa-icon [icon]="faBell" class="btn btn-outline-dark nav-item"></fa-icon></a>
     <li ngbDropdown class="nav-item d-inline-block float-right" display="dynamic">
       <fa-icon [icon]="faUser" class="btn btn-outline-dark nav-item" id="dropdownMode" ngbDropdownToggle></fa-icon>
       <div ngbDropdownMenu>

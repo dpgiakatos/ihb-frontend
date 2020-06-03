@@ -21,6 +21,9 @@ import { AllergicDiseasesComponent } from './user-dashboard/allergic-diseases/al
 import { AuthGuard } from '../auth/auth.guard';
 import { DoctorOnlyGuard } from '../auth/doctor-only.guard';
 import { SharedModule } from '../shared/shared.module';
+import { AlertDashboardComponent } from './alert-dashboard/alert-dashboard.component';
+import { AccessGuard } from './doctor-dashboard/access.guard';
+import { ModalContentComponent } from './doctor-dashboard/modal/modal.component';
 
 
 const userDashboardRoutes: Routes = [
@@ -34,8 +37,9 @@ const userDashboardRoutes: Routes = [
 const routes: Routes = [
   { path: '', component: DashboardComponent, canActivate: [AuthGuard], children: [
     { path: '', redirectTo: 'user', pathMatch: 'full' },
+    { path: 'alert', component: AlertDashboardComponent },
     { path: 'user', component: UserDashboardComponent, children: [...userDashboardRoutes] },
-    { path: 'user/:id', component: UserDashboardComponent, canActivate: [DoctorOnlyGuard], children: [...userDashboardRoutes] },
+    { path: 'user/:id', component: UserDashboardComponent, canActivate: [DoctorOnlyGuard, AccessGuard], children: [...userDashboardRoutes] },
     { path: 'doctor', component: DoctorDashboardComponent, canActivate: [DoctorOnlyGuard] },
     { path: 'administrator', component: AdministratorDashboardComponent },
     { path: 'message', component: MessageDashboardComponent },
@@ -58,6 +62,8 @@ const exportedComponents = [
   VaccinationsComponent,
   RecommendedVaccinationsComponent,
   ExtraVaccinationsComponent,
+  AlertDashboardComponent,
+  ModalContentComponent
 ];
 
 @NgModule({
