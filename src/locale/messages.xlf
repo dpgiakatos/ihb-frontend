@@ -396,11 +396,11 @@
           <context context-type="linenumber">48</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="88588a10a804e75322c6f43fe4a97ff696db1d36" datatype="html">
+      <trans-unit id="e540630c6f3258b0223cfc0039d7bfa1b79609f3" datatype="html">
         <source>
           IHB is a web application that aims to help the fulfillment of the 17 Sustainable Development Goals (SDGs) set in 2015 by the United Nations General Assembly.
           These are a collection of 17 global goals designed to be a &quot;blueprint to achieve a better and more sustainable future for all&quot; and are intended to be achieved by the year 2030.
-          IHB has to do with the 4th SDG which is &quot;Good Health and Well-Being&quot;.
+          IHB has to do with the 3rd SDG which is &quot;Good Health and Well-Being&quot;.
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
@@ -459,7 +459,8 @@
       </trans-unit>
       <trans-unit id="fbdb04611975d98891159db30f0343dea0b3a651" datatype="html">
         <source>
-          If you want any clarification or you have any additional question, you could use <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Contact<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> panel.
+          If you want any clarification or you have any additional question, you could use 
+          <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Contact<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> panel.
         </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
