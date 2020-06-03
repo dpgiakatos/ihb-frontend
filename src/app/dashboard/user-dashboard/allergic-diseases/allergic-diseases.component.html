@@ -1,0 +1,66 @@
+<form [formGroup]="form" (submit)="onAllergicFormSubmit()">
+  <ng-container *ngIf="!addAllergicDisease; then thenBlockForAllergic else elseBlockForAllergic"></ng-container>
+  <ng-template #thenBlockForAllergic>
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-primary" (click)="addAllergic()">Add</button>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #elseBlockForAllergic>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-lg mt-3">
+          <label for="allergicDiseaseName">Allergic Disease Name</label>
+          <input type="text" class="form-control" id="allergicDiseaseName" formControlName="name">
+          <div class="invalid-feedback">Please provide a valid name.</div>
+        </div>
+        <div class="col-lg mt-3">
+          <label for="allergicDiseaseDescription">Allergic Disease Description</label>
+          <textarea class="form-control" id="allergicDiseaseDescription" formControlName="dDescription"></textarea>
+          <div class="invalid-feedback">Please provide a valid description.</div>
+        </div>
+        <div class="col-lg mt-3">
+          <label for="allergicDiseaseTreatmentDescription">Treatment Description</label>
+          <textarea class="form-control" id="allergicDiseaseTreatmentDescription" formControlName="tDescription"></textarea>
+          <div class="invalid-feedback">Please provide a valid description.</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg mt-3">
+          <button type="submit" class="btn btn-primary mr-3" [disabled]="form.invalid">Save</button>
+          <button class="btn btn-primary mr-3" (click)="addAllergic()">Close</button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</form>
+<table class="table table-striped mt-3 table-responsive-lg">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Allergic Disease Name</th>
+    <th scope="col">Allergic Disease Description</th>
+    <th scope="col">Treatment Description</th>
+    <th scope="col"></th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let allergy of allergicList; let i = index">
+      <th scope="row">{{i+1}}</th>
+      <td>{{allergy.name}}</td>
+      <td>{{allergy.dDescription}}</td>
+      <td>{{allergy.tDescription}}</td>
+      <td><button type="button" class="btn btn-warning" (click)="setEditAllergicForm(allergy)">Edit</button></td>
+      <td><button type="button" class="btn badge-danger" (click)="onDeleteAllergicSubmit(allergy)">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
+<div class="d-flex justify-content-between p-2">
+  <ngb-pagination
+    [(page)]="allergicPageNumber"
+    [pageSize]="allergicPageSize"
+    [collectionSize]="allergicSize"
+    (pageChange)="allergicPage()">
+  </ngb-pagination>
+</div>

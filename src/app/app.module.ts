@@ -7,35 +7,24 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
 
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
-import { UserDashboardComponent } from './dashboard/user-dashboard/user-dashboard.component';
-import { DoctorDashboardComponent } from './dashboard/doctor-dashboard/doctor-dashboard.component';
-import { AdministratorDashboardComponent } from './dashboard/administrator-dashboard/administrator-dashboard.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ScrollTopComponent } from './home-page/scroll-top/scroll-top.component';
-import { UserTabDashboardComponent } from './dashboard/user-tab-dashboard/user-tab-dashboard.component';
-import { MessageDashboardComponent } from './dashboard/message-dashboard/message-dashboard.component';
-import { SettingsDashboardComponent } from './dashboard/settings-dashboard/settings-dashboard.component';
+
 import { FooterComponent } from './home-page/footer/footer.component';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { SharedModule } from './shared/shared.module';
 import { BaseUrlInterceptor } from './base-url.interceptor';
 import { environment } from '../environments/environment';
-import { NgbPlainDateAdapter } from './date-adapter.service';
+import { NgbPlainDateAdapter } from './helper/date-adapter.service';
+import { AuthGuard } from './auth/auth.guard';
+import { PreventAuthGuard } from './auth/prevent-auth.guard';
+import { AuthUtilitiesModule } from './auth/auth-utilities.module';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
-  {path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)},
-  {path: 'dashboard', component: DashboardComponent, children: [
-    {path: 'user', component: UserDashboardComponent},
-    {path: 'user/:id', component: UserDashboardComponent},
-    {path: 'doctor', component: DoctorDashboardComponent},
-    {path: 'administrator', component: AdministratorDashboardComponent},
-    {path: 'message', component: MessageDashboardComponent},
-    {path: 'usertab', component: UserTabDashboardComponent},
-    {path: 'settings', component: SettingsDashboardComponent}
-  ]},
+  {path: 'auth', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule), canLoad: [PreventAuthGuard]},
+  {path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule), canLoad: [AuthGuard]},
   {path: '**', component: NotFoundPageComponent}
 ];
 
@@ -46,13 +35,6 @@ export function tokenGetter() {
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
-    UserDashboardComponent,
-    DoctorDashboardComponent,
-    AdministratorDashboardComponent,
-    UserTabDashboardComponent,
-    MessageDashboardComponent,
-    SettingsDashboardComponent,
     HomePageComponent,
     ScrollTopComponent,
     FooterComponent,
@@ -72,15 +54,13 @@ export function tokenGetter() {
     ReactiveFormsModule,
     HttpClientModule,
     SharedModule,
+    AuthUtilitiesModule,
     JwtModule.forRoot({
       config: {
         tokenGetter,
         whitelistedDomains: ['http://localhost:3000']
       }
     })
-  ],
-  exports: [
-    DoctorDashboardComponent
   ],
   providers: [
     { provide: 'BASE_API_URL', useValue: environment.apiUrl },

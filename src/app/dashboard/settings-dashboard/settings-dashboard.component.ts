@@ -30,7 +30,6 @@ export class SettingsDashboardComponent implements OnInit {
   }
 
   onPasswordSubmit() {
-    console.log(this.passwordForm.value);
     this.passwordForm.reset();
   }
 

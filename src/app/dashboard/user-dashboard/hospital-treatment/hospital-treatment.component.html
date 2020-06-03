@@ -1,0 +1,97 @@
+<form [formGroup]="form" (submit)="onHospitalFormSubmit()">
+  <ng-container
+    *ngIf="!addHospitalTreatment; then thenBlockForHospitalTreatment else elseBlockForHospitalTreatment"></ng-container>
+  <ng-template #thenBlockForHospitalTreatment>
+    <div class="row">
+      <div class="col">
+        <button class="btn btn-primary" (click)="addHospital()">Add</button>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template #elseBlockForHospitalTreatment>
+    <div class="form-group">
+      <div class="row">
+        <div class="col-lg mt-3">
+          <label for="hospitalName">Hospital's Name</label>
+          <input type="text" class="form-control" id="hospitalName" formControlName="name">
+          <div class="invalid-feedback">Please provide a valid name.</div>
+        </div>
+        <div class="col-lg mt-3">
+          <label for="hospitalCity">Hospital's City</label>
+          <input type="text" class="form-control" id="hospitalCity" formControlName="city">
+          <div class="invalid-feedback">Please provide a valid city.</div>
+        </div>
+        <div class="col-lg mt-3">
+          <label for="hospitalCountry">Hospital's Country</label>
+          <select class="form-control" id="hospitalCountry" formControlName="country">
+            <option>Greece</option>
+          </select>
+          <div class="invalid-feedback">Please provide a valid country.</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg mt-3">
+          <label for="hospitalTreatmentCause">Hospital Treatment Cause</label>
+          <textarea class="form-control" id="hospitalTreatmentCause" formControlName="cause"></textarea>
+          <div class="invalid-feedback">Please provide a valid cause.</div>
+        </div>
+        <div class="col-lg mt-3">
+          <label for="hospitalTreatmentDescription">Treatment Description</label>
+          <textarea class="form-control" id="hospitalTreatmentDescription" formControlName="treatment"></textarea>
+          <div class="invalid-feedback">Please provide a valid treatment.</div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg mt-3">
+          <label for="hospitalTreatmentStarts">Hospital Treatment Starts</label>
+          <div class="input-group" id="hospitalTreatmentStarts">
+            <input type="text" class="form-control" placeholder="yyyy-mm-dd" name="dpStart" formControlName="starts"
+              ngbDatepicker #dS="ngbDatepicker">
+            <div class="input-group-append">
+              <button type="button" class="btn btn-outline-secondary" (click)="dS.toggle()">
+                <fa-icon [icon]="faCalendarAlt"></fa-icon>
+              </button>
+            </div>
+            <div class="invalid-feedback">Please provide a valid date.</div>
+          </div>
+        </div>
+        <div class="col-lg mt-3">
+          <label for="hospitalTreatmentFinishes">Hospital Treatment Finishes</label>
+          <div class="input-group" id="hospitalTreatmentFinishes">
+            <input type="text" class="form-control" placeholder="yyyy-mm-dd" name="dpFinishes" formControlName="finishes"
+              ngbDatepicker #dF="ngbDatepicker">
+            <div class="input-group-append">
+              <button type="button" class="btn btn-outline-secondary" (click)="dF.toggle()">
+                <fa-icon [icon]="faCalendarAlt"></fa-icon>
+              </button>
+            </div>
+            <div class="invalid-feedback">Please provide a valid date.</div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg mt-3">
+          <button type="submit" class="btn btn-primary mr-3" [disabled]="form.invalid">Save</button>
+          <button class="btn btn-primary mr-3" (click)="addHospital()">Close</button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</form>
+<table class="table table-striped mt-3 table-responsive-lg">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Hospital's Name</th>
+    <th scope="col">Hospital's City</th>
+    <th scope="col">Hospital's Country</th>
+    <th scope="col">Hospital Treatment Cause</th>
+    <th scope="col">Treatment Description</th>
+    <th scope="col">Hospital Treatment Period</th>
+    <th scope="col"></th>
+  </tr>
+  </thead>
+  <tbody>
+
+  </tbody>
+</table>

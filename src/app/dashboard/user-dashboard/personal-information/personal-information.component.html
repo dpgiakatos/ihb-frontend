@@ -1,0 +1,100 @@
+<form [formGroup]="form" (submit)="onSubmit()">
+  <div class="form-group">
+    <div class="row">
+      <div class="col-lg mt-3">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" id="firstName" formControlName="firstName">
+        <div class="invalid-feedback">Please provide your first name.</div>
+      </div>
+      <div class="col-lg mt-3">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" id="lastName" formControlName="lastName">
+        <div class="invalid-feedback">Please provide your last name.</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg mt-3">
+        <label for="ssnvs">SSNVS</label>
+        <input type="text" class="form-control" id="ssnvs" formControlName="ssnvs">
+        <div class="invalid-feedback">Please provide your SSNVS.</div>
+      </div>
+      <div class="col-lg mt-3">
+        <label for="dateOfBirth">Date Of Birth</label>
+        <div class="input-group" id="dateOfBirth">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="yyyy-mm-dd"
+            name="dp"
+            ngbDatepicker
+            #d="ngbDatepicker"
+            formControlName="birthDate">
+          <div class="input-group-append">
+            <button type="button" class="btn btn-outline-secondary" (click)="d.toggle()">
+              <fa-icon [icon]="faCalendarAlt"></fa-icon>
+            </button>
+          </div>
+          <div class="invalid-feedback">Please provide your date of birth.</div>
+        </div>
+      </div>
+      <div class="col-lg mt-3">
+        <label for="country">Country</label>
+        <select class="form-control" id="country" formControlName="country">
+          <option>Greece</option>
+        </select>
+        <div class="invalid-feedback">Please provide your country.</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg mt-3">
+        <label for="fathersFirstName">Father's First Name</label>
+        <input type="text" class="form-control" id="fathersFirstName" formControlName="fatherFirstName">
+        <div class="invalid-feedback">Please provide your father's first name.</div>
+      </div>
+      <div class="col-lg mt-3">
+        <label for="fathersLastName">Father's Last Name</label>
+        <input type="text" class="form-control" id="fathersLastName" formControlName="fatherLastName">
+        <div class="invalid-feedback">Please provide your father's last name.</div>
+      </div>
+      <div class="col-lg mt-3">
+        <label for="mothersFirstName">Mother's First Name</label>
+        <input type="text" class="form-control" id="mothersFirstName" formControlName="motherFirstName">
+        <div class="invalid-feedback">Please provide your mother's first name.</div>
+      </div>
+      <div class="col-lg mt-3">
+        <label for="mothersLastName">Mother's Last Name</label>
+        <input type="text" class="form-control" id="mothersLastName" formControlName="motherLastName">
+        <div class="invalid-feedback">Please provide your mother's last name</div>
+      </div>
+    </div>
+    <div class="row">
+      <!-- <div class="col-lg mt-3">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" formControlName="email">
+        <div class="invalid-feedback">Please provide your email.</div>
+      </div> -->
+      <div class="col-lg mt-3">
+        <label for="mobilePhone">Mobile Phone</label>
+        <input type="text" class="form-control" id="mobilePhone" formControlName="mobilePhone">
+        <div class="invalid-feedback">Please provide your mobile phone.</div>
+      </div>
+      <div class="col-lg mt-3">
+        <label for="emergencyPhone">Emergency Phone Contact</label>
+        <input type="text" class="form-control" id="emergencyPhone" formControlName="emergencyContact">
+        <div class="invalid-feedback">Please provide an emergency phone contact.</div>
+      </div>
+    </div>
+    <div class="row" *ngIf="canEdit()">
+      <div class="col-lg mt-3">
+        <ng-container
+          *ngIf="editing then editingPersonal else notEditingPersonal"></ng-container>
+        <ng-template #notEditingPersonal>
+          <button class="btn btn-primary mt-3 mr-3" (click)="onEdit()">Edit</button>
+        </ng-template>
+        <ng-template #editingPersonal>
+          <button type="submit" class="btn btn-primary mt-3 mr-3">Save</button>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</form>

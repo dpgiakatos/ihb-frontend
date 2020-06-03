@@ -22,7 +22,6 @@ export class ForgotPasswordComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.form.value);
     this.form.reset();
   }
 

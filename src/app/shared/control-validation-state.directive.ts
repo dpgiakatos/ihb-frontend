@@ -1,5 +1,5 @@
-import { Directive, OnInit, ElementRef, Renderer2, EventEmitter, OnDestroy, HostListener, Optional } from '@angular/core';
-import { NgControl, NgForm, FormGroupDirective, FormControl } from '@angular/forms';
+import { Directive, OnInit, ElementRef, Renderer2, OnDestroy, HostListener, Optional, Inject } from '@angular/core';
+import { NgControl, NgForm, FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
 @Directive({
@@ -8,19 +8,24 @@ import { Subscription } from 'rxjs';
 })
 export class ControlValidationStateDirective implements OnInit, OnDestroy {
 
-  private submitListener: Subscription;
+  private submitListener: Subscription | undefined;
   private validationListener: Subscription;
 
   private control: FormControl;
 
-  constructor(private controlRef: NgControl, private form: NgForm, private ref: ElementRef, private renderer2: Renderer2) { }
+  constructor(
+    private controlRef: NgControl,
+    @Inject(NgForm) @Optional() private form: NgForm | undefined,
+    private ref: ElementRef,
+    private renderer2: Renderer2
+  ) { }
 
   ngOnInit(): void {
     if (this.controlRef.control) {
       this.control = this.controlRef.control as FormControl;
     }
 
-    this.submitListener = this.form.ngSubmit.subscribe(() => {
+    this.submitListener = this.form?.ngSubmit.subscribe(() => {
       this.control.markAsDirty();
       this.control.markAsTouched();
       this.checkValidationStatusAndMessage();
@@ -33,7 +38,7 @@ export class ControlValidationStateDirective implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.submitListener.unsubscribe();
+    this.submitListener?.unsubscribe();
     this.validationListener.unsubscribe();
   }
 
@@ -46,7 +51,7 @@ export class ControlValidationStateDirective implements OnInit, OnDestroy {
   }
 
   @HostListener('blur')
-  private onInputBlur() {
+  public onInputBlur() {
     this.checkValidationStatusAndMessage();
   }
 

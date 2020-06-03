@@ -1,0 +1,22 @@
+<form [formGroup]="form" (submit)="onVaccinationSubmit()">
+  <div class="row" id="recommendedVaccinations">
+    <div class="col-lg-4" *ngFor="let vaccine of vaccines">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" formControlName="{{vaccine.id}}" id="{{vaccine.id}}"/>
+        <label class="form-check-label" [for]="vaccine.id">{{vaccine.name}}</label>
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="isDoctor">
+    <div class="col mt-3">
+      <ng-container
+        *ngIf="!editing then thenBlockForVaccinationList else elseBlockForVaccinationList"></ng-container>
+      <ng-template #thenBlockForVaccinationList>
+        <button type="button" class="btn btn-warning" (click)="editVaccination()">Edit</button>
+      </ng-template>
+      <ng-template #elseBlockForVaccinationList>
+        <button type="submit" class="btn btn-success">Save</button>
+      </ng-template>
+    </div>
+  </div>
+</form>

@@ -1,12 +1,16 @@
-import { NgbDateAdapter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDateAdapter, NgbDateStruct, NgbDate } from '@ng-bootstrap/ng-bootstrap';
 import { Injectable } from '@angular/core';
 
 @Injectable({providedIn: 'root'})
 export class NgbPlainDateAdapter extends NgbDateAdapter<string> {
-  fromModel(value: string | null): NgbDateStruct | null {
+  fromModel(value: string | NgbDate | null): NgbDateStruct | null {
     if (!value) {
       return null;
     }
+    if (value instanceof NgbDate) {
+      return value;
+    }
+
     const [year, month, day] = value.split('-');
     return {
       year: Number(year),
