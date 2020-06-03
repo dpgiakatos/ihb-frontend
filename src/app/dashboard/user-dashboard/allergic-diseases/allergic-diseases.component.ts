@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { forkJoin } from 'rxjs';
 import { AllergicDiseases } from './allergic-diseases.model';
+import { AllergicDiseasesService } from './allergic-diseases.service';
+import { ActivatedRoute } from '@angular/router';
+import { IS_DOCTOR } from '../user-dashboard.component';
+import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'ihb-allergic-diseases',
@@ -11,87 +13,90 @@ import { AllergicDiseases } from './allergic-diseases.model';
 })
 export class AllergicDiseasesComponent implements OnInit {
 
-  addAllergicDisease = false;
-  allergicId: number;
-  allergicList: AllergicDiseases[] = [];
-  allergicPageNumber = 1;
-  allergicPageSize = 10;
-  allergicSize: number;
-  allergicListForm: FormGroup;
-  editAllergicForm = false;
+  faCalendarAlt = faCalendarAlt;
 
   form = new FormGroup({
     name: new FormControl(null, [Validators.required]),
-    dDescription: new FormControl(null, [Validators.required]),
-    tDescription: new FormControl(null, [Validators.required])
+    diseaseDescription: new FormControl(null, [Validators.required]),
+    treatmentDescription: new FormControl(null, [Validators.required])
   });
 
-  constructor(private httpClient: HttpClient) { }
+  adding = false;
+  editing = false;
+  currentlyEditingId: string;
+
+  allergicList: AllergicDiseases[] = [];
+  page = 1;
+  limit = 10;
+  count: number;
+
+  userId?: string;
+
+  constructor(
+    private allergicService: AllergicDiseasesService,
+    private activatedRoute: ActivatedRoute,
+    @Inject(IS_DOCTOR) public isDoctor: boolean
+  ) { }
 
   ngOnInit(): void {
-    forkJoin({
-      allergicList: this.httpClient.get<AllergicDiseases[]>('dashboard/allergic/' + this.allergicPageNumber),
-      countAllergic: this.httpClient.get<number>('dashboard/allergic/count_allergic/count')
-    }).subscribe(values => {
-      this.allergicList = values.allergicList;
-      this.allergicSize = values.countAllergic;
-    });
+    this.userId = this.activatedRoute.snapshot.parent?.params.id;
+
+    this.fetchCurrentPage();
   }
 
-  onAllergicFormSubmit() {
-    this.addAllergicDisease = !this.addAllergicDisease;
-    if (!this.editAllergicForm) {
-      this.httpClient.post<AllergicDiseases>('dashboard/allergic', this.form.value).subscribe (
-        (allergic: AllergicDiseases) => {
-          if ((this.allergicSize / this.allergicPageSize) < this.allergicPageNumber) {
-            this.allergicList.push(allergic);
-          }
-          this.form.reset();
-          this.allergicSize++;
-        });
-    } else {
-      this.httpClient.put<AllergicDiseases>('dashboard/allergic/' + this.allergicId, this.form.value).subscribe (
-        (allergic: AllergicDiseases) => {
-          this.allergicList[this.allergicList.map(allergy => allergy.id).indexOf(this.allergicId)] = allergic;
-          this.form.reset();
-          this.editAllergicForm = false;
-        });
+  onSubmit() {
+    if (this.form.invalid) {
+      return;
     }
-  }
 
-  setEditAllergicForm(allergy: AllergicDiseases) {
-    this.editAllergicForm = true;
-    this.form.setValue({
-      name: allergy.name,
-      dDescription: allergy.dDescription,
-      tDescription: allergy.tDescription
-    });
-    this.allergicId = allergy.id;
-    if (!this.addAllergicDisease) {
-      this.addAllergicDisease = !this.addAllergicDisease;
+    if (!this.editing) {
+      this.allergicService.create(this.form.value, this.userId).subscribe((allergic: AllergicDiseases) => {
+        if ((this.count / this.limit) < this.page) {
+          this.allergicList.push(allergic);
+        }
+        this.form.reset();
+        this.count++;
+        this.adding = false;
+      });
+      return;
     }
-  }
 
-  onDeleteAllergicSubmit(allergy: AllergicDiseases) {
-    this.httpClient.delete('dashboard/allergic/' + allergy.id).subscribe(() => {
-      this.allergicPage();
-      this.allergicSize--;
-    });
-  }
-
-  allergicPage() {
-    forkJoin({
-      list: this.httpClient.get<AllergicDiseases[]>('dashboard/allergic/' + this.allergicPageNumber)
-    }).subscribe(value => {
-      this.allergicList = value.list;
-    });
-  }
-
-  addAllergic() {
-    this.addAllergicDisease = !this.addAllergicDisease;
-    if (this.addAllergicDisease) {
+    this.allergicService.edit(this.currentlyEditingId, this.form.value).subscribe((allergic: AllergicDiseases) => {
+      this.allergicList[this.allergicList.map(x => x.id).indexOf(this.currentlyEditingId)] = allergic;
       this.form.reset();
-    }
+      this.editing = false;
+      this.adding = false;
+    });
+  }
+
+  setEditForm(allergic: AllergicDiseases) {
+    this.editing = true;
+    this.adding = true;
+    this.form.patchValue(allergic);
+    this.currentlyEditingId = allergic.id!;
+  }
+
+  enableAddForm() {
+    this.adding = true;
+    this.form.reset();
+  }
+
+  closeAddForm() {
+    this.adding = false;
+    this.editing = false;
+  }
+
+  onDelete(allergic: AllergicDiseases) {
+    this.allergicService.delete(allergic.id!).subscribe(() => {
+      this.fetchCurrentPage();
+    });
+  }
+
+  fetchCurrentPage() {
+    this.allergicService.get(this.page, this.userId).subscribe(response => {
+      this.allergicList = response.allergics;
+      this.count = response.count;
+    });
   }
 
 }

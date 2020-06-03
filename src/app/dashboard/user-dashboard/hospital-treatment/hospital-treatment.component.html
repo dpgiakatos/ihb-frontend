@@ -1,14 +1,13 @@
-<form [formGroup]="form" (submit)="onHospitalFormSubmit()">
-  <ng-container
-    *ngIf="!addHospitalTreatment; then thenBlockForHospitalTreatment else elseBlockForHospitalTreatment"></ng-container>
-  <ng-template #thenBlockForHospitalTreatment>
+<form [formGroup]="form" (submit)="onSubmit()" *ngIf="isDoctor">
+  <ng-container *ngIf="!adding; then addButton else displayForm"></ng-container>
+  <ng-template #addButton>
     <div class="row">
       <div class="col">
-        <button class="btn btn-primary" (click)="addHospital()">Add</button>
+        <button class="btn btn-primary" (click)="enableAddForm()">Add</button>
       </div>
     </div>
   </ng-template>
-  <ng-template #elseBlockForHospitalTreatment>
+  <ng-template #displayForm>
     <div class="form-group">
       <div class="row">
         <div class="col-lg mt-3">
@@ -72,26 +71,53 @@
       <div class="row">
         <div class="col-lg mt-3">
           <button type="submit" class="btn btn-primary mr-3" [disabled]="form.invalid">Save</button>
-          <button class="btn btn-primary mr-3" (click)="addHospital()">Close</button>
+          <button class="btn btn-primary mr-3" (click)="closeAddForm()">Close</button>
         </div>
       </div>
     </div>
   </ng-template>
 </form>
-<table class="table table-striped mt-3 table-responsive-lg">
-  <thead>
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col">Hospital's Name</th>
-    <th scope="col">Hospital's City</th>
-    <th scope="col">Hospital's Country</th>
-    <th scope="col">Hospital Treatment Cause</th>
-    <th scope="col">Treatment Description</th>
-    <th scope="col">Hospital Treatment Period</th>
-    <th scope="col"></th>
-  </tr>
-  </thead>
-  <tbody>
-
-  </tbody>
-</table>
+<ng-container *ngIf="treatmentList.length">
+  <table class="table table-striped mt-3 table-responsive-lg">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Hospital's Name</th>
+      <th scope="col">Hospital's City</th>
+      <th scope="col">Hospital's Country</th>
+      <th scope="col">Hospital Treatment Cause</th>
+      <th scope="col">Treatment Description</th>
+      <th scope="col">Hospital Treatment Start</th>
+      <th scope="col">Hospital Treatment End</th>
+      <ng-container *ngIf="isDoctor">
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </ng-container>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let hospital of treatmentList; let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{hospital.name}}</td>
+        <td>{{hospital.city}}</td>
+        <td>{{hospital.country}}</td>
+        <td>{{hospital.cause}}</td>
+        <td>{{hospital.treatment}}</td>
+        <td>{{hospital.starts}}</td>
+        <td>{{hospital.finishes}}</td>
+        <ng-container *ngIf="isDoctor">
+          <td><button type="button" class="btn btn-warning" (click)="setEditForm(hospital)">Edit</button></td>
+          <td><button type="button" class="btn badge-danger" (click)="onDelete(hospital)">Delete</button></td>
+        </ng-container>
+      </tr>
+    </tbody>
+  </table>
+  <div class="d-flex justify-content-between p-2">
+    <ngb-pagination
+      [(page)]="page"
+      [pageSize]="limit"
+      [collectionSize]="count"
+      (pageChange)="fetchCurrentPage()">
+    </ngb-pagination>
+  </div>
+</ng-container>

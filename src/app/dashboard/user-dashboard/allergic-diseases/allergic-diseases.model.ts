@@ -1,6 +1,11 @@
 export interface AllergicDiseases {
-  id: number;
+  id: string;
   name: string;
-  dDescription: string;
-  tDescription: string;
+  diseaseDescription: string;
+  treatmentDescription: string;
+}
+
+export interface AllergicDiseasesList {
+  allergics: AllergicDiseases[];
+  count: number;
 }

@@ -7,6 +7,7 @@ import { PersonalInformationService } from './personal-information/personal-info
 import { RecommendedVaccinationsService } from './vaccinations/recommended-vaccinations/recommended-vaccinations.service';
 import { ExtraVaccinationsService } from './vaccinations/extra-vaccinations/extra-vaccinations.service';
 import { AllergicDiseasesService } from './allergic-diseases/allergic-diseases.service';
+import { HospitalTreatmentsService } from './hospital-treatment/hospital-treatment.service';
 
 export const isDoctorFactory = (authService: AuthService) => authService.getClaims()?.roles.some(r => r === Role.Doctor) || false;
 export const claimsFactory = (authService: AuthService) => authService.getClaims();
@@ -22,6 +23,7 @@ export const IS_DOCTOR = 'is_doctor';
     RecommendedVaccinationsService,
     ExtraVaccinationsService,
     AllergicDiseasesService,
+    HospitalTreatmentsService,
     {
       provide: IS_DOCTOR,
       useFactory: isDoctorFactory,

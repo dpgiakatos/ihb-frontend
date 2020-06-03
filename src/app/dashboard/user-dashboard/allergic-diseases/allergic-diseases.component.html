@@ -1,5 +1,5 @@
 <form [formGroup]="form" (submit)="onSubmit()" *ngIf="isDoctor">
-  <ng-container *ngIf="!addAllergicDisease; then addButton else displayForm"></ng-container>
+  <ng-container *ngIf="!adding; then addButton else displayForm"></ng-container>
   <ng-template #addButton>
     <div class="row">
       <div class="col">
@@ -17,50 +17,58 @@
         </div>
         <div class="col-lg mt-3">
           <label for="allergicDiseaseDescription">Allergic Disease Description</label>
-          <textarea class="form-control" id="allergicDiseaseDescription" formControlName="dDescription"></textarea>
+          <textarea class="form-control" id="allergicDiseaseDescription" formControlName="diseaseDescription"></textarea>
           <div class="invalid-feedback">Please provide a valid description.</div>
         </div>
         <div class="col-lg mt-3">
           <label for="allergicDiseaseTreatmentDescription">Treatment Description</label>
-          <textarea class="form-control" id="allergicDiseaseTreatmentDescription" formControlName="tDescription"></textarea>
+          <textarea class="form-control" id="allergicDiseaseTreatmentDescription" formControlName="treatmentDescription"></textarea>
           <div class="invalid-feedback">Please provide a valid description.</div>
         </div>
       </div>
       <div class="row">
         <div class="col-lg mt-3">
           <button type="submit" class="btn btn-primary mr-3" [disabled]="form.invalid">Save</button>
-          <button class="btn btn-primary mr-3" (click)="addAllergic()">Close</button>
+          <button class="btn btn-primary mr-3" (click)="closeAddForm()">Close</button>
         </div>
       </div>
     </div>
   </ng-template>
 </form>
-<table class="table table-striped mt-3 table-responsive-lg">
-  <thead>
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col">Allergic Disease Name</th>
-    <th scope="col">Allergic Disease Description</th>
-    <th scope="col">Treatment Description</th>
-    <th scope="col"></th>
-  </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let allergy of allergicList; let i = index">
-      <th scope="row">{{i+1}}</th>
-      <td>{{allergy.name}}</td>
-      <td>{{allergy.dDescription}}</td>
-      <td>{{allergy.tDescription}}</td>
-      <td><button type="button" class="btn btn-warning" (click)="setEditForm(allergy)">Edit</button></td>
-      <td><button type="button" class="btn badge-danger" (click)="onDelete(allergy)">Delete</button></td>
+<ng-container *ngIf="allergicList.length">
+  <table class="table table-striped mt-3 table-responsive-lg">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Allergic Disease Name</th>
+      <th scope="col">Allergic Disease Description</th>
+      <th scope="col">Treatment Description</th>
+      <ng-container *ngIf="isDoctor">
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </ng-container>
     </tr>
-  </tbody>
-</table>
-<div class="d-flex justify-content-between p-2">
-  <ngb-pagination
-    [(page)]="page"
-    [pageSize]="limit"
-    [collectionSize]="count"
-    (pageChange)="fetchCurrentPage()">
-  </ngb-pagination>
-</div>
+    </thead>
+    <tbody>
+      <tr *ngFor="let allergy of allergicList; let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{allergy.name}}</td>
+        <td>{{allergy.diseaseDescription}}</td>
+        <td>{{allergy.treatmentDescription}}</td>
+        <ng-container *ngIf="isDoctor">
+          <td><button type="button" class="btn btn-warning" (click)="setEditForm(allergy)">Edit</button></td>
+          <td><button type="button" class="btn badge-danger" (click)="onDelete(allergy)">Delete</button></td>
+        </ng-container>
+      </tr>
+    </tbody>
+  </table>
+  <div class="d-flex justify-content-between p-2">
+    <ngb-pagination
+      [(page)]="page"
+      [pageSize]="limit"
+      [collectionSize]="count"
+      (pageChange)="fetchCurrentPage()">
+    </ngb-pagination>
+  </div>
+</ng-container>
+
