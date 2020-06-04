@@ -8,14 +8,18 @@ export class UsersService {
 
   constructor(private httpClient: HttpClient, private urlSerializer: UrlSerializerService) { }
 
-  get(page: number, doctor: boolean, administrator: boolean) {
+  get(search: string, page: number, doctor: boolean, administrator: boolean) {
+    let url: string;
     let params = new HttpParams();
+    if (search.length > 0) {
+      url = this.urlSerializer.serialize(['administrator', 'search']);
+      params = params.append('search', search);
+    } else {
+      url = this.urlSerializer.serialize(['administrator', 'users']);
+    }
     params = params.append('page', page.toString());
     params = params.append('doctor', doctor.toString());
     params = params.append('administrator', administrator.toString());
-    const url = this.urlSerializer.serialize(['administrator', 'users']);
     return this.httpClient.get<UserList>(url, { params });
   }
-
-
 }
