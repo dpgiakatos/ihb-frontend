@@ -2,16 +2,28 @@
   <thead>
   <tr>
     <th scope="col-lg">#</th>
-    <th scope="col-lg">Full Name</th>
+    <th scope="col-lg">Email</th>
     <th scope="col-lg">Subject</th>
     <th scope="col-lg">Message</th>
     <th scope="col-lg"></th>
   </tr>
   </thead>
   <tbody>
-
+    <tr *ngFor="let inboxMessage of inbox; let i = index">
+      <th scope="row">{{i+1}}</th>
+      <td>{{inboxMessage.email}}</td>
+      <td>{{inboxMessage.subject}}</td>
+      <td>{{inboxMessage.message}}</td>
+      <td><a routerLink="./{{inboxMessage.id}}"><button class="btn btn-primary">Read</button></a></td>
+      <td><button type="button" class="btn badge-danger" (click)="delete(inboxMessage)">Delete</button></td>
+    </tr>
   </tbody>
 </table>
 <div class="d-flex justify-content-between p-2">
-<!--  <ngb-pagination [collectionSize]="" [(page)]="" [pageSize]=""></ngb-pagination>-->
+ <ngb-pagination 
+ [collectionSize]="count" 
+ [(page)]="page" 
+ [pageSize]="limit"
+ (pageChange)="fetchCurrentPage()">
+ </ngb-pagination>
 </div>
