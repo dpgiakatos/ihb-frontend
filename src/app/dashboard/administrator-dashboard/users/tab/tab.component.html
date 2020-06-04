@@ -1,22 +1,18 @@
 <div class="card w-75 mt-3 mx-auto">
   <div class="card-header">
-    <a routerLink="../administrator" class="mr-3"><button class="btn btn-primary">Back</button></a>
-    <label class="mr-3"><b>User: test</b></label>
+    <a routerLink="../" class="mr-3"><button class="btn btn-primary">Back</button></a>
     <a><button class="btn btn-danger float-right">Delete</button></a>
   </div>
   <div class="card-body">
-    <!--
-        <form>
-    -->
     <div class="form-group">
       <div class="row">
         <div class="col-lg mt-3">
           <label for="fullName">Full Name</label>
-          <input type="text" class="form-control" id="fullName" readonly placeholder="test">
+          <input type="text" class="form-control" id="fullName" readonly [formControl]="name">
         </div>
         <div class="col-lg mt-3">
           <label for="email">Email</label>
-          <input type="text" class="form-control" id="email" readonly placeholder="test@test.te">
+          <input type="text" class="form-control" id="email" readonly [formControl]="email">
         </div>
       </div>
       <div class="row">
@@ -37,8 +33,5 @@
         </div>
       </div>
     </div>
-    <!--
-        </form>
-    -->
   </div>
 </div>
