@@ -5,9 +5,6 @@
     <a><button class="btn btn-danger float-right">Delete</button></a>
   </div>
   <div class="card-body">
-    <!--
-        <form>
-    -->
     <div class="form-group">
       <div class="row">
         <div class="col-lg mt-3">
@@ -16,19 +13,19 @@
         </div>
         <div class="col-lg mt-3">
           <label for="email">Email</label>
-          <input type="text" class="form-control" id="email" readonly placeholder="test@test.te">
+          <input type="text" class="form-control" id="email" readonly [formControl]="email">
         </div>
       </div>
       <div class="row">
         <div class="col-lg mt-3">
           <label for="subject">Subject</label>
-          <input type="text" class="form-control" id="subject" readonly placeholder="test test test">
+          <input type="text" class="form-control" id="subject" readonly [formControl]="subject">
         </div>
       </div>
       <div class="row">
         <div class="col-lg mt-3">
           <label for="message">Message</label>
-          <textarea class="form-control" id="message" readonly placeholder="test test test test test test test test test"></textarea>
+          <textarea class="form-control" id="message" readonly [formControl]="message"></textarea>
         </div>
       </div>
       <div class="row">
@@ -37,8 +34,5 @@
         </div>
       </div>
     </div>
-    <!--
-        </form>
-    -->
   </div>
 </div>

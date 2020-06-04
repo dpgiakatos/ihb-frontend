@@ -1,11 +1,11 @@
 export interface ContactInbox {
-    id: string;
-    email: string;
-    subject: string;
-    message: string;
-  }
+  id: string;
+  email: string;
+  subject: string;
+  message: string;
+}
 
-  export interface ContactInboxList {
-    contacts: ContactInbox[];
-    count: number;
-  }
+export interface ContactInboxList {
+  contacts: ContactInbox[];
+  count: number;
+}
