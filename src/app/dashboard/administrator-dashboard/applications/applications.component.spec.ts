@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserTabDashboardComponent } from './user-tab-dashboard.component';
+import { ApplicationsComponent } from './applications.component';
 
-describe('UserTabDashboardComponent', () => {
-  let component: UserTabDashboardComponent;
-  let fixture: ComponentFixture<UserTabDashboardComponent>;
+describe('ApplicationsComponent', () => {
+  let component: ApplicationsComponent;
+  let fixture: ComponentFixture<ApplicationsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UserTabDashboardComponent ]
+      declarations: [ ApplicationsComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserTabDashboardComponent);
+    fixture = TestBed.createComponent(ApplicationsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

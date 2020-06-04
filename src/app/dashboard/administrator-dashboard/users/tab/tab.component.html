@@ -1,0 +1,44 @@
+<div class="card w-75 mt-3 mx-auto">
+  <div class="card-header">
+    <a routerLink="../administrator" class="mr-3"><button class="btn btn-primary">Back</button></a>
+    <label class="mr-3"><b>User: test</b></label>
+    <a><button class="btn btn-danger float-right">Delete</button></a>
+  </div>
+  <div class="card-body">
+    <!--
+        <form>
+    -->
+    <div class="form-group">
+      <div class="row">
+        <div class="col-lg mt-3">
+          <label for="fullName">Full Name</label>
+          <input type="text" class="form-control" id="fullName" readonly placeholder="test">
+        </div>
+        <div class="col-lg mt-3">
+          <label for="email">Email</label>
+          <input type="text" class="form-control" id="email" readonly placeholder="test@test.te">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg mt-3 custom-control custom-checkbox my-1 mr-sm-2 ml-5">
+          <div class="row">
+            <input type="checkbox" class="custom-control-input" id="doctorSelect">
+            <label class="custom-control-label" for="doctorSelect">Check this in order to activate <b>doctor</b> authorization</label>
+          </div>
+          <div class="row">
+            <input type="checkbox" class="custom-control-input" id="administratorSelect">
+            <label class="custom-control-label" for="administratorSelect">Check this in order to activate <b>administrator</b> authorization</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg mt-3">
+          Doctor documents:<a><button class="btn btn-primary ml-1" id="doctorDocuments">Download</button></a>
+        </div>
+      </div>
+    </div>
+    <!--
+        </form>
+    -->
+  </div>
+</div>

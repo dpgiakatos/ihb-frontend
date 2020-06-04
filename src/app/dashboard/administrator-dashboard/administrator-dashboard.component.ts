@@ -1,68 +1,40 @@
-import { Component, OnInit, PipeTransform } from '@angular/core';
-import { DecimalPipe } from '@angular/common';
-import { Observable } from 'rxjs';
-import {FormControl} from '@angular/forms';
-import { map, startWith } from 'rxjs/operators';
-
-interface User {
-  id?: number;
-  name: string;
-  mode: string[];
-}
-
-const USERS: User[] = [
-  {
-    name: 'User 1',
-    mode: ['User']
-  },
-  {
-    name: 'User 2',
-    mode: ['Doctor']
-  },
-  {
-    name: 'User 3',
-    mode: ['Administrator']
-  },
-  {
-    name: 'User 4',
-    mode: ['Doctor', 'Administrator']
-  }
-];
-
-function search(text: string, pipe: PipeTransform): User[] {
-  return USERS.filter(user => {
-    const term = text.toLowerCase();
-    return user.name.toLowerCase().includes(term);
-  });
-}
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { Observable, of } from 'rxjs';
+import { filter, map, switchMap } from 'rxjs/operators';
+import { InboxService } from './inbox/inbox.service';
+import { ApplicationsService } from './applications/applications.service';
+import { UsersService } from './users/users.service';
+import { MessageService } from './inbox/message/message.service';
+import { TabService } from './users/tab/tab.service';
 
 @Component({
   selector: 'ihb-administrator-dashboard',
   templateUrl: './administrator-dashboard.component.html',
   styleUrls: ['./administrator-dashboard.component.css'],
-  providers: [DecimalPipe]
+  providers: [
+    InboxService,
+    ApplicationsService,
+    UsersService,
+    MessageService,
+    TabService
+  ]
 })
 export class AdministratorDashboardComponent implements OnInit {
+  constructor(private route: ActivatedRoute, private router: Router) { }
 
-  users$: Observable<User[]>;
-  searchBox = new FormControl('');
-  page = 1;
-  pageSize = 2;
-  collectionSize = USERS.length;
+  activatedChild: Observable<string | null>;
 
-  constructor(pipe: DecimalPipe) {
-    this.users$ = this.searchBox.valueChanges.pipe(
-      startWith(''),
-      map(text => search(text, pipe))
+  ngOnInit() {
+    this.activatedChild = this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd),
+      switchMap(() => (this.route.firstChild?.url || of([]))),
+      map((urlSegments) => {
+        if (urlSegments.length) {
+          return urlSegments[0].path;
+        }
+        return null;
+      })
     );
-  }
-
-  ngOnInit(): void {
-  }
-
-  get users(): User[] {
-    return USERS
-      .map((user, i) => ({id: i + 1, ...user}))
-      .slice((this.page - 1) * this.pageSize, (this.page - 1) * this.pageSize + this.pageSize);
   }
 }

@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MessageDashboardComponent } from './message-dashboard.component';
+import { InboxComponent } from './inbox.component';
 
-describe('MessageDashboardComponent', () => {
-  let component: MessageDashboardComponent;
-  let fixture: ComponentFixture<MessageDashboardComponent>;
+describe('InboxComponent', () => {
+  let component: InboxComponent;
+  let fixture: ComponentFixture<InboxComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MessageDashboardComponent ]
+      declarations: [ InboxComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MessageDashboardComponent);
+    fixture = TestBed.createComponent(InboxComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

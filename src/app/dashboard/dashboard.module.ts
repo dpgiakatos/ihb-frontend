@@ -9,8 +9,6 @@ import { VaccinationsComponent } from './user-dashboard/vaccinations/vaccination
 import { HospitalTreatmentComponent } from './user-dashboard/hospital-treatment/hospital-treatment.component';
 import { PersonalInformationComponent } from './user-dashboard/personal-information/personal-information.component';
 import { SettingsDashboardComponent } from './settings-dashboard/settings-dashboard.component';
-import { MessageDashboardComponent } from './message-dashboard/message-dashboard.component';
-import { UserTabDashboardComponent } from './user-tab-dashboard/user-tab-dashboard.component';
 import { AdministratorDashboardComponent } from './administrator-dashboard/administrator-dashboard.component';
 import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
@@ -25,6 +23,12 @@ import { SharedModule } from '../shared/shared.module';
 import { NotificationsDashboardComponent } from './notifications-dashboard/notifications-dashboard.component';
 import { AccessGuard } from './doctor-dashboard/access.guard';
 import { ModalContentComponent } from './doctor-dashboard/modal/modal.component';
+import { AdministratorOnlyGuard } from '../auth/guards/administrator-only.guard';
+import { InboxComponent } from './administrator-dashboard/inbox/inbox.component';
+import { ApplicationsComponent } from './administrator-dashboard/applications/applications.component';
+import { UsersComponent } from './administrator-dashboard/users/users.component';
+import { MessageComponent } from './administrator-dashboard/inbox/message/message.component';
+import { TabComponent } from './administrator-dashboard/users/tab/tab.component';
 
 const userDashboardRoutes: Routes = [
   { path: '', redirectTo: 'personal-information', pathMatch: 'full' },
@@ -32,6 +36,15 @@ const userDashboardRoutes: Routes = [
   { path: 'vaccinations', component: VaccinationsComponent },
   { path: 'allergic-diseases', component: AllergicDiseasesComponent },
   { path: 'hospital-treatment', component: HospitalTreatmentComponent }
+];
+
+const administratorDashboardRoutes: Routes = [
+  { path: '', redirectTo: 'inbox', pathMatch: 'full' },
+  { path: 'inbox', component: InboxComponent },
+  { path: 'applications', component: ApplicationsComponent },
+  { path: 'users', component: UsersComponent },
+  { path: 'message', component: MessageComponent },
+  { path: 'tab', component: TabComponent }
 ];
 
 const routes: Routes = [
@@ -44,9 +57,10 @@ const routes: Routes = [
       canActivate: [DoctorOnlyGuard, AccessGuard], children: [...userDashboardRoutes]
     },
     { path: 'doctor', component: DoctorDashboardComponent, canActivate: [DoctorOnlyGuard] },
-    { path: 'administrator', component: AdministratorDashboardComponent },
-    { path: 'message', component: MessageDashboardComponent },
-    { path: 'usertab', component: UserTabDashboardComponent },
+    {
+      path: 'administrator', component: AdministratorDashboardComponent, canActivate: [AdministratorOnlyGuard],
+      children: [...administratorDashboardRoutes]
+    },
     { path: 'settings', component: SettingsDashboardComponent }
   ]}
 ];
@@ -56,8 +70,6 @@ const exportedComponents = [
   UserDashboardComponent,
   DoctorDashboardComponent,
   AdministratorDashboardComponent,
-  UserTabDashboardComponent,
-  MessageDashboardComponent,
   SettingsDashboardComponent,
   PersonalInformationComponent,
   AllergicDiseasesComponent,
@@ -66,7 +78,12 @@ const exportedComponents = [
   RecommendedVaccinationsComponent,
   ExtraVaccinationsComponent,
   NotificationsDashboardComponent,
-  ModalContentComponent
+  ModalContentComponent,
+  InboxComponent,
+  ApplicationsComponent,
+  UsersComponent,
+  MessageComponent,
+  TabComponent
 ];
 
 @NgModule({
