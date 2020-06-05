@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactInbox, ContactInboxList } from './inbox.model';
-import { HttpClient } from '@angular/common/http';
-import { forkJoin } from 'rxjs';
+import { ContactInbox } from './inbox.model';
 import { InboxService } from './inbox.service';
 
 @Component({
@@ -12,8 +10,7 @@ import { InboxService } from './inbox.service';
 export class InboxComponent implements OnInit {
 
   constructor(
-    private inboxService: InboxService,
-    private httpClient: HttpClient
+    private inboxService: InboxService
   ) { }
 
   inbox: ContactInbox[] = [];
@@ -26,20 +23,14 @@ export class InboxComponent implements OnInit {
   }
 
   fetchCurrentPage() {
-    forkJoin({
-      inboxList: this.httpClient.get<ContactInboxList>('contact/' + this.page),
-    }).subscribe(response => {
-      this.inbox = response.inboxList.contacts;
-      this.count = response.inboxList.count;
-    });
-  }
-
-  read(inboxMessage: ContactInbox) {
-
+    this.inboxService.get(this.page).subscribe(value => {
+      this.inbox = value.contacts;
+      this.count = value.count;
+    })
   }
 
   delete(inboxMessage: ContactInbox) {
-    this.httpClient.delete('contact/' + inboxMessage.id).subscribe(() => {
+    this.inboxService.delete(inboxMessage.id).subscribe(() => {
       this.count--;
       this.fetchCurrentPage();
     })
