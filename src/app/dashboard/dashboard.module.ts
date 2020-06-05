@@ -43,7 +43,6 @@ const administratorDashboardRoutes: Routes = [
   { path: 'inbox', component: InboxComponent },
   { path: 'applications', component: ApplicationsComponent },
   { path: 'users', component: UsersComponent },
-  { path: 'message', component: MessageComponent }
 ];
 
 const routes: Routes = [
@@ -61,6 +60,7 @@ const routes: Routes = [
       children: [...administratorDashboardRoutes]
     },
     { path: 'administrator/users/:id', component: TabComponent, canActivate: [AdministratorOnlyGuard] },
+    { path: 'administrator/inbox/:id', component: MessageComponent, canActivate: [AdministratorOnlyGuard] },
     { path: 'settings', component: SettingsDashboardComponent }
   ]}
 ];
