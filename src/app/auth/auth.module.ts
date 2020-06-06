@@ -10,13 +10,14 @@ import { ResetPasswordComponent } from '../auth/reset-password/reset-password.co
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { PreventAuthGuard } from './guards/prevent-auth.guard';
+import { ResetPasswordGuard } from './reset-password/reset-password.guard';
 
 const routes: Routes = [
   { path: '', component: AuthComponent, canActivate: [PreventAuthGuard], children: [
     { path: 'login', component: LoginComponent },
     { path: 'forgot-password', component: ForgotPasswordComponent},
     { path: 'register', component: RegisterComponent },
-    { path: 'reset-password', component: ResetPasswordComponent }
+    { path: 'reset-password/:tokenId', component: ResetPasswordComponent, canActivate: [ResetPasswordGuard] }
   ]}
 ];
 

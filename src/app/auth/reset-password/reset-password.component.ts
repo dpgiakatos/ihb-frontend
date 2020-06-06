@@ -1,9 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { HttpClient, HttpParams, HttpErrorResponse } from '@angular/common/http';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Subscription } from 'rxjs';
+import { AuthService } from '../auth.service';
 
 interface Password {
   password: string;
@@ -21,19 +22,18 @@ export class ResetPasswordComponent implements OnInit {
   private passwordChange: Subscription;
   private confirmPasswordChange: Subscription;
   private userInitiatedChange = true;
+  private token: string;
 
 
-  // constructor(
-  //   private httpClient: HttpClient,
-  //   private activatedRoute: ActivatedRoute,
-  //   private jwt: JwtHelperService
-  // ) {
-  //   this.userId = this.activatedRoute.snapshot.params.id;
-  //   const accessToken = localStorage.getItem('access-token');
-  //   if (!this.userId && accessToken) {
-  //     this.userId = jwt.decodeToken(accessToken).id;
-  //   }
-  // }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private authService: AuthService,
+    private router: Router
+  ) {
+    
+    this.token = this.activatedRoute.snapshot.params.tokenId;
+    console.log(this.token);
+  }
 
   ngOnInit(): void {
     this.resetPasswordForm = new FormGroup({
@@ -52,14 +52,17 @@ export class ResetPasswordComponent implements OnInit {
       }
     });
 
-    // let params = new HttpParams();
-    // params = params.append('userId', this.userId);
   }
 
 
   onResetPasswordSubmit() {
-    console.log(this.resetPasswordForm.value);
-    this.resetPasswordForm.reset();
+    if (this.resetPasswordForm.invalid)
+    {
+      return ;
+    }
+    this.authService.resetPassword(this.token, this.resetPasswordForm.value.password).subscribe(() => {
+      this.router.navigateByUrl('auth/login');
+    })
   }
 
   checkSamePassword() {

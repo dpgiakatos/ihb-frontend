@@ -28,7 +28,7 @@ export class ForgotPasswordComponent implements OnInit {
   onSubmit() {
     this.authService.forgotPassword(this.form.value).subscribe(() => {
     }, (err: HttpErrorResponse) => {
-      if (err.status === 401) {
+      if (err.status === 404) {
         this.form.setErrors({ invalidCredentials: true });
       }
     });
