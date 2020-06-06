@@ -1,7 +1,7 @@
 <div class="card w-75 mt-3 mx-auto">
   <div class="card-header">
     <a routerLink="../" class="mr-3"><button class="btn btn-primary">Back</button></a>
-    <a><button class="btn btn-danger float-right">Delete</button></a>
+    <button class="btn btn-danger float-right" (click)="onDelete()">Delete</button>
   </div>
   <div class="card-body">
     <div class="form-group">
@@ -18,11 +18,11 @@
       <div class="row">
         <div class="col-lg mt-3 custom-control custom-checkbox my-1 mr-sm-2 ml-5">
           <div class="row">
-            <input type="checkbox" class="custom-control-input" id="doctorSelect">
+            <input type="checkbox" class="custom-control-input" id="doctorSelect" [formControl]="doctor">
             <label class="custom-control-label" for="doctorSelect">Check this in order to activate <b>doctor</b> authorization</label>
           </div>
           <div class="row">
-            <input type="checkbox" class="custom-control-input" id="administratorSelect">
+            <input type="checkbox" class="custom-control-input" id="administratorSelect" [formControl]="administrator">
             <label class="custom-control-label" for="administratorSelect">Check this in order to activate <b>administrator</b> authorization</label>
           </div>
         </div>
