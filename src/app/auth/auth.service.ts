@@ -15,6 +15,10 @@ interface Register {
   password: string;
 }
 
+interface Email {
+  email: string;
+}
+
 interface LoginResult {
   accessToken: string;
 }
@@ -55,5 +59,9 @@ export class AuthService {
 
   isAuthenticated() {
     return !this.jwt.isTokenExpired();
+  }
+
+  forgotPassword(email: Email) {
+    return this.httpClient.post<void>('auth/forgot-password', email);
   }
 }
