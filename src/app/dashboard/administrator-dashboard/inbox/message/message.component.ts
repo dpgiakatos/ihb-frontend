@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MessageService } from './message.service';
 
 @Component({
@@ -18,7 +18,8 @@ export class MessageComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -27,11 +28,13 @@ export class MessageComponent implements OnInit {
       this.email.setValue(value.email);
       this.subject.setValue(value.subject);
       this.message.setValue(value.message);
-    })
+    });
   }
 
   delete() {
-    this.messageService.delete(this.inboxId).subscribe(() => {})
+    this.messageService.delete(this.inboxId).subscribe(() => {
+      this.router.navigateByUrl('/dashboard/administrator/inbox');
+    });
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { ContactInbox } from './inbox.model';
 import { InboxService } from './inbox.service';
 
@@ -26,13 +26,12 @@ export class InboxComponent implements OnInit {
     this.inboxService.get(this.page).subscribe(value => {
       this.inbox = value.contacts;
       this.count = value.count;
-    })
+    });
   }
 
   delete(inboxMessage: ContactInbox) {
     this.inboxService.delete(inboxMessage.id).subscribe(() => {
-      this.count--;
       this.fetchCurrentPage();
-    })
+    });
   }
 }

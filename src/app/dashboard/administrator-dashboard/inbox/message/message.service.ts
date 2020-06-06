@@ -14,7 +14,7 @@ export class MessageService {
     const url = this.urlSerializer.serialize(['contact/message', id.toString()]);
     return this.httpClient.get<ContactInbox>(url);
   }
-  
+
   delete(id: number) {
     const url = this.urlSerializer.serialize(['contact', id.toString()]);
     return this.httpClient.delete(url);
