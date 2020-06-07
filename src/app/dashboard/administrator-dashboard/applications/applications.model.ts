@@ -7,7 +7,11 @@ export interface Application {
   lastName: string;
 }
 
+export interface CountApplications {
+  count: number;
+}
+
 export interface ApplicationList {
   applications: Application[];
-  count: number;
+  count: CountApplications[];
 }

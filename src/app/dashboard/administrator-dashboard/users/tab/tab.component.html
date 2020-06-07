@@ -27,11 +27,14 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-lg mt-3">
-          Doctor documents:<a><button class="btn btn-primary ml-1" id="doctorDocuments">Download</button></a>
+      <ng-template [ngIf]="!applicationActive">
+        <div class="row">
+          <div class="col-lg mt-3">
+            Doctor documents:<button class="btn btn-primary ml-1" id="doctorDocuments" (click)="download()">Download</button>
+            <button class="btn btn-danger float-right" (click)="deleteApplication()">Delete doctor application</button>
+          </div>
         </div>
-      </div>
+      </ng-template>
     </div>
   </div>
 </div>

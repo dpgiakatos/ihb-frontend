@@ -23,7 +23,7 @@ export class ApplicationsComponent implements OnInit {
   fetchCurrentPage() {
     this.applicationService.get(this.page).subscribe(value => {
       this.list = value.applications;
-      this.count = value.count;
+      this.count = value.count[0].count;
     });
   }
 }

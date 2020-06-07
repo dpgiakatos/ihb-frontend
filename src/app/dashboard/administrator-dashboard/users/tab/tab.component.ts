@@ -13,6 +13,7 @@ import { switchMap, tap } from 'rxjs/operators';
 export class TabComponent implements OnInit {
 
   userId: string;
+  applicationActive: boolean;
 
   name = new FormControl();
   email = new FormControl();
@@ -33,6 +34,7 @@ export class TabComponent implements OnInit {
     this.fetchPage();
     this.onDoctorRoleChange();
     this.onAdministratorRoleChange();
+    this.hasApplication();
   }
 
   fetchPage() {
@@ -76,6 +78,20 @@ export class TabComponent implements OnInit {
   onDelete() {
     this.tabService.deleteUser(this.userId).subscribe(() => {
       this.router.navigateByUrl('/dashboard/administrator/users');
+    });
+  }
+
+  hasApplication() {
+    this.tabService.hasApplication(this.userId).subscribe(value => { this.applicationActive = value; });
+  }
+
+  download() {
+    this.tabService.downloadDocument(this.userId).subscribe();
+  }
+
+  deleteApplication() {
+    this.tabService.deleteApplication(this.userId).subscribe(() => {
+      this.router.navigateByUrl('/dashboard/administrator/applications');
     });
   }
 }
