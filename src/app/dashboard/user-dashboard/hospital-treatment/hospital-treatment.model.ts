@@ -10,6 +10,6 @@ export interface HospitalTreatment {
 }
 
 export interface HospitalTreatmentList {
-  treatments: HospitalTreatment[];
+  hospitals: HospitalTreatment[];
   count: number;
 }
