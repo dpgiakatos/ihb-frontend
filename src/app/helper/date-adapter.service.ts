@@ -1,4 +1,4 @@
-import { NgbDateAdapter, NgbDateStruct, NgbDate } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDateAdapter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { Injectable } from '@angular/core';
 
 @Injectable({providedIn: 'root'})

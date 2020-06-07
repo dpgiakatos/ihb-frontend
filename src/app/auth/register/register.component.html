@@ -19,7 +19,7 @@
     <div class="form-group">
       <label for="email" class="sr-only">Email Address</label>
       <input type="email" id="inputEmail" class="form-control" placeholder="Email Address" autocomplete="email"
-              formControlName="email" [ngClass]="{'is-invalid': validator(form.get('email'))}">
+              formControlName="email">
       <div class="invalid-feedback" *ngIf="form.get('email')?.hasError('required')">Please provide your email.</div>
       <div class="invalid-feedback" *ngIf="form.get('email')?.hasError('email') || form.get('email')?.hasError('isEmail')">Please provide a valid email.</div>
       <div class="invalid-feedback" *ngIf="form.get('email')?.hasError('isExistingEmail')">An account already exists with this email.</div>

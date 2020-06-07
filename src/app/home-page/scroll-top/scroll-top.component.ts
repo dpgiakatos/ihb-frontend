@@ -18,8 +18,8 @@ export class ScrollTopComponent {
   previousY = 0;
   cancelScrollToTop = false;
 
-  @HostListener('window:scroll', ['$event'])
-  onWindowScroll(event: Event) {
+  @HostListener('window:scroll')
+  onWindowScroll() {
     if (this.document?.defaultView) {
       if (this.document?.defaultView.pageYOffset > this.previousY) {
         this.cancelScrollToTop = true;

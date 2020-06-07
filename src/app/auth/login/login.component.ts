@@ -1,9 +1,8 @@
-import { Component, OnInit, ViewChild, ɵConsole } from '@angular/core';
-import { FormControl, FormGroup, Validators, AbstractControl, NgForm } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
 import { AuthService } from '../auth.service';
-import { UnprocessableEntitySchema } from '../../helper/UnprocessableEntitySchema';
 
 @Component({
   selector: 'ihb-login',
@@ -41,13 +40,6 @@ export class LoginComponent implements OnInit {
         this.form.setErrors({ invalidCredentials: true });
       }
     });
-  }
-
-  validator(control: AbstractControl | null): boolean {
-    if (!control) {
-      throw new Error('Validating null control');
-    }
-    return control.invalid && control.dirty && control.touched;
   }
 
 }

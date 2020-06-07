@@ -1,11 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Subscription } from 'rxjs';
+import { Subscription, merge } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { debounceTime, switchMap, tap } from 'rxjs/operators';
+import { switchMap, filter } from 'rxjs/operators';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { ModalContentComponent } from './modal/modal.component';
-import { User } from './doctor-dashboard.interface';
+import { User } from './doctor-dashboard.model';
+import { PermissionModalComponent } from './permission-modal/permission-modal.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ihb-doctor-dashboard',
@@ -16,53 +17,70 @@ export class DoctorDashboardComponent implements OnInit, OnDestroy {
 
   searchBox = new FormControl();
   country = new FormControl(null);
-  subscriptionSearch: Subscription;
-  subscriptionCountry: Subscription;
+  page = 1;
+  limit = 10;
+  count: number;
+
+  inputSubscription: Subscription;
   list: User[] = [];
 
-  constructor(private httpClient: HttpClient, private modalService: NgbModal) {}
+  constructor(
+    private httpClient: HttpClient,
+    private modalService: NgbModal,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
-    this.subscriptionSearch = this.searchBox.valueChanges.pipe(
-      tap(input => {
-        if (input.length === 0) {
-          this.list = [];
-        }
-      }),
-      debounceTime(1000),
-      switchMap(value => {
-        let params = new HttpParams();
-        params = params.append('search', value);
-        if (this.country.value) {
-          params = params.append('country', this.country.value);
-        }
-        return this.httpClient.get<User[]>('doctor/find', {params});
-      })
-    ).subscribe(value => {
-      this.list = value;
-    });
-    this.subscriptionCountry = this.country.valueChanges.pipe(
-      tap(input => {
-        if (input.length === 0) {
-          this.list = [];
-        }
-      }),
-      switchMap(value => {
-        return this.httpClient.get<User[]>('doctor/find?search=' + this.searchBox.value + '&country=' + value);
-      })
-    ).subscribe(value => {
-      this.list = value;
+    this.inputSubscription = merge(
+      this.searchBox.valueChanges.pipe(
+        filter(input => {
+          if (input.length === 0) {
+            this.list = [];
+            return false;
+          }
+          return true;
+        }),
+        // debounceTime(1000)
+      ),
+      this.country.valueChanges
+    ).pipe(
+      switchMap(() => this.fetchResults())
+    ).subscribe(response => {
+      this.list = response.users;
+      this.count = response.count;
     });
   }
 
   ngOnDestroy() {
-    this.list = [];
-    this.subscriptionSearch.unsubscribe();
-    this.subscriptionCountry.unsubscribe();
+    this.inputSubscription.unsubscribe();
   }
 
-  open(user: User) {
-    const modalRef = this.modalService.open(ModalContentComponent);
+  fetchCurrentPage() {
+    this.fetchResults().subscribe(response => {
+      this.list = response.users;
+      this.count = response.count;
+    });
+  }
+
+  private fetchResults() {
+    let params = new HttpParams();
+    params = params.append('search', this.searchBox.value);
+    params = params.append('page', this.page.toString());
+    if (this.country.value) {
+      params = params.append('country', this.country.value);
+    }
+    return this.httpClient.get<{ users: User[], count: number }>('doctor/find', { params });
+  }
+
+  openPermissionModal(user: User) {
+    const modalRef = this.modalService.open(PermissionModalComponent);
     modalRef.componentInstance.user = user;
+    modalRef.result.then(result => {
+      if (result === true) {
+        this.httpClient.get(`doctor/${user.userId}/access`).subscribe(() => {
+          this.router.navigate(['dashboard', 'user', user.userId]);
+        });
+      }
+    });
   }
 }

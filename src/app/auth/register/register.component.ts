@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { Subscription } from 'rxjs';
@@ -42,7 +42,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
     });
 
     this.passwordChange = this.form.controls.password.valueChanges.subscribe(() => this.checkSamePassword());
-    this.confirmPasswordChange = this.form.controls.cPassword.valueChanges.subscribe((event) => {
+    this.confirmPasswordChange = this.form.controls.cPassword.valueChanges.subscribe(() => {
       if (this.userInitiatedChange) {
         this.checkSamePassword();
       }
@@ -74,13 +74,6 @@ export class RegisterComponent implements OnInit, OnDestroy {
         }
       }
     });
-  }
-
-  validator(control: AbstractControl | null): boolean {
-    if (!control) {
-      throw new Error('Validating null control');
-    }
-    return control.invalid && control.dirty && control.touched;
   }
 
   checkSamePassword() {

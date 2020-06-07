@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
-import {FormControl, FormGroup, Validators, AbstractControl} from '@angular/forms';
+import {FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
@@ -33,12 +33,5 @@ export class ForgotPasswordComponent implements OnInit {
       }
     });
     this.form.reset();
-  }
-
-  validator(control: AbstractControl | null): boolean {
-    if (!control) {
-      throw new Error('Validating null control');
-    }
-    return control.invalid && control.dirty && control.touched;
   }
 }

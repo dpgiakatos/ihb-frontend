@@ -65,7 +65,7 @@ export class AuthService {
     return this.httpClient.post<void>('auth/forgot-password', email);
   }
 
-  checkResetToken(token: string){
+  checkResetToken(token: string) {
     return this.httpClient.get<void>(`auth/reset-password/${token}`);
   }
 

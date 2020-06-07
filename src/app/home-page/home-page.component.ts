@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
 interface Contact {
@@ -39,16 +39,8 @@ export class HomePageComponent implements OnInit {
 
   onContactSubmit() {
     console.log(this.contactForm.value);
-    this.httpClient.post<Contact>('contact', this.contactForm.value).subscribe(
-      (contact: Contact) => {
-        this.contactForm.reset();
-      })
-  }
-
-  validator(control: AbstractControl | null): boolean {
-    if (!control) {
-      throw new Error('Validating null control');
-    }
-    return control.invalid && control.dirty && control.touched;
+    this.httpClient.post<Contact>('contact', this.contactForm.value).subscribe(() => {
+      this.contactForm.reset();
+    });
   }
 }

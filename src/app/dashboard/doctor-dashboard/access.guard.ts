@@ -3,7 +3,6 @@ import {
   ActivatedRouteSnapshot,
   CanActivate,
   Router,
-  RouterStateSnapshot,
   UrlTree
 } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -21,7 +20,7 @@ export class AccessGuard implements CanActivate {
     private router: Router
   ) { }
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot)
+  canActivate(route: ActivatedRouteSnapshot)
     : Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     const userId = route.params.id;
     const url = this.urlSerializer.serialize(['doctor', userId, 'has-access']);

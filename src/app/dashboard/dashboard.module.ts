@@ -22,13 +22,13 @@ import { DoctorOnlyGuard } from '../auth/guards/doctor-only.guard';
 import { SharedModule } from '../shared/shared.module';
 import { NotificationsDashboardComponent } from './notifications-dashboard/notifications-dashboard.component';
 import { AccessGuard } from './doctor-dashboard/access.guard';
-import { ModalContentComponent } from './doctor-dashboard/modal/modal.component';
 import { AdministratorOnlyGuard } from '../auth/guards/administrator-only.guard';
 import { InboxComponent } from './administrator-dashboard/inbox/inbox.component';
 import { ApplicationsComponent } from './administrator-dashboard/applications/applications.component';
 import { UsersComponent } from './administrator-dashboard/users/users.component';
 import { MessageComponent } from './administrator-dashboard/inbox/message/message.component';
 import { TabComponent } from './administrator-dashboard/users/tab/tab.component';
+import { PermissionModalComponent } from './doctor-dashboard/permission-modal/permission-modal.component';
 
 const userDashboardRoutes: Routes = [
   { path: '', redirectTo: 'personal-information', pathMatch: 'full' },
@@ -79,7 +79,7 @@ const exportedComponents = [
   RecommendedVaccinationsComponent,
   ExtraVaccinationsComponent,
   NotificationsDashboardComponent,
-  ModalContentComponent,
+  PermissionModalComponent,
   InboxComponent,
   ApplicationsComponent,
   UsersComponent,

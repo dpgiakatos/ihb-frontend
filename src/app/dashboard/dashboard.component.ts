@@ -1,17 +1,16 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { faUser, faBell } from '@fortawesome/free-solid-svg-icons';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { Role, AuthService } from '../auth/auth.service';
-import { Router, ActivatedRoute } from '@angular/router';
-import { AuthGuard } from '../auth/guards/auth.guard';
+import { AuthService } from '../auth/auth.service';
+import { Router } from '@angular/router';
+import { NgbPaginationConfig } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'ihb-dashboard',
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
+  providers: [NgbPaginationConfig]
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
   faUser = faUser;
   faBell = faBell;
 
@@ -19,8 +18,15 @@ export class DashboardComponent {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private paginationConfig: NgbPaginationConfig
   ) { }
+
+  ngOnInit() {
+    this.paginationConfig.rotate = true;
+    this.paginationConfig.boundaryLinks = true;
+    this.paginationConfig.maxSize = 5;
+  }
 
   onLogout() {
     this.authService.logout();

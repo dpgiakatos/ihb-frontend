@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ContactInbox } from './inbox.model';
 import { InboxService } from './inbox.service';
 

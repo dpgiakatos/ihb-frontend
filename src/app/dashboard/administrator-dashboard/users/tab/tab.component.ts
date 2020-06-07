@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TabService } from './tab.service';
 import { FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { switchMap, tap } from 'rxjs/operators';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'ihb-tab',

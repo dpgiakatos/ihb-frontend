@@ -18,24 +18,33 @@
         </div>
       </div>
     </div>
-    <table *ngIf="searchBox.value" class="table table-striped mt-3 table-responsive-lg">
-      <thead>
-      <tr>
-        <th scope="col">First Name</th>
-        <th scope="col">Last Name</th>
-        <th scope="col">SSNVS</th>
-        <th scope="col"></th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let user of list;">
-        <td><ngb-highlight [result]="user.firstName" [term]="searchBox.value"></ngb-highlight></td>
-        <td><ngb-highlight [result]="user.lastName" [term]="searchBox.value"></ngb-highlight></td>
-        <td><ngb-highlight [result]="user.ssnvs" [term]="searchBox.value"></ngb-highlight></td>
-        <td><button class="btn btn-primary" (click)="open(user)">View</button></td>
-      </tr>
-      </tbody>
-    </table>
+    <ng-container *ngIf="list.length">
+      <table class="table table-striped mt-3 table-responsive-lg">
+        <thead>
+        <tr>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">SSNVS</th>
+          <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of list;">
+            <td><ngb-highlight [result]="user.firstName" [term]="searchBox.value"></ngb-highlight></td>
+            <td><ngb-highlight [result]="user.lastName" [term]="searchBox.value"></ngb-highlight></td>
+            <td><ngb-highlight [result]="user.ssnvs" [term]="searchBox.value"></ngb-highlight></td>
+            <td><button class="btn btn-primary" (click)="openPermissionModal(user)">View</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="d-flex justify-content-between p-2">
+        <ngb-pagination
+          [(page)]="page"
+          [pageSize]="limit"
+          [collectionSize]="count"
+          (pageChange)="fetchCurrentPage()"></ngb-pagination>
+      </div>
+    </ng-container>
   </div>
 </div>
 <router-outlet></router-outlet>

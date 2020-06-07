@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SettingsService } from './settings.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { ActivatedRoute } from '@angular/router';
@@ -35,7 +35,7 @@ export class SettingsDashboardComponent implements OnInit {
     private httpClient: HttpClient,
     private activatedRoute: ActivatedRoute,
     private settingsService: SettingsService,
-    private jwt: JwtHelperService
+    jwt: JwtHelperService
   ) {
     this.userId = this.activatedRoute.snapshot.params.id;
     const accessToken = localStorage.getItem('access-token');
@@ -64,15 +64,12 @@ export class SettingsDashboardComponent implements OnInit {
 
     let params = new HttpParams();
     params = params.append('userId', this.userId);
-    
     this.hasApplication();
   }
 
   onPasswordSubmit() {
-    console.log(this.passwordForm.value);
-    
     this.httpClient.put<Password>('user/' + this.userId + '/change-password', this.passwordForm.value).subscribe(
-      (password: Password) => {
+      () => {
         this.passwordForm.reset();
       }, (err: HttpErrorResponse) => {
         if (err.error instanceof ErrorEvent) {
