@@ -1,1 +1,28 @@
-<p>applications works!</p>
+<table class="table table-striped mt-3 table-responsive-lg">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">First Name</th>
+    <th scope="col">Last Name</th>
+    <th scope="col">Date & Time</th>
+    <th scope="col"></th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let item of list; let i = index">
+    <th scope="row">{{i+1}}</th>
+    <td>{{item.firstName}}</td>
+    <td>{{item.lastName}}</td>
+    <td>{{item.createdTime}}</td>
+    <td><a routerLink="./{{item.userId}}"><button class="btn btn-primary">Read</button></a></td>
+  </tr>
+  </tbody>
+</table>
+<div class="d-flex justify-content-between p-2">
+  <ngb-pagination
+    [collectionSize]="count"
+    [(page)]="page"
+    [pageSize]="limit"
+    (pageChange)="fetchCurrentPage()">
+  </ngb-pagination>
+</div>

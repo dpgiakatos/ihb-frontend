@@ -27,24 +27,32 @@
     </form>
     <hr/>
     <h3>Ask for doctor authorization</h3>
-    <p>Upload all the necessaries files in order to get a doctor account.</p>
-    <form [formGroup]="uploadForm" (submit)="onUploadSubmit()">
-      <div class="form-group">
-        <div class="row">
-          <div class="col-lg mt-3">
-            <div class="custom-file">
-              <input type="file" class="custom-file-input" id="customFile" formControlName="file">
-              <label class="custom-file-label" for="customFile">Choose file</label>
+    <ng-container *ngIf="applicationActive then thenBlock else elseBlock"></ng-container>
+    <ng-template #thenBlock>
+      <p>Upload all the necessaries files in order to get a doctor account.<br>
+        You should upload a zip folder which contains all your files that you want to upload.<br>
+        Other folders format will not be accepted.</p>
+      <form [formGroup]="uploadForm" (submit)="onUploadSubmit()">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-lg">
+              <div class="custom-file">
+                <input type="file" class="form-control-file" id="customFile"
+                       formControlName="file" accept=".zip" (change)="upload($event)">
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg mt-3">
+              <button type="submit" class="btn btn-primary" [disabled]="uploadForm.invalid">Upload</button>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-lg mt-3">
-            <a><button type="submit" class="btn btn-primary" [disabled]="uploadForm.disabled">Upload</button></a>
-          </div>
-        </div>
-      </div>
-    </form>
+      </form>
+    </ng-template>
+    <ng-template #elseBlock>
+      <p>You have sent an application.</p>
+    </ng-template>
     <hr/>
     <h3>Delete your account</h3>
     <p>All your personal information will be delete from our database.</p>

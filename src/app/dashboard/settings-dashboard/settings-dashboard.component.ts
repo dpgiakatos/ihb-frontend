@@ -1,32 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import { SettingsService } from './settings.service';
 
 @Component({
   selector: 'ihb-settings-dashboard',
   templateUrl: './settings-dashboard.component.html',
-  styleUrls: ['./settings-dashboard.component.css']
+  styleUrls: ['./settings-dashboard.component.css'],
+  providers: [SettingsService]
 })
 export class SettingsDashboardComponent implements OnInit {
 
-  passwordForm: FormGroup;
-  uploadForm: FormGroup;
+  passwordForm = new FormGroup({
+    password: new FormControl(null, [Validators.required]),
+    retype: new FormControl(null, [Validators.required])
+  });
+  uploadForm = new FormGroup({
+    file: new FormControl(null, [Validators.required]),
+  });
 
-  constructor() { }
+  file: File;
+  applicationActive: boolean;
 
-  ngOnInit(): void {
-    this.passwordForm = new FormGroup({
-      password: new FormControl(null, [
-        Validators.required
-      ]),
-      retype: new FormControl(null, [
-        Validators.required
-      ])
-    });
-    this.uploadForm = new FormGroup({
-      file: new FormControl(null, [
-        Validators.required
-      ])
-    });
+  constructor(private settingsService: SettingsService) { }
+
+  ngOnInit() {
+    this.hasApplication();
   }
 
   onPasswordSubmit() {
@@ -39,8 +37,26 @@ export class SettingsDashboardComponent implements OnInit {
     );
   }
 
-  onUploadSubmit() {
+  upload(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files?.length) {
+      const file = input.files[0];
+      if (file) {
+        if ((/\.(zip)$/i).test(file.name) && file.size <= 50000000) {
+          this.file = file;
+        } else {
+          // TODO: handle error
+        }
+      }
+    }
+  }
 
+  onUploadSubmit() {
+    this.settingsService.post(this.file).subscribe(() => { this.hasApplication(); });
+  }
+
+  hasApplication() {
+    this.settingsService.get().subscribe(value => { this.applicationActive = value; });
   }
 
   isInvalid(form: FormGroup): boolean {
