@@ -55,6 +55,9 @@ export class RegisterComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
+    if (this.form.invalid) {
+      return;
+    }
     this.authService.register(this.form.value).subscribe(() => {
       this.router.navigateByUrl('/dashboard/user');
     }, (err: HttpErrorResponse) => {

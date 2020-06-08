@@ -68,6 +68,9 @@ export class SettingsDashboardComponent implements OnInit {
   }
 
   onPasswordSubmit() {
+    if (this.passwordForm.invalid) {
+      return;
+    }
     this.httpClient.put<Password>('user/' + this.userId + '/change-password', this.passwordForm.value).subscribe(
       () => {
         this.passwordForm.reset();
@@ -103,15 +106,11 @@ export class SettingsDashboardComponent implements OnInit {
   }
 
   onUploadSubmit() {
-    this.settingsService.post(this.file).subscribe(() => { this.hasApplication(); });
+    this.settingsService.post(this.file).subscribe(() => { this.applicationActive = true; });
   }
 
   hasApplication() {
     this.settingsService.get().subscribe(value => { this.applicationActive = value; });
-  }
-
-  isInvalid(form: FormGroup): boolean {
-    return form.invalid || this.isNotSamePassword();
   }
 
 }

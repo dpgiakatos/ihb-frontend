@@ -1,4 +1,4 @@
-<div class="card text-center">
+<div class="card w-75 mt-3 mx-auto">
   <div class="card-header">
     <h1>Settings</h1>
   </div>
@@ -8,32 +8,28 @@
       <div class="form-group">
 
         <div class="form-group">
-          <div class="col-lg mt-3 mb-4">
-            <label for="oldPassword">Type the old password</label>
-            <input type="password" class="form-control" id="oldPassword" autocomplete="old-password"
-              placeholder="Old Password" formControlName="oldPassword">
-          </div>
-            <p class="text-danger" *ngIf="passwordForm.hasError('invalidCredentials')">Wrong Password</p>
+          <label for="oldPassword">Type the old password</label>
+          <input type="password" class="form-control" id="oldPassword" autocomplete="old-password"
+            placeholder="Old Password" formControlName="oldPassword">
+          <p class="text-danger" *ngIf="passwordForm.hasError('invalidCredentials')">Wrong Password</p>
         </div>
 
         <div class="form-group">
-          <div class="col-lg mt-3 mb-4">
-            <label for="password">Type the new password</label>
-            <input type="password" class="form-control" id="password" autocomplete="new-password"
-              placeholder="New Password" formControlName="password">
-          </div>
-          <div class="col-lg mt-3 mb-4">
-            <label for="retypePassword">Retype the new password</label>
-            <input type="password" class="form-control" id="newPassword" autocomplete="new-password"
-              placeholder="New Password" formControlName="newPassword"
-                   [ngClass]="{'is-invalid': isNotSamePassword()}">
-            <div class="invalid-feedback">The password is not the same.</div>
-          </div>
+          <label for="password">Type the new password</label>
+          <input type="password" class="form-control" id="password" autocomplete="new-password"
+            placeholder="New Password" formControlName="password">
+        </div>
+        <div class="form-group">
+          <label for="retypePassword">Retype the new password</label>
+          <input type="password" class="form-control" id="newPassword" autocomplete="new-password"
+            placeholder="New Password" formControlName="newPassword"
+                  [ngClass]="{'is-invalid': isNotSamePassword()}">
+          <div class="invalid-feedback">The password is not the same.</div>
         </div>
 
         <div class="row">
           <div class="col-lg mt-2">
-            <a><button type="submit" class="btn btn-primary" [disabled]="isInvalid(passwordForm)" (submit)="onPasswordSubmit()">Save</button></a>
+            <a><button type="submit" class="btn btn-primary" (submit)="onPasswordSubmit()">Save</button></a>
           </div>
         </div>
       </div>
@@ -42,9 +38,9 @@
     <h3>Ask for doctor authorization</h3>
     <ng-container *ngIf="applicationActive then thenBlock else elseBlock"></ng-container>
     <ng-template #thenBlock>
-      <p>Upload all the necessaries files in order to get a doctor account.<br>
+      <p>Upload all the necessary files in order to get a doctor account.<br>
         You should upload a zip folder which contains all your files that you want to upload.<br>
-        Other folders format will not be accepted.</p>
+        Other folder formats will not be accepted.</p>
       <form [formGroup]="uploadForm" (submit)="onUploadSubmit()">
         <div class="form-group">
           <div class="row">

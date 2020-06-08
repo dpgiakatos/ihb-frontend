@@ -104,7 +104,7 @@ export class HospitalTreatmentComponent implements OnInit {
 
   fetchCurrentPage() {
     this.treatmentsService.get(this.page, this.userId).subscribe(response => {
-      this.treatmentList = response.hospitals;
+      this.treatmentList = response.treatments;
       this.count = response.count;
     });
   }

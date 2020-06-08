@@ -38,9 +38,11 @@ export class HomePageComponent implements OnInit {
   }
 
   onContactSubmit() {
-    console.log(this.contactForm.value);
+    if (this.contactForm.invalid) {
+      return;
+    }
     this.httpClient.post<Contact>('contact', this.contactForm.value).subscribe(() => {
-      this.contactForm.reset();
+      // this.contactForm.reset();
     });
   }
 }
