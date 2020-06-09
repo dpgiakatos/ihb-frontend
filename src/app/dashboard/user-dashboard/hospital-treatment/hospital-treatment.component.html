@@ -121,3 +121,6 @@
     </ngb-pagination>
   </div>
 </ng-container>
+<p *ngIf='!isDoctor && !treatmentList.length'>
+  No available data. Only doctors can update your medical history.
+</p>

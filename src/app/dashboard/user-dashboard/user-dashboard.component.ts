@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 import { filter, switchMap, map } from 'rxjs/operators';
-import { of, Observable } from 'rxjs';
+import { of, Observable, merge } from 'rxjs';
 import { AuthService, Role, Claims } from '../../auth/auth.service';
 import { PersonalInformationService } from './personal-information/personal-information.service';
 import { RecommendedVaccinationsService } from './vaccinations/recommended-vaccinations/recommended-vaccinations.service';
@@ -43,15 +43,25 @@ export class UserDashboardComponent implements OnInit {
   activatedChild: Observable<string | null>;
 
   ngOnInit() {
-    this.activatedChild = this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd),
-      switchMap(() => (this.route.firstChild?.url || of([]))),
-      map((urlSegments) => {
-        if (urlSegments.length) {
-          return urlSegments[0].path;
-        }
-        return null;
-      })
+    this.activatedChild = merge(
+      of(this.route.snapshot.firstChild?.url || []).pipe(
+        map((urlSegments) => {
+          if (urlSegments.length) {
+            return urlSegments[0].path;
+          }
+          return null;
+        })
+      ),
+      this.router.events.pipe(
+        filter(event => event instanceof NavigationEnd),
+        switchMap(() => (this.route.firstChild?.url || of([]))),
+        map((urlSegments) => {
+          if (urlSegments.length) {
+            return urlSegments[0].path;
+          }
+          return null;
+        })
+      )
     );
   }
 }

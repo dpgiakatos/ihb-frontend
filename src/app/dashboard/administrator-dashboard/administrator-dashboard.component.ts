@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { Observable, of, merge } from 'rxjs';
 import { filter, map, switchMap } from 'rxjs/operators';
 import { InboxService } from './inbox/inbox.service';
 import { ApplicationsService } from './applications/applications.service';
@@ -26,15 +26,25 @@ export class AdministratorDashboardComponent implements OnInit {
   activatedChild: Observable<string | null>;
 
   ngOnInit() {
-    this.activatedChild = this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd),
-      switchMap(() => (this.route.firstChild?.url || of([]))),
-      map((urlSegments) => {
-        if (urlSegments.length) {
-          return urlSegments[0].path;
-        }
-        return null;
-      })
+    this.activatedChild = merge(
+      of(this.route.snapshot.firstChild?.url || []).pipe(
+        map((urlSegments) => {
+          if (urlSegments.length) {
+            return urlSegments[0].path;
+          }
+          return null;
+        })
+      ),
+      this.router.events.pipe(
+        filter(event => event instanceof NavigationEnd),
+        switchMap(() => (this.route.firstChild?.url || of([]))),
+        map((urlSegments) => {
+          if (urlSegments.length) {
+            return urlSegments[0].path;
+          }
+          return null;
+        })
+      )
     );
   }
 }
