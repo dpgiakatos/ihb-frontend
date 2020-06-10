@@ -3,7 +3,7 @@
   <ng-template #addButton>
     <div class="row">
       <div class="col">
-        <button class="btn btn-primary" (click)="enableAddForm()">Add</button>
+        <button class="btn btn-primary" (click)="enableAddForm()" i18n>Add</button>
       </div>
     </div>
   </ng-template>
@@ -11,25 +11,25 @@
     <div class="form-group">
       <div class="row">
         <div class="col-lg mt-3">
-          <label for="allergicDiseaseName">Allergic Disease Name</label>
+          <label for="allergicDiseaseName" i18n>Allergic Disease Name</label>
           <input type="text" class="form-control" id="allergicDiseaseName" formControlName="name">
-          <div class="invalid-feedback">Please provide a valid name.</div>
+          <div class="invalid-feedback" i18n>Please provide a valid name.</div>
         </div>
         <div class="col-lg mt-3">
-          <label for="allergicDiseaseDescription">Allergic Disease Description</label>
+          <label for="allergicDiseaseDescription" i18n>Allergic Disease Description</label>
           <textarea class="form-control" id="allergicDiseaseDescription" formControlName="diseaseDescription"></textarea>
-          <div class="invalid-feedback">Please provide a valid description.</div>
+          <div class="invalid-feedback" i18n>Please provide a valid description.</div>
         </div>
         <div class="col-lg mt-3">
-          <label for="allergicDiseaseTreatmentDescription">Treatment Description</label>
+          <label for="allergicDiseaseTreatmentDescription" i18n>Treatment Description</label>
           <textarea class="form-control" id="allergicDiseaseTreatmentDescription" formControlName="treatmentDescription"></textarea>
-          <div class="invalid-feedback">Please provide a valid description.</div>
+          <div class="invalid-feedback" i18n>Please provide a valid description.</div>
         </div>
       </div>
       <div class="row">
         <div class="col-lg mt-3">
-          <button type="submit" class="btn btn-primary mr-3">Save</button>
-          <button class="btn btn-primary mr-3" (click)="closeAddForm()">Close</button>
+          <button type="submit" class="btn btn-primary mr-3" i18n>Save</button>
+          <button class="btn btn-primary mr-3" (click)="closeAddForm()" i18n>Close</button>
         </div>
       </div>
     </div>
@@ -40,9 +40,9 @@
     <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">Allergic Disease Name</th>
-      <th scope="col">Allergic Disease Description</th>
-      <th scope="col">Treatment Description</th>
+      <th scope="col" i18n>Allergic Disease Name</th>
+      <th scope="col" i18n>Allergic Disease Description</th>
+      <th scope="col" i18n>Treatment Description</th>
       <ng-container *ngIf="isDoctor">
         <th scope="col"></th>
         <th scope="col"></th>
@@ -56,8 +56,8 @@
         <td>{{allergy.diseaseDescription}}</td>
         <td>{{allergy.treatmentDescription}}</td>
         <ng-container *ngIf="isDoctor">
-          <td><button type="button" class="btn btn-warning" (click)="setEditForm(allergy)">Edit</button></td>
-          <td><button type="button" class="btn badge-danger" (click)="onDelete(allergy)">Delete</button></td>
+          <td><button type="button" class="btn btn-warning" (click)="setEditForm(allergy)" i18n>Edit</button></td>
+          <td><button type="button" class="btn badge-danger" (click)="onDelete(allergy)" i18n>Delete</button></td>
         </ng-container>
       </tr>
     </tbody>
@@ -71,7 +71,7 @@
     </ngb-pagination>
   </div>
 </ng-container>
-<p *ngIf='!isDoctor && !allergicList.length'>
+<p *ngIf='!isDoctor && !allergicList.length' i18n>
   No available data. Only doctors can update your medical history.
 </p>
 

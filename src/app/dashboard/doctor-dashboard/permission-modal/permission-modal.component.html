@@ -1,13 +1,13 @@
 <div class="modal-header">
-  <h4 class="modal-title">Attention!</h4>
+  <h4 class="modal-title" i18n>Attention!</h4>
   <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
 <div class="modal-body">
-  <p>You are asking permission to see the health booklet of patient <b>{{user.firstName}} {{user.lastName}}</b>.</p>
-  <p><b>This transaction will be logged and <u>{{user.firstName}} {{user.lastName}}</u> will be notified.</b></p>
+  <p i18n>You are asking permission to see the health booklet of patient <b>{{user.firstName}} {{user.lastName}}</b>.</p>
+  <p i18n><b>This transaction will be logged and <u>{{user.firstName}} {{user.lastName}}</u> will be notified.</b></p>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-danger" ngbAutofocus (click)="activeModal.close(true)">I have permission</button>
+  <button type="button" class="btn btn-danger" ngbAutofocus (click)="activeModal.close(true)" i18n>I have permission</button>
 </div>

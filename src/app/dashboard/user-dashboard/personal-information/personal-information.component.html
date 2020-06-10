@@ -2,24 +2,24 @@
   <div class="form-group">
     <div class="row">
       <div class="col-lg mt-3">
-        <label for="firstName">First Name</label>
+        <label for="firstName" i18n>First Name</label>
         <input type="text" class="form-control" id="firstName" formControlName="firstName">
-        <div class="invalid-feedback">Please provide your first name.</div>
+        <div class="invalid-feedback" i18n>Please provide your first name.</div>
       </div>
       <div class="col-lg mt-3">
-        <label for="lastName">Last Name</label>
+        <label for="lastName" i18n>Last Name</label>
         <input type="text" class="form-control" id="lastName" formControlName="lastName">
-        <div class="invalid-feedback">Please provide your last name.</div>
+        <div class="invalid-feedback" i18n>Please provide your last name.</div>
       </div>
     </div>
     <div class="row">
       <div class="col-lg mt-3">
-        <label for="ssnvs">SSNVS</label>
+        <label for="ssnvs" i18n>SSNVS</label>
         <input type="text" class="form-control" id="ssnvs" formControlName="ssnvs">
-        <div class="invalid-feedback">Please provide your SSNVS.</div>
+        <div class="invalid-feedback" i18n>Please provide your SSNVS.</div>
       </div>
       <div class="col-lg mt-3">
-        <label for="dateOfBirth">Date Of Birth</label>
+        <label for="dateOfBirth" i18n>Date Of Birth</label>
         <div class="input-group" id="dateOfBirth">
           <input
             type="text"
@@ -34,49 +34,49 @@
               <fa-icon [icon]="faCalendarAlt"></fa-icon>
             </button>
           </div>
-          <div class="invalid-feedback">Please provide your date of birth.</div>
+          <div class="invalid-feedback" i18n>Please provide your date of birth.</div>
         </div>
       </div>
       <div class="col-lg mt-3">
-        <label for="country">Country</label>
+        <label for="country" i18n>Country</label>
         <select class="form-control" id="country" formControlName="country">
           <option>Greece</option>
         </select>
-        <div class="invalid-feedback">Please provide your country.</div>
+        <div class="invalid-feedback" i18n>Please provide your country.</div>
       </div>
     </div>
     <div class="row">
       <div class="col-lg mt-3">
-        <label for="fathersFirstName">Father's First Name</label>
+        <label for="fathersFirstName" i18n>Father's First Name</label>
         <input type="text" class="form-control" id="fathersFirstName" formControlName="fatherFirstName">
-        <div class="invalid-feedback">Please provide your father's first name.</div>
+        <div class="invalid-feedback" i18n>Please provide your father's first name.</div>
       </div>
       <div class="col-lg mt-3">
-        <label for="fathersLastName">Father's Last Name</label>
+        <label for="fathersLastName" i18n>Father's Last Name</label>
         <input type="text" class="form-control" id="fathersLastName" formControlName="fatherLastName">
-        <div class="invalid-feedback">Please provide your father's last name.</div>
+        <div class="invalid-feedback" i18n>Please provide your father's last name.</div>
       </div>
       <div class="col-lg mt-3">
-        <label for="mothersFirstName">Mother's First Name</label>
+        <label for="mothersFirstName" i18n>Mother's First Name</label>
         <input type="text" class="form-control" id="mothersFirstName" formControlName="motherFirstName">
-        <div class="invalid-feedback">Please provide your mother's first name.</div>
+        <div class="invalid-feedback" i18n>Please provide your mother's first name.</div>
       </div>
       <div class="col-lg mt-3">
-        <label for="mothersLastName">Mother's Last Name</label>
+        <label for="mothersLastName" i18n>Mother's Last Name</label>
         <input type="text" class="form-control" id="mothersLastName" formControlName="motherLastName">
-        <div class="invalid-feedback">Please provide your mother's last name</div>
+        <div class="invalid-feedback" i18n>Please provide your mother's last name</div>
       </div>
     </div>
     <div class="row">
       <div class="col-lg mt-3">
-        <label for="mobilePhone">Mobile Phone</label>
+        <label for="mobilePhone" i18n>Mobile Phone</label>
         <input type="text" class="form-control" id="mobilePhone" formControlName="mobilePhone">
-        <div class="invalid-feedback">Please provide your mobile phone.</div>
+        <div class="invalid-feedback" i18n>Please provide your mobile phone.</div>
       </div>
       <div class="col-lg mt-3">
-        <label for="emergencyPhone">Emergency Phone Contact</label>
+        <label for="emergencyPhone" i18n>Emergency Phone Contact</label>
         <input type="text" class="form-control" id="emergencyPhone" formControlName="emergencyContact">
-        <div class="invalid-feedback">Please provide an emergency phone contact.</div>
+        <div class="invalid-feedback" i18n>Please provide an emergency phone contact.</div>
       </div>
     </div>
     <div class="row" *ngIf="canEdit()">
@@ -84,10 +84,10 @@
         <ng-container
           *ngIf="editing then editingPersonal else notEditingPersonal"></ng-container>
         <ng-template #notEditingPersonal>
-          <button class="btn btn-primary mt-3 mr-3" (click)="onEdit()">Edit</button>
+          <button class="btn btn-primary mt-3 mr-3" (click)="onEdit()" i18n>Edit</button>
         </ng-template>
         <ng-template #editingPersonal>
-          <button type="submit" class="btn btn-primary mt-3 mr-3">Save</button>
+          <button type="submit" class="btn btn-primary mt-3 mr-3" i18n>Save</button>
         </ng-template>
       </div>
     </div>

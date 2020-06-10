@@ -1,20 +1,20 @@
 <div class="card w-75 mt-3 mx-auto">
   <div class="card-header">
-    <h1>User</h1>
+    <h1 i18n>User</h1>
   </div>
   <div class="card-body">
     <nav ngbNav [activeId]="activatedChild | async" class="nav-tabs">
       <li ngbNavItem="personal-information">
-        <a ngbNavLink routerLink="./personal-information">Personal Information</a>
+        <a ngbNavLink routerLink="./personal-information" i18n>Personal Information</a>
       </li>
       <li ngbNavItem="vaccinations">
-        <a ngbNavLink routerLink="./vaccinations">Vaccinations</a>
+        <a ngbNavLink routerLink="./vaccinations" i18n>Vaccinations</a>
       </li>
       <li ngbNavItem="allergic-diseases">
-        <a ngbNavLink routerLink="./allergic-diseases">Allergic Diseases</a>
+        <a ngbNavLink routerLink="./allergic-diseases" i18n>Allergic Diseases</a>
       </li>
       <li ngbNavItem="hospital-treatment">
-        <a ngbNavLink routerLink="./hospital-treatment">Hospital Treatment</a>
+        <a ngbNavLink routerLink="./hospital-treatment" i18n>Hospital Treatment</a>
       </li>
     </nav>
     <div class="mt-3">

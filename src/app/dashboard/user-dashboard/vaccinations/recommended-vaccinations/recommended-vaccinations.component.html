@@ -12,10 +12,10 @@
       <ng-container
         *ngIf="!editing then thenBlockForVaccinationList else elseBlockForVaccinationList"></ng-container>
       <ng-template #thenBlockForVaccinationList>
-        <button type="button" class="btn btn-warning" (click)="editVaccination()">Edit</button>
+        <button type="button" class="btn btn-warning" (click)="editVaccination()" i18n>Edit</button>
       </ng-template>
       <ng-template #elseBlockForVaccinationList>
-        <button type="submit" class="btn btn-success">Save</button>
+        <button type="submit" class="btn btn-success" i18n>Save</button>
       </ng-template>
     </div>
   </div>

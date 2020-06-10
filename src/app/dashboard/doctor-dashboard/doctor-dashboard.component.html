@@ -1,19 +1,19 @@
 <div class="card w-75 mt-3 mx-auto">
   <div class="card-header">
-    <h1>Doctor</h1>
+    <h1 i18n>Doctor</h1>
   </div>
   <div class="card-body">
     <div class="form-group">
       <div class="row">
         <div class="col-lg mt-3">
-          <label for="search">Search patient:</label>
+          <label for="search" i18n>Search patient:</label>
           <input type="text" class="form-control" id="search" [formControl]="searchBox">
         </div>
         <div class="col-lg mt-3">
-          <label for="countrySelect">Select country:</label>
+          <label for="countrySelect" i18n>Select country:</label>
           <select class="form-control w-50" id="countrySelect" [formControl]="country">
-            <option [value]="null">All</option>
-            <option>Greece</option>
+            <option [value]="null" i18n>All</option>
+            <option i18n>Greece</option>
           </select>
         </div>
       </div>
@@ -22,9 +22,9 @@
       <table class="table table-striped mt-3 table-responsive-lg">
         <thead>
         <tr>
-          <th scope="col">First Name</th>
-          <th scope="col">Last Name</th>
-          <th scope="col">SSNVS</th>
+          <th scope="col" i18n>First Name</th>
+          <th scope="col" i18n>Last Name</th>
+          <th scope="col" i18n>SSNVS</th>
           <th scope="col"></th>
         </tr>
         </thead>
@@ -33,7 +33,7 @@
             <td><ngb-highlight [result]="user.firstName" [term]="searchBox.value"></ngb-highlight></td>
             <td><ngb-highlight [result]="user.lastName" [term]="searchBox.value"></ngb-highlight></td>
             <td><ngb-highlight [result]="user.ssnvs" [term]="searchBox.value"></ngb-highlight></td>
-            <td><button class="btn btn-primary" (click)="openPermissionModal(user)">View</button></td>
+            <td><button class="btn btn-primary" (click)="openPermissionModal(user)" i18n>View</button></td>
           </tr>
         </tbody>
       </table>

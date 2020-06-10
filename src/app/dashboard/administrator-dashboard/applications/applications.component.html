@@ -2,9 +2,9 @@
   <thead>
   <tr>
     <th scope="col">#</th>
-    <th scope="col">First Name</th>
-    <th scope="col">Last Name</th>
-    <th scope="col">Date & Time</th>
+    <th scope="col" i18n>First Name</th>
+    <th scope="col" i18n>Last Name</th>
+    <th scope="col" i18n>Date & Time</th>
     <th scope="col"></th>
   </tr>
   </thead>
@@ -14,7 +14,7 @@
     <td>{{item.firstName}}</td>
     <td>{{item.lastName}}</td>
     <td>{{item.createdTime}}</td>
-    <td><a routerLink="./{{item.userId}}"><button class="btn btn-primary">Read</button></a></td>
+    <td><a routerLink="./{{item.userId}}"><button class="btn btn-primary" i18n>Read</button></a></td>
   </tr>
   </tbody>
 </table>

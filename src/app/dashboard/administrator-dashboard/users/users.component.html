@@ -1,17 +1,17 @@
 <div class="form-group">
   <div class="row">
     <div class="col-lg">
-      <label for="search">Search user</label>
+      <label for="search" i18n>Search user</label>
       <input type="text" class="form-control" id="search" [formControl]="search">
     </div>
     <div class="col custom-control custom-checkbox my-1 mr-sm-2 ml-5">
       <div class="row">
         <input type="checkbox" class="custom-control-input" id="doctorSelect" [formControl]="doctor">
-        <label class="custom-control-label" for="doctorSelect">Doctor</label>
+        <label class="custom-control-label" for="doctorSelect" i18n>Doctor</label>
       </div>
       <div class="row">
         <input type="checkbox" class="custom-control-input" id="administratorSelect" [formControl]="administrator">
-        <label class="custom-control-label" for="administratorSelect">Administrator</label>
+        <label class="custom-control-label" for="administratorSelect" i18n>Administrator</label>
       </div>
     </div>
   </div>
@@ -20,8 +20,8 @@
   <thead>
   <tr>
     <th scope="col">#</th>
-    <th scope="col">First Name</th>
-    <th scope="col">Last Name</th>
+    <th scope="col" i18n>First Name</th>
+    <th scope="col" i18n>Last Name</th>
     <th scope="col"></th>
   </tr>
   </thead>
@@ -30,7 +30,7 @@
       <th scope="row">{{i+1}}</th>
       <td>{{user.firstName}}</td>
       <td>{{user.lastName}}</td>
-      <td><a routerLink="./{{user.userId}}"><button class="btn btn-primary">View</button></a></td>
+      <td><a routerLink="./{{user.userId}}"><button class="btn btn-primary" i18n>View</button></a></td>
     </tr>
   </tbody>
 </table>

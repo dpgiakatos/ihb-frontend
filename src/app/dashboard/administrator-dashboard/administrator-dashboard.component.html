@@ -1,17 +1,17 @@
 <div class="card w-75 mt-3 mx-auto">
   <div class="card-header">
-    <h1>Administrator</h1>
+    <h1 i18n>Administrator</h1>
   </div>
   <div class="card-body">
     <nav ngbNav [activeId]="activatedChild | async" class="nav-tabs">
       <li ngbNavItem="inbox">
-        <a ngbNavLink routerLink="./inbox">Inbox</a>
+        <a ngbNavLink routerLink="./inbox" i18n>Inbox</a>
       </li>
       <li ngbNavItem="applications">
-        <a ngbNavLink routerLink="./applications">Applications</a>
+        <a ngbNavLink routerLink="./applications" i18n>Applications</a>
       </li>
       <li ngbNavItem="users">
-        <a ngbNavLink routerLink="./users">Users</a>
+        <a ngbNavLink routerLink="./users" i18n>Users</a>
       </li>
     </nav>
     <div class="mt-3">
