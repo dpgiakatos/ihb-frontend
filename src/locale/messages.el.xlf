@@ -4,7 +4,7 @@
     <body>
       <trans-unit id="ngb.alert.close" datatype="html">
         <source>Close</source>
-        <target>Insert text</target>
+        <target>Κλείσιμο</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/alert/alert.d.ts</context>
           <context context-type="linenumber">3</context>
@@ -12,7 +12,7 @@
       </trans-unit>
       <trans-unit id="ngb.carousel.previous" datatype="html">
         <source>Previous</source>
-        <target>Insert text</target>
+        <target>Προηγούμενο</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/carousel/carousel.d.ts</context>
           <context context-type="linenumber">13</context>
@@ -20,7 +20,7 @@
       </trans-unit>
       <trans-unit id="ngb.carousel.next" datatype="html">
         <source>Next</source>
-        <target>Insert text</target>
+        <target>Επόμενο</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/carousel/carousel.d.ts</context>
           <context context-type="linenumber">17</context>
@@ -28,7 +28,7 @@
       </trans-unit>
       <trans-unit id="ngb.datepicker.previous-month" datatype="html">
         <source>Previous month</source>
-        <target>Insert text</target>
+        <target>Προηγούμενος μήνας</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation.d.ts</context>
           <context context-type="linenumber">4</context>
@@ -40,7 +40,7 @@
       </trans-unit>
       <trans-unit id="ngb.datepicker.next-month" datatype="html">
         <source>Next month</source>
-        <target>Insert text</target>
+        <target>Επόμενος μήνας</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation.d.ts</context>
           <context context-type="linenumber">26</context>
@@ -52,7 +52,7 @@
       </trans-unit>
       <trans-unit id="ngb.datepicker.select-month" datatype="html">
         <source>Select month</source>
-        <target>Insert text</target>
+        <target>Επιλέξτε μήνα</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation-select.d.ts</context>
           <context context-type="linenumber">5</context>
@@ -64,7 +64,7 @@
       </trans-unit>
       <trans-unit id="ngb.datepicker.select-year" datatype="html">
         <source>Select year</source>
-        <target>Insert text</target>
+        <target>Επιλέξτε χρόνο</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/datepicker/datepicker-navigation-select.d.ts</context>
           <context context-type="linenumber">13</context>
@@ -76,7 +76,7 @@
       </trans-unit>
       <trans-unit id="ngb.pagination.first" datatype="html">
         <source>««</source>
-        <target>Insert text</target>
+        <target>««</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
           <context context-type="linenumber">2</context>
@@ -84,7 +84,7 @@
       </trans-unit>
       <trans-unit id="ngb.pagination.previous" datatype="html">
         <source>«</source>
-        <target>Insert text</target>
+        <target>«</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
           <context context-type="linenumber">3</context>
@@ -92,7 +92,7 @@
       </trans-unit>
       <trans-unit id="ngb.pagination.next" datatype="html">
         <source>»</source>
-        <target>Insert text</target>
+        <target>»</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
           <context context-type="linenumber">4</context>
@@ -100,7 +100,7 @@
       </trans-unit>
       <trans-unit id="ngb.pagination.last" datatype="html">
         <source>»»</source>
-        <target>Insert text</target>
+        <target>»»</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
           <context context-type="linenumber">5</context>
@@ -108,7 +108,7 @@
       </trans-unit>
       <trans-unit id="ngb.pagination.first-aria" datatype="html">
         <source>First</source>
-        <target>Insert text</target>
+        <target>Πρώτη</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
           <context context-type="linenumber">14</context>
@@ -116,7 +116,7 @@
       </trans-unit>
       <trans-unit id="ngb.pagination.previous-aria" datatype="html">
         <source>Previous</source>
-        <target>Insert text</target>
+        <target>Προηγούμενο</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
           <context context-type="linenumber">24</context>
@@ -124,7 +124,7 @@
       </trans-unit>
       <trans-unit id="ngb.pagination.next-aria" datatype="html">
         <source>Next</source>
-        <target>Insert text</target>
+        <target>Επόμενο</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
           <context context-type="linenumber">44</context>
@@ -132,7 +132,7 @@
       </trans-unit>
       <trans-unit id="ngb.pagination.last-aria" datatype="html">
         <source>Last</source>
-        <target>Insert text</target>
+        <target>Τελευταίο</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/pagination/pagination.d.ts</context>
           <context context-type="linenumber">53</context>
@@ -140,7 +140,7 @@
       </trans-unit>
       <trans-unit id="ngb.progressbar.value" datatype="html">
         <source><x id="INTERPOLATION" equiv-text="{{getPercentValue()}}"/>%</source>
-        <target>Insert text</target>
+        <target><x id="INTERPOLATION" equiv-text="{{getPercentValue()}}"/>%</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/progressbar/progressbar.d.ts</context>
           <context context-type="linenumber">7</context>
@@ -148,7 +148,7 @@
       </trans-unit>
       <trans-unit id="ngb.timepicker.increment-hours" datatype="html">
         <source>Increment hours</source>
-        <target>Insert text</target>
+        <target>Τοδο</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
           <context context-type="linenumber">9</context>
@@ -156,7 +156,7 @@
       </trans-unit>
       <trans-unit id="ngb.timepicker.HH" datatype="html">
         <source>HH</source>
-        <target>Insert text</target>
+        <target>ΩΩ</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
           <context context-type="linenumber">13</context>
@@ -164,7 +164,7 @@
       </trans-unit>
       <trans-unit id="ngb.timepicker.hours" datatype="html">
         <source>Hours</source>
-        <target>Insert text</target>
+        <target>Ώρες</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
           <context context-type="linenumber">15</context>
@@ -172,7 +172,7 @@
       </trans-unit>
       <trans-unit id="ngb.timepicker.decrement-hours" datatype="html">
         <source>Decrement hours</source>
-        <target>Insert text</target>
+        <target>Τοδο</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
           <context context-type="linenumber">23</context>
@@ -180,7 +180,7 @@
       </trans-unit>
       <trans-unit id="ngb.timepicker.increment-minutes" datatype="html">
         <source>Increment minutes</source>
-        <target>Insert text</target>
+        <target>Τοδο</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
           <context context-type="linenumber">32</context>
@@ -188,7 +188,7 @@
       </trans-unit>
       <trans-unit id="ngb.timepicker.MM" datatype="html">
         <source>MM</source>
-        <target>Insert text</target>
+        <target>ΜΜ</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
           <context context-type="linenumber">35</context>
@@ -196,7 +196,7 @@
       </trans-unit>
       <trans-unit id="ngb.timepicker.minutes" datatype="html">
         <source>Minutes</source>
-        <target>Insert text</target>
+        <target>Λεπτά</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
           <context context-type="linenumber">37</context>
@@ -204,7 +204,7 @@
       </trans-unit>
       <trans-unit id="ngb.timepicker.decrement-minutes" datatype="html">
         <source>Decrement minutes</source>
-        <target>Insert text</target>
+        <target>Τοδο</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
           <context context-type="linenumber">45</context>
@@ -212,7 +212,7 @@
       </trans-unit>
       <trans-unit id="ngb.timepicker.increment-seconds" datatype="html">
         <source>Increment seconds</source>
-        <target>Insert text</target>
+        <target>Τοδο</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
           <context context-type="linenumber">54</context>
@@ -220,7 +220,7 @@
       </trans-unit>
       <trans-unit id="ngb.timepicker.SS" datatype="html">
         <source>SS</source>
-        <target>Insert text</target>
+        <target>ΔΔ</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
           <context context-type="linenumber">57</context>
@@ -228,7 +228,7 @@
       </trans-unit>
       <trans-unit id="ngb.timepicker.seconds" datatype="html">
         <source>Seconds</source>
-        <target>Insert text</target>
+        <target>Δευτερόλεπτα</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
           <context context-type="linenumber">59</context>
@@ -236,7 +236,7 @@
       </trans-unit>
       <trans-unit id="ngb.timepicker.decrement-seconds" datatype="html">
         <source>Decrement seconds</source>
-        <target>Insert text</target>
+        <target>Τοδο</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
           <context context-type="linenumber">67</context>
@@ -244,7 +244,7 @@
       </trans-unit>
       <trans-unit id="ngb.timepicker.PM" datatype="html">
         <source><x id="INTERPOLATION" equiv-text="{{ i18n.getAfternoonPeriod() }}"/></source>
-        <target>Insert text</target>
+        <target><x id="INTERPOLATION" equiv-text="{{ i18n.getAfternoonPeriod() }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
           <context context-type="linenumber">76</context>
@@ -252,7 +252,7 @@
       </trans-unit>
       <trans-unit id="ngb.timepicker.AM" datatype="html">
         <source><x id="INTERPOLATION" equiv-text="{{ i18n.getMorningPeriod() }}"/></source>
-        <target>Insert text</target>
+        <target>Ελληνικά</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/timepicker/timepicker.d.ts</context>
           <context context-type="linenumber">77</context>
@@ -260,7 +260,7 @@
       </trans-unit>
       <trans-unit id="ngb.toast.close-aria" datatype="html">
         <source>Close</source>
-        <target>Insert text</target>
+        <target>Κλείσιμο</target>
         <context-group purpose="location">
           <context context-type="sourcefile">node_modules/@ng-bootstrap/ng-bootstrap/toast/toast.d.ts</context>
           <context context-type="linenumber">8</context>
@@ -292,6 +292,14 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
           <context context-type="linenumber">76</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/user-dashboard.component.html</context>
+          <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
       <trans-unit id="54250c9e7b1f923b9394f1df9fc20d0006c3dcdc" datatype="html">
@@ -650,6 +658,22 @@
           <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
           <context context-type="linenumber">162</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="563cade6511b3e778d58ea5dd08a6c7596bcaa45" datatype="html">
+        <source>Please provide your email.</source>
+        <target>Παρακαλώ συμπληρώστε την διεύθυνση ηλεκτρονικού ταχύδρομείου σας.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">166</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="4b0ca852bafa5037c4e64c7b18f9cd1e14b799de" datatype="html">
         <source>Subject</source>
@@ -658,6 +682,22 @@
           <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
           <context context-type="linenumber">170</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/inbox.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/message/message.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f25ef2dd50c53c9f9089ecb6ce490d2682c2d926" datatype="html">
+        <source>Please provide a subject.</source>
+        <target>Παρακαλώ συμπληρώστε το θέμα.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">173</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="ccac601bf473fa28c9ac46794f1cd40542f74347" datatype="html">
         <source>Message</source>
@@ -665,6 +705,22 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
           <context context-type="linenumber">177</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/inbox.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/message/message.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2e6cb6ba4e8e0ac6c88d9a96176b8dcd5bc33008" datatype="html">
+        <source>Please provide a message.</source>
+        <target>Παρακαλώ συμπληρώστε το μήνυμα.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">180</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2c5ff8fa9c9aaec93f97e37c9a0edcd797194573" datatype="html">
@@ -732,7 +788,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="7ea26e98fc312ec435452489ae46028745a060fb" datatype="html">
-        <source>Non-govermental Organizations</source>
+        <source>Non-governmental Organizations</source>
         <target>Μη Κυβερνητικές Οργανώσεις</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
@@ -845,7 +901,7 @@
       </trans-unit>
       <trans-unit id="5599be4ceb77ab97802b0865f851e91f97e29274" datatype="html">
         <source>Images from </source>
-        <target>Εικόνες από </target>
+        <target>Εικόνες από</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
           <context context-type="linenumber">103</context>
@@ -857,6 +913,1318 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home-page/footer/footer.component.html</context>
           <context context-type="linenumber">103</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="03354b2489337882c5a4fd033fec9b9f4b8d109f" datatype="html">
+        <source>Page Not Found</source>
+        <target>Δεν Βρέθηκε η Σελίδα</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/not-found-page/not-found-page.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bf7f7fe8727b6c4edd00e7d3453045aa4bad52e9" datatype="html">
+        <source>Sorry, we can&apos;t find the page you are looking for.</source>
+        <target>Λυπούμαστε αλλά δεν μπορούμε να βρούμε την σελίδα που ψάχνετε.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/not-found-page/not-found-page.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9055fc44ded57fe11369dd3e5c63e8f7df3d2987" datatype="html">
+        <source>Go back to homepage</source>
+        <target>Πηγαίνετε πίσω στην αρχική σελίδα</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/not-found-page/not-found-page.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8a1e7b5c711e5c5b49ed8e6f5153ef8143387da1" datatype="html">
+        <source>Please sign in</source>
+        <target>Παρακαλώ συνδεθείτε</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/login/login.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="244aae9346da82b0922506c2d2581373a15641cc" datatype="html">
+        <source>Email</source>
+        <target>Διεύθυνση Ηλεκτρονικού Ταχύδρομείου</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/login/login.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/inbox.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/message/message.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/users/tab/tab.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="91d5f24de2a855d70b07cb4fd2e4cf4885664e6a" datatype="html">
+        <source>Please provide an email.</source>
+        <target>Παρακαλώ συμπληρώστε τη διεύθυνση του ηλεκτρονικού ταχύδρομείου σας.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/login/login.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="de156c27adfe36c4f9ebad21ec453d24f1feb605" datatype="html">
+        <source>Please provide a valid email.</source>
+        <target>Παρακαλώ συμπληρώστε την διεύθυνση του ηλεκτρονικού ταχύδρομείου σας.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/login/login.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c32ef07f8803a223a83ed17024b38e8d82292407" datatype="html">
+        <source>Password</source>
+        <target>Κωδικός</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/login/login.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9d9ea8ed1b7899b8012eb40be8967baddeecc2b7" datatype="html">
+        <source>Please provide a password.</source>
+        <target>Παρακαλώ συμπληρώστε τον κωδικό σας.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/login/login.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3cba91f9631e0cdc7c3171fee66ff18c4c6aa6a6" datatype="html">
+        <source>Invalid credentials. Try again!</source>
+        <target>Εσφαλμένα Διαπιστευτήρια. Δοκιμάστε ξανά!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/login/login.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ba4f24bf9bf3dc4db3d6bc1b8b63339295f0b806" datatype="html">
+        <source>Sign In</source>
+        <target>Σύνδεση</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/login/login.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="80abfa11970d482edd4dfcec7d2ba671ae072419" datatype="html">
+        <source>Don&apos;t have an account? <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Register<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
+        <target>Δεν έχετε λογαριασμό; <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Εγγραφή<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/login/login.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3a8e04b34236be1cb450987973bcb7b33d483e35" datatype="html">
+        <source>Forgot password?</source>
+        <target>Ξεχάσατε τον κωδικό σας;</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/login/login.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e19fcf996343543e13789f17b550ab0c08124b5c" datatype="html">
+        <source>Create Account</source>
+        <target>Δημιουργία Λογαριασμού</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c83b838d845690bcb897f775f53b5316535306dc" datatype="html">
+        <source>First Name</source>
+        <target>Όνομα</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/doctor-dashboard/doctor-dashboard.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/notifications-dashboard/notifications-dashboard.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/applications/applications.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/users/users.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="296bd82c59159fd10f0719bc58b473f84b412868" datatype="html">
+        <source>Please provide your first name.</source>
+        <target>Παρακαλώ συμπληρώστε το όνομα σας.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="166b2cc65003221ff5f3ec05d5baca41e6821396" datatype="html">
+        <source>Last Name</source>
+        <target>Επίθετο</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/doctor-dashboard/doctor-dashboard.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/notifications-dashboard/notifications-dashboard.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/applications/applications.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/users/users.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6516ae89e866d1b6b390bdc2ec90160fab5e0a25" datatype="html">
+        <source>Please provide your last name.</source>
+        <target>Παρακαλώ συμπληρώστε το επίθετο σας.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5d095e6bb99dc2ac241a0001a7c024df5a0c221b" datatype="html">
+        <source>An account already exists with this email.</source>
+        <target>Υπάρχει ήδη ένας λογαριασμός με αυτήν την διεύθυνση ηλεκτρονικού ταχύδρομείου.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8581caa7ec7691dd48e3e63a9e29630cefa4d4a0" datatype="html">
+        <source>Password Confirmation</source>
+        <target>Επιβεβαίωση Κωδικού</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7b5867e7fca8b3aa75fd0a074bcb937e466fb8eb" datatype="html">
+        <source>Please confirm your password.</source>
+        <target>Παρακαλώ επιβεβαιώστε τον κωδικό σας.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/reset-password/reset-password.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="01a82075ea638681cf6d2ce1974cd9f27450b72e" datatype="html">
+        <source>The password is not the same.</source>
+        <target>Οι κωδικοί δεν είναι ίδιοι.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/reset-password/reset-password.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cfc2f436ec2beffb042e7511a73c89c372e86a6c" datatype="html">
+        <source>Register</source>
+        <target>Εγγραφή</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e1af1a2afdb1a63c7f34cd807ff305fe19fcffa2" datatype="html">
+        <source>Already have an account? <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Login<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></source>
+        <target>Έχετε ήδη λογαριασμό; <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>Συνδεθείτε<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4d528d81243448524f3e1de53c8b67e41aa7639f" datatype="html">
+        <source>Forgot Password</source>
+        <target>Ξέχασα τον κωδικό μου</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="09920be599b692fbed5172c40142dbe1880459f1" datatype="html">
+        <source>Enter the email address associated with your account.</source>
+        <target>Εισάγετε την διεύθυνση ηλεκτρονικού ταχύδρομείου που σχετίζεται με τον λογαριασμό σας.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="63ff200456b7d3b50b5448bdc3db73b675208cc8" datatype="html">
+        <source>There is no account with this email</source>
+        <target>Δεν υπάρχει λογαριασμός με αυτή τη διεύθυνση ηλεκτρονικού ταχύδρομείου</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ac10a3d9b59575640797c1a8e6aea642cf5d5e77" datatype="html">
+        <source>Continue</source>
+        <target>Συνέχεια</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="34557152cff7bc7db72a2a8706794d7fba4bac86" datatype="html">
+        <source>Reset Password</source>
+        <target>Επαναφορά Κωδικού</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/reset-password/reset-password.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4e2bf5e36a1eaa88f84b11fcd330dd1862612e26" datatype="html">
+        <source>Enter your new password.</source>
+        <target>Εισάγετε τον κωδικό σας.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/reset-password/reset-password.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0664417fefc5468742481e382c5097e614087b44" datatype="html">
+        <source>Please provide a password</source>
+        <target>Παρακαλώ συμπληρώστε τον κωδικό σας</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/reset-password/reset-password.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="06c663bf1474713f57551123a46b34318543b67d" datatype="html">
+        <source>Reset</source>
+        <target>Επαναφορά</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/reset-password/reset-password.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="08675a9ef18758902c856be54650973d14f0d9de" datatype="html">
+        <source>Doctor</source>
+        <target>Γιατρός</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/doctor-dashboard/doctor-dashboard.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/users/users.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="ca2283fc765b9f44b69f0175d685dc2443da6011" datatype="html">
+        <source>Administrator</source>
+        <target>Διαχειριστής</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/administrator-dashboard.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/users/users.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="121cc5391cd2a5115bc2b3160379ee5b36cd7716" datatype="html">
+        <source>Settings</source>
+        <target>Ρυθμίσεις</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="640eec093c685babaa3265137215e3cc92ad704d" datatype="html">
+        <source>Sign Out</source>
+        <target>Αποσύνδεση</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/dashboard.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2b16d754538c43298a40b3efa2b957beb1d29f27" datatype="html">
+        <source>Personal Information</source>
+        <target>Προσωπικές Πληροφορίες</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/user-dashboard.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="54e02accf2fab3310d08cc9b50d87e316fd5b3dd" datatype="html">
+        <source>Vaccinations</source>
+        <target>Εμβολιασμοί</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/user-dashboard.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3a915fe6e27d336f7ebb9283a081a8e171818471" datatype="html">
+        <source>Allergic Diseases</source>
+        <target>Αλλεργίες</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/user-dashboard.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1876fbd0106f16541936f49abb56073c12bc47a0" datatype="html">
+        <source>Hospital Treatment</source>
+        <target>Νοσοκομειακή Περίθαλψη</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/user-dashboard.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b9b4ca9615c87f32e774deeb6bd53db1349a0431" datatype="html">
+        <source>Attention!</source>
+        <target>Προσοχή!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/doctor-dashboard/permission-modal/permission-modal.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4f46a65d3ec43e29a2d390c3abdd3f5bd5124ddf" datatype="html">
+        <source>You are asking permission to see the health booklet of patient <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/><x id="INTERPOLATION" equiv-text="{{user.firstName}}"/> <x id="INTERPOLATION_1" equiv-text="{{user.lastName}}"/><x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>.</source>
+        <target>Πρέπει να αλλαχτεί <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/><x id="INTERPOLATION" equiv-text="{{user.firstName}}"/> <x id="INTERPOLATION_1" equiv-text="{{user.lastName}}"/><x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/doctor-dashboard/permission-modal/permission-modal.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="bce7f60cc31ef6823f1e55fbb9a8582450c50f51" datatype="html">
+        <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>This transaction will be logged and <x id="START_UNDERLINED_TEXT" ctype="x-u" equiv-text="&lt;u&gt;"/><x id="INTERPOLATION" equiv-text="{{user.firstName}}"/> <x id="INTERPOLATION_1" equiv-text="{{user.lastName}}"/><x id="CLOSE_UNDERLINED_TEXT" ctype="x-u" equiv-text="&lt;/u&gt;"/> will be notified.<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
+        <target><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Η δράση αυτή θα καταγραφεί <x id="START_UNDERLINED_TEXT" ctype="x-u" equiv-text="&lt;u&gt;"/><x id="INTERPOLATION" equiv-text="{{user.firstName}}"/> <x id="INTERPOLATION_1" equiv-text="{{user.lastName}}"/><x id="CLOSE_UNDERLINED_TEXT" ctype="x-u" equiv-text="&lt;/u&gt;"/> και θα ειδοποιηθεί.<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/doctor-dashboard/permission-modal/permission-modal.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="02294bcc4265ff2b9d04e89b3b5bd47f1e4833f0" datatype="html">
+        <source>I have permission</source>
+        <target>Έχω έγκριση</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/doctor-dashboard/permission-modal/permission-modal.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1163a5027dd7f2b23a2dee832e1c77bd041f82a8" datatype="html">
+        <source>Search patient:</source>
+        <target>Αναζήτηση ασθενή:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/doctor-dashboard/doctor-dashboard.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c214ce395aada87436634eabdd93d8fb01376adc" datatype="html">
+        <source>Select country:</source>
+        <target>Επιλέξτε χώρα:</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/doctor-dashboard/doctor-dashboard.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dfc3c34e182ea73c5d784ff7c8135f087992dac1" datatype="html">
+        <source>All</source>
+        <target>Όλα</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/doctor-dashboard/doctor-dashboard.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f1221fb0876c7b87775952f22e1b46342aa9800f" datatype="html">
+        <source>Greece</source>
+        <target>Ελλάδα</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/doctor-dashboard/doctor-dashboard.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="591bb67364c0c472f7d00ff8b5a21775f5b0c66b" datatype="html">
+        <source>SSNVS</source>
+        <target>ΑΜΚΑ</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/doctor-dashboard/doctor-dashboard.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6829218544e108e152f5fa72cb79c4ccb82e0d06" datatype="html">
+        <source>View</source>
+        <target>Προβολή</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/doctor-dashboard/doctor-dashboard.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/users/users.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="eb4e61ad5282c37e3708ca12ab1d283d75b7682c" datatype="html">
+        <source>Inbox</source>
+        <target>Εισερχόμενα</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/administrator-dashboard.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f1abafaeb40ce52355ddcc24686e3cd17b64e08a" datatype="html">
+        <source>Applications</source>
+        <target>Αιτήσεις</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/administrator-dashboard.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4d13a9cd5ed3dcee0eab22cb25198d43886942be" datatype="html">
+        <source>Users</source>
+        <target>Χρήστες</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/administrator-dashboard.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5edf054f14aa57bc25a28cb7db01956fee53dac8" datatype="html">
+        <source>Change Password</source>
+        <target>Αλλαγή Κωδικού</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6f55bb34330c285ea915acf5a857ccc509cca758" datatype="html">
+        <source>Type the old password</source>
+        <target>Πληκτρολογήστε τον παλίο σας κωδικό</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="064b0a19a5cf51140796cf2a895ef4a509f68f3c" datatype="html">
+        <source>Wrong Password</source>
+        <target>Εσφαλμένος Κωδικός</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="64a7fba32928eed30136fc84a74b1f02e03a7870" datatype="html">
+        <source>Type the new password</source>
+        <target>Πληκτρολογήστε τον νέο σας κωδικό</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c74544b34aa28804827fd95207130b4438c65848" datatype="html">
+        <source>Retype the new password</source>
+        <target>Πληκτρολογήστε ξάνα τον νέο σας κωδικό</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="52c9a103b812f258bcddc3d90a6e3f46871d25fe" datatype="html">
+        <source>Save</source>
+        <target>Αποθήκευση</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/recommended-vaccinations/recommended-vaccinations.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a7e9508bafb081c5a14bb914ef31db4f997eeaab" datatype="html">
+        <source>Ask for doctor authorization</source>
+        <target>Αιτηθείτε εξουσιοδότηση γιατρού</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0dbcd211c2133a85e2c970e73169beeed2df9091" datatype="html">
+        <source>
+          Upload all the necessary files in order to get a doctor account.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+          You should upload a zip folder which contains all your files that you want to upload.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+          Other folder formats will not be accepted.
+        </source>
+        <target>
+          Ανεβάστε όλα τα απαραίτητα αρχεία προκειμένου να λάβετε εξουσιοδότηση γιατρού στην πλατφόρμα μας.
+          <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+          Πρέπει να ανεβάσετε έναν φάκελο τύπου zip που θα περιέχει όλα τα αρχεία που επιθυμείτε να ανεβάσετε.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+          Διαφορετικοί τύποι φακέλων θα απορριφθούν.
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4b3972c3e9485218508a95f7a4ce7758e3f09ced" datatype="html">
+        <source>Upload</source>
+        <target>Μεταφόρτωση</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a9034bc956398db1ddffd8bed811de6e962ce55b" datatype="html">
+        <source>You have sent an application.</source>
+        <target>Έχετε στείλει μια αίτηση.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9a2f889dde4574a6883c853d1034e75891b28c45" datatype="html">
+        <source>Delete your account</source>
+        <target>Διαγράψτε τον λογαριασμό σας</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f89f14197991d807e865956f698bb8b59e506c6c" datatype="html">
+        <source>All your personal information will be delete from our database.</source>
+        <target>Όλα τα προσωπικά σας στοιχεία θα διαγραφούν από την βάση δεδομένων μας.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="66b777a6c0fdac1cc5538f2cbd28b38c71783abb" datatype="html">
+        <source>Delete Account</source>
+        <target>Διαγραφή Λογαριασμού</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
+          <context context-type="linenumber">68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3229ca4c64adc348896145768646951c883dec8b" datatype="html">
+        <source>Please provide your SSNVS.</source>
+        <target>Παρακαλώ συμπληρώστε το ΑΜΚΑ σας.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8a1b6d6b2314b41996549c94638159222b016a92" datatype="html">
+        <source>Date Of Birth</source>
+        <target>Ημερομηνία Γέννησης</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="21a345824fca425f087bd0689f9bc43bbeb6fa9b" datatype="html">
+        <source>Please provide your date of birth.</source>
+        <target>Παρακαλώ συμπληρώστε την ημερομηνία γέννηση σας.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a43f25a9ac40e8e2441ff0be7a36b8e5d15534df" datatype="html">
+        <source>Country</source>
+        <target>Χώρα</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1254ae4188d268c781424d880057fb7fcd724ddc" datatype="html">
+        <source>Please provide your country.</source>
+        <target>Παρακαλώ συμπληρώστε την χώρα σας.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="80c0abe3db2621325a73975cd556e1e970a28130" datatype="html">
+        <source>Father&apos;s First Name</source>
+        <target>Όνομα Πατρός</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0979fcfed681e33631cda308bb226ea917459fc7" datatype="html">
+        <source>Please provide your father&apos;s first name.</source>
+        <target>Παρακαλώ συμπληρώστε το όνομα του πατέρα σας.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="a48f78013937105465b3e620bb8c103c9f1f9e42" datatype="html">
+        <source>Father&apos;s Last Name</source>
+        <target>Επίθετο Πατρός</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="92be0ca632cf2cff382f1f67a5201dce7602a2e5" datatype="html">
+        <source>Please provide your father&apos;s last name.</source>
+        <target>Παρακαλώ συμπληρώστε το επίθετο του πατέρα σας.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="73504f61da784326dfa92cd68e21c8a56ae63bae" datatype="html">
+        <source>Mother&apos;s First Name</source>
+        <target>Όνομα Μητρός</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9557a4235abe8c0e43bf40831671350778b2d750" datatype="html">
+        <source>Please provide your mother&apos;s first name.</source>
+        <target>Παρακαλώ συμπληρώστε το όνομα της μητέρας σας.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e23bb08002c3e0a841b2ccfd8c03c56c0dae1b6b" datatype="html">
+        <source>Mother&apos;s Last Name</source>
+        <target>Επίθετο Μητρός</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
+          <context context-type="linenumber">65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="459ccd054ed6cae6dc68daa9130a3dabc922bc4d" datatype="html">
+        <source>Please provide your mother&apos;s last name</source>
+        <target>Παρακαλώ συμπληρώστε το επίθετο της μητέρας σας</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4a2f89fdc4cb456f4ff1cd59317354380d7a9096" datatype="html">
+        <source>Κινητό Τηλέφωνο</source>
+        <target>Ελληνικά</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="05425ec3f561fe58de1277d15ce7b1f22ec8b88b" datatype="html">
+        <source>Please provide your mobile phone.</source>
+        <target>Παρακαλώ συμπληρώστε το κινητό τηλέφωνο σας.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
+          <context context-type="linenumber">74</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="28549657fe8bcc53a684925bca2859faef3d9d20" datatype="html">
+        <source>Emergency Phone Contact</source>
+        <target>Τηλέφωνο Έκτακης Ανάγκης</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8afa59aef7e6fa24f33987d2b4714cc15bc1e88c" datatype="html">
+        <source>Please provide an emergency phone contact.</source>
+        <target>Παρακαλώ συμπληρώστε ένα τηλέφωνο έκτακτης ανάγκης.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
+          <context context-type="linenumber">79</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="28f86ffd419b869711aa13f5e5ff54be6d70731c" datatype="html">
+        <source>Edit</source>
+        <target>Επεξεργασία</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
+          <context context-type="linenumber">59</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">109</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/recommended-vaccinations/recommended-vaccinations.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f6755cff4957d5c3c89bafce5651f1b6fa2b1fd9" datatype="html">
+        <source>Add</source>
+        <target>Προσθήκη</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="228e9f98316ebe5277aff9e09e88a24c8f27a488" datatype="html">
+        <source>Allergic Disease Name</source>
+        <target>Όνομα Αλλεργίας</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f2eb1722fdd1ead833af6e9f92b67108c0175d8f" datatype="html">
+        <source>Please provide a valid name.</source>
+        <target>Παρακαλώ συμπληρώστε ένα όνομα.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0c4ceabe01e0ff9c5136713c3036bf4cb1015a1d" datatype="html">
+        <source>Allergic Disease Description</source>
+        <target>Περιγραφή Αλλεργίας</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3c3c237b246495d6e36ffb7f83a56f85c71189bf" datatype="html">
+        <source>Please provide a valid description.</source>
+        <target>Παρακαλώ συμπληρώστε μια έγκυρη περιγραφή.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d54bd981d94247ae99e3f2d968c0dd4eaec62b02" datatype="html">
+        <source>Treatment Description</source>
+        <target>Περιγραφή περίθαλψης</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">89</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f4e529ae5ffd73001d1ff4bbdeeb0a72e342e5c8" datatype="html">
+        <source>Close</source>
+        <target>Κλείσιμο</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="826b25211922a1b46436589233cb6f1a163d89b7" datatype="html">
+        <source>Delete</source>
+        <target>Διαγραφή</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">110</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/inbox.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/message/message.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/users/tab/tab.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6f433ff626c6f521bcffc8c90e7452074fc45c1e" datatype="html">
+        <source>
+          No available data. Only doctors can update your medical history.
+        </source>
+        <target>Δεν υπάρχουν διαθέσιμα δεδομένα. Μόνο κάποιος γιατρός μπορεί να ανανεώσει το ιατρικό σας ιστορικό.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
+          <context context-type="linenumber">74</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">124</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="580ecffcd2ce4a98d27bf551110342b6cca7d811" datatype="html">
+        <source>Hospital&apos;s Name</source>
+        <target>Όνομα Νοσοκομείου</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">85</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b94a41d4addfbeb1933b5dd02f7afd0ea7d32465" datatype="html">
+        <source>Hospital&apos;s City</source>
+        <target>Πόλη Νοσοκομείου</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8bc38c1a3300a4d02a4c35bdfff28386a388d2a4" datatype="html">
+        <source>Please provide a valid city.</source>
+        <target>Παρακαλώ επιλέξτε μια έγκυρη πόλη.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="93aeb565bbb5b8c96c050115b4f34aef77b101de" datatype="html">
+        <source>Hospital&apos;s Country</source>
+        <target>Χώρα Νοσοκομείου</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9f5270042b560547535b7f0b6b5b2b3e89900a5b" datatype="html">
+        <source>Please provide a valid country.</source>
+        <target>Παρακαλώ επιλέξτε μια έγκυρη χώρα.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="56ee034d5c1c5e313823de6cea79ed72b2603a1f" datatype="html">
+        <source>Αιτία νοσοκομειακής περίθαλψης</source>
+        <target>Ελληνικά</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">88</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cc04286f29f5c243900b2e86dc4cc2826390b11d" datatype="html">
+        <source>Please provide a valid cause.</source>
+        <target>Παρακαλώ επιλέξτε μια έγκυρη αιτία.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="55a364f6d6ca399b96be967b566a522d5622d321" datatype="html">
+        <source>Please provide a valid treatment.</source>
+        <target>Παρακαλώ επιλέξτε μια έγκυρη περίθαλψη.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3dece1e9849dbce7e67c2f3b937706b5c3590ef1" datatype="html">
+        <source>Hospital Treatment Starts</source>
+        <target>Νοσοκομειακή περίθαλψη αρχίζει</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e47e2c2d865934a061237d842ba7f9fca9158707" datatype="html">
+        <source>Please provide a valid date.</source>
+        <target>Παρακαλώ επιλέξτε μια έγκυρη Ημερομηνία.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5ea9123d794022b4243365327033538f6a184618" datatype="html">
+        <source>Hospital Treatment Finishes</source>
+        <target>Νοσοκομειακή περίθαλψη τελειώνει</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="369d050a6fc7f515112d24dcd150d3c55160dde4" datatype="html">
+        <source>Hospital Treatment Start</source>
+        <target>Έναρξη νοσοκομειακής περίθαλψης</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1c1dcb750df08e590401f291afc22e86127c9aab" datatype="html">
+        <source>Hospital Treatment End</source>
+        <target>Λήξη νοσοκομειακής περίθαλψης</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">91</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="b3f8bd8218400caf04583532f18476c4fe46c695" datatype="html">
+        <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Recommended vaccinations<x id="START_SUPERSCRIPT" ctype="x-sup" equiv-text="&lt;sup&gt;"/>1<x id="CLOSE_SUPERSCRIPT" ctype="x-sup" equiv-text="&lt;/sup&gt;"/><x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
+        <target><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Προτεινόμενοι εμβολιασμοί<x id="START_SUPERSCRIPT" ctype="x-sup" equiv-text="&lt;sup&gt;"/>1<x id="CLOSE_SUPERSCRIPT" ctype="x-sup" equiv-text="&lt;/sup&gt;"/><x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/vaccinations.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="e5802ecfb680e0fc13062d55878219bad49debc0" datatype="html">
+        <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Footnotes<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
+        <target><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Σημειώσεις<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/vaccinations.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="afe81ab47b0596925ac2268cd778be48167c6a44" datatype="html">
+        <source>
+          1. <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>
+          Greece: Recommended vaccinations
+          <x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>
+        </source>
+        <target>
+          1. <x id="START_LINK" ctype="x-a" equiv-text="&lt;a&gt;"/>
+          Ελλάδα: Προτεινόμενοι εμβολιασμοί
+          <x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/vaccinations.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7beef709ca2fc90e01918a124e9f4319cb226a5c" datatype="html">
+        <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Extra vaccinations<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
+        <target><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Παραπάνω εμβολιασμοί<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dbdb8b89263eed07f1171ed7669fbe2359ff8bc5" datatype="html">
+        <source>Vaccination Name</source>
+        <target>Όνομα Εμβολιασμού</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="16b35a4898a1af226cd6ab1a634ef88f44628fe9" datatype="html">
+        <source>Vaccination Date</source>
+        <target>Ημερομηνία Εμβολιασμού</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
+          <context context-type="linenumber">23</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
+          <context context-type="linenumber">57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="eec715de352a6b114713b30b640d319fa78207a0" datatype="html">
+        <source>Description</source>
+        <target>Περιγραφή</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="547448063ed69d2cc621fd5d0921ec582dca038e" datatype="html">
+        <source>No available data. Only doctors can update your medical history.</source>
+        <target>Δεν υπάρχουν διαθέσιμα δεδομένα. Μόνο κάποιος γιατρός μπορεί να ανανεώσει το ιατρικό σας ιστορικό.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8bcabdf6b16cad0313a86c7e940c5e3ad7f9f8ab" datatype="html">
+        <source>Notifications</source>
+        <target>Ειδοποιήσεις</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/notifications-dashboard/notifications-dashboard.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="089bf1264d31b4618d8990e855d51fc7950598c3" datatype="html">
+        <source>
+        In this page we inform you about the doctors, who had grant access and had see your medical history.
+        <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>The data is raw!<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>
+      </source>
+        <target>
+          Σε αυτήν την σελίδα σας ενημερώνουμε για τους γιατρούς που επισκέφτηκαν το ιατρικό σας ιστορικό.
+          <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>The data is raw!<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/notifications-dashboard/notifications-dashboard.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="44d05275bcdbc4cbbc7c68f992b688cd4da80f91" datatype="html">
+        <source>Access Time</source>
+        <target>Ώρα Πρόσβασης</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/notifications-dashboard/notifications-dashboard.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9b1d5e95f6bdcfb4b737413f5fa157e0dcb103d5" datatype="html">
+        <source>Read</source>
+        <target>Διαβάστε</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/inbox.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/applications/applications.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="853af7d1f6656baff6d5fde1f4f6057a42a78936" datatype="html">
+        <source>Date &amp; Time</source>
+        <target>Ημερομηνία &amp; Ώρα</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/applications/applications.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="11572daa76f45d53f8444c28304b1e64e4f555d8" datatype="html">
+        <source>Search user</source>
+        <target>Ψάξτε στους χρήστες</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/users/users.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="cda31dbd724cf5f4fa7a4274d9120651490c8a8c" datatype="html">
+        <source>Back</source>
+        <target>Πίσω</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/message/message.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/users/tab/tab.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0cf26ec067d800f0a5edae290bcb3163c5683982" datatype="html">
+        <source>Message from test</source>
+        <target>Μήνυμα για τεστ</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/message/message.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="484b0e541230d60ddb5fbd771a34a5c8d90e7a57" datatype="html">
+        <source>Full Name</source>
+        <target>Ονοματεπώνυμο</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/message/message.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/users/tab/tab.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3460115285a11afcb4ea6eea7be53a74d3cef423" datatype="html">
+        <source>Check this in order to activate <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>doctor<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> authorization</source>
+        <target>Ελληνικά</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/users/tab/tab.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d25e3a96a7dbdea98719f8617143972816ac46ae" datatype="html">
+        <source>Check this in order to activate <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>administrator<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> authorization</source>
+        <target>Ελληνικά</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/users/tab/tab.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="83310fc437efa47003be27c522982fe2366a005f" datatype="html">
+        <source>
+            Doctor documents:<x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button&gt;"/>Download<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+            <x id="START_TAG_BUTTON_1" ctype="x-button" equiv-text="&lt;button&gt;"/>Delete doctor application<x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/>
+          </source>
+        <target>Ελληνικά</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/users/tab/tab.component.html</context>
+          <context context-type="linenumber">32</context>
         </context-group>
       </trans-unit>
     </body>
