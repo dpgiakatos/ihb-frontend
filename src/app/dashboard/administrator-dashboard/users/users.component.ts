@@ -3,7 +3,7 @@ import { UsersService } from './users.service';
 import { User } from './users.model';
 import { FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { debounceTime, switchMap, tap } from 'rxjs/operators';
+import { switchMap, tap } from 'rxjs/operators';
 
 @Component({
   selector: 'ihb-users',
@@ -76,7 +76,7 @@ export class UsersComponent implements OnInit {
           this.userList = [];
         }
       }),
-      debounceTime(1000),
+      // debounceTime(250),
       switchMap(value => {
         return this.usersService.get(value, this.page, this.doctor.value, this.administrator.value);
       })

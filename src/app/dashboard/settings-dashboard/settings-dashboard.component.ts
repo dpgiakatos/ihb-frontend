@@ -106,7 +106,7 @@ export class SettingsDashboardComponent implements OnInit {
   }
 
   onUploadSubmit() {
-    this.settingsService.post(this.file).subscribe(() => { this.applicationActive = true; });
+    this.settingsService.post(this.file).subscribe(() => { this.applicationActive = false; });
   }
 
   hasApplication() {

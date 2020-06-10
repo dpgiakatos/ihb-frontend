@@ -1,25 +1,27 @@
-<table class="table table-striped mt-3 table-responsive-lg">
-  <thead>
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col" i18n>Email</th>
-    <th scope="col" i18n>Subject</th>
-    <th scope="col" i18n>Message</th>
-    <th scope="col"></th>
-    <th scope="col"></th>
-  </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let inboxMessage of inbox; let i = index">
-      <th scope="row">{{i+1}}</th>
-      <td>{{inboxMessage.email}}</td>
-      <td>{{inboxMessage.subject}}</td>
-      <td>{{inboxMessage.message}}</td>
-      <td><a routerLink="./{{inboxMessage.id}}"><button class="btn btn-primary" i18n>Read</button></a></td>
-      <td><button type="button" class="btn btn-danger" (click)="delete(inboxMessage)" i18n>Delete</button></td>
+<div class="table-responsive">
+  <table class="table table-striped mt-3">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col" i18n>Email</th>
+      <th scope="col" i18n>Subject</th>
+      <th scope="col" i18n>Date & Time</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
     </tr>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <tr *ngFor="let inboxMessage of inbox; let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{inboxMessage.email}}</td>
+        <td>{{inboxMessage.subject}}</td>
+        <td>{{inboxMessage.createdAt | date: 'short'}}</td>
+        <td><a routerLink="./{{inboxMessage.id}}"><button class="btn btn-primary" i18n>Read</button></a></td>
+        <td><button type="button" class="btn btn-danger" (click)="delete(inboxMessage)" i18n>Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 <div class="d-flex justify-content-between p-2">
  <ngb-pagination
  [collectionSize]="count"

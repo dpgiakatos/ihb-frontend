@@ -3,6 +3,7 @@ export interface ContactInbox {
   email: string;
   subject: string;
   message: string;
+  createdAt: string;
 }
 
 export interface ContactInboxList {

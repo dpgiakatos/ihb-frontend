@@ -20,7 +20,7 @@
             placeholder="New Password" formControlName="password">
         </div>
         <div class="form-group">
-          <label for="retypePassword" i18n>Retype the new password</label>
+          <label for="newPassword" i18n>Retype the new password</label>
           <input type="password" class="form-control" id="newPassword" autocomplete="new-password"
             placeholder="New Password" formControlName="newPassword"
                   [ngClass]="{'is-invalid': isNotSamePassword()}">
@@ -36,7 +36,7 @@
     </form>
     <hr/>
     <h3 i18n>Ask for doctor authorization</h3>
-    <ng-container *ngIf="applicationActive then thenBlock else elseBlock"></ng-container>
+    <ng-container *ngIf="!applicationActive then thenBlock else elseBlock"></ng-container>
     <ng-template #thenBlock>
       <p i18n>Upload all the necessary files in order to get a doctor account.<br>
         You should upload a zip folder which contains all your files that you want to upload.<br>
