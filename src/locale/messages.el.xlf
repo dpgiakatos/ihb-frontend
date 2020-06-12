@@ -282,9 +282,9 @@
           <context context-type="linenumber">75</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="e08a77594f3d89311cdf6da5090044270909c194" datatype="html">
-        <source>User</source>
-        <target>Χρήστης</target>
+      <trans-unit id="57d21ddb995adb1884201f12fc91221fa13fc6aa" datatype="html">
+        <source>Civilians</source>
+        <target>Πολίτες</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/navbar/navbar.component.html</context>
           <context context-type="linenumber">12</context>
@@ -293,6 +293,10 @@
           <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
           <context context-type="linenumber">76</context>
         </context-group>
+      </trans-unit>
+      <trans-unit id="e08a77594f3d89311cdf6da5090044270909c194" datatype="html">
+        <source>User</source>
+        <target>Χρήστης</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/dashboard.component.html</context>
           <context context-type="linenumber">8</context>
@@ -1359,24 +1363,24 @@
           <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="4f46a65d3ec43e29a2d390c3abdd3f5bd5124ddf" datatype="html">
-        <source>You are asking permission to see the health booklet of patient <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/><x id="INTERPOLATION" equiv-text="{{user.firstName}}"/> <x id="INTERPOLATION_1" equiv-text="{{user.lastName}}"/><x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>.</source>
+      <trans-unit id="5faf30e8d7d93ce5aacb8ecd9025dc52e246b0c3" datatype="html">
+        <source>You are about to access the health booklet of patient <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/><x id="INTERPOLATION" equiv-text="{{user.firstName}}"/> <x id="INTERPOLATION_1" equiv-text="{{user.lastName}}"/><x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>.</source>
         <target>Πρόκειται να δείτε το βιβλιάριο υγείας του χρήστη <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/><x id="INTERPOLATION" equiv-text="{{user.firstName}}"/> <x id="INTERPOLATION_1" equiv-text="{{user.lastName}}"/><x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/doctor-dashboard/permission-modal/permission-modal.component.html</context>
           <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="bce7f60cc31ef6823f1e55fbb9a8582450c50f51" datatype="html">
-        <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>This transaction will be logged and <x id="START_UNDERLINED_TEXT" ctype="x-u" equiv-text="&lt;u&gt;"/><x id="INTERPOLATION" equiv-text="{{user.firstName}}"/> <x id="INTERPOLATION_1" equiv-text="{{user.lastName}}"/><x id="CLOSE_UNDERLINED_TEXT" ctype="x-u" equiv-text="&lt;/u&gt;"/> will be notified.<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
+      <trans-unit id="a83cda32a66efa2899f0e236526543f256a3cd0b" datatype="html">
+        <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>This action will be logged and <x id="START_UNDERLINED_TEXT" ctype="x-u" equiv-text="&lt;u&gt;"/><x id="INTERPOLATION" equiv-text="{{user.firstName}}"/> <x id="INTERPOLATION_1" equiv-text="{{user.lastName}}"/><x id="CLOSE_UNDERLINED_TEXT" ctype="x-u" equiv-text="&lt;/u&gt;"/> will be notified.<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
         <target><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Η δράση αυτή θα καταγραφεί και ο χρήστης <x id="START_UNDERLINED_TEXT" ctype="x-u" equiv-text="&lt;u&gt;"/><x id="INTERPOLATION" equiv-text="{{user.firstName}}"/> <x id="INTERPOLATION_1" equiv-text="{{user.lastName}}"/><x id="CLOSE_UNDERLINED_TEXT" ctype="x-u" equiv-text="&lt;/u&gt;"/> θα ειδοποιηθεί.<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/doctor-dashboard/permission-modal/permission-modal.component.html</context>
           <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="02294bcc4265ff2b9d04e89b3b5bd47f1e4833f0" datatype="html">
-        <source>I have permission</source>
+      <trans-unit id="13d5907037be3ec4384d91a32c55584e078405a7" datatype="html">
+        <source>I wish to continue</source>
         <target>Επιθυμώ να συνεχίσω</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/doctor-dashboard/permission-modal/permission-modal.component.html</context>
@@ -1564,8 +1568,8 @@
           <context context-type="linenumber">56</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="a9034bc956398db1ddffd8bed811de6e962ce55b" datatype="html">
-        <source>You have sent an application.</source>
+      <trans-unit id="4dba776df328fbe1346a353c1bdde4586eeab13a" datatype="html">
+        <source>You have already sent an application.</source>
         <target>Έχετε στείλει ήδη αίτηση.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
@@ -1580,8 +1584,8 @@
           <context context-type="linenumber">66</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="f89f14197991d807e865956f698bb8b59e506c6c" datatype="html">
-        <source>All your personal information will be delete from our database.</source>
+      <trans-unit id="bfeaa203efa9ab3fe11b0f2b33e7c3485d29bdca" datatype="html">
+        <source>All your personal information will be deleted from our database.</source>
         <target>Όλα τα προσωπικά σας στοιχεία θα διαγραφούν από την βάση δεδομένων μας.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
@@ -2118,11 +2122,8 @@
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="089bf1264d31b4618d8990e855d51fc7950598c3" datatype="html">
-        <source>
-        In this page we inform you about the doctors, who had grant access and had see your medical history.
-        <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>The data is raw!<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/>
-      </source>
+      <trans-unit id="120f57f13cfbeb8a9bc25ce7ac7d6bdd6a3b81c0" datatype="html">
+        <source>In this page we inform you about the doctors who have accessed your medical history.</source>
         <target>
           Σε αυτήν την σελίδα σας ενημερώνουμε για τους γιατρούς που επισκέφτηκαν το ιατρικό σας ιστορικό.
         </target>
@@ -2131,8 +2132,8 @@
           <context context-type="linenumber">7</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="44d05275bcdbc4cbbc7c68f992b688cd4da80f91" datatype="html">
-        <source>Access Time</source>
+      <trans-unit id="ed1c11ac5ebebb599f304ae42251bd177ca8ea03" datatype="html">
+        <source>Access Date &amp; Time</source>
         <target>Ημερομηνία &amp; Ώρα Πρόσβασης</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/notifications-dashboard/notifications-dashboard.component.html</context>

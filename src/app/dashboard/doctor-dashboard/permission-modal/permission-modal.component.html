@@ -5,9 +5,9 @@
   </button>
 </div>
 <div class="modal-body">
-  <p i18n>You are asking permission to see the health booklet of patient <b>{{user.firstName}} {{user.lastName}}</b>.</p>
-  <p i18n><b>This transaction will be logged and <u>{{user.firstName}} {{user.lastName}}</u> will be notified.</b></p>
+  <p i18n>You are about to access the health booklet of patient <b>{{user.firstName}} {{user.lastName}}</b>.</p>
+  <p i18n><b>This action will be logged and <u>{{user.firstName}} {{user.lastName}}</u> will be notified.</b></p>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-danger" ngbAutofocus (click)="activeModal.close(true)" i18n>I have permission</button>
+  <button type="button" class="btn btn-danger" ngbAutofocus (click)="activeModal.close(true)" i18n>I wish to continue</button>
 </div>
