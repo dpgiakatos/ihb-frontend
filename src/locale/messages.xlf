@@ -554,7 +554,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/message/message.component.html</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f25ef2dd50c53c9f9089ecb6ce490d2682c2d926" datatype="html">
@@ -572,7 +572,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/message/message.component.html</context>
-          <context context-type="linenumber">23</context>
+          <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2e6cb6ba4e8e0ac6c88d9a96176b8dcd5bc33008" datatype="html">
@@ -794,7 +794,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/message/message.component.html</context>
-          <context context-type="linenumber">11</context>
+          <context context-type="linenumber">10</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/users/tab/tab.component.html</context>
@@ -1636,10 +1636,6 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/message/message.component.html</context>
-          <context context-type="linenumber">5</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/users/tab/tab.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
@@ -1853,7 +1849,9 @@
         </context-group>
       </trans-unit>
       <trans-unit id="120f57f13cfbeb8a9bc25ce7ac7d6bdd6a3b81c0" datatype="html">
-        <source>In this page we inform you about the doctors who have accessed your medical history.</source>
+        <source>
+        In this page we inform you about the doctors who have accessed your medical history.
+      </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/notifications-dashboard/notifications-dashboard.component.html</context>
           <context context-type="linenumber">7</context>
@@ -1906,10 +1904,10 @@
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="0cf26ec067d800f0a5edae290bcb3163c5683982" datatype="html">
-        <source>Message from test</source>
+      <trans-unit id="3c32a07710e402b2c056bd346e7c42f6015334a6" datatype="html">
+        <source>Delete User</source>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/message/message.component.html</context>
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/users/tab/tab.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>

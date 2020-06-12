@@ -692,7 +692,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/message/message.component.html</context>
-          <context context-type="linenumber">21</context>
+          <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f25ef2dd50c53c9f9089ecb6ce490d2682c2d926" datatype="html">
@@ -1883,10 +1883,6 @@
           <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/message/message.component.html</context>
           <context context-type="linenumber">5</context>
         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/users/tab/tab.component.html</context>
-          <context context-type="linenumber">4</context>
-        </context-group>
       </trans-unit>
       <trans-unit id="6f433ff626c6f521bcffc8c90e7452074fc45c1e" datatype="html">
         <source>
@@ -2064,7 +2060,7 @@
       </trans-unit>
       <trans-unit id="7beef709ca2fc90e01918a124e9f4319cb226a5c" datatype="html">
         <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Extra vaccinations<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
-        <target><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Παραπάνω εμβολιασμοί<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
+        <target><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Έιδικοί εμβολιασμοί<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
           <context context-type="linenumber">1</context>
@@ -2180,11 +2176,11 @@
           <context context-type="linenumber">3</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="0cf26ec067d800f0a5edae290bcb3163c5683982" datatype="html">
-        <source>Message from test</source>
-        <target>Μήνυμα Χρήστη</target>
+      <trans-unit id="3c32a07710e402b2c056bd346e7c42f6015334a6" datatype="html">
+        <source>Delete User</source>
+        <target>Διαγραφή Χρήστη</target>
         <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/message/message.component.html</context>
+          <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/users/tab/tab.component.html</context>
           <context context-type="linenumber">4</context>
         </context-group>
       </trans-unit>
