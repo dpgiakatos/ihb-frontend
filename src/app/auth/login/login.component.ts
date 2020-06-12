@@ -24,7 +24,8 @@ export class LoginComponent implements OnInit {
         Validators.email
       ]),
       password: new FormControl(null, [
-        Validators.required
+        Validators.required,
+        Validators.minLength(8)
       ])
     });
   }
@@ -43,6 +44,10 @@ export class LoginComponent implements OnInit {
         this.form.setErrors({ invalidCredentials: true });
       }
     });
+  }
+
+  get getPassword() {
+    return this.form.get('password');
   }
 
 }

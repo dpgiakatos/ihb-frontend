@@ -21,7 +21,7 @@ export class SettingsDashboardComponent implements OnInit {
 
   passwordForm = new FormGroup({
     password: new FormControl(null, [Validators.required]),
-    retype: new FormControl(null, [Validators.required])
+    retype : new FormControl(null, [Validators.required])
   });
   uploadForm = new FormGroup({
     file: new FormControl(null, [Validators.required]),
@@ -47,13 +47,16 @@ export class SettingsDashboardComponent implements OnInit {
   ngOnInit(): void {
     this.passwordForm = new FormGroup({
       oldPassword: new FormControl(null, [
-        Validators.required
+        Validators.required,
+        Validators.minLength(8)
       ]),
       password: new FormControl(null, [
-        Validators.required
+        Validators.required,
+        Validators.minLength(8)
       ]),
       newPassword: new FormControl(null, [
-        Validators.required
+        Validators.required,
+        Validators.minLength(8)
       ])
     });
     this.uploadForm = new FormGroup({
@@ -89,6 +92,18 @@ export class SettingsDashboardComponent implements OnInit {
     return Boolean(
       this.passwordForm.get('password')?.value !== this.passwordForm.get('retype')?.value && this.passwordForm.get('retype')?.touched
     );
+  }
+
+  get getOldPassword() {
+    return this.passwordForm.get('oldPassword');
+  } 
+
+  get getPassword() {
+    return this.passwordForm.get('password');
+  }
+
+  get getNewPassword() {
+    return this.passwordForm.get('newPassword');
   }
 
   upload(event: Event) {

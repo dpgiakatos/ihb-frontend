@@ -10,21 +10,26 @@
         <div class="form-group">
           <label for="oldPassword" i18n>Type the old password</label>
           <input type="password" class="form-control" id="oldPassword" autocomplete="old-password"
-            placeholder="Old Password" formControlName="oldPassword" i18n-placeholder>
-          <p class="text-danger" *ngIf="passwordForm.hasError('invalidCredentials')" i18n>Wrong Password</p>
+            placeholder="Old Password" required minlength="8" formControlName="oldPassword" i18n-placeholder>
+          <div class="invalid-feedback" *ngIf="passwordForm.hasError('invalidCredentials')" i18n>Wrong Password</div>
+          <div class="invalid-feedback" *ngIf="getOldPassword?.errors?.minlength && passwordForm?.get('oldPassword')?.touched" i18n>Name must be
+            at least 8 characters long.</div>
         </div>
 
         <div class="form-group">
           <label for="password" i18n>Type the new password</label>
-          <input type="password" class="form-control" id="password" autocomplete="new-password"
+          <input type="password" class="form-control" id="password" autocomplete="new-password" required minlength="8"
             placeholder="New Password" formControlName="password" i18n-placeholder>
+          <div class="invalid-feedback" *ngIf="getPassword?.errors?.minlength && passwordForm?.get('password')?.touched" i18n>Name must be at
+            least 8 characters long.</div>
+
         </div>
         <div class="form-group">
           <label for="newPassword" i18n>Retype the new password</label>
-          <input type="password" class="form-control" id="newPassword" autocomplete="new-password"
-            placeholder="New Password" formControlName="newPassword"
-                  [ngClass]="{'is-invalid': isNotSamePassword()}" i18n-placeholder>
+          <input type="password" class="form-control" id="newPassword" autocomplete="new-password" 
+            placeholder="New Password" formControlName="newPassword" i18n-placeholder>
           <div class="invalid-feedback" i18n>The password is not the same.</div>
+          
         </div>
 
         <div class="row">

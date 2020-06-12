@@ -34,7 +34,8 @@ export class RegisterComponent implements OnInit, OnDestroy {
         Validators.email
       ]),
       password: new FormControl(null, [
-        Validators.required
+        Validators.required,
+        Validators.minLength(8)
       ]),
       cPassword: new FormControl(null, [
         Validators.required
@@ -89,4 +90,8 @@ export class RegisterComponent implements OnInit, OnDestroy {
     }
     this.userInitiatedChange = true;
   }
+
+  get getPassword() {
+    return this.form.get('password');
+  } 
 }

@@ -29,7 +29,8 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.resetPasswordForm = new FormGroup({
       password: new FormControl(null, [
-        Validators.required
+        Validators.required,
+        Validators.minLength(8)
       ]),
       newPassword: new FormControl(null, [
         Validators.required
@@ -69,4 +70,8 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
     this.userInitiatedChange = true;
 
   }
+
+  get getPassword() {
+    return this.resetPasswordForm.get('password');
+  } 
 }
