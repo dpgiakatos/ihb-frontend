@@ -530,6 +530,10 @@
           <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
           <context context-type="linenumber">20</context>
         </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
       </trans-unit>
       <trans-unit id="563cade6511b3e778d58ea5dd08a6c7596bcaa45" datatype="html">
         <source>Please provide your email.</source>
@@ -785,8 +789,16 @@
           <context context-type="linenumber">9</context>
         </context-group>
         <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/login/login.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/forgot-password/forgot-password.component.html</context>
           <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">12</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/inbox.component.html</context>
@@ -834,8 +846,16 @@
           <context context-type="linenumber">15</context>
         </context-group>
         <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/login/login.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
           <context context-type="linenumber">29</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
+          <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9d9ea8ed1b7899b8012eb40be8967baddeecc2b7" datatype="html">
@@ -891,6 +911,10 @@
           <context context-type="linenumber">9</context>
         </context-group>
         <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/doctor-dashboard/doctor-dashboard.component.html</context>
           <context context-type="linenumber">25</context>
         </context-group>
@@ -927,6 +951,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
           <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
+          <context context-type="linenumber">15</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/doctor-dashboard/doctor-dashboard.component.html</context>
@@ -972,6 +1000,10 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
           <context context-type="linenumber">34</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
+          <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7b5867e7fca8b3aa75fd0a074bcb937e466fb8eb" datatype="html">
@@ -1274,6 +1306,13 @@
           <context context-type="linenumber">11</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="4ad47fba753bd89ce442197653ce65004eff1e6d" datatype="html">
+        <source>Old Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="064b0a19a5cf51140796cf2a895ef4a509f68f3c" datatype="html">
         <source>Wrong Password</source>
         <context-group purpose="location">
@@ -1286,6 +1325,17 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
           <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="c7014c6360e94b236286b869c3fe0ea9911c0387" datatype="html">
+        <source>New Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
+          <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="c74544b34aa28804827fd95207130b4438c65848" datatype="html">
@@ -1385,6 +1435,21 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
           <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="08bf05baa49f05263ee8198d322a82a6e3a75694" datatype="html">
+        <source>yyyy-mm-dd</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">60</context>
         </context-group>
       </trans-unit>
       <trans-unit id="21a345824fca425f087bd0689f9bc43bbeb6fa9b" datatype="html">
@@ -1641,8 +1706,8 @@
       </trans-unit>
       <trans-unit id="6f433ff626c6f521bcffc8c90e7452074fc45c1e" datatype="html">
         <source>
-  No available data. Only doctors can update your medical history.
-</source>
+          No available data. Only doctors can update your medical history.
+        </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
           <context context-type="linenumber">76</context>
@@ -1834,8 +1899,8 @@
       </trans-unit>
       <trans-unit id="547448063ed69d2cc621fd5d0921ec582dca038e" datatype="html">
         <source>
-      No available data. Only doctors can update your medical history.
-    </source>
+          No available data. Only doctors can update your medical history.
+        </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
           <context context-type="linenumber">88</context>

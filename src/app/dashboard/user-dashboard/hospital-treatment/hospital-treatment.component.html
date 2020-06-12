@@ -45,7 +45,7 @@
           <label for="hospitalTreatmentStarts" i18n>Hospital Treatment Starts</label>
           <div class="input-group" id="hospitalTreatmentStarts">
             <input type="text" class="form-control" placeholder="yyyy-mm-dd" name="dpStart" formControlName="starts"
-              ngbDatepicker #dS="ngbDatepicker">
+              ngbDatepicker #dS="ngbDatepicker" i18n-placeholder>
             <div class="input-group-append">
               <button type="button" class="btn btn-outline-secondary" (click)="dS.toggle()">
                 <fa-icon [icon]="faCalendarAlt"></fa-icon>
@@ -58,7 +58,7 @@
           <label for="hospitalTreatmentFinishes" i18n>Hospital Treatment Finishes</label>
           <div class="input-group" id="hospitalTreatmentFinishes">
             <input type="text" class="form-control" placeholder="yyyy-mm-dd" name="dpFinishes" formControlName="finishes"
-              ngbDatepicker #dF="ngbDatepicker">
+              ngbDatepicker #dF="ngbDatepicker" i18n-placeholder>
             <div class="input-group-append">
               <button type="button" class="btn btn-outline-secondary" (click)="dF.toggle()">
                 <fa-icon [icon]="faCalendarAlt"></fa-icon>
