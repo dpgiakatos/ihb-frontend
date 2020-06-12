@@ -21,9 +21,26 @@
         <a class="nav-link" routerLink="" fragment="contact" (click)="collapse()" i18n>Contact</a>
       </li>
     </ul>
+
+
+    <div ngbDropdown class="nav-item">
+      <a class="nav-link" ngbDropdownToggle role="button">
+        <fa-icon [icon]="faGlobe" [size]="'lg'"></fa-icon>
+      </a>
+      <div ngbDropdownMenu>
+        <a
+          [class.active]="locale === language.code"
+          *ngFor="let language of languages"
+          [href]="'/' + language.code + loadedUrl"
+          ngbDropdownItem
+        >{{ language.text }}</a>
+      </div>
+    </div>
+
     <ul class="navbar-nav nav-pills">
       <a routerLink="/auth/login" class="mr-3 nav-button-margin" (click)="collapse()"><button class="btn btn-outline-dark " i18n>Sign in</button></a>
       <a routerLink="/auth/register" (click)="collapse()"><button class="btn btn-dark" i18n>Sign up</button></a>
     </ul>
   </div>
 </nav>
+

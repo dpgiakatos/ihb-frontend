@@ -9,6 +9,12 @@
       "root": "",
       "sourceRoot": "src",
       "prefix": "ihb",
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "el": "src/locale/messages.el.xlf"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -59,11 +65,10 @@
             },
             "el": {
               "aot": true,
-              "outputPath": "dist/under-c-el/",
+              "outputPath": "dist/el/",
               "i18nFile": "src/locale/messages.el.xlf",
               "i18nFormat": "xlf",
-              "i18nLocale": "el",
-              "i18nMissingTranslation": "ignore"
+              "i18nLocale": "el"
             }
           }
         },

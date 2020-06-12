@@ -49,9 +49,7 @@ export class PersonalInformationComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log('submitting');
     if (this.form.valid) {
-      console.log('is valid');
       this.form.disable();
       this.editing = !this.editing;
       this.personalService.edit(this.form.value).subscribe();

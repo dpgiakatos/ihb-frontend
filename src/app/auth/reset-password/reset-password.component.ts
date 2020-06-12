@@ -24,7 +24,6 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
     private router: Router
   ) {
     this.token = this.activatedRoute.snapshot.params.tokenId;
-    console.log(this.token);
   }
 
   ngOnInit(): void {

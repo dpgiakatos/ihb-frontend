@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { NavbarComponent } from './navbar/navbar.component';
-import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCollapseModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { ControlValidationStateDirective } from './control-validation-state.directive';
 import { ProvideNgFormDirective } from './provide-ng-form.directive';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -12,8 +14,11 @@ import { ProvideNgFormDirective } from './provide-ng-form.directive';
     ProvideNgFormDirective
   ],
   imports: [
+    CommonModule,
     NgbCollapseModule,
-    RouterModule
+    NgbDropdownModule,
+    RouterModule,
+    FontAwesomeModule
   ],
   exports: [
     NavbarComponent,

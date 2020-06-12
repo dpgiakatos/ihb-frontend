@@ -30,6 +30,9 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
+    if (this.form.invalid) {
+      return;
+    }
     this.authService.login(this.form.value).subscribe(() => {
       this.router.navigateByUrl('/dashboard/user');
     }, (err: HttpErrorResponse) => {
