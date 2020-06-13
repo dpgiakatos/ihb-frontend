@@ -33,6 +33,7 @@ export class PersonalInformationComponent implements OnInit {
   faCalendarAlt = faCalendarAlt;
 
   showSpinner = true;
+  hasData = false;
 
   constructor(
     private personalService: PersonalInformationService,
@@ -47,6 +48,7 @@ export class PersonalInformationComponent implements OnInit {
       result => {
         this.form.patchValue(result);
         this.showSpinner = false;
+        this.hasData = true;
       }
     );
   }
