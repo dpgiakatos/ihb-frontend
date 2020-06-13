@@ -4,6 +4,7 @@ import { TabService } from './tab.service';
 import { FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { AuthService } from '../../../../auth/auth.service';
 
 @Component({
   selector: 'ihb-tab',
@@ -30,7 +31,8 @@ export class TabComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private tabService: TabService,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
@@ -83,7 +85,13 @@ export class TabComponent implements OnInit {
 
   onDelete() {
     this.tabService.deleteUser(this.userId).subscribe(() => {
-      this.router.navigateByUrl('/dashboard/administrator/users');
+      const currentUser = this.authService.getClaims()?.id;
+      if (currentUser === this.userId) {
+        this.authService.logout();
+        this.router.navigateByUrl('');
+      } else {
+        this.router.navigateByUrl('/dashboard/administrator/users');
+      }
     });
   }
 
