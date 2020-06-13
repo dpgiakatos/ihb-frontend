@@ -14,9 +14,9 @@
       <div class="form-group">
         <label for="inputPassword" class="sr-only" i18n>Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" autocomplete="current-password" formControlName="password" required minlength="8" i18n-placeholder>
-        <div class="invalid-feedback" *ngIf="getPassword?.errors?.minlength && form.get('password')?.touched" i18n>Name must be at least 8 characters long.</div>
+        <div class="invalid-feedback" *ngIf="getPassword?.errors?.minlength && form.get('password')?.touched" i18n>Password must be at least 8 characters long.</div>
       </div>
-      <p class="invalid-feedback" *ngIf="form.hasError('invalidCredentials')" i18n>Invalid credentials. Try again!</p>
+      <p class="text-danger" *ngIf="form.hasError('invalidCredentials')" i18n>Invalid credentials. Try again!</p>
       <button class="btn btn-lg btn-primary btn-block" type="submit" i18n>Sign In</button>
     </fieldset>
   </form>

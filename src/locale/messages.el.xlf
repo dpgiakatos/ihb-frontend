@@ -1031,6 +1031,30 @@
           <context context-type="linenumber">31</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="3988924f7d54793f47570a2cedb56ed710539f77" datatype="html">
+        <source>Password must be at least 8 characters long.</source>
+        <target>Ο κωδικός πρέπει να έχει μήκος τουλάχιστον 8 χαρακτήρων.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/login/login.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/reset-password/reset-password.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="3cba91f9631e0cdc7c3171fee66ff18c4c6aa6a6" datatype="html">
         <source>Invalid credentials. Try again!</source>
         <target>Εσφαλμένα Διαπιστευτήρια. Δοκιμάστε ξανά!</target>

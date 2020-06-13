@@ -554,7 +554,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/inbox.component.html</context>
-          <context context-type="linenumber">7</context>
+          <context context-type="linenumber">9</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/message/message.component.html</context>
@@ -802,7 +802,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/inbox.component.html</context>
-          <context context-type="linenumber">6</context>
+          <context context-type="linenumber">8</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/message/message.component.html</context>
@@ -810,7 +810,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/users/tab/tab.component.html</context>
-          <context context-type="linenumber">14</context>
+          <context context-type="linenumber">16</context>
         </context-group>
       </trans-unit>
       <trans-unit id="91d5f24de2a855d70b07cb4fd2e4cf4885664e6a" datatype="html">
@@ -858,8 +858,8 @@
           <context context-type="linenumber">30</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="9d9ea8ed1b7899b8012eb40be8967baddeecc2b7" datatype="html">
-        <source>Please provide a password.</source>
+      <trans-unit id="3988924f7d54793f47570a2cedb56ed710539f77" datatype="html">
+        <source>Password must be at least 8 characters long.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/login/login.component.html</context>
           <context context-type="linenumber">17</context>
@@ -867,6 +867,18 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
           <context context-type="linenumber">31</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/reset-password/reset-password.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
+          <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3cba91f9631e0cdc7c3171fee66ff18c4c6aa6a6" datatype="html">
@@ -916,23 +928,23 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/doctor-dashboard/doctor-dashboard.component.html</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">276</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
-          <context context-type="linenumber">5</context>
+          <context context-type="linenumber">7</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/notifications-dashboard/notifications-dashboard.component.html</context>
-          <context context-type="linenumber">16</context>
+          <context context-type="linenumber">18</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/applications/applications.component.html</context>
-          <context context-type="linenumber">6</context>
+          <context context-type="linenumber">8</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/users/users.component.html</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">25</context>
         </context-group>
       </trans-unit>
       <trans-unit id="296bd82c59159fd10f0719bc58b473f84b412868" datatype="html">
@@ -943,7 +955,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
-          <context context-type="linenumber">7</context>
+          <context context-type="linenumber">9</context>
         </context-group>
       </trans-unit>
       <trans-unit id="166b2cc65003221ff5f3ec05d5baca41e6821396" datatype="html">
@@ -958,23 +970,23 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/doctor-dashboard/doctor-dashboard.component.html</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="linenumber">277</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
-          <context context-type="linenumber">10</context>
+          <context context-type="linenumber">12</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/notifications-dashboard/notifications-dashboard.component.html</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">19</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/applications/applications.component.html</context>
-          <context context-type="linenumber">7</context>
+          <context context-type="linenumber">9</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/users/users.component.html</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6516ae89e866d1b6b390bdc2ec90160fab5e0a25" datatype="html">
@@ -985,7 +997,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5d095e6bb99dc2ac241a0001a7c024df5a0c221b" datatype="html">
@@ -1029,7 +1041,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
-          <context context-type="linenumber">27</context>
+          <context context-type="linenumber">29</context>
         </context-group>
       </trans-unit>
       <trans-unit id="cfc2f436ec2beffb042e7511a73c89c372e86a6c" datatype="html">
@@ -1086,13 +1098,6 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/reset-password/reset-password.component.html</context>
           <context context-type="linenumber">10</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="0664417fefc5468742481e382c5097e614087b44" datatype="html">
-        <source>Please provide a password</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/auth/reset-password/reset-password.component.html</context>
-          <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
       <trans-unit id="06c663bf1474713f57551123a46b34318543b67d" datatype="html">
@@ -1238,37 +1243,26 @@
           <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="f1221fb0876c7b87775952f22e1b46342aa9800f" datatype="html">
-        <source>Greece</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/doctor-dashboard/doctor-dashboard.component.html</context>
-          <context context-type="linenumber">16</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
-          <context context-type="linenumber">26</context>
-        </context-group>
-      </trans-unit>
       <trans-unit id="591bb67364c0c472f7d00ff8b5a21775f5b0c66b" datatype="html">
         <source>SSNVS</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/doctor-dashboard/doctor-dashboard.component.html</context>
-          <context context-type="linenumber">27</context>
+          <context context-type="linenumber">278</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
-          <context context-type="linenumber">17</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6829218544e108e152f5fa72cb79c4ccb82e0d06" datatype="html">
         <source>View</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/doctor-dashboard/doctor-dashboard.component.html</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">287</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/users/users.component.html</context>
-          <context context-type="linenumber">34</context>
+          <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="eb4e61ad5282c37e3708ca12ab1d283d75b7682c" datatype="html">
@@ -1324,59 +1318,59 @@
         <source>Type the new password</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="linenumber">19</context>
         </context-group>
       </trans-unit>
       <trans-unit id="c7014c6360e94b236286b869c3fe0ea9911c0387" datatype="html">
         <source>New Password</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">21</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="c74544b34aa28804827fd95207130b4438c65848" datatype="html">
         <source>Retype the new password</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
-          <context context-type="linenumber">23</context>
+          <context context-type="linenumber">26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="52c9a103b812f258bcddc3d90a6e3f46871d25fe" datatype="html">
         <source>Save</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">35</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
-          <context context-type="linenumber">90</context>
+          <context context-type="linenumber">340</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">32</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
-          <context context-type="linenumber">73</context>
+          <context context-type="linenumber">74</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/recommended-vaccinations/recommended-vaccinations.component.html</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="linenumber">19</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
-          <context context-type="linenumber">44</context>
+          <context context-type="linenumber">45</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a7e9508bafb081c5a14bb914ef31db4f997eeaab" datatype="html">
         <source>Ask for doctor authorization</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="linenumber">41</context>
         </context-group>
       </trans-unit>
       <trans-unit id="0dbcd211c2133a85e2c970e73169beeed2df9091" datatype="html">
@@ -1385,304 +1379,184 @@
         Other folder formats will not be accepted.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
-          <context context-type="linenumber">41</context>
+          <context context-type="linenumber">45</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4b3972c3e9485218508a95f7a4ce7758e3f09ced" datatype="html">
         <source>Upload</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
-          <context context-type="linenumber">56</context>
+          <context context-type="linenumber">60</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4dba776df328fbe1346a353c1bdde4586eeab13a" datatype="html">
         <source>You have already sent an application.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
-          <context context-type="linenumber">63</context>
+          <context context-type="linenumber">67</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9a2f889dde4574a6883c853d1034e75891b28c45" datatype="html">
         <source>Delete your account</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
-          <context context-type="linenumber">66</context>
+          <context context-type="linenumber">70</context>
         </context-group>
       </trans-unit>
       <trans-unit id="bfeaa203efa9ab3fe11b0f2b33e7c3485d29bdca" datatype="html">
         <source>All your personal information will be deleted from our database.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
-          <context context-type="linenumber">67</context>
+          <context context-type="linenumber">71</context>
         </context-group>
       </trans-unit>
       <trans-unit id="66b777a6c0fdac1cc5538f2cbd28b38c71783abb" datatype="html">
         <source>Delete Account</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
-          <context context-type="linenumber">68</context>
+          <context context-type="linenumber">72</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3229ca4c64adc348896145768646951c883dec8b" datatype="html">
         <source>Please provide your SSNVS.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">21</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8a1b6d6b2314b41996549c94638159222b016a92" datatype="html">
         <source>Date Of Birth</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="08bf05baa49f05263ee8198d322a82a6e3a75694" datatype="html">
         <source>yyyy-mm-dd</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
-          <context context-type="linenumber">27</context>
+          <context context-type="linenumber">29</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
-          <context context-type="linenumber">47</context>
+          <context context-type="linenumber">48</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
-          <context context-type="linenumber">60</context>
+          <context context-type="linenumber">61</context>
         </context-group>
       </trans-unit>
       <trans-unit id="21a345824fca425f087bd0689f9bc43bbeb6fa9b" datatype="html">
         <source>Please provide your date of birth.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="linenumber">39</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a43f25a9ac40e8e2441ff0be7a36b8e5d15534df" datatype="html">
         <source>Country</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
-          <context context-type="linenumber">41</context>
+          <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1254ae4188d268c781424d880057fb7fcd724ddc" datatype="html">
         <source>Please provide your country.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
-          <context context-type="linenumber">45</context>
+          <context context-type="linenumber">295</context>
         </context-group>
       </trans-unit>
       <trans-unit id="80c0abe3db2621325a73975cd556e1e970a28130" datatype="html">
         <source>Father&apos;s First Name</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
-          <context context-type="linenumber">50</context>
+          <context context-type="linenumber">300</context>
         </context-group>
       </trans-unit>
       <trans-unit id="0979fcfed681e33631cda308bb226ea917459fc7" datatype="html">
         <source>Please provide your father&apos;s first name.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
-          <context context-type="linenumber">52</context>
+          <context context-type="linenumber">302</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a48f78013937105465b3e620bb8c103c9f1f9e42" datatype="html">
         <source>Father&apos;s Last Name</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
-          <context context-type="linenumber">55</context>
+          <context context-type="linenumber">305</context>
         </context-group>
       </trans-unit>
       <trans-unit id="92be0ca632cf2cff382f1f67a5201dce7602a2e5" datatype="html">
         <source>Please provide your father&apos;s last name.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
-          <context context-type="linenumber">57</context>
+          <context context-type="linenumber">307</context>
         </context-group>
       </trans-unit>
       <trans-unit id="73504f61da784326dfa92cd68e21c8a56ae63bae" datatype="html">
         <source>Mother&apos;s First Name</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
-          <context context-type="linenumber">60</context>
+          <context context-type="linenumber">310</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9557a4235abe8c0e43bf40831671350778b2d750" datatype="html">
         <source>Please provide your mother&apos;s first name.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
-          <context context-type="linenumber">62</context>
+          <context context-type="linenumber">312</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e23bb08002c3e0a841b2ccfd8c03c56c0dae1b6b" datatype="html">
         <source>Mother&apos;s Last Name</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
-          <context context-type="linenumber">65</context>
+          <context context-type="linenumber">315</context>
         </context-group>
       </trans-unit>
       <trans-unit id="459ccd054ed6cae6dc68daa9130a3dabc922bc4d" datatype="html">
         <source>Please provide your mother&apos;s last name</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
-          <context context-type="linenumber">67</context>
+          <context context-type="linenumber">317</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4a2f89fdc4cb456f4ff1cd59317354380d7a9096" datatype="html">
         <source>Mobile Phone</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
-          <context context-type="linenumber">72</context>
+          <context context-type="linenumber">322</context>
         </context-group>
       </trans-unit>
       <trans-unit id="05425ec3f561fe58de1277d15ce7b1f22ec8b88b" datatype="html">
         <source>Please provide your mobile phone.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
-          <context context-type="linenumber">74</context>
+          <context context-type="linenumber">324</context>
         </context-group>
       </trans-unit>
       <trans-unit id="28549657fe8bcc53a684925bca2859faef3d9d20" datatype="html">
         <source>Emergency Phone Contact</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
-          <context context-type="linenumber">77</context>
+          <context context-type="linenumber">327</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8afa59aef7e6fa24f33987d2b4714cc15bc1e88c" datatype="html">
         <source>Please provide an emergency phone contact.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
-          <context context-type="linenumber">79</context>
+          <context context-type="linenumber">329</context>
         </context-group>
       </trans-unit>
       <trans-unit id="28f86ffd419b869711aa13f5e5ff54be6d70731c" datatype="html">
         <source>Edit</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/personal-information/personal-information.component.html</context>
-          <context context-type="linenumber">87</context>
+          <context context-type="linenumber">337</context>
         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
-          <context context-type="linenumber">60</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
-          <context context-type="linenumber">110</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/recommended-vaccinations/recommended-vaccinations.component.html</context>
-          <context context-type="linenumber">15</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
-          <context context-type="linenumber">73</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="f6755cff4957d5c3c89bafce5651f1b6fa2b1fd9" datatype="html">
-        <source>Add</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
-          <context context-type="linenumber">6</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
-          <context context-type="linenumber">6</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
-          <context context-type="linenumber">9</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="228e9f98316ebe5277aff9e09e88a24c8f27a488" datatype="html">
-        <source>Allergic Disease Name</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
-          <context context-type="linenumber">14</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
-          <context context-type="linenumber">44</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="f2eb1722fdd1ead833af6e9f92b67108c0175d8f" datatype="html">
-        <source>Please provide a valid name.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
-          <context context-type="linenumber">16</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
-          <context context-type="linenumber">16</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
-          <context context-type="linenumber">20</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="0c4ceabe01e0ff9c5136713c3036bf4cb1015a1d" datatype="html">
-        <source>Allergic Disease Description</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
-          <context context-type="linenumber">19</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
-          <context context-type="linenumber">45</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="3c3c237b246495d6e36ffb7f83a56f85c71189bf" datatype="html">
-        <source>Please provide a valid description.</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
-          <context context-type="linenumber">21</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
-          <context context-type="linenumber">26</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
-          <context context-type="linenumber">39</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="d54bd981d94247ae99e3f2d968c0dd4eaec62b02" datatype="html">
-        <source>Treatment Description</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
-          <context context-type="linenumber">24</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
-          <context context-type="linenumber">46</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
-          <context context-type="linenumber">38</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
-          <context context-type="linenumber">90</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="f4e529ae5ffd73001d1ff4bbdeeb0a72e342e5c8" datatype="html">
-        <source>Close</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
-          <context context-type="linenumber">32</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
-          <context context-type="linenumber">74</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
-          <context context-type="linenumber">45</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="826b25211922a1b46436589233cb6f1a163d89b7" datatype="html">
-        <source>Delete</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
           <context context-type="linenumber">61</context>
@@ -1692,12 +1566,132 @@
           <context context-type="linenumber">111</context>
         </context-group>
         <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/recommended-vaccinations/recommended-vaccinations.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+        <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
           <context context-type="linenumber">74</context>
         </context-group>
+      </trans-unit>
+      <trans-unit id="f6755cff4957d5c3c89bafce5651f1b6fa2b1fd9" datatype="html">
+        <source>Add</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="228e9f98316ebe5277aff9e09e88a24c8f27a488" datatype="html">
+        <source>Allergic Disease Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
+          <context context-type="linenumber">45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f2eb1722fdd1ead833af6e9f92b67108c0175d8f" datatype="html">
+        <source>Please provide a valid name.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0c4ceabe01e0ff9c5136713c3036bf4cb1015a1d" datatype="html">
+        <source>Allergic Disease Description</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3c3c237b246495d6e36ffb7f83a56f85c71189bf" datatype="html">
+        <source>Please provide a valid description.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d54bd981d94247ae99e3f2d968c0dd4eaec62b02" datatype="html">
+        <source>Treatment Description</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">91</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="f4e529ae5ffd73001d1ff4bbdeeb0a72e342e5c8" datatype="html">
+        <source>Close</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
+          <context context-type="linenumber">46</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="826b25211922a1b46436589233cb6f1a163d89b7" datatype="html">
+        <source>Delete</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
+          <context context-type="linenumber">62</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">112</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
+          <context context-type="linenumber">75</context>
+        </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/inbox.component.html</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">22</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/message/message.component.html</context>
@@ -1706,130 +1700,137 @@
       </trans-unit>
       <trans-unit id="6f433ff626c6f521bcffc8c90e7452074fc45c1e" datatype="html">
         <source>
-          No available data. Only doctors can update your medical history.
-        </source>
+  No available data. Only doctors can update your medical history.
+</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/allergic-diseases/allergic-diseases.component.html</context>
-          <context context-type="linenumber">76</context>
+          <context context-type="linenumber">77</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
-          <context context-type="linenumber">126</context>
+          <context context-type="linenumber">127</context>
         </context-group>
       </trans-unit>
       <trans-unit id="580ecffcd2ce4a98d27bf551110342b6cca7d811" datatype="html">
         <source>Hospital&apos;s Name</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
-          <context context-type="linenumber">14</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
-          <context context-type="linenumber">86</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="b94a41d4addfbeb1933b5dd02f7afd0ea7d32465" datatype="html">
-        <source>Hospital&apos;s City</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">15</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
           <context context-type="linenumber">87</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="8bc38c1a3300a4d02a4c35bdfff28386a388d2a4" datatype="html">
-        <source>Please provide a valid city.</source>
+      <trans-unit id="b94a41d4addfbeb1933b5dd02f7afd0ea7d32465" datatype="html">
+        <source>Hospital&apos;s City</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
-          <context context-type="linenumber">21</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="93aeb565bbb5b8c96c050115b4f34aef77b101de" datatype="html">
-        <source>Hospital&apos;s Country</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">20</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
           <context context-type="linenumber">88</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="9f5270042b560547535b7f0b6b5b2b3e89900a5b" datatype="html">
-        <source>Please provide a valid country.</source>
+      <trans-unit id="8bc38c1a3300a4d02a4c35bdfff28386a388d2a4" datatype="html">
+        <source>Please provide a valid city.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
-          <context context-type="linenumber">28</context>
+          <context context-type="linenumber">22</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="56ee034d5c1c5e313823de6cea79ed72b2603a1f" datatype="html">
-        <source>Hospital Treatment Cause</source>
+      <trans-unit id="93aeb565bbb5b8c96c050115b4f34aef77b101de" datatype="html">
+        <source>Hospital&apos;s Country</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="linenumber">25</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
           <context context-type="linenumber">89</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="f1221fb0876c7b87775952f22e1b46342aa9800f" datatype="html">
+        <source>Greece</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9f5270042b560547535b7f0b6b5b2b3e89900a5b" datatype="html">
+        <source>Please provide a valid country.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">29</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="56ee034d5c1c5e313823de6cea79ed72b2603a1f" datatype="html">
+        <source>Hospital Treatment Cause</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">34</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="cc04286f29f5c243900b2e86dc4cc2826390b11d" datatype="html">
         <source>Please provide a valid cause.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="linenumber">36</context>
         </context-group>
       </trans-unit>
       <trans-unit id="55a364f6d6ca399b96be967b566a522d5622d321" datatype="html">
         <source>Please provide a valid treatment.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
-          <context context-type="linenumber">40</context>
+          <context context-type="linenumber">41</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3dece1e9849dbce7e67c2f3b937706b5c3590ef1" datatype="html">
         <source>Hospital Treatment Starts</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
-          <context context-type="linenumber">45</context>
+          <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
       <trans-unit id="e47e2c2d865934a061237d842ba7f9fca9158707" datatype="html">
         <source>Please provide a valid date.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
-          <context context-type="linenumber">54</context>
+          <context context-type="linenumber">55</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
-          <context context-type="linenumber">67</context>
+          <context context-type="linenumber">68</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="linenumber">34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5ea9123d794022b4243365327033538f6a184618" datatype="html">
         <source>Hospital Treatment Finishes</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
-          <context context-type="linenumber">58</context>
+          <context context-type="linenumber">59</context>
         </context-group>
       </trans-unit>
       <trans-unit id="369d050a6fc7f515112d24dcd150d3c55160dde4" datatype="html">
         <source>Hospital Treatment Start</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
-          <context context-type="linenumber">91</context>
+          <context context-type="linenumber">92</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1c1dcb750df08e590401f291afc22e86127c9aab" datatype="html">
         <source>Hospital Treatment End</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/hospital-treatment/hospital-treatment.component.html</context>
-          <context context-type="linenumber">92</context>
+          <context context-type="linenumber">93</context>
         </context-group>
       </trans-unit>
       <trans-unit id="b3f8bd8218400caf04583532f18476c4fe46c695" datatype="html">
@@ -1861,49 +1862,49 @@
         <source><x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>Extra vaccinations<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
-          <context context-type="linenumber">1</context>
+          <context context-type="linenumber">2</context>
         </context-group>
       </trans-unit>
       <trans-unit id="dbdb8b89263eed07f1171ed7669fbe2359ff8bc5" datatype="html">
         <source>Vaccination Name</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
-          <context context-type="linenumber">17</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
-          <context context-type="linenumber">57</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="16b35a4898a1af226cd6ab1a634ef88f44628fe9" datatype="html">
-        <source>Vaccination Date</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
-          <context context-type="linenumber">23</context>
+          <context context-type="linenumber">18</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
           <context context-type="linenumber">58</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="eec715de352a6b114713b30b640d319fa78207a0" datatype="html">
-        <source>Description</source>
+      <trans-unit id="16b35a4898a1af226cd6ab1a634ef88f44628fe9" datatype="html">
+        <source>Vaccination Date</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="linenumber">24</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
           <context context-type="linenumber">59</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="547448063ed69d2cc621fd5d0921ec582dca038e" datatype="html">
-        <source>
-          No available data. Only doctors can update your medical history.
-        </source>
+      <trans-unit id="eec715de352a6b114713b30b640d319fa78207a0" datatype="html">
+        <source>Description</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
-          <context context-type="linenumber">88</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="547448063ed69d2cc621fd5d0921ec582dca038e" datatype="html">
+        <source>
+      No available data. Only doctors can update your medical history.
+    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/user-dashboard/vaccinations/extra-vaccinations/extra-vaccinations.component.html</context>
+          <context context-type="linenumber">89</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8bcabdf6b16cad0313a86c7e940c5e3ad7f9f8ab" datatype="html">
@@ -1926,29 +1927,29 @@
         <source>Access Date &amp; Time</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/notifications-dashboard/notifications-dashboard.component.html</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="853af7d1f6656baff6d5fde1f4f6057a42a78936" datatype="html">
         <source>Date &amp; Time</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/inbox.component.html</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="linenumber">10</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/applications/applications.component.html</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="linenumber">10</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9b1d5e95f6bdcfb4b737413f5fa157e0dcb103d5" datatype="html">
         <source>Read</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/inbox/inbox.component.html</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">21</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/applications/applications.component.html</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="11572daa76f45d53f8444c28304b1e64e4f555d8" datatype="html">
@@ -1980,21 +1981,21 @@
         <source>Full Name</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/users/tab/tab.component.html</context>
-          <context context-type="linenumber">10</context>
+          <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3460115285a11afcb4ea6eea7be53a74d3cef423" datatype="html">
         <source>Check this in order to activate <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>doctor<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> authorization</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/users/tab/tab.component.html</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">24</context>
         </context-group>
       </trans-unit>
       <trans-unit id="d25e3a96a7dbdea98719f8617143972816ac46ae" datatype="html">
         <source>Check this in order to activate <x id="START_BOLD_TEXT" ctype="x-b" equiv-text="&lt;b&gt;"/>administrator<x id="CLOSE_BOLD_TEXT" ctype="x-b" equiv-text="&lt;/b&gt;"/> authorization</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/users/tab/tab.component.html</context>
-          <context context-type="linenumber">26</context>
+          <context context-type="linenumber">28</context>
         </context-group>
       </trans-unit>
       <trans-unit id="83310fc437efa47003be27c522982fe2366a005f" datatype="html">
@@ -2004,7 +2005,7 @@
           </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/administrator-dashboard/users/tab/tab.component.html</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">36</context>
         </context-group>
       </trans-unit>
     </body>
