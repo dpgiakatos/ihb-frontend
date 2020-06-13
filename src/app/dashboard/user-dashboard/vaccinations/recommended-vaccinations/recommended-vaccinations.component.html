@@ -1,3 +1,4 @@
+<ihb-loading-spinner *ngIf="showSpinner"></ihb-loading-spinner>
 <form [formGroup]="form" (submit)="onVaccinationSubmit()">
   <div class="row" id="recommendedVaccinations">
     <div class="col-lg-4" *ngFor="let vaccine of vaccines">

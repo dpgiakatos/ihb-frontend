@@ -16,6 +16,8 @@ export class HospitalTreatmentComponent implements OnInit {
 
   faCalendarAlt = faCalendarAlt;
 
+  showSpinner = true;
+
   form = new FormGroup({
     name: new FormControl(null, [Validators.required]),
     city: new FormControl(null, [Validators.required]),
@@ -106,6 +108,7 @@ export class HospitalTreatmentComponent implements OnInit {
     this.treatmentsService.get(this.page, this.userId).subscribe(response => {
       this.treatmentList = response.treatments;
       this.count = response.count;
+      this.showSpinner = false;
     });
   }
 

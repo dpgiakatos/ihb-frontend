@@ -266,6 +266,9 @@
         </div>
       </div>
     </div>
+    <ng-container *ngIf="searchBox.value">
+      <ihb-loading-spinner *ngIf="showSpinner"></ihb-loading-spinner>
+    </ng-container>
     <ng-container *ngIf="list.length">
       <table class="table table-striped mt-3 table-responsive-lg">
         <thead>

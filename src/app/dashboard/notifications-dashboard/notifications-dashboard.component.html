@@ -8,25 +8,28 @@
         In this page we inform you about the doctors who have accessed your medical history.
       </p>
     </div>
-    <div class="table-responsive">
-      <table class="table table-striped mt-3">
-        <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col" i18n>First Name</th>
-          <th scope="col" i18n>Last Name</th>
-          <th scope="col" i18n>Access Date & Time</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let log of logs; let i = index">
-          <th scope="row">{{i+1}}</th>
-          <td>{{log.firstName}}</td>
-          <td>{{log.lastName}}</td>
-          <td>{{log.accessTime | date: 'short'}}</td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
+    <ng-container *ngIf="logs.length">
+      <ihb-loading-spinner *ngIf="showSpinner"></ihb-loading-spinner>
+      <div class="table-responsive">
+        <table class="table table-striped mt-3">
+          <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col" i18n>First Name</th>
+            <th scope="col" i18n>Last Name</th>
+            <th scope="col" i18n>Access Date & Time</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let log of logs; let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{log.firstName}}</td>
+            <td>{{log.lastName}}</td>
+            <td>{{log.accessTime | date: 'short'}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </ng-container>
   </div>
 </div>

@@ -16,6 +16,8 @@ export class ExtraVaccinationsComponent implements OnInit {
 
   faCalendarAlt = faCalendarAlt;
 
+  showSpinner = true;
+
   form = new FormGroup({
     name: new FormControl(null, [Validators.required]),
     date: new FormControl(this.calendar.getToday(), [Validators.required]),
@@ -102,6 +104,7 @@ export class ExtraVaccinationsComponent implements OnInit {
     this.extraVaccinationsService.get(this.page, this.userId).subscribe(response => {
       this.extraVaccinationList = response.vaccinations;
       this.count = response.count;
+      this.showSpinner = false;
     });
   }
 

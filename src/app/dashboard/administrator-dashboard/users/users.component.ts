@@ -25,6 +25,8 @@ export class UsersComponent implements OnInit {
   subscriptionDoctor: Subscription;
   subscriptionAdministrator: Subscription;
 
+  showSpinner: boolean;
+
   constructor(private usersService: UsersService) { }
 
   ngOnInit(): void {
@@ -35,9 +37,11 @@ export class UsersComponent implements OnInit {
   }
 
   fetchCurrentPage() {
+    this.showSpinner = true;
     this.usersService.get(this.search.value, this.page, this.doctor.value, this.administrator.value).subscribe(response => {
       this.userList = response.users;
       this.count = response.count;
+      this.showSpinner = false;
     });
   }
 
@@ -47,11 +51,13 @@ export class UsersComponent implements OnInit {
         this.userList = [];
       }),
       switchMap(value => {
+        this.showSpinner = true;
         return this.usersService.get(this.search.value, this.page, value, this.administrator.value);
       })
     ).subscribe(value => {
       this.userList = value.users;
       this.count = value.count;
+      this.showSpinner = false;
     });
   }
 
@@ -61,11 +67,13 @@ export class UsersComponent implements OnInit {
         this.userList = [];
       }),
       switchMap(value => {
+        this.showSpinner = true;
         return this.usersService.get(this.search.value, this.page, this.doctor.value, value);
       })
     ).subscribe(value => {
       this.userList = value.users;
       this.count = value.count;
+      this.showSpinner = false;
     });
   }
 
@@ -78,11 +86,13 @@ export class UsersComponent implements OnInit {
       }),
       // debounceTime(250),
       switchMap(value => {
+        this.showSpinner = true;
         return this.usersService.get(value, this.page, this.doctor.value, this.administrator.value);
       })
     ).subscribe(value => {
       this.userList = value.users;
       this.count = value.count;
+      this.showSpinner = false;
     });
   }
 }

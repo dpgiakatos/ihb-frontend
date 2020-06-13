@@ -16,11 +16,14 @@ export class NotificationsDashboardComponent implements OnInit {
 
   logs: Log[] = [];
 
+  showSpinner = true;
+
   constructor(private httpClient: HttpClient) { }
 
   ngOnInit(): void {
     this.httpClient.get<Log[]>('notifications/doctors-logs').subscribe(res => {
       this.logs = res;
+      this.showSpinner = false;
     });
   }
 }

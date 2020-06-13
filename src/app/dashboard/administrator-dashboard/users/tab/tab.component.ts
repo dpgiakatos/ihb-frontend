@@ -23,6 +23,10 @@ export class TabComponent implements OnInit {
   subscriptionDoctor: Subscription;
   subscriptionAdministrator: Subscription;
 
+  showSpinnerInfo = true;
+  infoHasLoad = false;
+  showSpinnerApp = true;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private tabService: TabService,
@@ -48,6 +52,8 @@ export class TabComponent implements OnInit {
           this.administrator.setValue(true);
         }
       });
+      this.showSpinnerInfo = false;
+      this.infoHasLoad = true;
     });
   }
 
@@ -82,7 +88,10 @@ export class TabComponent implements OnInit {
   }
 
   hasApplication() {
-    this.tabService.hasApplication(this.userId).subscribe(value => { this.applicationActive = value; });
+    this.tabService.hasApplication(this.userId).subscribe(value => {
+      this.applicationActive = value;
+      this.showSpinnerApp = false;
+    });
   }
 
   download() {

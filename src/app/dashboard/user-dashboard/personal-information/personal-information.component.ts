@@ -32,6 +32,8 @@ export class PersonalInformationComponent implements OnInit {
 
   faCalendarAlt = faCalendarAlt;
 
+  showSpinner = true;
+
   constructor(
     private personalService: PersonalInformationService,
     private activatedRoute: ActivatedRoute,
@@ -44,6 +46,7 @@ export class PersonalInformationComponent implements OnInit {
     this.personalService.get(this.userId).subscribe(
       result => {
         this.form.patchValue(result);
+        this.showSpinner = false;
       }
     );
   }

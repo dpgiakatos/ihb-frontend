@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SettingsService } from './settings.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient, HttpParams, HttpErrorResponse } from '@angular/common/http';
 
 interface Password {
@@ -29,13 +29,16 @@ export class SettingsDashboardComponent implements OnInit {
   userId: string;
 
   file: File;
-  applicationActive: boolean;
+  applicationExist: boolean;
+
+  showSpinner = false;
 
   constructor(
     private httpClient: HttpClient,
     private activatedRoute: ActivatedRoute,
     private settingsService: SettingsService,
-    jwt: JwtHelperService
+    jwt: JwtHelperService,
+    private router: Router
   ) {
     this.userId = this.activatedRoute.snapshot.params.id;
     const accessToken = localStorage.getItem('access-token');
@@ -96,7 +99,7 @@ export class SettingsDashboardComponent implements OnInit {
 
   get getOldPassword() {
     return this.passwordForm.get('oldPassword');
-  } 
+  }
 
   get getPassword() {
     return this.passwordForm.get('password');
@@ -121,11 +124,21 @@ export class SettingsDashboardComponent implements OnInit {
   }
 
   onUploadSubmit() {
-    this.settingsService.post(this.file).subscribe(() => { this.applicationActive = false; });
+    this.showSpinner = true;
+    this.settingsService.post(this.file).subscribe(() => {
+      this.applicationExist = true;
+      this.showSpinner = false;
+    });
   }
 
   hasApplication() {
-    this.settingsService.get().subscribe(value => { this.applicationActive = value; });
+    this.settingsService.get().subscribe(value => { this.applicationExist = value; });
+  }
+
+  onDelete() {
+    this.httpClient.delete('user/delete').subscribe(() => {
+      this.router.navigateByUrl('');
+    });
   }
 
 }

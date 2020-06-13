@@ -15,6 +15,8 @@ export class AllergicDiseasesComponent implements OnInit {
 
   faCalendarAlt = faCalendarAlt;
 
+  showSpinner = true;
+
   form = new FormGroup({
     name: new FormControl(null, [Validators.required]),
     diseaseDescription: new FormControl(null, [Validators.required]),
@@ -96,6 +98,7 @@ export class AllergicDiseasesComponent implements OnInit {
     this.allergicService.get(this.page, this.userId).subscribe(response => {
       this.allergicList = response.allergics;
       this.count = response.count;
+      this.showSpinner = false;
     });
   }
 

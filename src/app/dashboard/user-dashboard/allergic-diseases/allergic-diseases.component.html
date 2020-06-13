@@ -1,3 +1,4 @@
+<ihb-loading-spinner *ngIf="showSpinner"></ihb-loading-spinner>
 <form [formGroup]="form" (submit)="onSubmit()" *ngIf="isDoctor">
   <ng-container *ngIf="!adding; then addButton else displayForm"></ng-container>
   <ng-template #addButton>
@@ -45,8 +46,8 @@
         <th scope="col" i18n>Allergic Disease Description</th>
         <th scope="col" i18n>Treatment Description</th>
         <ng-container *ngIf="isDoctor">
-          <th scope="col"></th>
-          <th scope="col"></th>
+          <th class="text-right"></th>
+          <th class="text-left"></th>
         </ng-container>
       </tr>
       </thead>
@@ -57,8 +58,8 @@
           <td>{{allergy.diseaseDescription}}</td>
           <td>{{allergy.treatmentDescription}}</td>
           <ng-container *ngIf="isDoctor">
-            <td><button type="button" class="btn btn-warning" (click)="setEditForm(allergy)" i18n>Edit</button></td>
-            <td><button type="button" class="btn badge-danger" (click)="onDelete(allergy)" i18n>Delete</button></td>
+            <td class="text-right"><button type="button" class="btn btn-warning" (click)="setEditForm(allergy)" i18n>Edit</button></td>
+            <td class="text-left"><button type="button" class="btn badge-danger" (click)="onDelete(allergy)" i18n>Delete</button></td>
           </ng-container>
         </tr>
       </tbody>
@@ -76,4 +77,3 @@
 <p *ngIf='!isDoctor && !allergicList.length' i18n>
   No available data. Only doctors can update your medical history.
 </p>
-

@@ -5,28 +5,32 @@
   </div>
   <div class="card-body">
     <div class="form-group">
-      <div class="row">
-        <div class="col-lg mt-3">
-          <label for="fullName" i18n>Full Name</label>
-          <input type="text" class="form-control" id="fullName" readonly [formControl]="name">
-        </div>
-        <div class="col-lg mt-3">
-          <label for="email" i18n>Email</label>
-          <input type="text" class="form-control" id="email" readonly [formControl]="email">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg mt-3 custom-control custom-checkbox my-1 mr-sm-2 ml-5">
-          <div class="row">
-            <input type="checkbox" class="custom-control-input" id="doctorSelect" [formControl]="doctor">
-            <label class="custom-control-label" for="doctorSelect" i18n>Check this in order to activate <b>doctor</b> authorization</label>
+      <ihb-loading-spinner *ngIf="showSpinnerInfo"></ihb-loading-spinner>
+      <ng-container *ngIf="infoHasLoad">
+        <div class="row">
+          <div class="col-lg mt-3">
+            <label for="fullName" i18n>Full Name</label>
+            <input type="text" class="form-control" id="fullName" readonly [formControl]="name">
           </div>
-          <div class="row">
-            <input type="checkbox" class="custom-control-input" id="administratorSelect" [formControl]="administrator">
-            <label class="custom-control-label" for="administratorSelect" i18n>Check this in order to activate <b>administrator</b> authorization</label>
+          <div class="col-lg mt-3">
+            <label for="email" i18n>Email</label>
+            <input type="text" class="form-control" id="email" readonly [formControl]="email">
           </div>
         </div>
-      </div>
+        <div class="row">
+          <div class="col-lg mt-3 custom-control custom-checkbox my-1 mr-sm-2 ml-5">
+            <div class="row">
+              <input type="checkbox" class="custom-control-input" id="doctorSelect" [formControl]="doctor">
+              <label class="custom-control-label" for="doctorSelect" i18n>Check this in order to activate <b>doctor</b> authorization</label>
+            </div>
+            <div class="row">
+              <input type="checkbox" class="custom-control-input" id="administratorSelect" [formControl]="administrator">
+              <label class="custom-control-label" for="administratorSelect" i18n>Check this in order to activate <b>administrator</b> authorization</label>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+      <ihb-loading-spinner *ngIf="showSpinnerApp"></ihb-loading-spinner>
       <ng-template [ngIf]="applicationActive">
         <div class="row">
           <div class="col-lg mt-3" i18n>

@@ -20,6 +20,8 @@ export class RecommendedVaccinationsComponent implements OnInit {
 
   userId?: string;
 
+  showSpinner = true;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private vaccinationsService: RecommendedVaccinationsService,
@@ -37,6 +39,7 @@ export class RecommendedVaccinationsComponent implements OnInit {
           disabled: true
         }));
       }
+      this.showSpinner = false;
     });
   }
 

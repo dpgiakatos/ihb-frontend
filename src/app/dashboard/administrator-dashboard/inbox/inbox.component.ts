@@ -18,6 +18,8 @@ export class InboxComponent implements OnInit {
   page = 1;
   count: number;
 
+  showSpinner = true;
+
   ngOnInit(): void {
     this.fetchCurrentPage();
   }
@@ -26,6 +28,7 @@ export class InboxComponent implements OnInit {
     this.inboxService.get(this.page).subscribe(value => {
       this.inbox = value.contacts;
       this.count = value.count;
+      this.showSpinner = false;
     });
   }
 

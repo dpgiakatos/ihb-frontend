@@ -24,6 +24,8 @@ export class DoctorDashboardComponent implements OnInit, OnDestroy {
   inputSubscription: Subscription;
   list: User[] = [];
 
+  showSpinner: boolean;
+
   constructor(
     private httpClient: HttpClient,
     private modalService: NgbModal,
@@ -48,6 +50,7 @@ export class DoctorDashboardComponent implements OnInit, OnDestroy {
     ).subscribe(response => {
       this.list = response.users;
       this.count = response.count;
+      this.showSpinner = false;
     });
   }
 
@@ -63,6 +66,7 @@ export class DoctorDashboardComponent implements OnInit, OnDestroy {
   }
 
   private fetchResults() {
+    this.showSpinner = true;
     let params = new HttpParams();
     params = params.append('search', this.searchBox.value);
     params = params.append('page', this.page.toString());
