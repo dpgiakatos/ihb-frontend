@@ -4,6 +4,7 @@ import { SettingsService } from './settings.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient, HttpParams, HttpErrorResponse } from '@angular/common/http';
+import { AuthService } from '../../auth/auth.service';
 
 interface Password {
   oldPassword: string;
@@ -38,7 +39,8 @@ export class SettingsDashboardComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private settingsService: SettingsService,
     jwt: JwtHelperService,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) {
     this.userId = this.activatedRoute.snapshot.params.id;
     const accessToken = localStorage.getItem('access-token');
@@ -137,6 +139,7 @@ export class SettingsDashboardComponent implements OnInit {
 
   onDelete() {
     this.httpClient.delete('user/delete').subscribe(() => {
+      this.authService.logout();
       this.router.navigateByUrl('');
     });
   }
