@@ -1485,7 +1485,7 @@
       </trans-unit>
       <trans-unit id="dfc3c34e182ea73c5d784ff7c8135f087992dac1" datatype="html">
         <source>All</source>
-        <target>Όλα</target>
+        <target>Όλες</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/doctor-dashboard/doctor-dashboard.component.html</context>
           <context context-type="linenumber">15</context>
@@ -1648,7 +1648,7 @@
         </context-group>
       </trans-unit>
       <trans-unit id="be1c9e94cd5a3cc7d1a6a844bd0c3ee185e26c8d" datatype="html">
-        <source>There was an error trying to upload the file. Make sure the file you are trying to upload 
+        <source>There was an error trying to upload the file. Make sure the file you are trying to upload
         is of .zip format. Also the file&apos;s size must not exceed 50MB.</source>
         <target>
           Υπήρξε σφάλμα κατά την μεταφόρτωση του αρχείου. Σιγουρευτείτε ότι το αρχείο που προσπαθείτε να
