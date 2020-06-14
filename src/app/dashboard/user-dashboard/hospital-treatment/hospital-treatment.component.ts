@@ -6,6 +6,7 @@ import { HospitalTreatment } from './hospital-treatment.model';
 import { ActivatedRoute } from '@angular/router';
 import { IS_DOCTOR } from '../user-dashboard.component';
 import { HospitalTreatmentsService } from './hospital-treatment.service';
+import { maxLength } from '../../../helper/length.validator';
 
 @Component({
   selector: 'ihb-hospital-treatment',
@@ -19,13 +20,13 @@ export class HospitalTreatmentComponent implements OnInit {
   showSpinner = true;
 
   form = new FormGroup({
-    name: new FormControl(null, [Validators.required]),
-    city: new FormControl(null, [Validators.required]),
+    name: new FormControl(null, [Validators.required, maxLength(255)]),
+    city: new FormControl(null, [Validators.required, maxLength(255)]),
     country: new FormControl(null, [Validators.required]),
-    cause: new FormControl(null, [Validators.required]),
-    treatment: new FormControl(null, [Validators.required]),
-    starts: new FormControl(this.calendar.getToday(), [Validators.required]),
-    finishes: new FormControl(this.calendar.getToday(), [Validators.required])
+    cause: new FormControl(null, [Validators.required, maxLength(255)]),
+    treatment: new FormControl(null, [Validators.required, maxLength(255)]),
+    starts: new FormControl(null, [Validators.required]),
+    finishes: new FormControl(null, [Validators.required])
   });
 
   adding = false;

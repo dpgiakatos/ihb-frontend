@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { maxLength } from '../helper/length.validator';
 import { AuthService } from '../auth/auth.service';
 
 interface Contact {
@@ -28,13 +29,16 @@ export class HomePageComponent implements OnInit {
     this.contactForm = new FormGroup({
       email: new FormControl(null, [
         Validators.required,
-        Validators.email
+        Validators.email,
+        maxLength(255)
       ]),
       subject: new FormControl(null, [
-        Validators.required
+        Validators.required,
+        maxLength(255)
       ]),
       message: new FormControl(null, [
-        Validators.required
+        Validators.required,
+        maxLength(5000)
       ])
     });
   }

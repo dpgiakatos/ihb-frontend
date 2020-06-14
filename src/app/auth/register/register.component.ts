@@ -3,8 +3,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { Subscription } from 'rxjs';
-import { UnprocessableEntitySchema } from 'src/app/helper/UnprocessableEntitySchema';
+import { UnprocessableEntitySchema } from '../../helper/UnprocessableEntitySchema';
 import { HttpErrorResponse } from '@angular/common/http';
+import { minLength, maxLength } from '../../helper/length.validator';
 
 @Component({
   selector: 'ihb-register',
@@ -24,18 +25,21 @@ export class RegisterComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.form = new FormGroup({
       firstName: new FormControl(null, [
-        Validators.required
+        Validators.required,
+        maxLength(255)
       ]),
       lastName: new FormControl(null, [
-        Validators.required
+        Validators.required,
+        maxLength(255)
       ]),
       email: new FormControl(null, [
         Validators.required,
-        Validators.email
+        Validators.email,
+        maxLength(255)
       ]),
       password: new FormControl(null, [
         Validators.required,
-        Validators.minLength(8)
+        minLength(8)
       ]),
       cPassword: new FormControl(null, [
         Validators.required
@@ -93,5 +97,5 @@ export class RegisterComponent implements OnInit, OnDestroy {
 
   get getPassword() {
     return this.form.get('password');
-  } 
+  }
 }

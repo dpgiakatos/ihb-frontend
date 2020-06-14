@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { UrlSerializerService } from 'src/app/helper/url-serializer.service';
+import { UrlSerializerService } from '../../../../helper/url-serializer.service';
 import { HttpClient } from '@angular/common/http';
 import { ContactInbox } from '../inbox.model';
 

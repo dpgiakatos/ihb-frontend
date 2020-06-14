@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { UrlSerializerService } from '../../../helper/url-serializer.service';
-import { Claims } from 'src/app/auth/auth.service';
+import { Claims } from '../../../auth/auth.service';
 import { AllergicDiseasesList, AllergicDiseases } from './allergic-diseases.model';
 
 @Injectable()

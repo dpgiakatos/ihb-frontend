@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { forkJoin } from 'rxjs';
 import { RecommendedVaccines } from './recommended-vaccines.model';
-import { UrlSerializerService } from 'src/app/helper/url-serializer.service';
+import { UrlSerializerService } from '../../../../helper/url-serializer.service';
 import { Claims } from '../../../../auth/auth.service';
 
 @Injectable()

@@ -5,6 +5,7 @@ import { AllergicDiseasesService } from './allergic-diseases.service';
 import { ActivatedRoute } from '@angular/router';
 import { IS_DOCTOR } from '../user-dashboard.component';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
+import { maxLength } from '../../../helper/length.validator';
 
 @Component({
   selector: 'ihb-allergic-diseases',
@@ -18,9 +19,9 @@ export class AllergicDiseasesComponent implements OnInit {
   showSpinner = true;
 
   form = new FormGroup({
-    name: new FormControl(null, [Validators.required]),
-    diseaseDescription: new FormControl(null, [Validators.required]),
-    treatmentDescription: new FormControl(null, [Validators.required])
+    name: new FormControl(null, [Validators.required, maxLength(255)]),
+    diseaseDescription: new FormControl(null, [Validators.required, maxLength(255)]),
+    treatmentDescription: new FormControl(null, [Validators.required, maxLength(255)])
   });
 
   adding = false;

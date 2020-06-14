@@ -6,6 +6,7 @@ import { ExtraVaccination } from './extra-vaccinations.model';
 import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons';
 import { ExtraVaccinationsService } from './extra-vaccinations.service';
 import { IS_DOCTOR } from '../../user-dashboard.component';
+import { maxLength } from '../../../../helper/length.validator';
 
 @Component({
   selector: 'ihb-extra-vaccinations',
@@ -19,9 +20,9 @@ export class ExtraVaccinationsComponent implements OnInit {
   showSpinner = true;
 
   form = new FormGroup({
-    name: new FormControl(null, [Validators.required]),
-    date: new FormControl(this.calendar.getToday(), [Validators.required]),
-    description: new FormControl(null, [Validators.required])
+    name: new FormControl(null, [Validators.required, maxLength(255)]),
+    date: new FormControl(null, [Validators.required]),
+    description: new FormControl(null, [Validators.required, maxLength(255)])
   });
 
   adding = false;
@@ -55,6 +56,7 @@ export class ExtraVaccinationsComponent implements OnInit {
     }
 
     if (!this.editing) {
+      console.log(this.form.value);
       this.extraVaccinationsService.create(this.form.value, this.userId).subscribe((vaccination: ExtraVaccination) => {
         if ((this.count / this.limit) < this.page) {
           this.extraVaccinationList.push(vaccination);

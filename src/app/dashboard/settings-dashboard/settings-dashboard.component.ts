@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SettingsService } from './settings.service';
-import { JwtHelperService } from '@auth0/angular-jwt';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { HttpClient, HttpParams, HttpErrorResponse } from '@angular/common/http';
 import { AuthService } from '../../auth/auth.service';
+import { minLength } from '../../helper/length.validator';
 
 interface Password {
   oldPassword: string;
@@ -37,32 +37,22 @@ export class SettingsDashboardComponent implements OnInit {
 
   constructor(
     private httpClient: HttpClient,
-    private activatedRoute: ActivatedRoute,
     private settingsService: SettingsService,
-    jwt: JwtHelperService,
     private router: Router,
     private authService: AuthService
-  ) {
-    this.userId = this.activatedRoute.snapshot.params.id;
-    const accessToken = localStorage.getItem('access-token');
-    if (!this.userId && accessToken) {
-      this.userId = jwt.decodeToken(accessToken).id;
-    }
-  }
+  ) { }
 
   ngOnInit(): void {
     this.passwordForm = new FormGroup({
       oldPassword: new FormControl(null, [
-        Validators.required,
-        Validators.minLength(8)
+        Validators.required
       ]),
       password: new FormControl(null, [
         Validators.required,
-        Validators.minLength(8)
+        minLength(8)
       ]),
       newPassword: new FormControl(null, [
-        Validators.required,
-        Validators.minLength(8)
+        Validators.required
       ])
     });
     this.uploadForm = new FormGroup({
@@ -80,7 +70,7 @@ export class SettingsDashboardComponent implements OnInit {
     if (this.passwordForm.invalid) {
       return;
     }
-    this.httpClient.put<Password>('user/' + this.userId + '/change-password', this.passwordForm.value).subscribe(
+    this.httpClient.put<Password>('user/change-password', this.passwordForm.value).subscribe(
       () => {
         this.passwordForm.reset();
       }, (err: HttpErrorResponse) => {
@@ -141,7 +131,7 @@ export class SettingsDashboardComponent implements OnInit {
   }
 
   onDelete() {
-    this.httpClient.delete('user/delete').subscribe(() => {
+    this.httpClient.delete('user').subscribe(() => {
       this.authService.logout();
       this.router.navigateByUrl('');
     });

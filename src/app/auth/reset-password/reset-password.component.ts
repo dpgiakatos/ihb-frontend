@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../auth.service';
+import { minLength } from '../../helper/length.validator';
 
 @Component({
   selector: 'ihb-reset-password',
@@ -30,7 +31,7 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
     this.resetPasswordForm = new FormGroup({
       password: new FormControl(null, [
         Validators.required,
-        Validators.minLength(8)
+        minLength(8)
       ]),
       newPassword: new FormControl(null, [
         Validators.required
@@ -73,5 +74,5 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
 
   get getPassword() {
     return this.resetPasswordForm.get('password');
-  } 
+  }
 }

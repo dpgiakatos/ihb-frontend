@@ -10,7 +10,7 @@ export class SettingsService {
     const formData = new FormData();
     formData.append('file', file);
     const url = this.urlSerializer.serialize(['application', 'upload']);
-    return this.httpClient.post<any>(url, formData, {});
+    return this.httpClient.post<any>(url, formData);
   }
 
   get() {
