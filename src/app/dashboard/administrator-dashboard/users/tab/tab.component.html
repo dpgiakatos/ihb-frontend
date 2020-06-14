@@ -38,6 +38,13 @@
             <button class="btn btn-danger float-right" (click)="deleteApplication()">Delete doctor application</button>
           </div>
         </div>
+        <ng-template [ngIf]="progressBar">
+          <div class="row">
+            <div class="col-lg mt-3">
+              <ngb-progressbar type="success" [value]="downloadProgress" [striped]="true" [animated]="true"></ngb-progressbar>
+            </div>
+          </div>
+        </ng-template>
       </ng-template>
     </div>
   </div>

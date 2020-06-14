@@ -13,7 +13,14 @@ import { AdministratorDashboardComponent } from './administrator-dashboard/admin
 import { DoctorDashboardComponent } from './doctor-dashboard/doctor-dashboard.component';
 import { UserDashboardComponent } from './user-dashboard/user-dashboard.component';
 import { DashboardComponent } from './dashboard.component';
-import { NgbDatepickerModule, NgbNavModule, NgbPaginationModule, NgbTypeaheadModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import {
+    NgbDatepickerModule,
+    NgbNavModule,
+    NgbPaginationModule,
+    NgbTypeaheadModule,
+    NgbDropdownModule,
+    NgbProgressbarModule
+} from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AllergicDiseasesComponent } from './user-dashboard/allergic-diseases/allergic-diseases.component';
@@ -91,18 +98,19 @@ const exportedComponents = [
 
 @NgModule({
   declarations: exportedComponents,
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    SharedModule,
-    ReactiveFormsModule,
-    FontAwesomeModule,
-    NgbDatepickerModule,
-    NgbNavModule,
-    NgbPaginationModule,
-    NgbTypeaheadModule,
-    NgbDropdownModule
-  ],
+    imports: [
+        CommonModule,
+        RouterModule.forChild(routes),
+        SharedModule,
+        ReactiveFormsModule,
+        FontAwesomeModule,
+        NgbDatepickerModule,
+        NgbNavModule,
+        NgbPaginationModule,
+        NgbTypeaheadModule,
+        NgbDropdownModule,
+        NgbProgressbarModule
+    ],
   exports: exportedComponents
 })
 export class DashboardModule { }

@@ -5,6 +5,8 @@ import { FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 import { AuthService } from '../../../../auth/auth.service';
+import { HttpEventType } from '@angular/common/http';
+import { saveAs } from 'file-saver';
 
 @Component({
   selector: 'ihb-tab',
@@ -27,6 +29,9 @@ export class TabComponent implements OnInit {
   showSpinnerInfo = true;
   infoHasLoad = false;
   showSpinnerApp = true;
+
+  downloadProgress: number;
+  progressBar = false;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -74,6 +79,7 @@ export class TabComponent implements OnInit {
   onAdministratorRoleChange() {
     this.subscriptionAdministrator = this.administrator.valueChanges.pipe(
       switchMap(value => {
+        console.log(value);
         if (value) {
           return this.tabService.set(this.userId, 'Administrator');
         } else {
@@ -103,7 +109,17 @@ export class TabComponent implements OnInit {
   }
 
   download() {
-    this.tabService.downloadDocument(this.userId).subscribe();
+    this.progressBar = true;
+    this.tabService.downloadDocument(this.userId).subscribe((event) => {
+      console.log(this.downloadProgress);
+      if (event.type === HttpEventType.DownloadProgress && event.total) {
+        this.downloadProgress = Math.round((event.loaded / event.total) * 100);
+      }
+      if (event.type === HttpEventType.Response && event.body) {
+        this.progressBar = false;
+        saveAs(event.body);
+      }
+    });
   }
 
   deleteApplication() {
