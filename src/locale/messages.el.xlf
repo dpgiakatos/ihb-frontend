@@ -346,6 +346,18 @@
           <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="cbeb3bd06f5d6189ef1726be8c5d6f5d69710e89" datatype="html">
+        <source>Go to Dashboard</source>
+        <target>Πίνακας Εργαλειών</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/navbar/navbar.component.html</context>
+          <context context-type="linenumber">47</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">52</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="50ddf3fddeb620a211206e89292e036e69cb017c" datatype="html">
         <source>International Travel</source>
         <target>Διεθνές Ταξίδι</target>
@@ -435,6 +447,22 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
           <context context-type="linenumber">39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="0e781723ac1f8bd242b085f4a78517128a95f043" datatype="html">
+        <source>Use IHB Now!</source>
+        <target>Χρησιμοποιείστε το IHB τώρα!</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7f16dcb663fa62e4fc3d56e3e4c293d13fe9cc31" datatype="html">
+        <source>You already are a registered member of our platform.</source>
+        <target>Είστε ήδη εγγεγραμμένο μέλος της πλατφόρμας μας.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/home-page/home-page.component.html</context>
+          <context context-type="linenumber">51</context>
         </context-group>
       </trans-unit>
       <trans-unit id="f2cdbf44efd107634a71980689e86b22764e2519" datatype="html">
@@ -1619,12 +1647,16 @@
           <context context-type="linenumber">38</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="0edc1151d416667ae7d0dc5fd9892464a09efde7" datatype="html">
-        <source>Wrong input!</source>
-        <target>Λανθασμένη Είσοδος!</target>
+      <trans-unit id="be1c9e94cd5a3cc7d1a6a844bd0c3ee185e26c8d" datatype="html">
+        <source>There was an error trying to upload the file. Make sure the file you are trying to upload 
+        is of .zip format. Also the file&apos;s size must not exceed 50MB.</source>
+        <target>
+          Υπήρξε σφάλμα κατά την μεταφόρτωση του αρχείου. Σιγουρευτείτε ότι το αρχείο που προσπαθείτε να
+          ανεβάσετε είναι τύπου .zip. Επίσης το μέγεθος του αρχείου δεν θα πρέπει να υπερβαίνει τα 50MB.
+        </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
-          <context context-type="linenumber">42</context>
+          <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
       <trans-unit id="0dbcd211c2133a85e2c970e73169beeed2df9091" datatype="html">

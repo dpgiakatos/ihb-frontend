@@ -3,6 +3,7 @@ import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'ihb-navbar',
@@ -24,7 +25,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   constructor(
     @Inject(LOCALE_ID) public locale: string,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
@@ -44,4 +46,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.isMenuCollapsed = true;
   }
 
+  isAuthenticated(){
+    return this.authService.isAuthenticated();
+  }
 }

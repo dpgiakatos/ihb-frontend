@@ -30,15 +30,31 @@
   </ng-template>
 </ngb-carousel>
 
-<div class="jumbotron">
-  <div class="container">
-    <h1 class="display-4" i18n>Join IHB Now!</h1>
-    <p class="lead" i18n>Patients, Doctors and Clinics can all use our free platform and be a step ahead in the case of an emergency.</p>
-    <hr class="my-4">
-    <p i18n>Create your account in just one minute. Only thing needed is a protocol.</p>
-    <a routerLink="auth/register" class="btn btn-primary btn-lg" role="button" i18n>Register Now</a>
+<div *ngIf="!isAuthenticated(); then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-4" i18n>Join IHB Now!</h1>
+      <p class="lead" i18n>Patients, Doctors and Clinics can all use our free platform and be a step ahead in the case of an emergency.</p>
+      <hr class="my-4">
+      <p i18n>Create your account in just one minute. Only thing needed is a protocol.</p>
+      <a routerLink="auth/register" class="btn btn-primary btn-lg" role="button" i18n>Register Now</a>
+    </div>
+  </div>        
+</ng-template>
+<ng-template #elseBlock>
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-4" i18n>Use IHB Now!</h1>
+      <p class="lead" i18n>Patients, Doctors and Clinics can all use our free platform and be a step ahead in the case of an emergency.</p>
+      <hr class="my-4">
+      <p i18n>You already are a registered member of our platform.</p>
+      <a routerLink="/dashboard/user" class="btn btn-primary btn-lg" role="button" i18n>Go to Dashboard</a>
+    </div>
   </div>
-</div>
+</ng-template>
+
+
 
 <div class="main-content-container">
   <div class="container-fluid">

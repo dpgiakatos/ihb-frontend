@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { AuthService } from '../auth/auth.service';
 
 interface Contact {
   id: number;
@@ -19,7 +20,8 @@ export class HomePageComponent implements OnInit {
   contactForm: FormGroup;
 
   constructor(
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -44,5 +46,9 @@ export class HomePageComponent implements OnInit {
     this.httpClient.post<Contact>('contact', this.contactForm.value).subscribe(() => {
       // this.contactForm.reset();
     });
+  }
+
+  isAuthenticated(){
+    return this.authService.isAuthenticated();
   }
 }

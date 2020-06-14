@@ -38,8 +38,14 @@
     </div>
 
     <ul class="navbar-nav nav-pills">
-      <a routerLink="/auth/login" class="mr-3 nav-button-margin" (click)="collapse()"><button class="btn btn-outline-dark " i18n>Sign in</button></a>
-      <a routerLink="/auth/register" (click)="collapse()"><button class="btn btn-dark" i18n>Sign up</button></a>
+      <div *ngIf="!isAuthenticated(); then thenBlock else elseBlock"></div>
+      <ng-template #thenBlock>
+        <a routerLink="/auth/login" class="mr-3 nav-button-margin" (click)="collapse()"><button class="btn btn-outline-dark " i18n>Sign in</button></a>
+        <a routerLink="/auth/register" (click)="collapse()"><button class="btn btn-dark" i18n>Sign up</button></a>  
+      </ng-template>
+      <ng-template #elseBlock>
+        <a routerLink="/dashboard/user" (click)="collapse()"><button class="btn btn-dark" i18n>Go to Dashboard</button></a>
+      </ng-template>
     </ul>
   </div>
 </nav>

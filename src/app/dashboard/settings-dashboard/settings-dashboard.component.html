@@ -39,7 +39,10 @@
     </form>
     <hr/>
     <h3 i18n>Ask for doctor authorization</h3>
-    <div class="alert alert-danger mt-3" role="alert" *ngIf="uploadError" i18n>Wrong input!</div>
+    <div class="alert alert-danger mt-3" role="alert" *ngIf="uploadError">
+      <p i18n>There was an error trying to upload the file. Make sure the file you are trying to upload 
+        is of .zip format. Also the file's size must not exceed 50MB.</p>
+    </div>
     <ihb-loading-spinner *ngIf="showSpinner"></ihb-loading-spinner>
     <ng-container *ngIf="!applicationExist then thenBlock else elseBlock"></ng-container>
     <ng-template #thenBlock>
