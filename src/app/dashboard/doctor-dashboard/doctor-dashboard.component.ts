@@ -7,6 +7,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { User } from './doctor-dashboard.model';
 import { PermissionModalComponent } from './permission-modal/permission-modal.component';
 import { Router } from '@angular/router';
+import { CountriesService } from 'src/app/shared/countries.service';
 
 @Component({
   selector: 'ihb-doctor-dashboard',
@@ -25,11 +26,13 @@ export class DoctorDashboardComponent implements OnInit, OnDestroy {
   list: User[] = [];
 
   showSpinner: boolean;
+  spinnerTimer: any | null;
 
   constructor(
     private httpClient: HttpClient,
     private modalService: NgbModal,
-    private router: Router
+    private router: Router,
+    public countries: CountriesService
   ) { }
 
   ngOnInit(): void {
@@ -37,12 +40,12 @@ export class DoctorDashboardComponent implements OnInit, OnDestroy {
       this.searchBox.valueChanges.pipe(
         filter(input => {
           if (input.length === 0) {
-            this.list = [];
+            this.cancelSpinner();
             return false;
           }
           return true;
         }),
-        // debounceTime(1000)
+        // debounceTime(350)
       ),
       this.country.valueChanges
     ).pipe(
@@ -50,7 +53,7 @@ export class DoctorDashboardComponent implements OnInit, OnDestroy {
     ).subscribe(response => {
       this.list = response.users;
       this.count = response.count;
-      this.showSpinner = false;
+      this.cancelSpinner();
     });
   }
 
@@ -65,8 +68,23 @@ export class DoctorDashboardComponent implements OnInit, OnDestroy {
     });
   }
 
+  private scheduleSpinner() {
+    if (!this.spinnerTimer) {
+      this.spinnerTimer = setTimeout(() => {
+        this.spinnerTimer = null;
+        this.showSpinner = true;
+      }, 500);
+    }
+  }
+
+  private cancelSpinner() {
+    this.showSpinner = false;
+    clearTimeout(this.spinnerTimer);
+    this.spinnerTimer = null;
+  }
+
   private fetchResults() {
-    this.showSpinner = true;
+    this.scheduleSpinner();
     let params = new HttpParams();
     params = params.append('search', this.searchBox.value);
     params = params.append('page', this.page.toString());

@@ -7,6 +7,7 @@ import { ActivatedRoute } from '@angular/router';
 import { IS_DOCTOR } from '../user-dashboard.component';
 import { HospitalTreatmentsService } from './hospital-treatment.service';
 import { maxLength } from '../../../helper/length.validator';
+import { CountriesService } from 'src/app/shared/countries.service';
 
 @Component({
   selector: 'ihb-hospital-treatment',
@@ -45,6 +46,7 @@ export class HospitalTreatmentComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private calendar: NgbCalendar,
     private dateAdapter: NgbDateAdapter<string>,
+    public countries: CountriesService,
     @Inject(IS_DOCTOR) public isDoctor: boolean
   ) { }
 
@@ -73,12 +75,12 @@ export class HospitalTreatmentComponent implements OnInit {
     }
 
     this.treatmentsService.edit(this.currentlyEditingId, this.form.value).subscribe((treatment: HospitalTreatment) => {
-        this.treatmentList[this.treatmentList.map(x => x.id).indexOf(this.currentlyEditingId)] = treatment;
-        this.form.reset();
-        this.form.get('date')?.setValue(this.dateAdapter.toModel(this.calendar.getToday()));
-        this.editing = false;
-        this.adding = false;
-      });
+      this.treatmentList[this.treatmentList.map(x => x.id).indexOf(this.currentlyEditingId)] = treatment;
+      this.form.reset();
+      this.form.get('date')?.setValue(this.dateAdapter.toModel(this.calendar.getToday()));
+      this.editing = false;
+      this.adding = false;
+    });
   }
 
   setEditForm(treatment: HospitalTreatment) {

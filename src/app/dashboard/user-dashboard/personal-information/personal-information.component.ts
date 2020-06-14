@@ -5,6 +5,7 @@ import { PersonalInformationService } from './personal-information.service';
 import { ActivatedRoute } from '@angular/router';
 import { IS_DOCTOR } from '../user-dashboard.component';
 import { maxLength } from '../../../helper/length.validator';
+import { CountriesService } from 'src/app/shared/countries.service';
 
 @Component({
   selector: 'ihb-personal-information',
@@ -39,6 +40,7 @@ export class PersonalInformationComponent implements OnInit {
   constructor(
     private personalService: PersonalInformationService,
     private activatedRoute: ActivatedRoute,
+    public countries: CountriesService,
     @Inject(IS_DOCTOR) public isDoctor: boolean
   ) { }
 
