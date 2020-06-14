@@ -1373,48 +1373,55 @@
           <context context-type="linenumber">41</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="0edc1151d416667ae7d0dc5fd9892464a09efde7" datatype="html">
+        <source>Wrong input!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
+          <context context-type="linenumber">42</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="0dbcd211c2133a85e2c970e73169beeed2df9091" datatype="html">
         <source>Upload all the necessary files in order to get a doctor account.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
         You should upload a zip folder which contains all your files that you want to upload.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
         Other folder formats will not be accepted.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
-          <context context-type="linenumber">45</context>
+          <context context-type="linenumber">46</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4b3972c3e9485218508a95f7a4ce7758e3f09ced" datatype="html">
         <source>Upload</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
-          <context context-type="linenumber">60</context>
+          <context context-type="linenumber">61</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4dba776df328fbe1346a353c1bdde4586eeab13a" datatype="html">
         <source>You have already sent an application.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
-          <context context-type="linenumber">67</context>
+          <context context-type="linenumber">68</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9a2f889dde4574a6883c853d1034e75891b28c45" datatype="html">
         <source>Delete your account</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
-          <context context-type="linenumber">70</context>
+          <context context-type="linenumber">71</context>
         </context-group>
       </trans-unit>
       <trans-unit id="bfeaa203efa9ab3fe11b0f2b33e7c3485d29bdca" datatype="html">
         <source>All your personal information will be deleted from our database.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
-          <context context-type="linenumber">71</context>
+          <context context-type="linenumber">72</context>
         </context-group>
       </trans-unit>
       <trans-unit id="66b777a6c0fdac1cc5538f2cbd28b38c71783abb" datatype="html">
         <source>Delete Account</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
-          <context context-type="linenumber">72</context>
+          <context context-type="linenumber">73</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3229ca4c64adc348896145768646951c883dec8b" datatype="html">
