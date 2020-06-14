@@ -39,6 +39,9 @@
     </form>
     <hr/>
     <h3 i18n>Ask for doctor authorization</h3>
+    <div class="alert alert-danger mt-3" role="alert" *ngIf="uploadError">
+      Wrong input!
+    </div>
     <ihb-loading-spinner *ngIf="showSpinner"></ihb-loading-spinner>
     <ng-container *ngIf="!applicationExist then thenBlock else elseBlock"></ng-container>
     <ng-template #thenBlock>

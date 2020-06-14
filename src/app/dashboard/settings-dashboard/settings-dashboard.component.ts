@@ -31,6 +31,7 @@ export class SettingsDashboardComponent implements OnInit {
 
   file: File;
   applicationExist: boolean;
+  uploadError = false;
 
   showSpinner = false;
 
@@ -118,8 +119,6 @@ export class SettingsDashboardComponent implements OnInit {
       if (file) {
         if ((/\.(zip)$/i).test(file.name) && file.size <= 50000000) {
           this.file = file;
-        } else {
-          // TODO: handle error
         }
       }
     }
@@ -130,6 +129,10 @@ export class SettingsDashboardComponent implements OnInit {
     this.settingsService.post(this.file).subscribe(() => {
       this.applicationExist = true;
       this.showSpinner = false;
+      this.uploadError = false;
+    }, () => {
+      this.showSpinner = false;
+      this.uploadError = true;
     });
   }
 
