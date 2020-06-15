@@ -1,9 +1,10 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, TemplateRef } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { AuthService } from '../auth.service';
 import { minLength } from '../../helper/length.validator';
+import { ToastsService } from 'src/app/toasts/toasts.service';
 
 @Component({
   selector: 'ihb-reset-password',
@@ -18,11 +19,14 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
   private userInitiatedChange = true;
   private token: string;
 
+  @ViewChild('successToast') successToastTemplate: TemplateRef<{}>;
+
 
   constructor(
     private activatedRoute: ActivatedRoute,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private toastsService: ToastsService
   ) {
     this.token = this.activatedRoute.snapshot.params.tokenId;
   }
@@ -55,7 +59,9 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
     if (this.resetPasswordForm.invalid) {
       return;
     }
+
     this.authService.resetPassword(this.token, this.resetPasswordForm.value.password).subscribe(() => {
+      this.toastsService.show(this.successToastTemplate, { className: 'bg-success text-light', delay: 10000 });
       this.router.navigateByUrl('auth/login');
     });
   }

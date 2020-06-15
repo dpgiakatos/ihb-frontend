@@ -19,6 +19,7 @@ import { environment } from '../environments/environment';
 import { NgbPlainDateAdapter } from './helper/date-adapter.service';
 import { AuthGuard } from './auth/guards/auth.guard';
 import { PreventAuthGuard } from './auth/guards/prevent-auth.guard';
+import { ToastsComponent } from './toasts/toasts.component';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
@@ -37,7 +38,8 @@ export function tokenGetter() {
     HomePageComponent,
     ScrollTopComponent,
     FooterComponent,
-    NotFoundPageComponent
+    NotFoundPageComponent,
+    ToastsComponent
   ],
   imports: [
     BrowserModule,

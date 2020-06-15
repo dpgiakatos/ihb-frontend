@@ -12,9 +12,9 @@ export class ForgotPasswordComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private authService: AuthService) {
+  success = false;
 
-  }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -30,6 +30,7 @@ export class ForgotPasswordComponent implements OnInit {
       return;
     }
     this.authService.forgotPassword(this.form.value).subscribe(() => {
+      this.success = true;
     }, (err: HttpErrorResponse) => {
       if (err.status === 404) {
         this.form.setErrors({ invalidCredentials: true });

@@ -16,3 +16,7 @@ html {
 .was-validated :invalid~.invalid-tooltip~.invalid-tooltip {
   display: none;
 }
+
+.ngb-toasts {
+  margin-top: calc(.5em + 64px) !important;
+}

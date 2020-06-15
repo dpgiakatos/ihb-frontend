@@ -11,6 +11,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { PreventAuthGuard } from './guards/prevent-auth.guard';
 import { ResetPasswordGuard } from './reset-password/reset-password.guard';
+import { NgbToastModule } from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
   { path: '', component: AuthComponent, canActivate: [PreventAuthGuard], children: [
@@ -33,6 +34,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     FormsModule,
+    NgbToastModule,
     ReactiveFormsModule,
     SharedModule
   ]
