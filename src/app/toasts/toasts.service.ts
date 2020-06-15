@@ -14,7 +14,6 @@ export interface Toast {
   providedIn: 'root'
 })
 export class ToastsService {
-
   toasts: Toast[] = [];
 
   show(textOrTpl: Toast['textOrTpl'], options?: Toast['options']) {

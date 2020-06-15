@@ -3,43 +3,55 @@
     <h1 class="h3 mb-3 font-weight-normal" i18n>Create Account</h1>
     <hr>
   </div>
-  <form class="form-register" [formGroup]="form" (submit)="onSubmit()">
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="text" class="sr-only" i18n>First Name</label>
-        <input type="text" id="firstname" class="form-control" placeholder="First Name" formControlName="firstName" i18n-placeholder>
-        <div class="invalid-feedback" i18n>Please provide your first name.</div>
+  <ng-container *ngIf="!success">
+    <form class="form-register" [formGroup]="form" (submit)="onSubmit()">
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="text" class="sr-only" i18n>First Name</label>
+          <input type="text" id="firstname" class="form-control" placeholder="First Name" formControlName="firstName" i18n-placeholder>
+          <div class="invalid-feedback" i18n>Please provide your first name.</div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="text" class="sr-only" i18n>Last Name</label>
+          <input type="text" id="lastname" class="form-control" placeholder="Last Name" formControlName="lastName" i18n-placeholder>
+          <div class="invalid-feedback" i18n>Please provide your last name.</div>
+        </div>
       </div>
-      <div class="form-group col-md-6">
-        <label for="text" class="sr-only" i18n>Last Name</label>
-        <input type="text" id="lastname" class="form-control" placeholder="Last Name" formControlName="lastName" i18n-placeholder>
-        <div class="invalid-feedback" i18n>Please provide your last name.</div>
+      <div class="form-group">
+        <label for="email" class="sr-only" i18n>Email Address</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email Address" autocomplete="email"
+                formControlName="email" i18n-placeholder>
+        <div class="invalid-feedback" *ngIf="form.get('email')?.hasError('required')" i18n>Please provide your email.</div>
+        <div class="invalid-feedback" *ngIf="form.get('email')?.hasError('email') || form.get('email')?.hasError('isEmail')" i18n>Please provide a valid email.</div>
+        <div class="invalid-feedback" *ngIf="form.get('email')?.hasError('isUnique')" i18n>An account already exists with this email.</div>
       </div>
-    </div>
-    <div class="form-group">
-      <label for="email" class="sr-only" i18n>Email Address</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Email Address" autocomplete="email"
-              formControlName="email" i18n-placeholder>
-      <div class="invalid-feedback" *ngIf="form.get('email')?.hasError('required')" i18n>Please provide your email.</div>
-      <div class="invalid-feedback" *ngIf="form.get('email')?.hasError('email') || form.get('email')?.hasError('isEmail')" i18n>Please provide a valid email.</div>
-      <div class="invalid-feedback" *ngIf="form.get('email')?.hasError('isUnique')" i18n>An account already exists with this email.</div>
-    </div>
-    <div class="form-row">
-      <div class="form-group col-md-6">
-        <label for="password" class="sr-only" i18n>Password</label>
-        <input type="password" id="password" class="form-control" placeholder="Password" autocomplete="new-password" formControlName="password" i18n-placeholder>
-        <div class="invalid-feedback" *ngIf="getPassword?.hasError('minlength')" i18n>Password must be at least 8 characters long.</div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="password" class="sr-only" i18n>Password</label>
+          <input type="password" id="password" class="form-control" placeholder="Password" autocomplete="new-password" formControlName="password" i18n-placeholder>
+          <div class="invalid-feedback" *ngIf="getPassword?.hasError('minlength')" i18n>Password must be at least 8 characters long.</div>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="password" class="sr-only" i18n>Password Confirmation</label>
+          <input type="password" id="passwordConfirmation" class="form-control" placeholder="Password Confirmation" autocomplete="new-password" formControlName="cPassword" i18n-placeholder>
+          <div class="invalid-feedback" *ngIf="form.get('cPassword')?.hasError('required')" i18n>Please confirm your password.</div>
+          <div class="invalid-feedback" *ngIf="form.get('cPassword')?.hasError('invalidConfirmation')" i18n>The password is not the same.</div>
+        </div>
       </div>
-      <div class="form-group col-md-6">
-        <label for="password" class="sr-only" i18n>Password Confirmation</label>
-        <input type="password" id="passwordConfirmation" class="form-control" placeholder="Password Confirmation" autocomplete="new-password" formControlName="cPassword" i18n-placeholder>
-        <div class="invalid-feedback" *ngIf="form.get('cPassword')?.hasError('required')" i18n>Please confirm your password.</div>
-        <div class="invalid-feedback" *ngIf="form.get('cPassword')?.hasError('invalidConfirmation')" i18n>The password is not the same.</div>
-      </div>
-    </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit" i18n>Register</button>
-  </form>
-  <hr>
-  <div class="card-bottom" i18n>Already have an account? <a routerLink="../login">Login</a></div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" i18n>Register</button>
+    </form>
+    <hr>
+    <div class="card-bottom" i18n>Already have an account? <a routerLink="../login">Login</a></div>
+  </ng-container>
+
+  <div class="form-register" *ngIf="success">
+    <p style="text-align: justify" i18n>
+      We have sent you an email containing instructions on how to activate your Internation Health Booklet account. If you can't find the email,
+      give it a few minutes and also don't forget to check the spam folder.
+    </p>
+    <a routerLink="/auth/login">
+      <button type="button" class="btn btn-lg btn-primary btn-block" i18n>Login</button>
+    </a>
+  </div>
 </div>
 

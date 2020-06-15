@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { Subscription } from 'rxjs';
 import { UnprocessableEntitySchema } from '../../helper/UnprocessableEntitySchema';
@@ -20,7 +19,11 @@ export class RegisterComponent implements OnInit, OnDestroy {
   private passwordChange: Subscription;
   private userInitiatedChange = true;
 
-  constructor(private router: Router, private authService: AuthService) { }
+  success = false;
+
+  constructor(
+    private authService: AuthService
+  ) { }
 
   ngOnInit() {
     this.form = new FormGroup({
@@ -64,7 +67,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
       return;
     }
     this.authService.register(this.form.value).subscribe(() => {
-      this.router.navigateByUrl('/dashboard/user');
+      this.success = true;
     }, (err: HttpErrorResponse) => {
       if (err.status === 422) {
         const validationErrors: UnprocessableEntitySchema = err.error;
