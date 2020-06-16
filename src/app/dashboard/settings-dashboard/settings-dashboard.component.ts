@@ -6,6 +6,8 @@ import { HttpClient, HttpParams, HttpErrorResponse } from '@angular/common/http'
 import { AuthService } from '../../auth/auth.service';
 import { minLength } from '../../helper/length.validator';
 import { ToastsService } from 'src/app/toasts/toasts.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { DeleteConfirmationModalComponent } from '../delete-confirmation-modal/delete-confirmation-modal.component';
 
 interface Password {
   oldPassword: string;
@@ -45,7 +47,8 @@ export class SettingsDashboardComponent implements OnInit {
     private settingsService: SettingsService,
     private router: Router,
     private authService: AuthService,
-    private toastsService: ToastsService
+    private toastsService: ToastsService,
+    private modalService: NgbModal
   ) { }
 
   ngOnInit(): void {
@@ -153,10 +156,15 @@ export class SettingsDashboardComponent implements OnInit {
     this.settingsService.get().subscribe(value => { this.applicationExist = value; });
   }
 
-  onDelete() {
-    this.httpClient.delete('user').subscribe(() => {
-      this.authService.logout();
-      this.router.navigateByUrl('');
+  openDeleteConfirmationModal() {
+    const modalRef = this.modalService.open(DeleteConfirmationModalComponent);
+    modalRef.result.then(result => {
+      if (result === true) {
+        this.httpClient.delete('user').subscribe(() => {
+          this.authService.logout();
+          this.router.navigateByUrl('');
+        });
+      }
     });
   }
 

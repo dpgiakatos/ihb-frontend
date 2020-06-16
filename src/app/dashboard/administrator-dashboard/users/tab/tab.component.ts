@@ -7,6 +7,8 @@ import { switchMap } from 'rxjs/operators';
 import { AuthService } from '../../../../auth/auth.service';
 import { HttpEventType } from '@angular/common/http';
 import { saveAs } from 'file-saver';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { DeleteConfirmationModalComponent } from '../../../delete-confirmation-modal/delete-confirmation-modal.component';
 
 @Component({
   selector: 'ihb-tab',
@@ -37,7 +39,8 @@ export class TabComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private tabService: TabService,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private modalService: NgbModal
   ) { }
 
   ngOnInit(): void {
@@ -89,14 +92,19 @@ export class TabComponent implements OnInit {
     ).subscribe();
   }
 
-  onDelete() {
-    this.tabService.deleteUser(this.userId).subscribe(() => {
-      const currentUser = this.authService.getClaims()?.id;
-      if (currentUser === this.userId) {
-        this.authService.logout();
-        this.router.navigateByUrl('');
-      } else {
-        this.router.navigateByUrl('/dashboard/administrator/users');
+  openDeleteConfirmationModal() {
+    const modalRef = this.modalService.open(DeleteConfirmationModalComponent);
+    modalRef.result.then(result => {
+      if (result === true) {
+        this.tabService.deleteUser(this.userId).subscribe(() => {
+          const currentUser = this.authService.getClaims()?.id;
+          if (currentUser === this.userId) {
+            this.authService.logout();
+            this.router.navigateByUrl('');
+          } else {
+            this.router.navigateByUrl('/dashboard/administrator/users');
+          }
+        });
       }
     });
   }
@@ -111,7 +119,6 @@ export class TabComponent implements OnInit {
   download() {
     this.progressBar = true;
     this.tabService.downloadDocument(this.userId).subscribe((event) => {
-      console.log(this.downloadProgress);
       if (event.type === HttpEventType.DownloadProgress && event.total) {
         this.downloadProgress = Math.round((event.loaded / event.total) * 100);
       }
@@ -123,8 +130,13 @@ export class TabComponent implements OnInit {
   }
 
   deleteApplication() {
-    this.tabService.deleteApplication(this.userId).subscribe(() => {
-      this.router.navigateByUrl('/dashboard/administrator/applications');
+    const modalRef = this.modalService.open(DeleteConfirmationModalComponent);
+    modalRef.result.then(result => {
+      if (result === true) {
+        this.tabService.deleteApplication(this.userId).subscribe(() => {
+          this.router.navigateByUrl('/dashboard/administrator/applications');
+        });
+      }
     });
   }
 }

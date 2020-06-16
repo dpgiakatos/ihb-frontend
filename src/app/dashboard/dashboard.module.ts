@@ -37,6 +37,7 @@ import { MessageComponent } from './administrator-dashboard/inbox/message/messag
 import { TabComponent } from './administrator-dashboard/users/tab/tab.component';
 import { PermissionModalComponent } from './doctor-dashboard/permission-modal/permission-modal.component';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import { DeleteConfirmationModalComponent } from './delete-confirmation-modal/delete-confirmation-modal.component';
 
 const userDashboardRoutes: Routes = [
   { path: '', redirectTo: 'personal-information', pathMatch: 'full' },
@@ -93,7 +94,8 @@ const exportedComponents = [
   UsersComponent,
   MessageComponent,
   TabComponent,
-  LoadingSpinnerComponent
+  LoadingSpinnerComponent,
+  DeleteConfirmationModalComponent
 ];
 
 @NgModule({
