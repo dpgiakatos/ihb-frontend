@@ -17,6 +17,8 @@ export class UsersComponent implements OnInit {
   limit = 10;
   count: number;
 
+  index: number;
+
   search = new FormControl('');
   doctor = new FormControl(false);
   administrator = new FormControl(false);
@@ -42,6 +44,7 @@ export class UsersComponent implements OnInit {
       this.userList = response.users;
       this.count = response.count;
       this.showSpinner = false;
+      this.index = (this.page * this.limit) - this.limit;
     });
   }
 
@@ -58,6 +61,7 @@ export class UsersComponent implements OnInit {
       this.userList = value.users;
       this.count = value.count;
       this.showSpinner = false;
+      this.index = (this.page * this.limit) - this.limit;
     });
   }
 
@@ -74,6 +78,7 @@ export class UsersComponent implements OnInit {
       this.userList = value.users;
       this.count = value.count;
       this.showSpinner = false;
+      this.index = (this.page * this.limit) - this.limit;
     });
   }
 
@@ -93,6 +98,7 @@ export class UsersComponent implements OnInit {
       this.userList = value.users;
       this.count = value.count;
       this.showSpinner = false;
+      this.index = (this.page * this.limit) - this.limit;
     });
   }
 }

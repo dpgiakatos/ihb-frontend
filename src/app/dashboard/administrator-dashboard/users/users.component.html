@@ -29,7 +29,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let user of userList; let i = index">
-        <th scope="row">{{i+1}}</th>
+        <th scope="row">{{index+i+1}}</th>
         <td><ngb-highlight [result]="user.firstName" [term]="search.value">{{user.firstName}}</ngb-highlight></td>
         <td><ngb-highlight [result]="user.lastName" [term]="search.value">{{user.lastName}}</ngb-highlight></td>
         <td><a routerLink="./{{user.userId}}"><button class="btn btn-primary" i18n>View</button></a></td>
