@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { maxLength } from '../helper/length.validator';
 import { AuthService } from '../auth/auth.service';
+import { ToastsService } from '../toasts/toasts.service';
 
 interface Contact {
   id: number;
@@ -19,10 +20,12 @@ interface Contact {
 export class HomePageComponent implements OnInit {
 
   contactForm: FormGroup;
+  @ViewChild('successToast') successToastTemplate: TemplateRef<{}>;
 
   constructor(
     private httpClient: HttpClient,
-    private authService: AuthService
+    private authService: AuthService,
+    private toastsService: ToastsService
   ) { }
 
   ngOnInit() {
@@ -48,6 +51,7 @@ export class HomePageComponent implements OnInit {
       return;
     }
     this.httpClient.post<Contact>('contact', this.contactForm.value).subscribe(() => {
+      this.toastsService.show(this.successToastTemplate, { className: 'bg-success text-light', delay: 5000 });
       // this.contactForm.reset();
     });
   }
