@@ -11,8 +11,8 @@
           <label for="oldPassword" i18n>Type the old password</label>
           <input type="password" class="form-control" id="oldPassword" autocomplete="old-password"
             placeholder="Old Password" formControlName="oldPassword" i18n-placeholder>
-          <div class="invalid-feedback" *ngIf="passwordForm.hasError('invalidCredentials')" i18n>Wrong Password</div>
-        </div>
+          </div>
+          <p class="text-danger" *ngIf="passwordForm.hasError('invalidCredentials')" i18n>Wrong Password</p>
 
         <div class="form-group">
           <label for="password" i18n>Type the new password</label>
@@ -77,3 +77,7 @@
     <button class="btn btn-danger" (click)="onDelete()" i18n>Delete Account</button>
   </div>
 </div>
+
+<ng-template #successToast i18n>
+  You have successfully change your password.
+</ng-template>

@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SettingsService } from './settings.service';
 import { Router } from '@angular/router';
 import { HttpClient, HttpParams, HttpErrorResponse } from '@angular/common/http';
 import { AuthService } from '../../auth/auth.service';
 import { minLength } from '../../helper/length.validator';
+import { ToastsService } from 'src/app/toasts/toasts.service';
 
 interface Password {
   oldPassword: string;
@@ -35,11 +36,16 @@ export class SettingsDashboardComponent implements OnInit {
 
   showSpinner = false;
 
+  @ViewChild('successToast') successToastTemplate: TemplateRef<{}>;
+
+
+
   constructor(
     private httpClient: HttpClient,
     private settingsService: SettingsService,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private toastsService: ToastsService
   ) { }
 
   ngOnInit(): void {
@@ -72,7 +78,7 @@ export class SettingsDashboardComponent implements OnInit {
     }
     this.httpClient.put<Password>('user/change-password', this.passwordForm.value).subscribe(
       () => {
-        this.passwordForm.reset();
+        this.toastsService.show(this.successToastTemplate, { className: 'bg-success text-light', delay: 10000 });
       }, (err: HttpErrorResponse) => {
         if (err.error instanceof ErrorEvent) {
           console.log('network error');
@@ -82,6 +88,7 @@ export class SettingsDashboardComponent implements OnInit {
         }
       });
     this.passwordForm.reset();
+
   }
 
   isNotSamePassword(): boolean {
