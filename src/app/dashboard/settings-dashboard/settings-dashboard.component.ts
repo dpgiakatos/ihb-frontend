@@ -107,8 +107,12 @@ export class SettingsDashboardComponent implements OnInit {
     if (input.files?.length) {
       const file = input.files[0];
       if (file) {
-        if ((/\.(zip)$/i).test(file.name) && file.size <= 50000000) {
+        if ((/\.(zip)$/i).test(file.name) && file.size <= 25000000) {
+          this.uploadError = false;
           this.file = file;
+        } else {
+          this.uploadError = true;
+          this.uploadForm.reset();
         }
       }
     }
