@@ -6,6 +6,7 @@ import { HttpClient, HttpParams, HttpErrorResponse } from '@angular/common/http'
 import { AuthService } from '../../auth/auth.service';
 import { minLength } from '../../helper/length.validator';
 import { ToastsService } from 'src/app/toasts/toasts.service';
+import { Subscription } from 'rxjs';
 
 interface Password {
   oldPassword: string;
@@ -38,7 +39,9 @@ export class SettingsDashboardComponent implements OnInit {
 
   @ViewChild('successToast') successToastTemplate: TemplateRef<{}>;
 
-
+  private confirmPasswordChange: Subscription;
+  private passwordChange: Subscription;
+  private userInitiatedChange = true;
 
   constructor(
     private httpClient: HttpClient,
@@ -70,6 +73,13 @@ export class SettingsDashboardComponent implements OnInit {
     let params = new HttpParams();
     params = params.append('userId', this.userId);
     this.hasApplication();
+
+    this.passwordChange = this.passwordForm.controls.password.valueChanges.subscribe(() => this.checkSamePassword());
+    this.confirmPasswordChange = this.passwordForm.controls.newPassword.valueChanges.subscribe(() => {
+      if (this.userInitiatedChange) {
+        this.checkSamePassword();
+      }
+    });
   }
 
   onPasswordSubmit() {
@@ -91,10 +101,15 @@ export class SettingsDashboardComponent implements OnInit {
 
   }
 
-  isNotSamePassword(): boolean {
-    return Boolean(
-      this.passwordForm.get('password')?.value !== this.passwordForm.get('retype')?.value && this.passwordForm.get('retype')?.touched
-    );
+  checkSamePassword() {
+    this.userInitiatedChange = false;
+    const confirmPasswordControl = this.passwordForm.get('newPassword') as FormControl;
+    if (this.passwordForm.get('password')?.value !== confirmPasswordControl.value) {
+      confirmPasswordControl.setErrors({ invalidConfirmation: true });
+    } else {
+      confirmPasswordControl.updateValueAndValidity();
+    }
+    this.userInitiatedChange = true;
   }
 
   get getOldPassword() {
