@@ -6,7 +6,6 @@ import { HttpClient, HttpParams, HttpErrorResponse } from '@angular/common/http'
 import { AuthService } from '../../auth/auth.service';
 import { minLength } from '../../helper/length.validator';
 import { ToastsService } from 'src/app/toasts/toasts.service';
-import { Subscription } from 'rxjs';
 
 interface Password {
   oldPassword: string;
@@ -39,8 +38,6 @@ export class SettingsDashboardComponent implements OnInit {
 
   @ViewChild('successToast') successToastTemplate: TemplateRef<{}>;
 
-  private confirmPasswordChange: Subscription;
-  private passwordChange: Subscription;
   private userInitiatedChange = true;
 
   constructor(
@@ -74,8 +71,8 @@ export class SettingsDashboardComponent implements OnInit {
     params = params.append('userId', this.userId);
     this.hasApplication();
 
-    this.passwordChange = this.passwordForm.controls.password.valueChanges.subscribe(() => this.checkSamePassword());
-    this.confirmPasswordChange = this.passwordForm.controls.newPassword.valueChanges.subscribe(() => {
+    this.passwordForm.controls.password.valueChanges.subscribe(() => this.checkSamePassword());
+    this.passwordForm.controls.newPassword.valueChanges.subscribe(() => {
       if (this.userInitiatedChange) {
         this.checkSamePassword();
       }
