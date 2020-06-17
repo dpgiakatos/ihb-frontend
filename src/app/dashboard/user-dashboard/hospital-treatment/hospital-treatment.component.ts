@@ -39,6 +39,8 @@ export class HospitalTreatmentComponent implements OnInit {
   limit = 10;
   count: number;
 
+  offset = 0;
+
   userId?: string;
 
   constructor(
@@ -108,7 +110,9 @@ export class HospitalTreatmentComponent implements OnInit {
   }
 
   fetchCurrentPage() {
+    this.showSpinner = true;
     this.treatmentsService.get(this.page, this.userId).subscribe(response => {
+      this.offset = (this.page - 1) * this.limit;
       this.treatmentList = response.treatments;
       this.count = response.count;
       this.showSpinner = false;

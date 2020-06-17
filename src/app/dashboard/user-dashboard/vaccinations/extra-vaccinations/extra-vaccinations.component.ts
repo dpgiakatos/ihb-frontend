@@ -34,6 +34,8 @@ export class ExtraVaccinationsComponent implements OnInit {
   limit = 10;
   count: number;
 
+  offset = 0;
+
   userId?: string;
 
   constructor(
@@ -103,7 +105,9 @@ export class ExtraVaccinationsComponent implements OnInit {
   }
 
   fetchCurrentPage() {
+    this.showSpinner = true;
     this.extraVaccinationsService.get(this.page, this.userId).subscribe(response => {
+      this.offset = (this.page - 1) * this.limit;
       this.extraVaccinationList = response.vaccinations;
       this.count = response.count;
       this.showSpinner = false;

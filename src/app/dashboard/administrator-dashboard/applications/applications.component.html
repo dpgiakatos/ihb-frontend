@@ -1,6 +1,12 @@
-<ihb-loading-spinner *ngIf="showSpinner"></ihb-loading-spinner>
-<ng-container *ngIf="list.length">
-  <div class="table-responsive">
+<div style="position: relative;">
+  <ng-container *ngIf="showSpinner">
+    <div class="search-result-area-loading"></div>
+    <div style="margin-top: 32px" *ngIf="list.length === 0"></div>
+    <div class="spinner">
+      <ihb-loading-spinner></ihb-loading-spinner>
+    </div>
+  </ng-container>
+  <div class="table-responsive" *ngIf="list.length">
     <table class="table table-striped mt-3">
       <thead>
       <tr>
@@ -13,7 +19,7 @@
       </thead>
       <tbody>
       <tr *ngFor="let item of list; let i = index">
-        <th scope="row">{{i+1}}</th>
+        <th scope="row">{{ offset + i + 1 }}</th>
         <td>{{item.firstName}}</td>
         <td>{{item.lastName}}</td>
         <td>{{item.createdTime | date: 'short'}}</td>
@@ -22,12 +28,12 @@
       </tbody>
     </table>
   </div>
-  <div class="d-flex justify-content-between p-2">
-    <ngb-pagination
-      [collectionSize]="count"
-      [(page)]="page"
-      [pageSize]="limit"
-      (pageChange)="fetchCurrentPage()">
-    </ngb-pagination>
-  </div>
-</ng-container>
+</div>
+<div class="d-flex justify-content-between p-2" *ngIf="list.length">
+  <ngb-pagination
+    [collectionSize]="count"
+    [(page)]="page"
+    [pageSize]="limit"
+    (pageChange)="fetchCurrentPage()">
+  </ngb-pagination>
+</div>

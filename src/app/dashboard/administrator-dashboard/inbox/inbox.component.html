@@ -1,6 +1,12 @@
-<ihb-loading-spinner *ngIf="showSpinner"></ihb-loading-spinner>
-<ng-container *ngIf="inbox.length">
-  <div class="table-responsive">
+<div style="position: relative;">
+  <ng-container *ngIf="showSpinner">
+    <div class="search-result-area-loading"></div>
+    <div style="margin-top: 32px" *ngIf="inbox.length === 0"></div>
+    <div class="spinner">
+      <ihb-loading-spinner></ihb-loading-spinner>
+    </div>
+  </ng-container>
+  <div class="table-responsive" *ngIf="inbox.length">
     <table class="table table-striped mt-3">
       <thead>
       <tr>
@@ -14,7 +20,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let inboxMessage of inbox; let i = index">
-          <td>{{i+1}}</td>
+          <td>{{ offset + i + 1 }}</td>
           <td>{{inboxMessage.email}}</td>
           <td>{{inboxMessage.subject}}</td>
           <td>{{inboxMessage.createdAt | date: 'short'}}</td>
@@ -24,12 +30,13 @@
       </tbody>
     </table>
   </div>
-  <div class="d-flex justify-content-between p-2">
-   <ngb-pagination
-   [collectionSize]="count"
-   [(page)]="page"
-   [pageSize]="limit"
-   (pageChange)="fetchCurrentPage()">
-   </ngb-pagination>
-  </div>
-</ng-container>
+
+</div>
+<div class="d-flex justify-content-between p-2"  *ngIf="inbox.length">
+  <ngb-pagination
+  [collectionSize]="count"
+  [(page)]="page"
+  [pageSize]="limit"
+  (pageChange)="fetchCurrentPage()">
+  </ngb-pagination>
+</div>

@@ -1,0 +1,13 @@
+<div ngbDropdown class="nav-item">
+  <a class="nav-link" ngbDropdownToggle role="button">
+    <fa-icon [icon]="faGlobe" [size]="'lg'"></fa-icon>
+  </a>
+  <div ngbDropdownMenu>
+    <a
+      [class.active]="locale === language.code"
+      *ngFor="let language of languages"
+      [href]="'/' + language.code + loadedUrl"
+      ngbDropdownItem
+    >{{ language.text }}</a>
+  </div>
+</div>

@@ -1,4 +1,3 @@
-<ihb-loading-spinner class="spinner-container" *ngIf="showSpinner"></ihb-loading-spinner>
 <form [formGroup]="form" (submit)="onSubmit()" *ngIf="isDoctor">
   <ng-container *ngIf="!adding; then addButton else displayForm"></ng-container>
   <ng-template #addButton>
@@ -78,8 +77,15 @@
     </div>
   </ng-template>
 </form>
-<ng-container *ngIf="treatmentList.length">
-  <div class="table-responsive">
+<div style="position: relative;">
+  <ng-container *ngIf="showSpinner">
+    <div class="search-result-area-loading"></div>
+    <div style="margin-top: 32px" *ngIf="treatmentList.length === 0"></div>
+    <div class="spinner">
+      <ihb-loading-spinner></ihb-loading-spinner>
+    </div>
+  </ng-container>
+  <div class="table-responsive" *ngIf="treatmentList.length">
     <table class="table table-striped mt-3">
       <thead>
       <tr>
@@ -99,7 +105,7 @@
       </thead>
       <tbody>
         <tr *ngFor="let hospital of treatmentList; let i = index">
-          <th scope="row">{{i+1}}</th>
+          <th scope="row">{{ offset + i + 1 }}</th>
           <td>{{hospital.name}}</td>
           <td>{{hospital.city}}</td>
           <td>{{hospital.country}}</td>
@@ -115,15 +121,16 @@
       </tbody>
     </table>
   </div>
-  <div class="d-flex justify-content-between p-2">
-    <ngb-pagination
-      [(page)]="page"
-      [pageSize]="limit"
-      [collectionSize]="count"
-      (pageChange)="fetchCurrentPage()">
-    </ngb-pagination>
-  </div>
-</ng-container>
+</div>
+<div class="d-flex justify-content-between p-2" *ngIf="treatmentList.length">
+  <ngb-pagination
+    [(page)]="page"
+    [pageSize]="limit"
+    [collectionSize]="count"
+    (pageChange)="fetchCurrentPage()">
+  </ngb-pagination>
+</div>
+
 <p *ngIf="!isDoctor && !treatmentList.length && !showSpinner" i18n>
   No available data. Only doctors can update your medical history.
 </p>

@@ -6,12 +6,14 @@ import { ControlValidationStateDirective } from './control-validation-state.dire
 import { ProvideNgFormDirective } from './provide-ng-form.directive';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
+import { LanguageSelectorComponent } from './language-selector/language-selector.component';
 
 @NgModule({
   declarations: [
     NavbarComponent,
     ControlValidationStateDirective,
-    ProvideNgFormDirective
+    ProvideNgFormDirective,
+    LanguageSelectorComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { CommonModule } from '@angular/common';
   exports: [
     NavbarComponent,
     ControlValidationStateDirective,
-    ProvideNgFormDirective
+    ProvideNgFormDirective,
+    LanguageSelectorComponent
   ]
 })
 export class SharedModule { }
