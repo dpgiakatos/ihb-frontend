@@ -18,6 +18,8 @@ export class InboxComponent implements OnInit {
   page = 1;
   count: number;
 
+  offset = 0;
+
   showSpinner = true;
 
   ngOnInit(): void {
@@ -25,7 +27,9 @@ export class InboxComponent implements OnInit {
   }
 
   fetchCurrentPage() {
+    this.showSpinner = true;
     this.inboxService.get(this.page).subscribe(value => {
+      this.offset = (this.page - 1) * this.limit;
       this.inbox = value.contacts;
       this.count = value.count;
       this.showSpinner = false;

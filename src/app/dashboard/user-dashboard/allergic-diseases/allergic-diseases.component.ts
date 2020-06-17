@@ -33,6 +33,8 @@ export class AllergicDiseasesComponent implements OnInit {
   limit = 10;
   count: number;
 
+  offset = 0;
+
   userId?: string;
 
   constructor(
@@ -96,7 +98,9 @@ export class AllergicDiseasesComponent implements OnInit {
   }
 
   fetchCurrentPage() {
+    this.showSpinner = true;
     this.allergicService.get(this.page, this.userId).subscribe(response => {
+      this.offset = (this.page - 1) * this.limit;
       this.allergicList = response.allergics;
       this.count = response.count;
       this.showSpinner = false;

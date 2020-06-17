@@ -43,18 +43,20 @@ export class DoctorDashboardComponent implements OnInit, OnDestroy {
             this.cancelSpinner();
             return false;
           }
+          this.scheduleSpinner();
           return true;
         }),
         // debounceTime(350)
       ),
       this.country.valueChanges.pipe(
         filter(() => {
+          this.showSpinner = true;
           return this.searchBox.value;
         })
       )
     ).pipe(
       switchMap(() => {
-        this.scheduleSpinner();
+        this.page = 1;
         return this.fetchResults();
       })
     ).subscribe(response => {

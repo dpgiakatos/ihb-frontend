@@ -24,5 +24,4 @@ export class ToastsComponent implements OnInit {
     return null;
   }
 
-
 }

@@ -22,26 +22,13 @@
       </li>
     </ul>
 
-
-    <div ngbDropdown class="nav-item">
-      <a class="nav-link" ngbDropdownToggle role="button">
-        <fa-icon [icon]="faGlobe" [size]="'lg'"></fa-icon>
-      </a>
-      <div ngbDropdownMenu>
-        <a
-          [class.active]="locale === language.code"
-          *ngFor="let language of languages"
-          [href]="'/' + language.code + loadedUrl"
-          ngbDropdownItem
-        >{{ language.text }}</a>
-      </div>
-    </div>
+    <ihb-language-selector></ihb-language-selector>
 
     <ul class="navbar-nav nav-pills">
       <div *ngIf="!isAuthenticated(); then thenBlock else elseBlock"></div>
       <ng-template #thenBlock>
         <a routerLink="/auth/login" class="mr-3 nav-button-margin" (click)="collapse()"><button class="btn btn-outline-dark " i18n>Sign in</button></a>
-        <a routerLink="/auth/register" (click)="collapse()"><button class="btn btn-dark" i18n>Sign up</button></a>  
+        <a routerLink="/auth/register" (click)="collapse()"><button class="btn btn-dark" i18n>Sign up</button></a>
       </ng-template>
       <ng-template #elseBlock>
         <a routerLink="/dashboard/user" (click)="collapse()"><button class="btn btn-dark" i18n>Go to Dashboard</button></a>
