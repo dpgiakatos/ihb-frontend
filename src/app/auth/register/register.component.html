@@ -35,7 +35,7 @@
           <label for="password" class="sr-only" i18n>Password Confirmation</label>
           <input type="password" id="passwordConfirmation" class="form-control" placeholder="Password Confirmation" autocomplete="new-password" formControlName="cPassword" i18n-placeholder>
           <div class="invalid-feedback" *ngIf="form.get('cPassword')?.hasError('required')" i18n>Please confirm your password.</div>
-          <div class="invalid-feedback" *ngIf="form.get('cPassword')?.hasError('invalidConfirmation')" i18n>The password is not the same.</div>
+          <div class="invalid-feedback" *ngIf="form.get('cPassword')?.hasError('invalidConfirmation')" i18n>The passwords do not match.</div>
         </div>
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit" i18n>Register</button>
@@ -47,7 +47,7 @@
   <div class="form-register" *ngIf="success">
     <p style="text-align: justify" i18n>
       We have sent you an email containing instructions on how to activate your International Health Booklet account. If you can't find the email,
-      give it a few minutes and also don't forget to check the spam folder.
+      wait for a few minutes or check the spam folder.
     </p>
     <a routerLink="/auth/login">
       <button type="button" class="btn btn-lg btn-primary btn-block" i18n>Login</button>
