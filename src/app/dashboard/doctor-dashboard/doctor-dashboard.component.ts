@@ -49,7 +49,10 @@ export class DoctorDashboardComponent implements OnInit, OnDestroy {
       ),
       this.country.valueChanges
     ).pipe(
-      switchMap(() => this.fetchResults())
+      switchMap(() => {
+        this.scheduleSpinner();
+        return this.fetchResults();
+      })
     ).subscribe(response => {
       this.list = response.users;
       this.count = response.count;
@@ -62,10 +65,17 @@ export class DoctorDashboardComponent implements OnInit, OnDestroy {
   }
 
   fetchCurrentPage() {
+    this.showSpinner = true;
     this.fetchResults().subscribe(response => {
+      this.showSpinner = false;
       this.list = response.users;
       this.count = response.count;
     });
+  }
+
+  // tslint:disable-next-line: variable-name
+  trackUserResultsBy(_index: number, user: User) {
+    return user.userId;
   }
 
   private scheduleSpinner() {
@@ -84,7 +94,6 @@ export class DoctorDashboardComponent implements OnInit, OnDestroy {
   }
 
   private fetchResults() {
-    this.scheduleSpinner();
     let params = new HttpParams();
     params = params.append('search', this.searchBox.value);
     params = params.append('page', this.page.toString());
@@ -103,6 +112,6 @@ export class DoctorDashboardComponent implements OnInit, OnDestroy {
           this.router.navigate(['dashboard', 'user', user.userId]);
         });
       }
-    });
+    }).catch(() => {});
   }
 }

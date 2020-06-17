@@ -42,7 +42,7 @@
       <p i18n>There was an error trying to upload the file. Make sure the file you are trying to upload
         is of .zip format. Also the file's size must not exceed 25MB.</p>
     </div>
-    <ihb-loading-spinner *ngIf="showSpinner"></ihb-loading-spinner>
+    <ihb-loading-spinner class="spinner-container" *ngIf="showSpinner"></ihb-loading-spinner>
     <ng-container *ngIf="!applicationExist then thenBlock else elseBlock"></ng-container>
     <ng-template #thenBlock>
       <p i18n>Upload all the necessary files in order to get a doctor account.<br>

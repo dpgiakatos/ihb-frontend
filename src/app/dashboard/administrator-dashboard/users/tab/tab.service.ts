@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { UrlSerializerService } from '../../../../helper/url-serializer.service';
 import { UserTab } from '../users.model';
+import { Role } from '../../../../auth/auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,14 +16,12 @@ export class TabService {
     return this.httpClient.get<UserTab>(url);
   }
 
-  set(id: string, role: string) {
+  set(id: string, role: Role) {
     const url = this.urlSerializer.serialize(['administrator', id, 'set-role']);
-    let params = new HttpParams();
-    params = params.append('role', role);
-    return this.httpClient.get<void>(url, { params });
+    return this.httpClient.put<void>(url, null, { params: { role } });
   }
 
-  deleteRole(id: string, role: string) {
+  deleteRole(id: string, role: Role) {
     const url = this.urlSerializer.serialize(['administrator', id, 'delete-role']);
     let params = new HttpParams();
     params = params.append('role', role);

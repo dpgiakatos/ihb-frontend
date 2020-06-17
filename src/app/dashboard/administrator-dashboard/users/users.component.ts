@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { UsersService } from './users.service';
 import { User } from './users.model';
 import { FormControl } from '@angular/forms';
-import { Subscription } from 'rxjs';
+import { Subscription, merge } from 'rxjs';
 import { switchMap, tap } from 'rxjs/operators';
 
 @Component({
@@ -10,95 +10,95 @@ import { switchMap, tap } from 'rxjs/operators';
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
-export class UsersComponent implements OnInit {
+export class UsersComponent implements OnInit, OnDestroy {
 
   userList: User[] = [];
   page = 1;
   limit = 10;
   count: number;
 
-  index: number;
+  offset = 0;
 
   search = new FormControl('');
   doctor = new FormControl(false);
   administrator = new FormControl(false);
 
-  subscriptionSearch: Subscription;
-  subscriptionDoctor: Subscription;
-  subscriptionAdministrator: Subscription;
+  querySubscription: Subscription;
 
   showSpinner: boolean;
 
-  constructor(private usersService: UsersService) { }
+  spinnerTimer: any | null;
+
+  constructor(
+    private usersService: UsersService
+  ) { }
 
   ngOnInit(): void {
     this.fetchCurrentPage();
-    this.fetchDoctors();
-    this.fetchAdministrators();
-    this.fetchSearching();
+
+    this.querySubscription = merge(
+      this.doctor.valueChanges.pipe(
+        tap(() => {
+          this.showSpinner = true;
+          this.userList = [];
+        })
+      ),
+      this.administrator.valueChanges.pipe(
+        tap(() => {
+          this.showSpinner = true;
+          this.userList = [];
+        })
+      ),
+      this.search.valueChanges.pipe(
+        tap(() => {
+          this.scheduleSpinner();
+        })
+        // debounceTime(250),
+      )
+    ).pipe(
+      switchMap(() => {
+        this.page = 1;
+        return this.usersService.get(this.search.value, this.page, this.doctor.value, this.administrator.value);
+      })
+    ).subscribe(response => {
+      this.userList = response.users;
+      this.count = response.count;
+      this.offset = 0;
+      this.cancelSpinner();
+    });
+  }
+
+  ngOnDestroy() {
+    this.querySubscription.unsubscribe();
   }
 
   fetchCurrentPage() {
     this.showSpinner = true;
     this.usersService.get(this.search.value, this.page, this.doctor.value, this.administrator.value).subscribe(response => {
+      this.offset = (this.page - 1) * this.limit;
       this.userList = response.users;
       this.count = response.count;
       this.showSpinner = false;
-      this.index = (this.page * this.limit) - this.limit;
     });
   }
 
-  fetchDoctors() {
-    this.subscriptionDoctor = this.doctor.valueChanges.pipe(
-      tap(() => {
-        this.userList = [];
-      }),
-      switchMap(value => {
-        this.showSpinner = true;
-        return this.usersService.get(this.search.value, this.page, value, this.administrator.value);
-      })
-    ).subscribe(value => {
-      this.userList = value.users;
-      this.count = value.count;
-      this.showSpinner = false;
-      this.index = (this.page * this.limit) - this.limit;
-    });
+  // tslint:disable-next-line: variable-name
+  trackUserResultsBy(_index: number, user: User) {
+    return user.userId;
   }
 
-  fetchAdministrators() {
-    this.subscriptionAdministrator = this.administrator.valueChanges.pipe(
-      tap(() => {
-        this.userList = [];
-      }),
-      switchMap(value => {
+  private scheduleSpinner() {
+    if (!this.spinnerTimer) {
+      this.spinnerTimer = setTimeout(() => {
+        this.spinnerTimer = null;
         this.showSpinner = true;
-        return this.usersService.get(this.search.value, this.page, this.doctor.value, value);
-      })
-    ).subscribe(value => {
-      this.userList = value.users;
-      this.count = value.count;
-      this.showSpinner = false;
-      this.index = (this.page * this.limit) - this.limit;
-    });
+      }, 500);
+    }
   }
 
-  fetchSearching() {
-    this.subscriptionSearch = this.search.valueChanges.pipe(
-      tap(input => {
-        if (input.length === 0) {
-          this.userList = [];
-        }
-      }),
-      // debounceTime(250),
-      switchMap(value => {
-        this.showSpinner = true;
-        return this.usersService.get(value, this.page, this.doctor.value, this.administrator.value);
-      })
-    ).subscribe(value => {
-      this.userList = value.users;
-      this.count = value.count;
-      this.showSpinner = false;
-      this.index = (this.page * this.limit) - this.limit;
-    });
+  private cancelSpinner() {
+    this.showSpinner = false;
+    clearTimeout(this.spinnerTimer);
+    this.spinnerTimer = null;
   }
 }

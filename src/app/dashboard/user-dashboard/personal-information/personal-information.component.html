@@ -1,4 +1,4 @@
-<ihb-loading-spinner *ngIf="showSpinner"></ihb-loading-spinner>
+<ihb-loading-spinner class="spinner-container" *ngIf="showSpinner"></ihb-loading-spinner>
 <ng-container *ngIf="hasData">
   <form [formGroup]="form" (submit)="onSubmit()">
     <div class="form-group">

@@ -4,7 +4,7 @@ import { TabService } from './tab.service';
 import { FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { AuthService } from '../../../../auth/auth.service';
+import { AuthService, Role } from '../../../../auth/auth.service';
 import { HttpEventType } from '@angular/common/http';
 import { saveAs } from 'file-saver';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -56,10 +56,10 @@ export class TabComponent implements OnInit {
       this.name.setValue(value.info.firstName + ' ' + value.info.lastName);
       this.email.setValue(value.info.email);
       value.role.forEach(role => {
-        if (role.role === 'Doctor') {
-          this.doctor.setValue(true);
-        } else if (role.role === 'Administrator') {
-          this.administrator.setValue(true);
+        if (role === Role.Doctor) {
+          this.doctor.setValue(true, { emitEvent: false });
+        } else if (role === Role.Administrator) {
+          this.administrator.setValue(true, { emitEvent: false });
         }
       });
       this.showSpinnerInfo = false;
@@ -71,9 +71,9 @@ export class TabComponent implements OnInit {
     this.subscriptionDoctor = this.doctor.valueChanges.pipe(
       switchMap(value => {
         if (value) {
-          return this.tabService.set(this.userId, 'Doctor');
+          return this.tabService.set(this.userId, Role.Doctor);
         } else {
-          return this.tabService.deleteRole(this.userId, 'Doctor');
+          return this.tabService.deleteRole(this.userId, Role.Doctor);
         }
       })
     ).subscribe();
@@ -82,11 +82,10 @@ export class TabComponent implements OnInit {
   onAdministratorRoleChange() {
     this.subscriptionAdministrator = this.administrator.valueChanges.pipe(
       switchMap(value => {
-        console.log(value);
         if (value) {
-          return this.tabService.set(this.userId, 'Administrator');
+          return this.tabService.set(this.userId, Role.Administrator);
         } else {
-          return this.tabService.deleteRole(this.userId, 'Administrator');
+          return this.tabService.deleteRole(this.userId, Role.Administrator);
         }
       })
     ).subscribe();
@@ -106,7 +105,7 @@ export class TabComponent implements OnInit {
           }
         });
       }
-    });
+    }).catch(() => {});
   }
 
   hasApplication() {
@@ -137,6 +136,6 @@ export class TabComponent implements OnInit {
           this.router.navigateByUrl('/dashboard/administrator/applications');
         });
       }
-    });
+    }).catch(() => {});
   }
 }

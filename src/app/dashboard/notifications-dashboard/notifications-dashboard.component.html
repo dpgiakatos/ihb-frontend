@@ -8,8 +8,8 @@
         In this page we inform you about the doctors who have accessed your medical history.
       </p>
     </div>
+    <ihb-loading-spinner class="spinner-container" *ngIf="showSpinner"></ihb-loading-spinner>
     <ng-container *ngIf="logs.length">
-      <ihb-loading-spinner *ngIf="showSpinner"></ihb-loading-spinner>
       <div class="table-responsive">
         <table class="table table-striped mt-3">
           <thead>

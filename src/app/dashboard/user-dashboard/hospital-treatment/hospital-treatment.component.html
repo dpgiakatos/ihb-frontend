@@ -1,4 +1,4 @@
-<ihb-loading-spinner *ngIf="showSpinner"></ihb-loading-spinner>
+<ihb-loading-spinner class="spinner-container" *ngIf="showSpinner"></ihb-loading-spinner>
 <form [formGroup]="form" (submit)="onSubmit()" *ngIf="isDoctor">
   <ng-container *ngIf="!adding; then addButton else displayForm"></ng-container>
   <ng-template #addButton>
@@ -124,6 +124,6 @@
     </ngb-pagination>
   </div>
 </ng-container>
-<p *ngIf='!isDoctor && !treatmentList.length' i18n>
+<p *ngIf="!isDoctor && !treatmentList.length && !showSpinner" i18n>
   No available data. Only doctors can update your medical history.
 </p>

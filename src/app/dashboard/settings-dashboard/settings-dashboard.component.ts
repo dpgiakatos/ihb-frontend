@@ -165,7 +165,7 @@ export class SettingsDashboardComponent implements OnInit {
           this.router.navigateByUrl('');
         });
       }
-    });
+    }).catch(() => {});
   }
 
 }

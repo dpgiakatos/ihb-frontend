@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faUser, faBell } from '@fortawesome/free-solid-svg-icons';
-import { AuthService } from '../auth/auth.service';
+import { AuthService, Role } from '../auth/auth.service';
 import { Router } from '@angular/router';
 import { NgbPaginationConfig } from '@ng-bootstrap/ng-bootstrap';
 
@@ -14,7 +14,9 @@ export class DashboardComponent implements OnInit {
   faUser = faUser;
   faBell = faBell;
 
-  result: {id: string, roles: string[]};
+  roles: Role[];
+
+  Role = Role;
 
   constructor(
     private authService: AuthService,
@@ -23,6 +25,8 @@ export class DashboardComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.roles = this.authService.getClaims()!.roles;
+
     this.paginationConfig.rotate = true;
     this.paginationConfig.boundaryLinks = true;
     this.paginationConfig.maxSize = 5;
@@ -31,6 +35,10 @@ export class DashboardComponent implements OnInit {
   onLogout() {
     this.authService.logout();
     this.router.navigateByUrl('/auth/login');
+  }
+
+  hasRole(requiredRole: Role) {
+    return this.roles.some(role => requiredRole === role);
   }
 
 }

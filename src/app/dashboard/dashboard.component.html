@@ -5,9 +5,9 @@
     <li ngbDropdown class="nav-item d-inline-block float-right" display="dynamic">
       <fa-icon [icon]="faUser" class="btn btn-outline-dark nav-item" id="dropdownMode" ngbDropdownToggle></fa-icon>
       <div ngbDropdownMenu>
-        <a routerLink="user"><button class="btn-outline-dark" ngbDropdownItem i18n>User</button></a>
-        <a routerLink="doctor"><button class="btn-outline-dark" ngbDropdownItem i18n>Doctor</button></a>
-        <a routerLink="administrator"><button class="btn-outline-dark" ngbDropdownItem i18n>Administrator</button></a>
+        <a routerLink="user"><button class="btn-outline-dark" ngbDropdownItem i18n>My data</button></a>
+        <a routerLink="doctor"><button class="btn-outline-dark" ngbDropdownItem *ngIf="hasRole(Role.Doctor)" i18n>Find patient</button></a>
+        <a routerLink="administrator"><button class="btn-outline-dark" ngbDropdownItem *ngIf="hasRole(Role.Administrator)" i18n>Administration</button></a>
         <div class="dropdown-divider"></div>
         <a routerLink="settings"><button class="btn-outline-dark" ngbDropdownItem i18n>Settings</button></a>
         <button class="btn-outline-dark" ngbDropdownItem (click)="onLogout()" i18n>Sign Out</button>

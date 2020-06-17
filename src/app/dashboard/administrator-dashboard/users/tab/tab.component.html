@@ -5,7 +5,7 @@
   </div>
   <div class="card-body">
     <div class="form-group">
-      <ihb-loading-spinner *ngIf="showSpinnerInfo"></ihb-loading-spinner>
+      <ihb-loading-spinner class="spinner-container" *ngIf="showSpinnerInfo"></ihb-loading-spinner>
       <ng-container *ngIf="infoHasLoad">
         <div class="row">
           <div class="col-lg mt-3">
@@ -30,7 +30,7 @@
           </div>
         </div>
       </ng-container>
-      <ihb-loading-spinner *ngIf="showSpinnerApp"></ihb-loading-spinner>
+      <ihb-loading-spinner class="spinner-container" *ngIf="showSpinnerApp"></ihb-loading-spinner>
       <ng-template [ngIf]="applicationActive">
         <div class="row">
           <div class="col-lg mt-3" i18n>
