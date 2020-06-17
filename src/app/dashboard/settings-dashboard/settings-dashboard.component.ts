@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef, OnDestroy } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { SettingsService } from './settings.service';
 import { Router } from '@angular/router';
@@ -8,6 +8,7 @@ import { minLength } from '../../helper/length.validator';
 import { ToastsService } from 'src/app/toasts/toasts.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DeleteConfirmationModalComponent } from '../delete-confirmation-modal/delete-confirmation-modal.component';
+import { Subscription } from 'rxjs';
 
 interface Password {
   oldPassword: string;
@@ -21,7 +22,7 @@ interface Password {
   styleUrls: ['./settings-dashboard.component.css'],
   providers: [SettingsService]
 })
-export class SettingsDashboardComponent implements OnInit {
+export class SettingsDashboardComponent implements OnInit, OnDestroy {
 
   passwordForm = new FormGroup({
     password: new FormControl(null, [Validators.required]),
@@ -37,6 +38,9 @@ export class SettingsDashboardComponent implements OnInit {
   uploadError = false;
 
   showSpinner = false;
+
+  passwordSubscription: Subscription;
+  confirmPasswordSubscription: Subscription;
 
   @ViewChild('successToast') successToastTemplate: TemplateRef<{}>;
 
@@ -74,12 +78,17 @@ export class SettingsDashboardComponent implements OnInit {
     params = params.append('userId', this.userId);
     this.hasApplication();
 
-    this.passwordForm.controls.password.valueChanges.subscribe(() => this.checkSamePassword());
-    this.passwordForm.controls.newPassword.valueChanges.subscribe(() => {
+    this.passwordSubscription = this.passwordForm.controls.password.valueChanges.subscribe(() => this.checkSamePassword());
+    this.confirmPasswordSubscription = this.passwordForm.controls.newPassword.valueChanges.subscribe(() => {
       if (this.userInitiatedChange) {
         this.checkSamePassword();
       }
     });
+  }
+
+  ngOnDestroy() {
+    this.passwordSubscription.unsubscribe();
+    this.confirmPasswordSubscription.unsubscribe();
   }
 
   onPasswordSubmit() {

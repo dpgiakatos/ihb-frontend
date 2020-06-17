@@ -47,7 +47,11 @@ export class DoctorDashboardComponent implements OnInit, OnDestroy {
         }),
         // debounceTime(350)
       ),
-      this.country.valueChanges
+      this.country.valueChanges.pipe(
+        filter(() => {
+          return this.searchBox.value;
+        })
+      )
     ).pipe(
       switchMap(() => {
         this.scheduleSpinner();

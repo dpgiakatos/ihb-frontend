@@ -25,14 +25,12 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.activatedRoute.snapshot.queryParams);
     if (this.activatedRoute.snapshot.queryParams.verify === 'true') {
       this.toastsService.show(this.successToastTemplate, { className: 'bg-success text-light', delay: 10000 });
     }
     if (this.activatedRoute.snapshot.queryParams.verify === 'false') {
       this.toastsService.show(this.failToastTemplate, { className: 'bg-danger text-light', delay: 10000 });
     }
-
 
     this.form = new FormGroup({
       email: new FormControl(null, [
@@ -57,6 +55,11 @@ export class LoginComponent implements OnInit {
       }
       if (err.status === 401) {
         this.form.setErrors({ invalidCredentials: true });
+      }
+      if (err.status === 422) {
+        if (err.error.failingConstraints?.email[0].constraint === 'isVerified') {
+          this.form.setErrors({ unverified: true });
+        }
       }
     });
   }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TabService } from './tab.service';
 import { FormControl } from '@angular/forms';
@@ -15,7 +15,7 @@ import { DeleteConfirmationModalComponent } from '../../../delete-confirmation-m
   templateUrl: './tab.component.html',
   styleUrls: ['./tab.component.css']
 })
-export class TabComponent implements OnInit {
+export class TabComponent implements OnInit, OnDestroy {
 
   userId: string;
   applicationActive: boolean;
@@ -49,6 +49,11 @@ export class TabComponent implements OnInit {
     this.onDoctorRoleChange();
     this.onAdministratorRoleChange();
     this.hasApplication();
+  }
+
+  ngOnDestroy() {
+    this.subscriptionDoctor.unsubscribe();
+    this.subscriptionAdministrator.unsubscribe();
   }
 
   fetchPage() {
