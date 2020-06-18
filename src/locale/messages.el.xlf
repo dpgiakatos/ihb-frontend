@@ -1015,7 +1015,7 @@
       </trans-unit>
       <trans-unit id="91d5f24de2a855d70b07cb4fd2e4cf4885664e6a" datatype="html">
         <source>Please provide an email.</source>
-        <target>Insert</target>
+        <target>Παρακαλώ συμπληρώστε την διεύθυνση του ηλεκτρονικού Ταχυδρομείου σας.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/login/login.component.html</context>
           <context context-type="linenumber">11</context>
@@ -1750,7 +1750,7 @@
       </trans-unit>
       <trans-unit id="a7e9508bafb081c5a14bb914ef31db4f997eeaab" datatype="html">
         <source>Ask for doctor authorization</source>
-        <target>Insert</target>
+        <target>Αιτηθείτε εξουσιοδότηση γιατρού</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
           <context context-type="linenumber">40</context>
