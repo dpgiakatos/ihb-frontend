@@ -1761,7 +1761,7 @@
         is of .zip format. Also the file&apos;s size must not exceed 25MB.</source>
         <target>
           Υπήρξε σφάλμα κατά την μεταφόρτωση του αρχείου. Σιγουρευτείτε ότι το αρχείο που προσπαθείτε να
-          ανεβάσετε είναι τύπου .zip. Επίσης το μέγεθος του αρχείου δεν θα πρέπει να υπερβαίνει τα 50MB.
+          ανεβάσετε είναι τύπου .zip. Επίσης το μέγεθος του αρχείου δεν θα πρέπει να υπερβαίνει τα 25MB.
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
@@ -1778,7 +1778,8 @@
           Ανεβάστε όλα τα απαραίτητα αρχεία προκειμένου να λάβετε εξουσιοδότηση γιατρού στην πλατφόρμα μας.
           <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
           Πρέπει να ανεβάσετε έναν φάκελο τύπου zip που θα περιέχει όλα τα αρχεία που επιθυμείτε να ανεβάσετε.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
-          Διαφορετικοί τύποι φακέλων θα απορριφθούν.
+          Διαφορετικοί τύποι φακέλων θα απορριφθούν.<x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br/&gt;"/>
+          Το μέγεθος του αρχείου δεν πρέπει να υπερβαίνει τα 25MB.
         </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/dashboard/settings-dashboard/settings-dashboard.component.html</context>
