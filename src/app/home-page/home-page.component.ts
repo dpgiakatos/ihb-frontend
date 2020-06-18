@@ -52,7 +52,7 @@ export class HomePageComponent implements OnInit {
     }
     this.httpClient.post<Contact>('contact', this.contactForm.value).subscribe(() => {
       this.toastsService.show(this.successToastTemplate, { className: 'bg-success text-light', delay: 5000 });
-      // this.contactForm.reset();
+      this.contactForm.reset();
     });
   }
 
