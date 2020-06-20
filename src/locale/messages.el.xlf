@@ -1315,10 +1315,6 @@
           <context context-type="sourcefile">src/app/auth/register/register.component.html</context>
           <context context-type="linenumber">48</context>
         </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/auth/forgot-password/forgot-password.component.html</context>
-          <context context-type="linenumber">20</context>
-        </context-group>
       </trans-unit>
       <trans-unit id="6765b4c916060f6bc42d9bb69e80377dbcb5e4e9" datatype="html">
         <source>Login</source>
@@ -1362,6 +1358,21 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/auth/forgot-password/forgot-password.component.html</context>
           <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="40327a49275ee65230243144953f0a765b5ea5f6" datatype="html">
+        <source>
+      We have sent you an email containing instructions on how to reset your password. If you can&apos;t find the email,
+      wait for a few minutes or check the spam folder.
+    </source>
+        <target>
+          Σας έχουμε στείλει ένα email που περιέχει οδηγίες σχετικά με την αλλαγή του κωδικού σας στο
+          International Health Booklet. Αν δεν μπορείτε να βρείτε το email, περιμένετε λίγα λεπτά ή ελέγξτε και στον φάκελο
+          με την ανεπιθύμητη αλληλογραφία.
+        </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/forgot-password/forgot-password.component.html</context>
+          <context context-type="linenumber">20</context>
         </context-group>
       </trans-unit>
       <trans-unit id="34557152cff7bc7db72a2a8706794d7fba4bac86" datatype="html">
